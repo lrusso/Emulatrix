@@ -7,10 +7,10 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 
 ## Important:
 
-- To run Nintendo ROMS select .NES files.
+- To run a Nintendo ROM select a .NES file.
 
-- To run Sega Genesis ROMS select .BIN files.
+- To run a Sega Genesis ROM select .BIN file.
 
-- To run MAME32 ROMS select .ZIP files (the original MAME32 ZIP name, like wboy3.zip, DO NOT RENAME THEM).
+- To run a MAME32 ROM select a .ZIP file (with the original MAME32 ZIP name, like wboy3.zip, DO NOT RENAME IT).
 
-- To run DOSBox programs, upload a .ZIP (the software will try to run AUTORUN.BAT).
+- To run a DOS program, upload a .ZIP file with it (the software will try to run AUTORUN.BAT).
