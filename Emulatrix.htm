@@ -139,6 +139,20 @@
 				alert(valueErrorWhileLoading);
 				location.reload(true);
 				}
+
+
+			window.onkeydown =function(event)
+				{
+    			if (event.keyCode === 13)
+    				{
+					var element = document.getElementById("gui_loader").value;
+					if (typeof(element) != "undefined" && element != null)
+    					{
+    					document.getElementById("gui_loader").click();
+    					}
+					}
+				}
+
 		</script>
 
 		<iframe id="container" src="about:blank"></iframe>
