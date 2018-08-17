@@ -1,5 +1,5 @@
 # Emulatrix
-JavaScript emulator pack: Sega Genesis, Nintendo, MAME32 and DOSBox 
+JavaScript emulator pack: Sega Genesis, Nintendo, Game Boy, Game Boy Color, MAME32 and DOSBox 
 
 ## Demo:
 
@@ -8,6 +8,10 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 ## Important:
 
 - To run a Nintendo ROM select a .NES file.
+
+- To run a Game Boy ROM select .GB file.
+
+- To run a Game Boy Color ROM select .GBC file.
 
 - To run a Sega Genesis ROM select .BIN file.
 
