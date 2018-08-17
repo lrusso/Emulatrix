@@ -1,6 +1,6 @@
 # Emulatrix
 
-JavaScript Emulator - Sega Genesis, Nintendo, GameBoy, GameBoy Color, MAME32 and DOSBox.
+JavaScript Emulator - Sega Genesis, Nintendo, GameBoy, GameBoy Color, GameBoy Advance, MAME32 and DOSBox.
 
 ## Demo:
 
@@ -13,6 +13,8 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 - To run a GameBoy ROM select a .GB file.
 
 - To run a GameBoy Color ROM select a .GBC file.
+
+- To run a GameBoy Advance ROM select a .GBA file.
 
 - To run a Sega Genesis ROM select a .BIN file.
 
