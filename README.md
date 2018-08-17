@@ -9,11 +9,11 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 
 - To run a Nintendo ROM select a .NES file.
 
-- To run a Game Boy ROM select .GB file.
+- To run a Game Boy ROM select a .GB file.
 
-- To run a Game Boy Color ROM select .GBC file.
+- To run a Game Boy Color ROM select a .GBC file.
 
-- To run a Sega Genesis ROM select .BIN file.
+- To run a Sega Genesis ROM select a .BIN file.
 
 - To run a MAME32 ROM select a .ZIP file (with the original MAME32 ZIP name, like wboy3.zip, DO NOT RENAME IT).
 
