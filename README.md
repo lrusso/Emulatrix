@@ -1,5 +1,5 @@
 # Emulatrix
-JavaScript emulator pack: Sega Genesis, Nintendo, Game Boy, Game Boy Color, MAME32 and DOSBox 
+JavaScript emulator pack: Sega Genesis, Nintendo, Game Boy, Game Boy Color, MAME32 and DOSBox.
 
 ## Demo:
 
