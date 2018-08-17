@@ -30,7 +30,7 @@
 				valueBy = "por Leonardo Russo";
 				valueInsert = "INSERTAR MONEDA = 1";
 				valueKeyboardWithMouse = "TECLADO Y MOUSE";
-				valueError = "ERROR: Por favor verifique que el juego se encuentre en formato NES, GB, GBC, BIN o ZIP.";
+				valueError = "ERROR: Por favor verifique que el juego se encuentre en formato NES, GB, GBC, GBA, BIN o ZIP.";
 				valueErrorWhileLoading = "ERROR: Hubo un error al crear el disco virtual, por favor seleccione el juego nuevamente.";
 				}
 				else
@@ -40,14 +40,14 @@
 				valueBy = "by Leonardo Russo";
 				valueInsert = "INSERT COIN = 1";
 				valueKeyboardWithMouse = "KEYBOARD AND MOUSE";
-				valueError = "ERROR: Please check that the game is in NES, GB, GBC, BIN or ZIP format.";
+				valueError = "ERROR: Please check that the game is in NES, GB, GBC, GBA, BIN or ZIP format.";
 				valueErrorWhileLoading = "ERROR: There was an error while creating the virtual memory drive, please select the game again.";
 				}
 
 			function runEmulator(files)
 				{
 				var extension = files[0].name.split(".").pop().toLowerCase();
-				if (extension=="zip" | extension=="bin" | extension=="nes" | extension=="gb" | extension=="gbc")
+				if (extension=="zip" | extension=="bin" | extension=="nes" | extension=="gb" | extension=="gbc" | extension=="gba")
 					{
 					if (extension=="zip")
 						{
@@ -111,6 +111,10 @@
 							else if (extension=="gb" | extension=="gbc")
 								{
 								document.getElementById("container").src = "Emulatrix_GameBoy.htm";
+								}
+							else if (extension=="gba")
+								{
+								document.getElementById("container").src = "Emulatrix_GameBoyAdvance.htm";
 								}
 							else if (extension=="bin")
 								{
@@ -191,7 +195,8 @@
 							<td class="gui_table_field2">
 								START = S<br />
 								SELECT = A<br />
-								A, B = X, Z
+								A, B = X, Z<br />
+								L, R = Q, W
 							</td>
 						</tr>
 						<tr>
