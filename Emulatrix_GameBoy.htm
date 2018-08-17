@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Emulatrix | Leonardo Russo</title>
+   		<link rel="stylesheet" href="Emulatrix.css">
+	</head>
+	<body>
+		<script>
+			function loadRomIntoVD()
+				{
+				var data = parent.ROMDATA;
+
+				// STARTS THE VIRTUAL FILE SYSTEM				
+				startFileSystem();
+
+				// CREATES THE ROM FILE IN THE VIRTUAL DRIVE
+				var dataView=new Uint8Array(data);
+				FS.createDataFile("/","game.gb",dataView,true,false);
+
+				// CREATES THE FOLDERS IN THE VIRTUAL DRIVE IN ORDER TO SAVE THE CONFIG FILE
+				FS.createFolder("/home/web_user", "retroarch", true, true);
+				FS.createFolder("/home/web_user/retroarch", "userdata", true, true);
+
+				// CREATES THE VARIABLE FOR THE CONFIGURATION FILE
+				var config = "";
+
+				// SETS THE DEFAULT FOLDER WHEN BROWSING THE VIRTUAL DRIVE
+				config += "rgui_browser_directory = /\n";
+
+				// SETS THE KEY FOR THE START AND SELECT BUTTON
+				config += "input_player1_start = s\n";
+				config += "input_player1_start_btn = s\n";
+				config += "input_player1_select = a\n";
+				config += "input_player1_select_btn = a\n";
+
+				// SETS THE KEYS FOR THE BUTTONS A, B
+				config += "input_player1_a = x\n";
+				config += "input_player1_b = z\n";
+
+				// SETS THE KEYS FOR UNWANTED FUNCTIONS
+ 				config += "slowmotion_ratio = 0.0\n";
+				config += "input_enable_hotkey_btn = null\n";
+				config += "input_game_focus_toggle = scroll_lock\n";
+
+				var container_width = document.getElementById("container").offsetWidth;
+				var container_height = document.getElementById("container").offsetHeight;
+
+				// SETS THE VIDEO CONFIGURATION
+				config += "video_vsync = true\n";
+				config += "video_scale = 1\n";
+				config += "video_window_x = " + container_width + "\n";
+				config += "video_window_y = " + container_height + "\n";
+				config += "aspect_ratio_index = 23\n";
+				config += "custom_viewport_width = " + container_width + "\n";
+				config += "custom_viewport_height = " + container_height + "\n";
+				config += "custom_viewport_x = 0\n";
+				config += "custom_viewport_y = 0\n";
+
+				// SETS THE AUDIO LATENCY
+				config += "audio_latency = 128\n";
+
+				// HIDES THE NOTIFICATION MESSAGES
+				config += "video_message_pos_x = -100\n";
+				config += "video_message_pos_y = -100\n";
+
+				// CREATES THE FILE WITH THE CONFIGURATION
+				FS.createDataFile("/home/web_user/retroarch/userdata", "retroarch.cfg", config, true, true);
+
+				// RUNS THE EMULATOR WITH THE SELECTED ROM
+				Module.callMain(["-v","/game.gb"]);
+
+				// RESIZES THE CANVAS
+				document.getElementById("canvas").width = container_width;
+				document.getElementById("canvas").height = container_height;
+				}
+
+			window.onload = function()
+				{
+				document.getElementById("container").style.display="block";
+				setTimeout(function(){loadRomIntoVD();},1000);
+				}
+		</script>
+		<div id="container"><canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas></div>
+		<script src="Emulatrix_GameBoy.js"></script>
+	</body>
+</html>
