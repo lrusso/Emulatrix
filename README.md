@@ -2,9 +2,9 @@
 
 JavaScript Emulator based on RetroArch - Sega Genesis, Nintendo, GameBoy, GameBoy Color, GameBoy Advance, MAME32 and DOSBox.
 
-## Demo:
+## Online Web:
 
-https://lrusso.github.io/Emulatrix/Emulatrix.htm
+https://emulatrix.lrusso.com.ar
 
 ## Important:
 
