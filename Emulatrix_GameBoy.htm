@@ -79,6 +79,13 @@
 				document.getElementById("container").style.display="block";
 				setTimeout(function(){loadRomIntoVD();},1000);
 				}
+
+			window.onerror = function (msg, url, lineNo, columnNo, error)
+				{
+				alert(parent.valueErrorWhileLoading);
+				window.location.href = "Emulatrix.htm";
+				return true;
+				}
 		</script>
 		<div id="container"><canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas></div>
 		<script src="Emulatrix_GameBoy.js"></script>

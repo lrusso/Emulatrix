@@ -36,6 +36,13 @@
 				document.getElementById("canvas").style.maxHeight = "100%"; 
 				setTimeout(function(){loadRomIntoVD();},1000);
 				}
+
+			window.onerror = function (msg, url, lineNo, columnNo, error)
+				{
+				alert(parent.valueErrorWhileLoading);
+				window.location.href = "Emulatrix.htm";
+				return true;
+				}
 		</script>
 
 		<div id="containerdosbox">
