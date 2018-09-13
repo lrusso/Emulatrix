@@ -21,3 +21,7 @@ https://emulatrix.lrusso.com.ar
 - To run a MAME32 ROM select a .ZIP file (with the original MAME32 ZIP name, like wboy3.zip, DO NOT RENAME IT).
 
 - To run a DOS program, upload a .ZIP file with it (the software will try to run AUTORUN.BAT).
+
+## Core files:
+
+https://buildbot.libretro.com/stable/
