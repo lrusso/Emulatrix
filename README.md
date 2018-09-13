@@ -18,7 +18,7 @@ https://emulatrix.lrusso.com.ar
 
 - To play a Sega Genesis ROM select a .BIN file from your hard drive.
 
-- To play a MAME32 ROM select a .ZIP file from your hard drive (with the original ZIP name, like wboy3.zip, DO NOT RENAME IT).
+- To play a MAME32 ROM select a .ZIP file from your hard drive (with the original name, like wboy3.zip, DO NOT RENAME IT).
 
 - To play a DOS game, upload a .ZIP file from your hard drive (the software will try to run AUTORUN.BAT).
 
