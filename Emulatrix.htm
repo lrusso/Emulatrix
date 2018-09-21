@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="UTF-8">
 		<title>Emulatrix | Leonardo Russo</title>
-   		<link rel="stylesheet" href="Emulatrix.css">
+		<link rel="stylesheet" href="Emulatrix.css">
 	</head>
 	<body>
 		<script>
@@ -57,6 +58,7 @@
 							ZIPFILE = files[0];
 							// HIDES THE LOADER
 							document.getElementById("gui").style.display = "none";
+							document.getElementById("gui_loaderlabel").style.display = "none";
 								
 							// SETTING THE EMULATOR
 							document.getElementById("container").style.display = "block";
@@ -76,6 +78,7 @@
 
 								// HIDES THE LOADER
 								document.getElementById("gui").style.display = "none";
+								document.getElementById("gui_loaderlabel").style.display = "none";
 								
 								// SETTING THE EMULATOR
 								document.getElementById("container").style.display = "block";
@@ -98,6 +101,7 @@
 
 							// HIDES THE LOADER
 							document.getElementById("gui").style.display = "none";
+							document.getElementById("gui_loaderlabel").style.display = "none";
 						
 							// SETTING THE EMULATOR
 							document.getElementById("container").style.display = "block";
@@ -222,6 +226,8 @@
 				</div>
 			</div>
 			<div class="gui_menu_about"><script>document.write(valueBy);</script> / LRusso.com</div>
+		</div>
+		<div class="gui_menu_fileloader" onmouseover="document.getElementById('gui_loaderlabel').style.display='block';" onmouseout="if(document.getElementById('gui').style.display=='none'){document.getElementById('gui_loaderlabel').style.display='none';}">
 			<input type="file" id="gui_loader" disabled onchange="runEmulator(event.target.files);"/>
 			<label for="gui_loader" id="gui_loaderlabel"><span class="gui_loadericon"></span><script>document.write(valueSelectGame);</script></label>
 		</div>
