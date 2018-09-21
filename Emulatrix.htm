@@ -139,6 +139,12 @@
 				document.getElementById("gui_loader").disabled = false;
 				document.getElementById("gui_loader").value = null;
 				document.getElementById("container").src = "about:blank";
+
+				// TO KEEP FOCUS IN THE CONTAINER
+				setInterval(function()
+					{
+					document.getElementById("container").focus();
+					}, 250);
 				}
 
 			window.onerror = function()
@@ -151,10 +157,13 @@
 				{
     			if (event.keyCode === 13)
     				{
-					var element = document.getElementById("gui_loader").value;
-					if (typeof(element) != "undefined" && element != null)
+    				if (document.getElementById("gui").style.display!="none")
     					{
-    					document.getElementById("gui_loader").click();
+						var element = document.getElementById("gui_loader").value;
+						if (typeof(element) != "undefined" && element != null)
+    						{
+    						document.getElementById("gui_loader").click();
+    						}
     					}
 					}
 				}
