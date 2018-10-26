@@ -155,16 +155,16 @@
 
 			window.onkeydown = function(event)
 				{
-    			if (event.keyCode === 13)
-    				{
-    				if (document.getElementById("gui").style.display!="none")
-    					{
+				if (event.keyCode === 13)
+					{
+					if (document.getElementById("gui").style.display!="none")
+						{
 						var element = document.getElementById("gui_loader").value;
 						if (typeof(element) != "undefined" && element != null)
-    						{
-    						document.getElementById("gui_loader").click();
-    						}
-    					}
+							{
+							document.getElementById("gui_loader").click();
+							}
+						}
 					}
 				}
 

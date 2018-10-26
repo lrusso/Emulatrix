@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Emulatrix | Leonardo Russo</title>
-   		<link rel="stylesheet" href="Emulatrix.css">
+		<link rel="stylesheet" href="Emulatrix.css">
 	</head>
 	<body>
 		<script>
@@ -23,10 +23,10 @@
 				var emulator = new Emulator(document.getElementById("canvas"),new DosBoxLoader(DosBoxLoader.mountZip(DosBoxLoader.fetchFile())));
 
 				// STARTING THE EMULATOR
-	            emulator.start();
+				emulator.start();
 
-	            // ATTACHING THE DOSBOX SCRIPT
-	            attach_script("Emulatrix_DOSBox.js");
+				// ATTACHING THE DOSBOX SCRIPT
+				attach_script("Emulatrix_DOSBox.js");
 				}
 
 			window.onload = function()
