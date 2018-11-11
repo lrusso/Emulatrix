@@ -10,6 +10,8 @@ https://emulatrix.lrusso.com.ar
 
 - To play a Nintendo ROM select a .NES file from your hard drive.
 
+- To play a Super Nintendo ROM select a .SMC file from your hard drive.
+
 - To play a GameBoy ROM select a .GB file from your hard drive.
 
 - To play a GameBoy Color ROM select a .GBC file from your hard drive.
