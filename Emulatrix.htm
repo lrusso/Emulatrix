@@ -31,7 +31,7 @@
 				valueBy = "por Leonardo Russo";
 				valueInsert = "INSERTAR MONEDA = 1";
 				valueKeyboardWithMouse = "TECLADO Y MOUSE";
-				valueError = "ERROR: Por favor verifique que el juego se encuentre en formato NES, GB, GBC, GBA, BIN o ZIP.";
+				valueError = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, BIN o ZIP.";
 				valueErrorWhileLoading = "Por favor int\u00E9ntelo de nuevo.";
 				}
 				else
@@ -41,14 +41,14 @@
 				valueBy = "by Leonardo Russo";
 				valueInsert = "INSERT COIN = 1";
 				valueKeyboardWithMouse = "KEYBOARD AND MOUSE";
-				valueError = "ERROR: Please check that the game is in NES, GB, GBC, GBA, BIN or ZIP format.";
+				valueError = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, BIN or ZIP format.";
 				valueErrorWhileLoading = "Please try again.";
 				}
 
 			function runEmulator(files)
 				{
 				var extension = files[0].name.split(".").pop().toLowerCase();
-				if (extension=="zip" | extension=="bin" | extension=="nes" | extension=="gb" | extension=="gbc" | extension=="gba")
+				if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="bin" | extension=="zip")
 					{
 					if (extension=="zip")
 						{
@@ -111,6 +111,10 @@
 							if (extension=="nes")
 								{
 								document.getElementById("container").src = "Emulatrix_Nintendo.htm";
+								}
+							else if (extension=="smc")
+								{
+								document.getElementById("container").src = "Emulatrix_SuperNintendo.htm";
 								}
 							else if (extension=="gb" | extension=="gbc")
 								{
@@ -182,30 +186,29 @@
 					<span class="gui_menu_title"><script>document.write(valueSelect);</script></span>
 					<table class="gui_table">
 						<tr>
-							<td class="gui_table_field1">
-								<img src="Emulatrix_SegaGenesis.png" alt="SegaGenesis">
-							</td>
-							<td class="gui_table_field2">
+							<td class="gui_table_field">
+								<img src="Emulatrix_SegaGenesis.png" alt="SegaGenesis"><br />
 								START = ENTER<br />
 								A, B, C = A, S, D<br />
 								X, Y, Z = Q, W, E
 							</td>
-						</tr>
-						<tr>
-							<td class="gui_table_field1">
-								<img src="Emulatrix_Nintendo.png" alt="Nintendo">
-							</td>
-							<td class="gui_table_field2">
-								START = S<br />
-								SELECT = A<br />
-								A, B = X, Z
+							<td class="gui_table_field">
+								<img src="Emulatrix_SuperNintendo.png" alt="Nintendo"><br />
+								START = E<br />
+								SELECT = R<br />
+								A, B, X, Y, L, R = X, Z, S, A, W, Q
 							</td>
 						</tr>
 						<tr>
-							<td class="gui_table_field1">
-								<img src="Emulatrix_GameBoy.png" alt="GameBoy">
+							<td class="gui_table_field">
+								<img src="Emulatrix_MAME32.png" alt="MAME32"><br />
+								START = ENTER<br />
+								<script>document.write(valueInsert);</script><br />
+								A, B, X, Y = A, S, Q, W<br />
+								L, L2, L3, R, R2, R3 = N, M, K, L, O, P
 							</td>
-							<td class="gui_table_field2">
+							<td class="gui_table_field">
+								<img src="Emulatrix_GameBoy.png" alt="GameBoy"><br />
 								START = S<br />
 								SELECT = A<br />
 								A, B = X, Z<br />
@@ -213,22 +216,15 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="gui_table_field1">
-								<img src="Emulatrix_MAME32.png" alt="MAME32">
-							</td>
-							<td class="gui_table_field2">
-								START = ENTER<br />
-								<script>document.write(valueInsert);</script><br />
-								A, B, X, Y = A, S, Q, W<br />
-								L, L2, L3, R, R2, R3 = N, M, K, L, O, P
-							</td>
-						</tr>
-						<tr>
-							<td class="gui_table_field1">
-								<img src="Emulatrix_DOSBox.png" alt="DOSBox">
-							</td>
-							<td class="gui_table_field2">
+							<td class="gui_table_field">
+								<img src="Emulatrix_DOSBox.png" alt="DOSBox"><br />
 								<script>document.write(valueKeyboardWithMouse);</script>
+							</td>
+							<td class="gui_table_field">
+								<img src="Emulatrix_Nintendo.png" alt="Nintendo"><br />
+								START = S<br />
+								SELECT = A<br />
+								A, B = X, Z
 							</td>
 						</tr>
 					</table>
