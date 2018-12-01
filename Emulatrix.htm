@@ -32,7 +32,7 @@
 				valueInsert = "INSERTAR MONEDA = 1";
 				valueKeyboardWithMouse = "TECLADO Y MOUSE";
 				valueError = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, BIN o ZIP.";
-				valueErrorWhileLoading = "Por favor int\u00E9ntelo de nuevo.";
+				valueErrorWhileLoading = "El juego no pudo ser cargado. Por favor, verifique el formato del archivo y vuelva a intentarlo o reinicie el navegador Web para tener m\u00E1s memoria libre.\n\n";
 				}
 				else
 				{
@@ -42,7 +42,7 @@
 				valueInsert = "INSERT COIN = 1";
 				valueKeyboardWithMouse = "KEYBOARD AND MOUSE";
 				valueError = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, BIN or ZIP format.";
-				valueErrorWhileLoading = "Please try again.";
+				valueErrorWhileLoading = "The game couldn't be loaded. Please check the format of the file and try again or restart the Web browser in order to get more free memory.\n\n";
 				}
 
 			function runEmulator(files)
@@ -151,10 +151,11 @@
 					}, 250);
 				}
 
-			window.onerror = function()
+			window.onerror = function (msg, url, lineNo, columnNo, error)
 				{
-				alert(valueErrorWhileLoading);
-				location.reload(true);
+				alert(valueErrorWhileLoading + msg.toUpperCase());
+				window.location.href = "Emulatrix.htm";
+				return true;
 				}
 
 			window.onkeydown = function(event)
