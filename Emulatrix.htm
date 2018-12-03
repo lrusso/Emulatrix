@@ -31,7 +31,7 @@
 				{
 				valueSelect = "CONTROLES DE LAS PLATAFORMAS";
 				valueSelectGame = "Abrir ROM";
-				valueResetGame = "Reiniciar ROM";
+				valueResetGame = "Resetear ROM";
 				valueBy = "por Leonardo Russo";
 				valueInsert = "INSERTAR MONEDA = 1";
 				valueKeyboardWithMouse = "TECLADO Y MOUSE";
@@ -55,93 +55,65 @@
 				var extension = files[0].name.split(".").pop().toLowerCase();
 				if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="bin" | extension=="zip")
 					{
-					if (extension=="zip")
+					var filereader = new FileReader();
+					filereader.file_name = files[0].name;
+					filereader.onload = function()
 						{
-						var filenameChecker = "|" + (files[0].name.split(".").slice(0, -1).join(".")) + "|";
-						if (MAME32GAMES.indexOf(filenameChecker)===-1)
+						// SETS THE FILE CONTENT FOR THE EMULATORS
+						ROMDATA = this.result;
+						ROMFILENAME = files[0].name;
+						ZIPFILE = files[0];
+
+						// HIDES THE LOADER
+						if (loadedGame==false)
 							{
-							ZIPFILE = files[0];
-							// HIDES THE LOADER
 							document.getElementById("gui").style.display = "none";
 							document.getElementById("gui_loaderlabel1").style.display = "none";
-								
-							// SETTING THE EMULATOR
-							document.getElementById("container").style.display = "inline-block";
-							document.getElementById("container").focus();
-
-							// STARTING THE EMULATOR
-							document.getElementById("container").src = "Emulatrix_DOSBox.htm";
 							}
-							else
+
+						// SETS THAT A GAME WAS LOADED
+						loadedGame = true;
+
+						// DISPLAYING THE EMULATOR CONTAINER
+						document.getElementById("container").style.display = "block";
+						document.getElementById("container").focus();
+
+						// STARTING THE EMULATOR
+						if (extension=="nes")
 							{
-							var filereader = new FileReader();
-							filereader.file_name = files[0].name;
-							filereader.onload = function()
+							document.getElementById("container").src = "Emulatrix_Nintendo.htm";
+							}
+						else if (extension=="smc")
+							{
+							document.getElementById("container").src = "Emulatrix_SuperNintendo.htm";
+							}
+						else if (extension=="gb" | extension=="gbc")
+							{
+							document.getElementById("container").src = "Emulatrix_GameBoy.htm";
+							}
+						else if (extension=="gba")
+							{
+							document.getElementById("container").src = "Emulatrix_GameBoyAdvance.htm";
+							}
+						else if (extension=="bin")
+							{
+							document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";
+							}
+						else if (extension=="zip")
+							{
+							// CHECKING IF IS A MAME32 OR DOSBOX GAME
+							var filenameChecker = "|" + (files[0].name.split(".").slice(0, -1).join(".")) + "|";
+							if (MAME32GAMES.indexOf(filenameChecker)===-1)
 								{
-								ROMDATA = this.result;
-								ROMFILENAME = files[0].name;
-
-								// HIDES THE LOADER
-								document.getElementById("gui").style.display = "none";
-								document.getElementById("gui_loaderlabel1").style.display = "none";
-								
-								// SETTING THE EMULATOR
-								document.getElementById("container").style.display = "block";
-								document.getElementById("container").focus();
-
-								// STARTING THE EMULATOR
+								document.getElementById("container").src = "Emulatrix_DOSBox.htm";
+								}
+								else
+								{
 								document.getElementById("container").src = "Emulatrix_MAME32.htm";
 								}
-							filereader.readAsArrayBuffer(files[0]);
 							}
-						}
-						else
-						{
-						var filereader = new FileReader();
-						filereader.file_name = files[0].name;
-						filereader.onload = function()
-							{
-
-							ROMDATA = this.result;
-							ROMFILENAME = files[0].name;
-
-							// HIDES THE LOADER
-							if (loadedGame==false)
-								{
-								document.getElementById("gui").style.display = "none";
-								document.getElementById("gui_loaderlabel1").style.display = "none";
-								}
-
-							loadedGame =true;
-
-							// SETTING THE EMULATOR
-							document.getElementById("container").style.display = "inline-block";
-							document.getElementById("container").focus();
-
-							// STARTING THE EMULATOR
-							if (extension=="nes")
-								{
-								document.getElementById("container").src = "Emulatrix_Nintendo.htm";
-								}
-							else if (extension=="smc")
-								{
-								document.getElementById("container").src = "Emulatrix_SuperNintendo.htm";
-								}
-							else if (extension=="gb" | extension=="gbc")
-								{
-								document.getElementById("container").src = "Emulatrix_GameBoy.htm";
-								}
-							else if (extension=="gba")
-								{
-								document.getElementById("container").src = "Emulatrix_GameBoyAdvance.htm";
-								}
-							else if (extension=="bin")
-								{
-								document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";
-								}
-							};
-						filereader.readAsArrayBuffer(files[0]);
-						}
+						};
+					filereader.readAsArrayBuffer(files[0]);
 					}
 					else
 					{
