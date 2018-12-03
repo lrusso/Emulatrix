@@ -6,7 +6,7 @@ JavaScript Emulator based on RetroArch - Sega Genesis, Nintendo, Super Nintendo,
 
 https://emulatrix.lrusso.com.ar
 
-## Important: After clicking in 'Open game'
+## Important: After clicking in 'Open ROM'
 
 - To play a Nintendo ROM select a .NES file from your hard drive.
 
