@@ -11,7 +11,7 @@ body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-moz-use
 #gui_loaderlabel1{display:inline-block;text-align:left;background-color:white;border:1px solid grey;cursor:pointer;font-family:Arial;font-size:12px;line-height:20px;z-index:991;}
 #gui_loaderlabel2{display:none;text-align:left;background-color:white;border:1px solid grey;cursor:pointer;font-family:Arial;font-size:12px;line-height:20px;z-index:991;margin-left:10px;}
 
-@media (max-width: 1280px)
+@media (max-width:1280px)
 	{
 	.gui_menu_about{position:absolute;right:2px;top:5px;color:white;font-family:Arial;font-size:13px;padding-bottom:5px;padding-right:5px;}
 	.gui_menu_title{color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:bold;}
