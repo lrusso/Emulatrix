@@ -78,6 +78,9 @@
 						document.getElementById("container").style.display = "block";
 						document.getElementById("container").focus();
 
+						// CLEARING THE SELECTED FILE VALUE
+						document.getElementById("gui_loader").value = null;
+
 						// STARTING THE EMULATOR
 						if (extension=="nes")
 							{
@@ -102,7 +105,7 @@
 						else if (extension=="zip")
 							{
 							// CHECKING IF THE FILE IS A MAME32 OR DOSBOX GAME
-							var filenameChecker = "|" + (files[0].name.split(".").slice(0, -1).join(".")) + "|";
+							var filenameChecker = "|" + (ROMFILENAME.split(".").slice(0, -1).join(".")) + "|";
 							if (MAME32GAMES.indexOf(filenameChecker)===-1)
 								{
 								document.getElementById("container").src = "Emulatrix_DOSBox.htm";
