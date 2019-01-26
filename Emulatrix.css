@@ -13,7 +13,6 @@ body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-moz-use
 
 @media(max-width:1366px)
 	{
-	.gui_menu_about{position:absolute;right:2px;top:5px;color:white;font-family:Arial;font-size:13px;padding-bottom:5px;padding-right:5px;}
 	.gui_menu_title{color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:bold;}
 	.gui_table{width:475px;margin:0 auto;}
 	.gui_table_field{width:150px;padding-top:20px;color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:normal;vertical-align:top;}
@@ -24,7 +23,6 @@ body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-moz-use
 
 @media(min-width:1367px)
 	{
-	.gui_menu_about{position:absolute;right:2px;top:5px;color:white;font-family:Arial;font-size:14px;padding-bottom:5px;padding-right:5px;}
 	.gui_menu_title{color:white;font-family:Arial;font-size:14px;line-height:20px;font-weight:bold;}
 	.gui_table{width:776px;margin:0 auto;}
 	.gui_table_field{width:388px;padding-top:50px;color:white;font-family:Arial;font-size:14px;line-height:30px;font-weight:normal;vertical-align:top;}
