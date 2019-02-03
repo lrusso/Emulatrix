@@ -236,16 +236,16 @@
 
 			<input type="file" id="gui_loader" disabled onchange="runEmulator(event.target.files);"/>
 
-			<label for="gui_loader" id="gui_loaderlabel1">
+			<label id="gui_loaderlabel1" for="gui_loader">
 				<span class="gui_buttons">
-					<span class="gui_loadericon1"></span>
+					<span id="gui_loaderlabel1icon"></span>
 					<script>document.write(valueSelectGame);</script>
 				</span>
 			</label>
 
 			<span id="gui_loaderlabel2" onclick="resetGame();">
 				<span class="gui_buttons">
-					<span class="gui_loadericon2"></span>
+					<span id="gui_loaderlabel2icon"></span>
 					<script>document.write(valueResetGame);</script>
 				</span>
 			</span>
