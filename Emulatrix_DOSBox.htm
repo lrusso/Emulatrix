@@ -37,7 +37,7 @@
 			window.onerror = function (msg, url, lineNo, columnNo, error)
 				{
 				alert(parent.valueErrorWhileLoading + msg.toUpperCase());
-				window.location.href = "Emulatrix.htm";
+				window.top.location.href = "Emulatrix.htm";
 				return true;
 				}
 		</script>
