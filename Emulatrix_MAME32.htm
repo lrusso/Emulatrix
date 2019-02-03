@@ -9,14 +9,12 @@
 		<script>
 			function loadRomIntoVD()
 				{
-				var data = parent.ROMDATA;var filenamezip = parent.ROMFILENAME;
-
 				// STARTS THE VIRTUAL FILE SYSTEM
 				startFileSystem();
 
 				// CREATES THE ROM FILE IN THE VIRTUAL DRIVE
-				var dataView=new Uint8Array(data);
-				FS.createDataFile("/",filenamezip,dataView,true,false);
+				var dataView=new Uint8Array(parent.ROMDATA);
+				FS.createDataFile("/",parent.ROMNAME,dataView,true,false);
 
 				// CREATES THE FOLDERS IN THE VIRTUAL DRIVE IN ORDER TO SAVE THE CONFIG FILE
 				FS.createFolder("/home/web_user", "retroarch", true, true);
@@ -285,7 +283,7 @@
 				FS.createDataFile("/home/web_user/retroarch/userdata", "retroarch.cfg", config, true, true);
 
 				// RUNS THE EMULATOR WITH THE SELECTED ROM
-				Module.callMain(["-v","/" + filenamezip]);
+				Module.callMain(["-v","/" + parent.ROMNAME]);
 
 				// RESIZES THE CANVAS
 				document.getElementById("canvas").width = container_width;

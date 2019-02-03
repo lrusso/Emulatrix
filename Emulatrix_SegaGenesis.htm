@@ -9,13 +9,11 @@
 		<script>
 			function loadRomIntoVD()
 				{
-				var data = parent.ROMDATA;
-
 				// STARTS THE VIRTUAL FILE SYSTEM
 				startFileSystem();
 
 				// CREATES THE ROM FILE IN THE VIRTUAL DRIVE
-				var dataView=new Uint8Array(data);
+				var dataView=new Uint8Array(parent.ROMDATA);
 				FS.createDataFile("/","game.bin",dataView,true,false);
 
 				// CREATES THE FOLDERS IN THE VIRTUAL DRIVE IN ORDER TO SAVE THE CONFIG FILE
