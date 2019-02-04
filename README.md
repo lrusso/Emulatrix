@@ -26,7 +26,7 @@ https://emulatrix.lrusso.com.ar
 | config -set "cycles=4000" | Default |
 | config -set "cycles=10000" | Faster |
 | config -set "cycles=15000" | Faster |
-| config -set "cycles=20000" | Fastest (suggested max value) |
+| config -set "cycles=20000" | Fastest |
 
 
 | config -set "sbtype=none" | Sound Blaster disabled |
