@@ -16,7 +16,7 @@ https://emulatrix.lrusso.com.ar
 | GameBoy Color | Select the game file from your hard drive. | GBC | --- |
 | GameBoy Advance | Select the game file from your hard drive. | GBA | --- |
 | Sega Genesis | Select the game file from your hard drive. | BIN | --- |
-| MAME32 | Select the game file from your hard drive. | ZIP | Don't rename the file. |
+| MAME32 | Select the game file from your hard drive. | ZIP | Do not rename the file. |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
 
 ## DOSBox useful commands:
