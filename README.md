@@ -21,14 +21,12 @@ https://emulatrix.lrusso.com.ar
 
 ## DOSBox useful commands:
 
-| TYPE IN THE PROMPT  | SPEED EMULATION  |
+| TYPE IN THE PROMPT  | RESULT  |
 | :------------ |:---------------:|
-| config -set "cycles=4000" | Default |
-| config -set "cycles=10000" | Faster |
-| config -set "cycles=15000" | Faster |
-| config -set "cycles=20000" | Fastest |
-
-
+| config -set "cycles=4000" | Default emulation speed |
+| config -set "cycles=10000" | Faster emulation speed |
+| config -set "cycles=15000" | Faster emulation speed |
+| config -set "cycles=20000" | Fastest emulation speed |
 | config -set "sbtype=none" | Sound Blaster disabled |
 
 ## Core files:
