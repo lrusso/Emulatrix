@@ -8,21 +8,16 @@ https://emulatrix.lrusso.com.ar
 
 ## Important: After clicking in 'Open ROM'
 
-- To play a Nintendo ROM, select a .NES file from your hard drive.
-
-- To play a Super Nintendo ROM, select a .SMC file from your hard drive.
-
-- To play a GameBoy ROM, select a .GB file from your hard drive.
-
-- To play a GameBoy Color ROM, select a .GBC file from your hard drive.
-
-- To play a GameBoy Advance ROM, select a .GBA file from your hard drive.
-
-- To play a Sega Genesis ROM, select a .BIN file from your hard drive.
-
-- To play a MAME32 ROM, select a .ZIP file from your hard drive (with the original name, like wboy3.zip, DO NOT RENAME IT).
-
-- To play a DOS game, select a .ZIP file from your hard drive (the software will try to run AUTORUN.BAT).
+| Platform  | How to play a game?  | File format | Note |
+| :------------ |:---------------:| :-----:| :-----:|
+| Nintendo | Select the game file from your hard drive. | NES | --- |
+| Super Nintendo | Select the game file from your hard drive. | SMC | --- |
+| GameBoy | Select the game file from your hard drive. | GB | --- |
+| GameBoy Color | Select the game file from your hard drive. | GBC | --- |
+| GameBoy Advance | Select the game file from your hard drive. | GBA | --- |
+| Sega Genesis | Select the game file from your hard drive. | BIN | --- |
+| MAME32 | Select the game file from your hard drive. | ZIP | Don't rename the file. |
+| DOS | Select the game file from your hard drive. | ZIP | Will run AUTORUN.BAT |
 
 ## Core files:
 
