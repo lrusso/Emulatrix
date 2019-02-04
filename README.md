@@ -23,7 +23,9 @@ https://emulatrix.lrusso.com.ar
 
 | TYPE IN THE PROMPT  | RESULT  |
 | :------------ |:---------------:|
-| config -set "cycles=20000" | Faster emulation |
+| config -set "cycles=10000" | Faster emulation 1 |
+| config -set "cycles=15000" | Faster emulation 2 |
+| config -set "cycles=20000" | Faster emulation 3 |
 | config -set "sbtype=none" | Sound Blaster disabled |
 
 ## Core files:
