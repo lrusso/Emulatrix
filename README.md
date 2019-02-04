@@ -21,7 +21,7 @@ https://emulatrix.lrusso.com.ar
 
 ## DOSBox useful commands:
 
-| TYPE IN THE PROMPT  | DESCRIPTION  |
+| TYPE IN THE PROMPT  | RESULT  |
 | :------------ |:---------------:|
 | config -set "cycles=20000" | Faster emulation |
 | config -set "sbtype=none" | Sound Blaster disabled |
