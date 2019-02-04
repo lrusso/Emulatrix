@@ -8,7 +8,7 @@ https://emulatrix.lrusso.com.ar
 
 ## Important: After clicking in 'Open ROM'
 
-| Platform  | How to play a game?  | File format | Note |
+| PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
 | :------------ |:---------------:| :-----:| :-----:|
 | Nintendo | Select the game file from your hard drive. | NES | --- |
 | Super Nintendo | Select the game file from your hard drive. | SMC | --- |
