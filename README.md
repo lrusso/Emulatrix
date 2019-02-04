@@ -19,13 +19,6 @@ https://emulatrix.lrusso.com.ar
 | MAME32 | Select the game file from your hard drive. | ZIP | Do not rename the file. |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
 
-## DOSBox useful commands:
-
-| TYPE IN THE PROMPT  | RESULT  |
-| :------------ |:---------------:|
-| config -set "cycles=20000" | Faster emulation |
-| config -set "sbtype=none" | Sound Blaster disabled |
-
 ## Core files:
 
 https://buildbot.libretro.com/stable/
