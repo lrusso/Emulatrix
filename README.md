@@ -26,6 +26,10 @@ https://emulatrix.lrusso.com.ar
 | config -set "cycles=20000" | Faster emulation |
 | config -set "sbtype=none" | Sound Blaster disabled |
 
+## DOSBox suggestion in Emulatrix:
+
+Create in the ZIP file that has your game, a file named AUTORUN.BAT. The system will try to run the AUTORUN.BAT when loaded.
+
 ## Core files:
 
 https://buildbot.libretro.com/stable/
