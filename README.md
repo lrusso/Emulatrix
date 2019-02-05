@@ -6,7 +6,7 @@ JavaScript Emulator based on RetroArch - Sega Genesis, Nintendo, Super Nintendo,
 
 https://emulatrix.lrusso.com.ar
 
-## Important: After clicking in 'Open ROM'
+## IMPORTANT: After clicking in 'Open ROM'
 
 | PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
 | :------------ |:---------------:| :-----:| :-----:|
