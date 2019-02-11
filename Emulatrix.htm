@@ -13,7 +13,8 @@
 			var valueSelectGame = "";
 			var valueResetGame = "";
 			var valueInsert = "";
-			var valueQuestion = "";
+			var valueQuestionTitle ="";
+			var valueQuestionMessage = "";
 			var valueKeyboardWithMouse = "";
 			var valueError = "";
 			var valueErrorLoading = "";
@@ -29,7 +30,8 @@
 				valueSelectGame = "Abrir ROM";
 				valueResetGame = "Resetear ROM";
 				valueInsert = "INSERTAR MONEDA = 1";
-				valueQuestion = "¿Cargar como juego de Sega Genesis (Aceptar) o de PlayStation (Cancelar)?";
+				valueQuestionTitle = "Mensaje";
+				valueQuestionMessage = "Un archivo en formato BIN puede ser<br />un juego de Sega Genesis o PlayStation.<br /><br />Seleccione la consola correspondiente:";
 				valueKeyboardWithMouse = "TECLADO Y MOUSE";
 				valueError = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, BIN o ZIP.";
 				valueErrorWhileLoading = "El juego no pudo ser cargado. Por favor, verifique el formato del archivo y vuelva a intentarlo o reinicie el navegador Web para tener m\u00E1s memoria libre.\n\n";
@@ -40,7 +42,8 @@
 				valueSelectGame = "Open ROM";
 				valueResetGame = "Reset ROM";
 				valueInsert = "INSERT COIN = 1";
-				valueQuestion = "Load as a Sega Genesis game (OK) or a PlayStation Game (Cancel)?";
+				valueQuestionTitle = "Message";
+				valueQuestionMessage = "A file in BIN format can be a<br />Sega Genesis or PlayStation game.<br /><br />Select the game console of the file:";
 				valueKeyboardWithMouse = "KEYBOARD AND MOUSE";
 				valueError = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, BIN or ZIP format.";
 				valueErrorWhileLoading = "The game couldn't be loaded. Please check the format of the file and try again or restart the Web browser in order to get more free memory.\n\n";
@@ -90,15 +93,11 @@
 							}
 						else if (extension=="bin")
 							{
-							// ASKING IF IS A SEGA GENESIS OR PLAYSTATION GAME
-							if (confirm(valueQuestion))
-								{
-								document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";
-								}
-								else
-								{
-								document.getElementById("container").src = "Emulatrix_PlayStation.htm";
-								}
+							// A BIN FILE COULD BE A SEGA GENESIS GAME OR A PLAYSTATION GAME
+							// A SELECTION DIALOG IS PRESENTED FOR THE USER
+
+							showPlatformSelector();
+
 							}
 						else if (extension=="zip")
 							{
@@ -142,6 +141,45 @@
 					}
 				}
 
+			function showPlatformSelector()
+				{
+				var d = document;
+
+				if(d.getElementById("platformSelectorContainer")) return;
+
+				var mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+				mObj.id = "platformSelectorContainer";
+				mObj.style.height = d.documentElement.scrollHeight + "px";
+
+				var alertObj = mObj.appendChild(d.createElement("div"));
+				alertObj.id = "platformSelector";
+				if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+				alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
+				alertObj.style.visiblity="visible";
+
+				var h1 = alertObj.appendChild(d.createElement("h1"));
+				h1.id = "platformSelectorTitle";
+				h1.appendChild(d.createTextNode(valueQuestionTitle));
+
+				var msg = alertObj.appendChild(d.createElement("p"));
+				msg.id = "platformSelectorMessage";
+				msg.innerHTML = valueQuestionMessage;
+
+				var btn = alertObj.appendChild(d.createElement("a"));
+				btn.id = "platformSelectorCloseBtn1";
+				btn.appendChild(d.createTextNode("Sega Genesis"));
+				btn.href = "javascript:void(0)";
+				btn.onclick = function() {document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";return false; }
+
+				var btn2 = alertObj.appendChild(d.createElement("a"));
+				btn2.id = "platformSelectorCloseBtn2";
+				btn2.appendChild(d.createTextNode("PlayStation"));
+				btn2.href = "javascript:void(0)";
+				btn2.onclick = function() {document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));document.getElementById("container").src = "Emulatrix_PlayStation.htm";return false; }
+
+				alertObj.style.display = "block";
+				}
+
 			function resetGame()
 				{
 				document.getElementById("container").contentDocument.location.reload(true);
@@ -181,7 +219,6 @@
 						}
 					}
 				}
-
 		</script>
 
 		<iframe id="container" src="about:blank"></iframe>
