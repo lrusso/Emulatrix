@@ -34,12 +34,12 @@ https://emulatrix.lrusso.com.ar
 
 | PLATFORM  | URL  | CORE |
 | :------------ |:---------------:| :-----:|
-| Nintendo | https://buildbot.libretro.com/stable/ | fceumm |
-| Super Nintendo | https://buildbot.libretro.com/stable/ | snes9x2010 |
-| GameBoy | https://buildbot.libretro.com/stable/ | gambatte |
-| GameBoy Color | https://buildbot.libretro.com/stable/ | gambatte |
-| GameBoy Advance | https://buildbot.libretro.com/stable/ | vba_next |
-| Sega Genesis | https://buildbot.libretro.com/stable/ | genesis_plus_gx |
-| MAME32 | https://buildbot.libretro.com/stable/ | fbalpha2012 |
+| Nintendo | https://buildbot.libretro.com/stable | fceumm |
+| Super Nintendo | https://buildbot.libretro.com/stable | snes9x2010 |
+| GameBoy | https://buildbot.libretro.com/stable | gambatte |
+| GameBoy Color | https://buildbot.libretro.com/stable | gambatte |
+| GameBoy Advance | https://buildbot.libretro.com/stable | vba_next |
+| Sega Genesis | https://buildbot.libretro.com/stable | genesis_plus_gx |
+| MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 |
 | PlayStation | https://github.com/tjwei/pcsxjs | --- |
 | DOS | --- | --- |
