@@ -30,7 +30,7 @@ https://emulatrix.lrusso.com.ar
 | config -set "cycles=20000" | Fastest emulation speed |
 | config -set "sbtype=none" | Sound Blaster disabled |
 
-## Core files:
+## RetroArch core files:
 
 https://buildbot.libretro.com/stable/
 
