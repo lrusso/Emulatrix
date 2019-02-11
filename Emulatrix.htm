@@ -13,6 +13,7 @@
 			var valueSelectGame = "";
 			var valueResetGame = "";
 			var valueInsert = "";
+			var valueQuestion = "";
 			var valueKeyboardWithMouse = "";
 			var valueError = "";
 			var valueErrorLoading = "";
@@ -28,6 +29,7 @@
 				valueSelectGame = "Abrir ROM";
 				valueResetGame = "Resetear ROM";
 				valueInsert = "INSERTAR MONEDA = 1";
+				valueQuestion = "¿Cargar como juego de Sega Genesis (Aceptar) o de PlayStation (Cancelar)?";
 				valueKeyboardWithMouse = "TECLADO Y MOUSE";
 				valueError = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, BIN o ZIP.";
 				valueErrorWhileLoading = "El juego no pudo ser cargado. Por favor, verifique el formato del archivo y vuelva a intentarlo o reinicie el navegador Web para tener m\u00E1s memoria libre.\n\n";
@@ -38,6 +40,7 @@
 				valueSelectGame = "Open ROM";
 				valueResetGame = "Reset ROM";
 				valueInsert = "INSERT COIN = 1";
+				valueQuestion = "Load as a Sega Genesis game (OK) or a PlayStation Game (Cancel)?";
 				valueKeyboardWithMouse = "KEYBOARD AND MOUSE";
 				valueError = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, BIN or ZIP format.";
 				valueErrorWhileLoading = "The game couldn't be loaded. Please check the format of the file and try again or restart the Web browser in order to get more free memory.\n\n";
@@ -87,7 +90,15 @@
 							}
 						else if (extension=="bin")
 							{
-							document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";
+							// ASKING IF IS A SEGA GENESIS OR PLAYSTATION GAME
+							if (confirm(valueQuestion))
+								{
+								document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";
+								}
+								else
+								{
+								document.getElementById("container").src = "Emulatrix_PlayStation.htm";
+								}
 							}
 						else if (extension=="zip")
 							{
@@ -196,22 +207,20 @@
 								SELECT = R<br />
 								A, B, X, Y, L, R = X, Z, S, A, W, Q
 							</td>
-						</tr>
-						<tr>
 							<td class="gui_table_field">
 								<div class="gui_emulator_nintendo"></div>
 								START = S<br />
 								SELECT = A<br />
 								A, B = X, Z
 							</td>
+						</tr>
+						<tr>
 							<td class="gui_table_field">
 								<div class="gui_emulator_gameboy"></div>
 								START = S<br />
 								SELECT = A<br />
 								A, B, L, R = X, Z, Q, W
 							</td>
-						</tr>
-						<tr>
 							<td class="gui_table_field">
 								<div class="gui_emulator_mame32"></div>
 								START = ENTER<br />
@@ -220,6 +229,15 @@
 								L, L2, L3, R, R2, R3 = N, M, K, L, O, P
 							</td>
 							<td class="gui_table_field">
+								<div class="gui_emulator_playstation"></div>
+								START = ENTER<br />
+								SELECT = SHIFT<br />
+								L1, L2, R1, R2 = 1, 2, 3, 4<br />
+								&#9650;, &#9678;, X, &#9634; = W, D, S, A
+							</td>
+						</tr>
+						<tr>
+							<td class="gui_table_field" colspan="3">
 								<div class="gui_emulator_dosbox"></div>
 								<script>document.write(valueKeyboardWithMouse);</script>
 							</td>
