@@ -41,5 +41,5 @@ https://emulatrix.lrusso.com.ar
 | GameBoy Advance | https://buildbot.libretro.com/stable/ | GBA |
 | Sega Genesis | https://buildbot.libretro.com/stable/ | BIN |
 | MAME32 | https://buildbot.libretro.com/stable/ | ZIP |
-| PlayStation | https://github.com/tjwei/pcsxjs | BIN |
+| PlayStation | https://github.com/tjwei/pcsxjs | --- |
 | DOS | --- | --- |
