@@ -152,25 +152,25 @@
 				mObj.id = "platformSelectorContainer";
 				mObj.style.height = d.documentElement.scrollHeight + "px";
 
-				// CREATING THE DIALOG
-				var alertObj = mObj.appendChild(d.createElement("div"));
-				alertObj.id = "platformSelector";
-				if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
-				alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
-				alertObj.style.visiblity="visible";
+				// CREATING THE SELECTOR DIALOG
+				var selectorDialog = mObj.appendChild(d.createElement("div"));
+				selectorDialog.id = "platformSelector";
+				if(d.all && !window.opera) selectorDialog.style.top = document.documentElement.scrollTop + "px";
+				selectorDialog.style.left = (d.documentElement.scrollWidth - selectorDialog.offsetWidth)/2 + "px";
+				selectorDialog.style.visiblity="visible";
 
 				// CREATING THE TITLE
-				var h1 = alertObj.appendChild(d.createElement("h1"));
+				var h1 = selectorDialog.appendChild(d.createElement("h1"));
 				h1.id = "platformSelectorTitle";
 				h1.appendChild(d.createTextNode(valueQuestionTitle));
 
 				// CREATING THE MESSAGE
-				var msg = alertObj.appendChild(d.createElement("p"));
+				var msg = selectorDialog.appendChild(d.createElement("p"));
 				msg.id = "platformSelectorMessage";
 				msg.innerHTML = valueQuestionMessage;
 
 				// CREATING THE SEGA GENESIS SELECTOR BUTTON
-				var btn = alertObj.appendChild(d.createElement("a"));
+				var btn = selectorDialog.appendChild(d.createElement("a"));
 				btn.id = "platformSelectorCloseBtn1";
 				btn.appendChild(d.createTextNode("Sega Genesis"));
 				btn.href = "javascript:void(0)";
@@ -186,7 +186,7 @@
 					};
 
 				// CREATING THE PLAYSTATION SELECTOR BUTTON
-				var btn2 = alertObj.appendChild(d.createElement("a"));
+				var btn2 = selectorDialog.appendChild(d.createElement("a"));
 				btn2.id = "platformSelectorCloseBtn2";
 				btn2.appendChild(d.createTextNode("PlayStation"));
 				btn2.href = "javascript:void(0)";
@@ -202,7 +202,7 @@
 					};
 
 				// SHOWING THE DIALOG
-				alertObj.style.display = "block";
+				selectorDialog.style.display = "block";
 				}
 
 			function resetGame()
