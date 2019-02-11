@@ -33,3 +33,7 @@ https://emulatrix.lrusso.com.ar
 ## Core files:
 
 https://buildbot.libretro.com/stable/
+
+## PlayStation core files:
+
+https://github.com/tjwei/pcsxjs
