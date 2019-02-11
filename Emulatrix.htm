@@ -140,6 +140,9 @@
 
 			function showPlatformSelector()
 				{
+				// CLEARING THE CONTAINER TO STOP A POSSIBLE GAME IN PROGRESS
+				document.getElementById("container").src = "about:blank";
+
 				var d = document;
 
 				if(d.getElementById("platformSelectorContainer")) return;
