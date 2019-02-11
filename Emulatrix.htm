@@ -143,40 +143,65 @@
 				// CLEARING THE CONTAINER TO STOP A POSSIBLE GAME IN PROGRESS
 				document.getElementById("container").src = "about:blank";
 
+				// PREVENTS DUPLICATED DIALOGS
 				var d = document;
-
 				if(d.getElementById("platformSelectorContainer")) return;
 
+				// CREATING THE DIALOG CONTAINER
 				var mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
 				mObj.id = "platformSelectorContainer";
 				mObj.style.height = d.documentElement.scrollHeight + "px";
 
+				// CREATING THE DIALOG
 				var alertObj = mObj.appendChild(d.createElement("div"));
 				alertObj.id = "platformSelector";
 				if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
 				alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
 				alertObj.style.visiblity="visible";
 
+				// CREATING THE TITLE
 				var h1 = alertObj.appendChild(d.createElement("h1"));
 				h1.id = "platformSelectorTitle";
 				h1.appendChild(d.createTextNode(valueQuestionTitle));
 
+				// CREATING THE MESSAGE
 				var msg = alertObj.appendChild(d.createElement("p"));
 				msg.id = "platformSelectorMessage";
 				msg.innerHTML = valueQuestionMessage;
 
+				// CREATING THE SEGA GENESIS SELECTOR BUTTON
 				var btn = alertObj.appendChild(d.createElement("a"));
 				btn.id = "platformSelectorCloseBtn1";
 				btn.appendChild(d.createTextNode("Sega Genesis"));
 				btn.href = "javascript:void(0)";
-				btn.onclick = function() {document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";return false;}
+				btn.onclick = function()
+					{
+					// DELETING THE DIALOG
+					document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));
 
+					// LOADING THE SEGA GENESIS EMULATOR
+					document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";
+
+					return true;
+					};
+
+				// CREATING THE PLAYSTATION SELECTOR BUTTON
 				var btn2 = alertObj.appendChild(d.createElement("a"));
 				btn2.id = "platformSelectorCloseBtn2";
 				btn2.appendChild(d.createTextNode("PlayStation"));
 				btn2.href = "javascript:void(0)";
-				btn2.onclick = function() {document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));document.getElementById("container").src = "Emulatrix_PlayStation.htm";return false;}
+				btn2.onclick = function()
+					{
+					// DELETING THE DIALOG
+					document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));
 
+					// LOADING THE PLAYSTATION EMULATOR
+					document.getElementById("container").src = "Emulatrix_PlayStation.htm";
+
+					return true;
+					};
+
+				// SHOWING THE DIALOG
 				alertObj.style.display = "block";
 				}
 
