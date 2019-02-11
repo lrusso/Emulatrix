@@ -93,11 +93,8 @@
 							}
 						else if (extension=="bin")
 							{
-							// A BIN FILE COULD BE A SEGA GENESIS GAME OR A PLAYSTATION GAME
-							// A SELECTION DIALOG IS PRESENTED FOR THE USER
-
+							// ASKING THE USER IF THE BIN FILE IS A SEGA GENESIS OR PLAYSTATION GAME
 							showPlatformSelector();
-
 							}
 						else if (extension=="zip")
 							{
@@ -169,13 +166,13 @@
 				btn.id = "platformSelectorCloseBtn1";
 				btn.appendChild(d.createTextNode("Sega Genesis"));
 				btn.href = "javascript:void(0)";
-				btn.onclick = function() {document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";return false; }
+				btn.onclick = function() {document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";return false;}
 
 				var btn2 = alertObj.appendChild(d.createElement("a"));
 				btn2.id = "platformSelectorCloseBtn2";
 				btn2.appendChild(d.createTextNode("PlayStation"));
 				btn2.href = "javascript:void(0)";
-				btn2.onclick = function() {document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));document.getElementById("container").src = "Emulatrix_PlayStation.htm";return false; }
+				btn2.onclick = function() {document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));document.getElementById("container").src = "Emulatrix_PlayStation.htm";return false;}
 
 				alertObj.style.display = "block";
 				}
