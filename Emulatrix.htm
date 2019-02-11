@@ -13,8 +13,6 @@
 			var valueSelectGame = "";
 			var valueResetGame = "";
 			var valueInsert = "";
-			var valueQuestionTitle ="";
-			var valueQuestionMessage = "";
 			var valueKeyboardWithMouse = "";
 			var valueError = "";
 			var valueErrorLoading = "";
@@ -30,8 +28,6 @@
 				valueSelectGame = "Abrir ROM";
 				valueResetGame = "Resetear ROM";
 				valueInsert = "INSERTAR MONEDA = 1";
-				valueQuestionTitle = "Mensaje";
-				valueQuestionMessage = "Un archivo en formato BIN puede ser<br />un juego de Sega Genesis o PlayStation.<br /><br />Seleccione la consola correspondiente:";
 				valueKeyboardWithMouse = "TECLADO Y MOUSE";
 				valueError = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, BIN o ZIP.";
 				valueErrorWhileLoading = "El juego no pudo ser cargado. Por favor, verifique el formato del archivo y vuelva a intentarlo o reinicie el navegador Web para tener m\u00E1s memoria libre.\n\n";
@@ -42,8 +38,6 @@
 				valueSelectGame = "Open ROM";
 				valueResetGame = "Reset ROM";
 				valueInsert = "INSERT COIN = 1";
-				valueQuestionTitle = "Message";
-				valueQuestionMessage = "A file in BIN format can be a<br />Sega Genesis or PlayStation game.<br /><br />Select the game console of the file:";
 				valueKeyboardWithMouse = "KEYBOARD AND MOUSE";
 				valueError = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, BIN or ZIP format.";
 				valueErrorWhileLoading = "The game couldn't be loaded. Please check the format of the file and try again or restart the Web browser in order to get more free memory.\n\n";
@@ -93,8 +87,15 @@
 							}
 						else if (extension=="bin")
 							{
-							// ASKING THE USER IF THE BIN FILE IS A SEGA GENESIS OR PLAYSTATION GAME
-							showPlatformSelector();
+							// CHECKING IF THE FILE IS A SEGA GENESIS OR PLAYSTATION GAME
+							if(ROMDATA.byteLength>=10000000) // IF FILESIZE IS BIGGER THAN 10 MB
+								{
+								document.getElementById("container").src = "Emulatrix_PlayStation.htm";
+								}
+								else
+								{
+								document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";
+								}
 							}
 						else if (extension=="zip")
 							{
@@ -120,10 +121,6 @@
 
 			function showToolbar(a)
 				{
-				// PREVENTS FROM SHOWING THE TOOLBAR IF THE PLATAFORM SELECTOR IS VISIBLE
-				var d = document;
-				if(d.getElementById("platformSelectorContainer")) return;
-
 				if (a==true)
 					{
 					document.getElementById("gui_loaderlabel1").style.display="inline-block";
@@ -140,73 +137,6 @@
 						document.getElementById("gui_loaderlabel2").style.display="none";
 						}
 					}
-				}
-
-			function showPlatformSelector()
-				{
-				// CLEARING THE CONTAINER TO STOP A POSSIBLE GAME IN PROGRESS
-				document.getElementById("container").src = "about:blank";
-
-				// PREVENTS DUPLICATED DIALOGS
-				var d = document;
-				if(d.getElementById("platformSelectorContainer")) return;
-
-				// CREATING THE DIALOG CONTAINER
-				var mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
-				mObj.id = "platformSelectorContainer";
-				mObj.style.height = d.documentElement.scrollHeight + "px";
-
-				// CREATING THE SELECTOR DIALOG
-				var selectorDialog = mObj.appendChild(d.createElement("div"));
-				selectorDialog.id = "platformSelector";
-				if(d.all && !window.opera) selectorDialog.style.top = document.documentElement.scrollTop + "px";
-				selectorDialog.style.left = (d.documentElement.scrollWidth - selectorDialog.offsetWidth)/2 + "px";
-				selectorDialog.style.visiblity="visible";
-
-				// CREATING THE TITLE
-				var h1 = selectorDialog.appendChild(d.createElement("h1"));
-				h1.id = "platformSelectorTitle";
-				h1.appendChild(d.createTextNode(valueQuestionTitle));
-
-				// CREATING THE MESSAGE
-				var msg = selectorDialog.appendChild(d.createElement("p"));
-				msg.id = "platformSelectorMessage";
-				msg.innerHTML = valueQuestionMessage;
-
-				// CREATING THE SEGA GENESIS SELECTOR BUTTON
-				var btn = selectorDialog.appendChild(d.createElement("a"));
-				btn.id = "platformSelectorCloseBtn1";
-				btn.appendChild(d.createTextNode("Sega Genesis"));
-				btn.href = "javascript:void(0)";
-				btn.onclick = function()
-					{
-					// DELETING THE SELECTOR DIALOG
-					document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));
-
-					// LOADING THE SEGA GENESIS EMULATOR
-					document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";
-
-					return true;
-					};
-
-				// CREATING THE PLAYSTATION SELECTOR BUTTON
-				var btn2 = selectorDialog.appendChild(d.createElement("a"));
-				btn2.id = "platformSelectorCloseBtn2";
-				btn2.appendChild(d.createTextNode("PlayStation"));
-				btn2.href = "javascript:void(0)";
-				btn2.onclick = function()
-					{
-					// DELETING THE SELECTOR DIALOG
-					document.getElementsByTagName("body")[0].removeChild(document.getElementById("platformSelectorContainer"));
-
-					// LOADING THE PLAYSTATION EMULATOR
-					document.getElementById("container").src = "Emulatrix_PlayStation.htm";
-
-					return true;
-					};
-
-				// SHOWING THE SELECTOR DIALOG
-				selectorDialog.style.display = "block";
 				}
 
 			function resetGame()
