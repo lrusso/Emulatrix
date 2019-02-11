@@ -32,8 +32,14 @@ https://emulatrix.lrusso.com.ar
 
 ## Core files:
 
-https://buildbot.libretro.com/stable/
-
-## PlayStation core files:
-
-https://github.com/tjwei/pcsxjs
+| PLATFORM  | URL  | CORE |
+| :------------ |:---------------:| :-----:|
+| Nintendo | https://buildbot.libretro.com/stable/ | fceumm_libretro |
+| Super Nintendo | https://buildbot.libretro.com/stable/ | SMC |
+| GameBoy | https://buildbot.libretro.com/stable/ | GB |
+| GameBoy Color | https://buildbot.libretro.com/stable/ | GBC |
+| GameBoy Advance | https://buildbot.libretro.com/stable/ | GBA |
+| Sega Genesis | https://buildbot.libretro.com/stable/ | BIN |
+| MAME32 | https://buildbot.libretro.com/stable/ | ZIP |
+| PlayStation | https://github.com/tjwei/pcsxjs | BIN |
+| DOS | --- | --- |
