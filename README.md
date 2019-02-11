@@ -17,6 +17,7 @@ https://emulatrix.lrusso.com.ar
 | GameBoy Advance | Select the game file from your hard drive. | GBA | --- |
 | Sega Genesis | Select the game file from your hard drive. | BIN | --- |
 | MAME32 | Select the game file from your hard drive. | ZIP | Do not rename the file. |
+| PlayStation | Select the game file from your hard drive. | BIN | --- |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
 
 ## DOSBox useful commands:
