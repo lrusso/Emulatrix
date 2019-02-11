@@ -120,6 +120,10 @@
 
 			function showToolbar(a)
 				{
+				// PREVENTS FROM SHOWING THE TOOLBAR IF THE PLATAFORM SELECTOR IS VISIBLE
+				var d = document;
+				if(d.getElementById("platformSelectorContainer")) return;
+
 				if (a==true)
 					{
 					document.getElementById("gui_loaderlabel1").style.display="inline-block";

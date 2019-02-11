@@ -26,7 +26,7 @@ body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-moz-use
 #platformSelectorMessage {font-family:Arial;font-size:13px;line-height:20px;text-align:center;padding-top:5px;padding-bottom:10px;}
 #platformSelectorCloseBtn1 {font-family:Arial;font-size:13px;text-align:center;color:black;display:inline-block;position:relative;padding:7px;border:0 none;width:100px;background-color:#DDD;border:1px solid #CCC;text-decoration:none;}
 #platformSelectorCloseBtn2 {font-family:Arial;font-size:13px;text-align:center;color:black;display:inline-block;position:relative;padding:7px;border:0 none;width:100px;background-color:#DDD;border:1px solid #CCC;text-decoration:none;margin-left:15px;}
-#platformSelectorContainer {background-color:rgba(0, 0, 0, 0.3);position:absolute;width:100%;height:100%;top:0px;left:0px;z-index:10000;}
+#platformSelectorContainer {position:absolute;top:0;left:0;right:0;bottom:0;z-index:10000;}
 
 @media(max-width:1366px)
 	{
