@@ -48,6 +48,9 @@
 				var extension = files[0].name.split(".").pop().toLowerCase();
 				if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="bin" | extension=="zip")
 					{
+					// CLEARING THE CONTAINER FROM ANY GAME IN PROGRESS
+					document.getElementById("container").src = "about:blank";
+
 					var filereader = new FileReader();
 					filereader.file_name = files[0].name;
 					filereader.onload = function()
