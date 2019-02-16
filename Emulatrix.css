@@ -25,7 +25,7 @@ body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-moz-use
 @media(max-width:1366px)
 	{
 	.gui_menu_title{color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:bold;}
-	.gui_table{width:700px;margin:0 auto;}
+	.gui_table{width:650px;margin:0 auto;}
 	.gui_table_field{padding-top:20px;color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:normal;vertical-align:top;}
 	.gui_buttons{width:135px;display:inline-block;font-family:Arial;font-size:12px;color:black;border:1px solid #CCC;background:#DDD;box-shadow:0 0 5px -1px rgba(0,0,0,0.2);cursor:pointer;vertical-align:middle;padding-top:5px;padding-bottom:5px;text-align:center;}
 	}
