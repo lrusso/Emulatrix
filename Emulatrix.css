@@ -27,17 +27,17 @@ body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-moz-use
 	.gui_menu_title{color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:bold;}
 	.gui_table{width:650px;margin:0 auto;}
 	.gui_table_field{padding-top:20px;color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:normal;vertical-align:top;}
-	.gui_table_field2{display:inline-block;margin-right:50px;}
+	.gui_table_field2{display:inline-block;margin-right:130px;}
 	.gui_table_field3{display:inline-block;}
 	.gui_buttons{width:135px;display:inline-block;font-family:Arial;font-size:12px;color:black;border:1px solid #CCC;background:#DDD;box-shadow:0 0 5px -1px rgba(0,0,0,0.2);cursor:pointer;vertical-align:middle;padding-top:5px;padding-bottom:5px;text-align:center;}
 	}
 
 @media(min-width:1367px)
 	{
-	.gui_menu_title{color:white;font-family:Arial;font-size:14px;line-height:20px;font-weight:bold;}
+	.gui_menu_title{color:white;font-family:Arial;font-size:14px;line-height:20px;font-weight:bold;display:inline-block;margin-top:20px;}
 	.gui_table{width:776px;margin:0 auto;}
 	.gui_table_field{padding-top:50px;color:white;font-family:Arial;font-size:14px;line-height:30px;font-weight:normal;vertical-align:top;}
-	.gui_table_field2{display:inline-block;margin-right:50px;}
+	.gui_table_field2{display:inline-block;margin-right:190px;}
 	.gui_table_field3{display:inline-block;}
 	.gui_buttons{width:135px;display:inline-block;font-family:Arial;font-size:13px;color:black;border:1px solid #CCC;background:#DDD;box-shadow:0 0 5px -1px rgba(0,0,0,0.2);cursor:pointer;vertical-align:middle;padding-top:8px;padding-bottom:8px;text-align:center;}
 	}
