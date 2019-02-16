@@ -18,6 +18,7 @@ https://emulatrix.lrusso.com.ar
 | Sega Genesis | Select the game file from your hard drive. | BIN | --- |
 | MAME32 | Select the game file from your hard drive. | ZIP | Do not rename the file. |
 | PlayStation | Select the game file from your hard drive. | BIN | --- |
+| Commodore | Select the game file from your hard drive. | D64 | --- |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
 
 ## DOSBox useful commands:
@@ -41,6 +42,6 @@ https://emulatrix.lrusso.com.ar
 | GameBoy Advance | https://buildbot.libretro.com/stable | vba_next |
 | Sega Genesis | https://buildbot.libretro.com/stable | genesis_plus_gx |
 | MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 |
-| Commodore 64 |https://github.com/rjanicek/vice.js | --- |
 | PlayStation | https://github.com/tjwei/pcsxjs | --- |
+| Commodore 64 |https://github.com/rjanicek/vice.js | --- |
 | DOS | --- | --- |
