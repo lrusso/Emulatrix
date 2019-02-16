@@ -41,5 +41,6 @@ https://emulatrix.lrusso.com.ar
 | GameBoy Advance | https://buildbot.libretro.com/stable | vba_next |
 | Sega Genesis | https://buildbot.libretro.com/stable | genesis_plus_gx |
 | MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 |
+| Commodore 64 |https://github.com/rjanicek/vice.js | --- |
 | PlayStation | https://github.com/tjwei/pcsxjs | --- |
 | DOS | --- | --- |
