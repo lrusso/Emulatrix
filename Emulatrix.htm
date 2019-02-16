@@ -13,6 +13,7 @@
 			var valueOpenROM = "";
 			var valueResetROM = "";
 			var valueInsertCoin = "";
+			var valueKeyboard = "";
 			var valueKeyboardAndMouse = "";
 			var valueErrorExtension = "";
 			var valueErrorWhileLoading = "";
@@ -28,8 +29,9 @@
 				valueOpenROM = "Abrir ROM";
 				valueResetROM = "Resetear ROM";
 				valueInsertCoin = "INSERTAR MONEDA = 1";
+				valueKeyboard = "TECLADO";
 				valueKeyboardAndMouse = "TECLADO Y MOUSE";
-				valueErrorExtension = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, BIN o ZIP.";
+				valueErrorExtension = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, D64, BIN o ZIP.";
 				valueErrorWhileLoading = "El juego no pudo ser cargado. Por favor, verifique el formato del archivo y vuelva a intentarlo o reinicie el navegador Web para tener m\u00E1s memoria libre.\n\n";
 				}
 				else
@@ -38,15 +40,16 @@
 				valueOpenROM = "Open ROM";
 				valueResetROM = "Reset ROM";
 				valueInsertCoin = "INSERT COIN = 1";
+				valueKeyboard = "KEYBOARD";
 				valueKeyboardAndMouse = "KEYBOARD AND MOUSE";
-				valueErrorExtension = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, BIN or ZIP format.";
+				valueErrorExtension = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, D64, BIN or ZIP format.";
 				valueErrorWhileLoading = "The game couldn't be loaded. Please check the format of the file and try again or restart the Web browser in order to get more free memory.\n\n";
 				}
 
 			function runEmulator(files)
 				{
 				var extension = files[0].name.split(".").pop().toLowerCase();
-				if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="bin" | extension=="zip")
+				if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="d64" | extension=="bin" | extension=="zip")
 					{
 					// CLEARING THE CONTAINER FROM ANY GAME IN PROGRESS
 					document.getElementById("container").src = "about:blank";
@@ -87,6 +90,10 @@
 						else if (extension=="gba")
 							{
 							document.getElementById("container").src = "Emulatrix_GameBoyAdvance.htm";
+							}
+						else if (extension=="d64")
+							{
+							document.getElementById("container").src = "Emulatrix_Commodore64.htm";
 							}
 						else if (extension=="bin")
 							{
@@ -199,7 +206,7 @@
 								A, B, C = A, S, D<br />
 								X, Y, Z = Q, W, E
 							</td>
-							<td class="gui_table_field">
+							<td class="gui_table_field" colspan="4">
 								<div class="gui_emulator_supernintendo"></div>
 								START = E<br />
 								SELECT = R<br />
@@ -219,7 +226,7 @@
 								SELECT = A<br />
 								A, B, L, R = X, Z, Q, W
 							</td>
-							<td class="gui_table_field">
+							<td class="gui_table_field" colspan="4">
 								<div class="gui_emulator_mame32"></div>
 								START = ENTER<br />
 								<script>document.write(valueInsertCoin);</script><br />
@@ -235,6 +242,10 @@
 							</td>
 						</tr>
 						<tr>
+							<td class="gui_table_field" colspan="3">
+								<div class="gui_emulator_commodore64"></div>
+								<script>document.write(valueKeyboard);</script>
+							</td>
 							<td class="gui_table_field" colspan="3">
 								<div class="gui_emulator_dosbox"></div>
 								<script>document.write(valueKeyboardAndMouse);</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Emulatrix | Leonardo Russo</title>
+		<link rel="stylesheet" href="Emulatrix.css">
+	</head>
+	<body>
+		<div id="container"><canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas></div>
+		<script>
+			function loadRomIntoVD()
+				{
+				// CREATES THE ROM FILE IN THE VIRTUAL DRIVE
+				var dataView=new Uint8Array(parent.ROMDATA);
+				FS.createDataFile("/","game.d64",dataView,true,false);
+				}
+
+			var viceArguments = ["+truedrive"]
+								.concat(["-virtualdev"])
+								.concat(["+VICIIdsize"])
+								.concat(["-VICIIvcache"])
+								.concat(["-soundfragsize","2"])
+								.concat(["-soundrate","22050"])
+								.concat(["-soundsync","0"])
+								.concat(["-autostart", "game.d64"]);
+
+			var Module =
+				{
+				preRun: [loadRomIntoVD],
+				arguments: viceArguments,
+				canvas: document.getElementById("canvas"),
+				};
+
+			window.onload = function()
+				{
+				document.getElementById("container").style.display="block";
+				}
+
+			window.onerror = function (msg, url, lineNo, columnNo, error)
+				{
+				alert(parent.valueErrorWhileLoading + msg.toUpperCase());
+				parent.document.location.href = "Emulatrix.htm";
+				return true;
+				}
+		</script>
+		<script src="Emulatrix_Commodore64.js"></script>
+	</body>
+</html>
