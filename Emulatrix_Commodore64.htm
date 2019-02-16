@@ -15,19 +15,10 @@
 				FS.createDataFile("/","game.d64",dataView,true,false);
 				}
 
-			var viceArguments = ["+truedrive"]
-								.concat(["-virtualdev"])
-								.concat(["+VICIIdsize"])
-								.concat(["-VICIIvcache"])
-								.concat(["-soundfragsize","2"])
-								.concat(["-soundrate","22050"])
-								.concat(["-soundsync","0"])
-								.concat(["-autostart", "game.d64"]);
-
 			var Module =
 				{
 				preRun: [loadRomIntoVD],
-				arguments: viceArguments,
+				arguments: ["+truedrive"].concat(["-virtualdev"]).concat(["+VICIIdsize"]).concat(["-VICIIvcache"]).concat(["-soundfragsize","2"]).concat(["-soundrate","22050"]).concat(["-soundsync","0"]).concat(["-autostart", "game.d64"]),
 				canvas: document.getElementById("canvas"),
 				};
 
