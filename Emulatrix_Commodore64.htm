@@ -22,6 +22,79 @@
 				canvas: document.getElementById("canvas"),
 				};
 
+			/*
+
+			-------------------------------------------------------------------------
+			THE JOYSTICK IS EMULATED WITH THE DIRECTIONAL CURSOR KEYS.
+			IF YOU DON'T WANT THIS, YOU CAN DELETE THE KEYDOWN AND KEYUP EVENT BELOW.
+			-------------------------------------------------------------------------
+
+			FIRE: 0x10,
+			EAST: 0x08,
+			WEST: 0x04,
+			SOUTH: 0x02,
+			NORTH: 0x01,
+			SOUTHWEST: 0x02 | 0x04,
+			SOUTHEAST: 0x02 | 0x08,
+			NORTHWEST: 0x01 | 0x04,
+			NORTHEAST: 0x01 | 0x08
+
+			*/
+
+			var joystick = 2;
+			var valueUP = 0x01;
+			var valueDOWN = 0x02;
+			var valueLEFT = 0x04;
+			var valueRIGHT = 0x08;
+
+			document.addEventListener("keydown", function(event)
+				{
+				if (event.keyCode === 38) // UP
+					{
+					Module.ccall("joystick_set_value_or", "undefined", ["number", "number"],[joystick,valueUP]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				else if (event.keyCode === 40) // DOWN
+					{
+					Module.ccall("joystick_set_value_or", "undefined", ["number", "number"],[joystick,valueDOWN]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				else if (event.keyCode === 37) // LEFT
+					{
+					Module.ccall("joystick_set_value_or", "undefined", ["number", "number"],[joystick,valueLEFT]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				else if (event.keyCode === 39) // RIGHT
+					{
+					Module.ccall("joystick_set_value_or", "undefined", ["number", "number"],[joystick,valueRIGHT]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				}, false);
+
+			document.addEventListener("keyup", function(event)
+				{
+				if (event.keyCode === 38) // UP
+					{
+					Module.ccall("joystick_set_value_and", "undefined", ["number", "number"],[joystick,~valueUP]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				else if (event.keyCode === 40) // DOWN
+					{
+					Module.ccall("joystick_set_value_and", "undefined", ["number", "number"],[joystick,~valueDOWN]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				else if (event.keyCode === 37) // LEFT
+					{
+					Module.ccall("joystick_set_value_and", "undefined", ["number", "number"],[joystick,~valueLEFT]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				else if (event.keyCode === 39) // RIGHT
+					{
+					Module.ccall("joystick_set_value_and", "undefined", ["number", "number"],[joystick,~valueRIGHT]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				}, false);
+
 			window.onload = function()
 				{
 				document.getElementById("container").style.display="block";
