@@ -31,7 +31,7 @@
 				valueInsertCoin = "INSERTAR MONEDA = 1";
 				valueKeyboard = "TECLADO";
 				valueKeyboardAndMouse = "TECLADO Y MOUSE";
-				valueErrorExtension = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, D64, T64, PRG, BIN o ZIP.";
+				valueErrorExtension = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, D64, T64, PRG, P00, BIN o ZIP.";
 				valueErrorWhileLoading = "El juego no pudo ser cargado. Por favor, verifique el formato del archivo y vuelva a intentarlo o reinicie el navegador Web para tener m\u00E1s memoria libre.\n\n";
 				}
 				else
@@ -42,14 +42,14 @@
 				valueInsertCoin = "INSERT COIN = 1";
 				valueKeyboard = "KEYBOARD";
 				valueKeyboardAndMouse = "KEYBOARD AND MOUSE";
-				valueErrorExtension = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, D64, T64, PRG, BIN or ZIP format.";
+				valueErrorExtension = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, D64, T64, PRG, P00, BIN or ZIP format.";
 				valueErrorWhileLoading = "The game couldn't be loaded. Please check the format of the file and try again or restart the Web browser in order to get more free memory.\n\n";
 				}
 
 			function runEmulator(files)
 				{
 				var extension = files[0].name.split(".").pop().toLowerCase();
-				if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="d64" | extension=="t64" | extension=="prg" | extension=="bin" | extension=="zip")
+				if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="d64" | extension=="t64" | extension=="prg" | extension=="p00" | extension=="bin" | extension=="zip")
 					{
 					// CLEARING THE CONTAINER FROM ANY GAME IN PROGRESS
 					document.getElementById("container").src = "about:blank";
@@ -91,7 +91,7 @@
 							{
 							document.getElementById("container").src = "Emulatrix_GameBoyAdvance.htm";
 							}
-						else if (extension=="d64" | extension=="t64" | extension=="prg")
+						else if (extension=="d64" | extension=="t64" | extension=="prg" | extension=="p00")
 							{
 							document.getElementById("container").src = "Emulatrix_Commodore64.htm";
 							}
