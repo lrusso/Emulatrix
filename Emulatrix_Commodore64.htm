@@ -48,6 +48,7 @@
 			var valueDOWN = 0x02;
 			var valueLEFT = 0x04;
 			var valueRIGHT = 0x08;
+			var valueFIRE = 0x10;
 
 			document.addEventListener("keydown", function(event)
 				{
@@ -69,6 +70,11 @@
 				else if (event.keyCode === 39) // RIGHT
 					{
 					Module.ccall("joystick_set_value_or", "undefined", ["number", "number"],[joystick,valueRIGHT]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				else if (event.keyCode === 17) // CTRL
+					{
+					Module.ccall("joystick_set_value_or", "undefined", ["number", "number"],[joystick,valueFIRE]);
 					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
 					}
 				}, false);
@@ -93,6 +99,11 @@
 				else if (event.keyCode === 39) // RIGHT
 					{
 					Module.ccall("joystick_set_value_and", "undefined", ["number", "number"],[joystick,~valueRIGHT]);
+					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
+					}
+				else if (event.keyCode === 17) // CTRL
+					{
+					Module.ccall("joystick_set_value_and", "undefined", ["number", "number"],[joystick,~valueFIRE]);
 					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
 					}
 				}, false);
