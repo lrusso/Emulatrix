@@ -173,15 +173,21 @@
 
 			function commodore64Joystick()
 				{
-				if (document.getElementById("container").contentWindow.joystickEnabled==true)
+				try
 					{
-					document.getElementById("container").contentWindow.joystickEnabled=false;
-					document.getElementById("commodore64JoystickStatusText").innerHTML = valueCommodore64JoystickOFF;
+					if (document.getElementById("container").contentWindow.joystickEnabled == true)
+						{
+						document.getElementById("container").contentWindow.joystickEnabled = false;
+						document.getElementById("commodore64JoystickStatusText").innerHTML = valueCommodore64JoystickOFF;
+						}
+						else
+						{
+						document.getElementById("container").contentWindow.joystickEnabled = true;
+						document.getElementById("commodore64JoystickStatusText").innerHTML = valueCommodore64JoystickON;
+						}
 					}
-					else
+					catch(err)
 					{
-					document.getElementById("container").contentWindow.joystickEnabled=true;
-					document.getElementById("commodore64JoystickStatusText").innerHTML = valueCommodore64JoystickON;
 					}
 				}
 
