@@ -15,6 +15,8 @@
 			var valueInsertCoin = "";
 			var valueKeyboard = "";
 			var valueKeyboardAndMouse = "";
+			var valueCommodore64JoystickON = "";
+			var valueCommodore64JoystickOFF = "";
 			var valueErrorExtension = "";
 			var valueErrorWhileLoading = "";
 
@@ -31,6 +33,8 @@
 				valueInsertCoin = "INSERTAR MONEDA = 1";
 				valueKeyboard = "TECLADO";
 				valueKeyboardAndMouse = "TECLADO Y MOUSE";
+				valueCommodore64JoystickON = "Joystick activado";
+				valueCommodore64JoystickOFF = "Joystick desactivado";
 				valueErrorExtension = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, GB, GBC, GBA, D64, T64, PRG, P00, BIN o ZIP.";
 				valueErrorWhileLoading = "El juego no pudo ser cargado. Por favor, verifique el formato del archivo y vuelva a intentarlo o reinicie el navegador Web para tener m\u00E1s memoria libre.\n\n";
 				}
@@ -42,6 +46,8 @@
 				valueInsertCoin = "INSERT COIN = 1";
 				valueKeyboard = "KEYBOARD";
 				valueKeyboardAndMouse = "KEYBOARD AND MOUSE";
+				valueCommodore64JoystickON = "Joystick enabled";
+				valueCommodore64JoystickOFF = "Joystick disabled";
 				valueErrorExtension = "ERROR: Please check that the game is in NES, SMC, GB, GBC, GBA, D64, T64, PRG, P00, BIN or ZIP format.";
 				valueErrorWhileLoading = "The game couldn't be loaded. Please check the format of the file and try again or restart the Web browser in order to get more free memory.\n\n";
 				}
@@ -132,10 +138,20 @@
 				{
 				if (a==true)
 					{
+					// SHOWS 'OPEN ROM'
 					document.getElementById("gui_loaderlabel1").style.display="inline-block";
+
+					// SHOWS 'RESET ROM' IF A GAME IS LOADED
 					if (ROMNAME!="")
 						{
 						document.getElementById("gui_loaderlabel2").style.display="inline-block";
+						}
+
+					// SHOWS 'JOYSTICK ENABLED/DISABLED' IF A COMMODORE 64 GAME IS LOADED
+					var extension = ROMNAME.split(".").pop().toLowerCase();
+					if (extension=="d64" | extension=="t64" | extension=="prg" | extension=="p00")
+						{
+						document.getElementById("gui_loaderlabel3").style.display="inline-block";
 						}
 					}
 					else
@@ -144,6 +160,7 @@
 						{
 						document.getElementById("gui_loaderlabel1").style.display="none";
 						document.getElementById("gui_loaderlabel2").style.display="none";
+						document.getElementById("gui_loaderlabel3").style.display="none";
 						}
 					}
 				}
@@ -151,6 +168,21 @@
 			function resetROM()
 				{
 				document.getElementById("container").contentDocument.location.reload(true);
+				document.getElementById("commodore64JoystickStatusText").innerHTML = valueCommodore64JoystickON;
+				}
+
+			function commodore64Joystick()
+				{
+				if (document.getElementById("container").contentWindow.joystickEnabled==true)
+					{
+					document.getElementById("container").contentWindow.joystickEnabled=false;
+					document.getElementById("commodore64JoystickStatusText").innerHTML = valueCommodore64JoystickOFF;
+					}
+					else
+					{
+					document.getElementById("container").contentWindow.joystickEnabled=true;
+					document.getElementById("commodore64JoystickStatusText").innerHTML = valueCommodore64JoystickON;
+					}
 				}
 
 			window.onload = function()
@@ -263,16 +295,23 @@
 			<input type="file" id="gui_loader" disabled onchange="runEmulator(event.target.files);"/>
 
 			<label id="gui_loaderlabel1" for="gui_loader">
-				<span class="gui_buttons">
+				<span class="gui_buttons1">
 					<span class="gui_loaderlabel1icon"></span>
 					<script>document.write(valueOpenROM);</script>
 				</span>
 			</label>
 
 			<span id="gui_loaderlabel2" onclick="resetROM();">
-				<span class="gui_buttons">
+				<span class="gui_buttons1">
 					<span class="gui_loaderlabel2icon"></span>
 					<script>document.write(valueResetROM);</script>
+				</span>
+			</span>
+
+			<span id="gui_loaderlabel3" onclick="commodore64Joystick();">
+				<span class="gui_buttons2">
+					<span class="gui_loaderlabel3icon"></span>
+					<span id="commodore64JoystickStatusText"><script>document.write(valueCommodore64JoystickON);</script></span>
 				</span>
 			</span>
 
