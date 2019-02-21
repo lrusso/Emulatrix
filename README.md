@@ -18,7 +18,7 @@ https://emulatrix.lrusso.com.ar
 | Sega Genesis | Select the game file from your hard drive. | BIN | --- |
 | MAME32 | Select the game file from your hard drive. | ZIP | Do not rename the file. |
 | PlayStation | Select the game file from your hard drive. | BIN | --- |
-| Commodore 64 | Select the game file from your hard drive. | D64<br />T64<br />PRG<br />P00 | --- |
+| Commodore 64 | Select the game file from your hard drive. | D64<br />T64<br />PRG<br />P00<br />TAP | --- |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
 
 ## DOSBox useful commands:
