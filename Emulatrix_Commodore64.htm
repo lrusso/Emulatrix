@@ -39,6 +39,99 @@
 
 			*/
 
+			/*
+			KEY							VALUE
+
+			LEFT ARROW					96
+			1							49
+			2							50
+			3							51
+			4							52
+			5							53
+			6							54
+			7							55
+			8							56
+			9							57
+			0							48
+			PLUS						189
+			MINUS						187
+			POUND						45
+			CLR HOME					36
+			INST DEL					8
+			CTRL						9
+			Q							113
+			W							119
+			E							101
+			R							114
+			T							116
+			Y							121
+			U							117
+			I							105
+			O							111
+			P							112
+			@							219
+			*							221
+			UP ARROW					127
+			RUN STOP					27
+			SHIFT LOCK					20
+			A							97
+			S							115
+			D							100
+			F							102
+			G							103
+			H							104
+			J							106
+			K							107
+			L							108
+			:							186
+			;							222
+			=							220
+			RETURN						13
+			CBM							1248
+			LEFT SHIFT					1249
+			Z							122
+			X							120
+			C							99
+			V							118
+			B							98
+			N							110
+			M							109
+			,							44
+			.							46
+			/							47
+			RIGHT SHIFT					1249
+			CRSR UP						1106
+			CRSR LEFT					1104
+			CRSR RIGHT					1103
+			CRSR DOWN					1105
+			SPACE						32
+			F1							1082
+			F2							1083
+			F3							1084
+			F4							1085
+			F5							1086
+			F6							1087
+			F7							1088
+			F8							1089
+
+			--------------------------------
+			EXAMPLE CODE
+			--------------------------------
+
+			var C64_SPACE_KEY_CODE = 32;
+
+			function sendSpaceKeyPressedCode()
+				{
+				Module.ccall('keyboard_key_pressed', 'undefined', ['number'], [C64_SPACE_KEY_CODE]);
+				}
+
+			function sendSpaceKeyReleasedCode()
+				{
+				Module.ccall('keyboard_key_released', 'undefined', ['number'], [C64_SPACE_KEY_CODE]);
+				}
+
+			*/
+
 			document.addEventListener("keydown", function(event)
 				{
 				if (joystickEnabled == true)
