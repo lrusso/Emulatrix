@@ -100,6 +100,8 @@
 							}
 						else if (extension=="d64" | extension=="t64" | extension=="prg" | extension=="p00" | extension=="tap")
 							{
+							// RESETS THE JOYSTICK STATUS TEXT
+							document.getElementById("commodore64JoystickStatusText").innerHTML = valueCommodore64JoystickON;
 							document.getElementById("container").src = "Emulatrix_Commodore64.htm";
 							}
 						else if (extension=="bin")
@@ -139,16 +141,16 @@
 				{
 				if (a==true)
 					{
-					// SHOWS 'OPEN ROM'
+					// SHOWS "OPEN ROM"
 					document.getElementById("gui_loaderlabel1").style.display="inline-block";
 
-					// SHOWS 'RESET ROM' IF A GAME IS LOADED
+					// SHOWS "RESET ROM" IF A GAME IS LOADED
 					if (ROMNAME!="")
 						{
 						document.getElementById("gui_loaderlabel2").style.display="inline-block";
 						}
 
-					// SHOWS 'JOYSTICK ENABLED/DISABLED' IF A COMMODORE 64 GAME IS LOADED
+					// SHOWS "JOYSTICK ENABLED/DISABLED" IF A COMMODORE 64 GAME IS LOADED
 					var extension = ROMNAME.split(".").pop().toLowerCase();
 					if (extension=="d64" | extension=="t64" | extension=="prg" | extension=="p00" | extension=="tap")
 						{
