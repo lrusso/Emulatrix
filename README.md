@@ -2,7 +2,7 @@
 
 JavaScript Emulator - Sega Genesis, Nintendo, Super Nintendo, GameBoy, GameBoy Color, GameBoy Advance, MAME32, PlayStation, Commodore 64 and DOSBox.
 
-## Web:
+## Web
 
 https://emulatrix.lrusso.com.ar
 
@@ -21,7 +21,7 @@ https://emulatrix.lrusso.com.ar
 | Commodore 64 | Select the game file from your hard drive. | D64<br />T64<br />PRG<br />P00<br />TAP | --- |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
 
-## DOSBox useful commands:
+## DOSBox useful commands
 
 | TYPE IN THE PROMPT  | RESULT  |
 | :------------ |:---------------:|
@@ -31,7 +31,7 @@ https://emulatrix.lrusso.com.ar
 | config -set "cycles=20000" | Fastest emulation speed |
 | config -set "sbtype=none" | Sound Blaster disabled |
 
-## Core files:
+## Core files
 
 | PLATFORM  | URL  | CORE |
 | :------------ |:---------------:| :-----:|
