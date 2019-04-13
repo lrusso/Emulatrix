@@ -4,7 +4,7 @@ JavaScript Emulator - Sega Genesis, Nintendo, Super Nintendo, GameBoy, GameBoy C
 
 ## Web
 
-https://emulatrix.lrusso.com.ar
+https://lrusso.github.io/Emulatrix/Emulatrix.htm
 
 ## IMPORTANT - After clicking in "Open ROM"
 
