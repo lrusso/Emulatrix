@@ -58,7 +58,7 @@
 				if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="d64" | extension=="t64" | extension=="prg" | extension=="p00" | extension=="tap" | extension=="bin" | extension=="zip")
 					{
 					// CLEARING THE CONTAINER FROM ANY GAME IN PROGRESS
-					document.getElementById("container").src = "about:blank";
+					document.getElementById("container").contentDocument.location.replace("about:blank");
 
 					var filereader = new FileReader();
 					filereader.file_name = files[0].name;
@@ -84,36 +84,36 @@
 						// STARTING THE EMULATOR
 						if (extension=="nes")
 							{
-							document.getElementById("container").src = "Emulatrix_Nintendo.htm";
+							document.getElementById("container").contentDocument.location.replace("Emulatrix_Nintendo.htm");
 							}
 						else if (extension=="smc")
 							{
-							document.getElementById("container").src = "Emulatrix_SuperNintendo.htm";
+							document.getElementById("container").contentDocument.location.replace("Emulatrix_SuperNintendo.htm");
 							}
 						else if (extension=="gb" | extension=="gbc")
 							{
-							document.getElementById("container").src = "Emulatrix_GameBoy.htm";
+							document.getElementById("container").contentDocument.location.replace("Emulatrix_GameBoy.htm");
 							}
 						else if (extension=="gba")
 							{
-							document.getElementById("container").src = "Emulatrix_GameBoyAdvance.htm";
+							document.getElementById("container").contentDocument.location.replace("Emulatrix_GameBoyAdvance.htm");
 							}
 						else if (extension=="d64" | extension=="t64" | extension=="prg" | extension=="p00" | extension=="tap")
 							{
 							// RESETS THE JOYSTICK STATUS TEXT
 							document.getElementById("commodore64JoystickStatusText").innerHTML = valueCommodore64JoystickON;
-							document.getElementById("container").src = "Emulatrix_Commodore64.htm";
+							document.getElementById("container").contentDocument.location.replace("Emulatrix_Commodore64.htm");
 							}
 						else if (extension=="bin")
 							{
 							// CHECKING IF THE FILE IS A SEGA GENESIS OR PLAYSTATION GAME
 							if(ROMDATA.byteLength>=10000000)
 								{
-								document.getElementById("container").src = "Emulatrix_PlayStation.htm";
+								document.getElementById("container").contentDocument.location.replace("Emulatrix_PlayStation.htm");
 								}
 								else
 								{
-								document.getElementById("container").src = "Emulatrix_SegaGenesis.htm";
+								document.getElementById("container").contentDocument.location.replace("Emulatrix_SegaGenesis.htm");
 								}
 							}
 						else if (extension=="zip")
@@ -121,11 +121,11 @@
 							// CHECKING IF THE FILE IS A MAME32 OR DOSBOX GAME
 							if (MAME32_ROM_LIST.indexOf("|" + ROMNAME + "|")===-1)
 								{
-								document.getElementById("container").src = "Emulatrix_DOSBox.htm";
+								document.getElementById("container").contentDocument.location.replace("Emulatrix_DOSBox.htm");
 								}
 								else
 								{
-								document.getElementById("container").src = "Emulatrix_MAME32.htm";
+								document.getElementById("container").contentDocument.location.replace("Emulatrix_MAME32.htm");
 								}
 							}
 						};
@@ -198,7 +198,7 @@
 				{
 				document.getElementById("gui_loader").disabled = false;
 				document.getElementById("gui_loader").value = null;
-				document.getElementById("container").src = "about:blank";
+				document.getElementById("container").contentDocument.location.replace("about:blank");
 
 				// TO KEEP FOCUS IN THE CONTAINER
 				setInterval(function()
