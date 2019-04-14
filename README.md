@@ -16,7 +16,7 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 | GameBoy Color | Select the game file from your hard drive. | GBC | Version 1.7.6 |
 | GameBoy Advance | Select the game file from your hard drive. | GBA |Version 1.7.6 |
 | Sega Genesis | Select the game file from your hard drive. | BIN | Version 1.7.6 |
-| MAME32 | Select the game file from your hard drive. | ZIP | Version 1.7.6<br />Do not rename the file. |
+| MAME32 | Select the game file from your hard drive. | ZIP | Version 1.7.6<br />Do not rename the ZIP file. |
 | PlayStation | Select the game file from your hard drive. | BIN | --- |
 | Commodore 64 | Select the game file from your hard drive. | D64<br />T64<br />PRG<br />P00<br />TAP | Version 2.4 |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
