@@ -28,10 +28,24 @@
 				attachScript("Emulatrix_DOSBox.js");
 				}
 
+			function mouseChecker()
+				{
+				if(document.pointerLockElement === document.getElementById("containerdosbox") || document.mozPointerLockElement === document.getElementById("containerdosbox"))
+					{
+					}
+					else
+					{
+					parent.goBackButtonResetIncrement();
+					}
+				}
+
 			window.onload = function()
 				{
 				document.getElementById("container").style.display="block";
 				setTimeout(function(){loadRomIntoVD();},1000);
+				document.addEventListener("click", mouseChecker, false);
+				document.addEventListener("dblclick", mouseChecker, false);
+				document.addEventListener("mousemove", mouseChecker, false);
 				}
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
