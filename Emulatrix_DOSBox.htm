@@ -47,82 +47,16 @@
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
 				{
-				alert(parent.valueErrorWhileLoading + msg.toUpperCase());
-				parent.document.location.href = "Emulatrix.htm";
+				// SOMETIMES THE DOSBOX SCRIPT WON'T BE SUCCESSFULLLY IF THE PAGE TAB IS NOT ACTIVE.
+				// WINDOW.ONLOAD DOESN'T FIX THIS.
+				// THAT'S WHY THE FUNCTION BELOW GIVES ANOTHER TRY TO RUN THE EMULATOR WITH THE SELECTED ROM.
+
+				setTimeout(function()
+					{
+					document.location.reload(true);
+					}, 5000);
 				return true;
 				}
-
-			/*
-
-			--------------------------------
-			EXAMPLE CODE FOR OVERRIDING KEYS
-			--------------------------------
-
-			document.addEventListener("keydown", function(event)
-				{
-				if (event.keyCode === 38) // UP
-					{
-					var event = document.createEvent("KeyboardEvent");
-					event.initKeyEvent("keydown", true, true, window, 0, 0, 0, 0, 104, 104);
-					Module["canvas"].dispatchEvent(event);
-					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
-					}
-				else if (event.keyCode === 40) // DOWN
-					{
-					var event = document.createEvent("KeyboardEvent");
-					event.initKeyEvent("keydown", true, true, window, 0, 0, 0, 0, 98, 98);
-					Module["canvas"].dispatchEvent(event);
-					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
-					}
-				else if (event.keyCode === 37) // LEFT
-					{
-					var event = document.createEvent("KeyboardEvent");
-					event.initKeyEvent("keydown", true, true, window, 0, 0, 0, 0, 100, 100);
-					Module["canvas"].dispatchEvent(event);
-					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
-					}
-				else if (event.keyCode === 39) // RIGHT
-					{
-					var event = document.createEvent("KeyboardEvent");
-					event.initKeyEvent("keydown", true, true, window, 0, 0, 0, 0, 102, 102);
-					Module["canvas"].dispatchEvent(event);
-					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
-					}
-				}, false);
-
-			document.addEventListener("keyup", function(event)
-				{
-				if (event.keyCode === 38) // UP
-					{
-					var event = document.createEvent("KeyboardEvent");
-					event.initKeyEvent("keyup", true, true, window, 0, 0, 0, 0, 104, 104);
-					Module["canvas"].dispatchEvent(event);
-					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
-					}
-				else if (event.keyCode === 40) // DOWN
-					{
-					var event = document.createEvent("KeyboardEvent");
-					event.initKeyEvent("keyup", true, true, window, 0, 0, 0, 0, 98, 98);
-					Module["canvas"].dispatchEvent(event);
-					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
-					}
-				else if (event.keyCode === 37) // LEFT
-					{
-					var event = document.createEvent("KeyboardEvent");
-					event.initKeyEvent("keyup", true, true, window, 0, 0, 0, 0, 100, 100);
-					Module["canvas"].dispatchEvent(event);
-					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
-					}
-				else if (event.keyCode === 39) // RIGHT
-					{
-					var event = document.createEvent("KeyboardEvent");
-					event.initKeyEvent("keyup", true, true, window, 0, 0, 0, 0, 102, 102);
-					Module["canvas"].dispatchEvent(event);
-					event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return false;
-					}
-				}, false);
-
-			*/
 		</script>
 
 		<div class="pleasewait"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
