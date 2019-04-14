@@ -10,15 +10,15 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 
 | PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
 | :------------ |:---------------:| :-----:| :-----:|
-| Nintendo | Select the game file from your hard drive. | NES | --- |
-| Super Nintendo | Select the game file from your hard drive. | SMC | --- |
-| GameBoy | Select the game file from your hard drive. | GB | --- |
-| GameBoy Color | Select the game file from your hard drive. | GBC | --- |
-| GameBoy Advance | Select the game file from your hard drive. | GBA | --- |
-| Sega Genesis | Select the game file from your hard drive. | BIN | --- |
-| MAME32 | Select the game file from your hard drive. | ZIP | Do not rename the file. |
+| Nintendo | Select the game file from your hard drive. | NES | Version 1.7.6 | 
+| Super Nintendo | Select the game file from your hard drive. | SMC | Version 1.7.6 |
+| GameBoy | Select the game file from your hard drive. | GB | Version 1.7.6 |
+| GameBoy Color | Select the game file from your hard drive. | GBC | Version 1.7.6 |
+| GameBoy Advance | Select the game file from your hard drive. | GBA |Version 1.7.6 |
+| Sega Genesis | Select the game file from your hard drive. | BIN | Version 1.7.6 |
+| MAME32 | Select the game file from your hard drive. | ZIP | Version 1.7.6<br />Do not rename the file. |
 | PlayStation | Select the game file from your hard drive. | BIN | --- |
-| Commodore 64 | Select the game file from your hard drive. | D64<br />T64<br />PRG<br />P00<br />TAP | --- |
+| Commodore 64 | Select the game file from your hard drive. | D64<br />T64<br />PRG<br />P00<br />TAP | Version 2.4 |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
 
 ## DOSBox useful commands
