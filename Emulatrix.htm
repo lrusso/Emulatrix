@@ -13,6 +13,8 @@
 			var ROMNAME = "";
 			var CTRLS_IDLE = 0;
 			var STRING_ABOUT = "";
+			var STRING_HOW1 = "";
+			var STRING_HOW2 = "";
 			var STRING_INSERTCOIN = "";
 			var STRING_KEYBOARDANDMOUSE = "";
 			var STRING_ERRORWITHEXTENSION = "";
@@ -20,6 +22,8 @@
 
 			if (userLanguage.substring(0,2)=="es")
 				{
+				STRING_HOW1 = "&iquest;C&oacute;mo funciona?";
+				STRING_HOW2 = "Haga click en el &iacute;cono rojo ubicado en el extremo inferior de la pantalla y luego seleccione de su computadora el archivo del juego que desea jugar.";
 				STRING_ABOUT = "por Leonardo Russo / LRusso.com";
 				STRING_INSERTCOIN = "INSERTAR MONEDA = 1";
 				STRING_KEYBOARDANDMOUSE = "TECLADO Y MOUSE";
@@ -27,6 +31,8 @@
 				}
 				else
 				{
+				STRING_HOW1 = "How does it works?";
+				STRING_HOW2 = "Click in the red icon located at the bottom of the screen and select from your computer the game file that you want to play.";
 				STRING_ABOUT = "by Leonardo Russo / LRusso.com";
 				STRING_INSERTCOIN = "INSERT COIN = 1";
 				STRING_KEYBOARDANDMOUSE = "KEYBOARD AND MOUSE";
@@ -204,21 +210,6 @@
 				document.addEventListener("dblclick", goBackButtonResetIncrement, false);
 				document.addEventListener("mousemove", goBackButtonResetIncrement, false);
 				}
-
-			window.onkeydown = function(event)
-				{
-				if (event.keyCode === 13)
-					{
-					if (document.getElementsByClassName("gui_container")[0].style.display!="none")
-						{
-						var element = document.getElementById("gui_controls_file").value;
-						if (typeof(element) != "undefined" && element != null)
-							{
-							document.getElementById("gui_controls_file").click();
-							}
-						}
-					}
-				}
 		</script>
 
 		<iframe id="container" src="about:blank"></iframe>
@@ -229,6 +220,8 @@
 			<div class="gui_background"></div>
 			<div class="gui_title">
 				<div class="gui_title_logo"></div>
+				<div class="gui_title_how1"><span onmouseover="document.getElementById('how').style.display='block'" onmouseout="document.getElementById('how').style.display='none'"><script>document.write(STRING_HOW1);</script></span></div>
+				<div class="gui_title_how2" id="how"><script>document.write(STRING_HOW2);</script></div>
 				<div class="gui_title_about"><script>document.write(STRING_ABOUT);</script></div>
 			</div>
 			<div class="gui_controls">
