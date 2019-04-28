@@ -54,6 +54,7 @@
 							// SETS THE FILE CONTENT FOR THE EMULATORS
 							ROMDATA = this.result;
 							ROMNAME = files[0].name;
+							ROMNAME = ROMNAME.toLowerCase();
 
 							// HIDES THE GUI
 							document.getElementsByClassName("gui_container")[0].style.display = "none";
