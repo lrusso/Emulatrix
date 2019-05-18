@@ -20,7 +20,7 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 | Sega Genesis | Select the game file from your hard drive. | BIN | --- |
 | MAME32 | Select the game file from your hard drive. | ZIP | Do not rename the ZIP file. |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
-| Virtual Machines | Select the game file from your hard drive. | ZIP | Must contan a c.img file.<br/>It will mounted and booted. |
+| Virtual Machines | Select the game file from your hard drive. | ZIP | Must contain a c.img file.<br/>It will mounted and booted. |
 
 ## DOSBox useful commands
 
