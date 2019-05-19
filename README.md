@@ -22,6 +22,10 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
 | Virtual Machines | Select the disk file from your hard drive. | ZIP | Must contain a c.img file.<br/>It will be mounted and booted. |
 
+## Sample of Emulatrix loading a virtual machine
+
+https://github.com/lrusso/EmulatrixVM
+
 ## DOSBox useful commands
 
 | TYPE IN THE PROMPT  | RESULT  |
