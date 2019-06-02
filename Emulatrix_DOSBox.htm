@@ -229,6 +229,9 @@
 				document.addEventListener("click", mouseChecker, false);
 				document.addEventListener("dblclick", mouseChecker, false);
 				document.addEventListener("mousemove", mouseChecker, false);
+				document.addEventListener("pointerlockchange", mouseChecker, false);
+				document.addEventListener("mozpointerlockchange", mouseChecker, false);
+				document.addEventListener("webkitpointerlockchange", mouseChecker, false);
 				}
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
