@@ -123,7 +123,7 @@
 								{
 								var opt = document.createElement("option");
 								opt.value = rawListFolders[i];
-								opt.innerHTML =  "&lt;DIR&gt; " + rawListFolders[i];
+								opt.innerHTML =  "&lt;DIR&gt; " + rawListFolders[i].toUpperCase();
 								select.appendChild(opt);
 								}
 
@@ -132,7 +132,7 @@
 								{
 								var opt = document.createElement("option");
 								opt.value = rawListFiles[i];
-								opt.innerHTML = rawListFiles[i];
+								opt.innerHTML = rawListFiles[i].toUpperCase();
 								select.appendChild(opt);
 								}
 							}
