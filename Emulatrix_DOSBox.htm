@@ -410,6 +410,10 @@
 				document.addEventListener("mozpointerlockchange", mouseChecker, false);
 				document.addEventListener("webkitpointerlockchange", mouseChecker, false);
 				document.getElementById("fileupload_uploader").value = null;
+
+				// SETTING THE TITLES FOR EACH BUTTON
+				document.getElementsByClassName("gui_download")[0].title = parent.STRING_DOWNLOADFILE;
+				document.getElementsByClassName("gui_uploadsave")[0].title = parent.STRING_UPLOADFILE;
 				}
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
