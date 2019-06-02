@@ -147,6 +147,11 @@
 
 					// HIDES THE RELOAD BUTTON
 					document.getElementsByClassName("gui_reload")[0].style.display = "none";
+
+					// HIDES THE DOWNLOAD BUTTON (ONLY FOR THE DOSBOX EMULATOR)
+					var iframe = document.getElementById("container");
+					var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+					innerDoc.getElementsByClassName("gui_download")[0].style.display = "none";
 					}
 					catch(err)
 					{
@@ -165,6 +170,11 @@
 
 						// SHOWS THE RELOAD BUTTON
 						document.getElementsByClassName("gui_reload")[0].style.display = "block";
+						
+						// SHOWS THE DOWNLOAD BUTTON (ONLY FOR THE DOSBOX EMULATOR)
+						var iframe = document.getElementById("container");
+						var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+						innerDoc.getElementsByClassName("gui_download")[0].style.display = "block";
 						}
 					}
 					catch(err)
@@ -184,6 +194,11 @@
 
 						// HIDES THE RELOAD BUTTON
 						document.getElementsByClassName("gui_reload")[0].style.display = "none";
+
+						// HIDES THE DOWNLOAD BUTTON (ONLY FOR THE DOSBOX EMULATOR)
+						var iframe = document.getElementById("container");
+						var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+						innerDoc.getElementsByClassName("gui_download")[0].style.display = "none";
 						}
 					}
 					catch(err)
