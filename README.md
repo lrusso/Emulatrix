@@ -47,4 +47,4 @@ https://github.com/lrusso/EmulatrixVM
 | GameBoy Advance | https://buildbot.libretro.com/stable | vba_next |
 | Sega Genesis | https://buildbot.libretro.com/stable | genesis_plus_gx |
 | MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 |
-| DOS | --- | --- |
+| DOS | https://github.com/dreamlayers/em-dosbox | dosbox |
