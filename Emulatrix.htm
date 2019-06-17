@@ -22,6 +22,7 @@
 			var STRING_DOWNLOADFILE = "";
 			var STRING_GOBACK = "";
 			var STRING_RELOAD = "";
+			var STRING_READINGFILE = "";
 			var STRING_SELECTFOLDER1 = "";
 			var STRING_SELECTFOLDER2 = "";
 			var STRING_SELECTFOLDER3 = "";
@@ -39,6 +40,7 @@
 				STRING_DOWNLOADFILE = "Descargar archivo";
 				STRING_GOBACK = "Volver al men" + String.fromCharCode(250) + " principal";
 				STRING_RELOAD = "Recargar juego";
+				STRING_READINGFILE = "Leyendo archivo...";
 				STRING_SELECTFOLDER1 = "&iquest;D&oacute;nde desea ubicar el archivo?";
 				STRING_SELECTFOLDER2 = "NOTA: Puede requerir ingresar el comando RESCAN en el S&iacute;mbolo del sistema.";
 				STRING_SELECTFOLDER3 = "Seleccionar carpeta actual";
@@ -55,6 +57,7 @@
 				STRING_DOWNLOADFILE = "Download file";
 				STRING_GOBACK = "Go back to the main menu";
 				STRING_RELOAD = "Reload game";
+				STRING_READINGFILE = "Reading file...";
 				STRING_SELECTFOLDER1 = "Where do you want the file?";
 				STRING_SELECTFOLDER2 = "NOTE: It may require to input the command RESCAN in the Command Prompt.";
 				STRING_SELECTFOLDER3 = "Select current folder";
@@ -94,6 +97,9 @@
 							document.getElementById("container").style.display = "block";
 							document.getElementById("container").focus();
 
+							// HIDING THE PLEASE WAIT ANIMATION
+							document.getElementsByClassName("gui_pleasewait")[0].style.display = "none";
+
 							// CLEARING THE SELECTED FILE VALUE
 							document.getElementById("gui_controls_file").value = null;
 
@@ -131,6 +137,11 @@
 									}
 								}
 							};
+
+						// SHOWS THE PLEASE WAIT ANIMATION
+						document.getElementsByClassName("gui_pleasewait")[0].style.display = "block";
+
+						// READING THE FILE
 						filereader.readAsArrayBuffer(files[0]);
 						}
 						else
@@ -262,6 +273,7 @@
 		<iframe id="container" src="about:blank"></iframe>
 		<div class="gui_goback" onclick="goBack()"></div>
 		<div class="gui_reload" onclick="reload()"></div>
+		<div class="gui_pleasewait"><div class="gui_pleasewait_title"><script>document.write(STRING_READINGFILE);</script></div><div class="pleasewait"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
 
 		<div class="gui_container">
 			<div class="gui_background"></div>
