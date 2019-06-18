@@ -13,6 +13,7 @@
 
 			var ROMDATA = "";
 			var ROMNAME = "";
+			var DOSGAME = false;
 			var CTRLS_IDLE = 0;
 			var STRING_HOW1 = "";
 			var STRING_HOW2 = "";
@@ -87,6 +88,9 @@
 							ROMNAME = files[0].name;
 							ROMNAME = ROMNAME.toLowerCase();
 
+							// BEFORE CHECKING, SETS THE DOSGAME VALUE TO FALSE
+							DOSGAME = false;
+
 							// HIDES THE GUI
 							document.getElementsByClassName("gui_container")[0].style.display = "none";
 
@@ -126,6 +130,7 @@
 								// CHECKING IF THE FILE IS A MAME32 OR DOSBOX GAME
 								if (MAME32_ROM_LIST.indexOf("|" + ROMNAME + "|")===-1)
 									{
+									DOSGAME = true;
 									document.getElementById("container").contentDocument.location.replace("Emulatrix_DOSBox.htm");
 									}
 									else
@@ -181,11 +186,33 @@
 					// HIDES THE RELOAD BUTTON
 					document.getElementsByClassName("gui_reload")[0].style.display = "none";
 
-					// HIDES THE DOWNLOAD BUTTON (ONLY FOR THE DOSBOX EMULATOR)
-					var iframe = document.getElementById("container");
-					var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-					innerDoc.getElementsByClassName("gui_download")[0].style.display = "none";
-					innerDoc.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
+					// HIDES THE DOWNLOAD BUTTON
+					document.getElementsByClassName("gui_download")[0].style.display = "none";
+
+					// HIDES THE UPLOAD SAVE BUTTON
+					document.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
+					}
+					catch(err)
+					{
+					}
+				}
+
+			function DOSBox_DownloadFile()
+				{
+				try
+					{
+					document.getElementById("container").contentWindow.download_ResetPath();
+					}
+					catch(err)
+					{
+					}
+				}
+
+			function DOSBox_UploadFile()
+				{
+				try
+					{
+					document.getElementById("container").contentWindow.uploadSelectFile();
 					}
 					catch(err)
 					{
@@ -204,12 +231,15 @@
 
 						// SHOWS THE RELOAD BUTTON
 						document.getElementsByClassName("gui_reload")[0].style.display = "block";
-						
-						// SHOWS THE DOWNLOAD BUTTON (ONLY FOR THE DOSBOX EMULATOR)
-						var iframe = document.getElementById("container");
-						var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-						innerDoc.getElementsByClassName("gui_download")[0].style.display = "block";
-						innerDoc.getElementsByClassName("gui_uploadsave")[0].style.display = "block";
+
+						if(DOSGAME==true)
+							{
+							// SHOWS THE DOWNLOAD BUTTON
+							document.getElementsByClassName("gui_download")[0].style.display = "block";
+
+							// SHOWS THE UPLOAD SAVE BUTTON
+							document.getElementsByClassName("gui_uploadsave")[0].style.display = "block";
+							}
 						}
 					}
 					catch(err)
@@ -230,11 +260,11 @@
 						// HIDES THE RELOAD BUTTON
 						document.getElementsByClassName("gui_reload")[0].style.display = "none";
 
-						// HIDES THE DOWNLOAD BUTTON (ONLY FOR THE DOSBOX EMULATOR)
-						var iframe = document.getElementById("container");
-						var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-						innerDoc.getElementsByClassName("gui_download")[0].style.display = "none";
-						innerDoc.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
+						// SHOWS THE DOWNLOAD BUTTON
+						document.getElementsByClassName("gui_download")[0].style.display = "none";
+
+						// SHOWS THE UPLOAD SAVE BUTTON
+						document.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
 						}
 					}
 					catch(err)
@@ -264,12 +294,16 @@
 				document.getElementsByClassName("gui_upload")[0].title = STRING_SELECTGAME;
 				document.getElementsByClassName("gui_goback")[0].title = STRING_GOBACK;
 				document.getElementsByClassName("gui_reload")[0].title = STRING_RELOAD;
+				document.getElementsByClassName("gui_download")[0].title = STRING_DOWNLOADFILE;
+				document.getElementsByClassName("gui_uploadsave")[0].title = STRING_UPLOADFILE;
 				}
 		</script>
 
 		<iframe id="container" src="about:blank"></iframe>
 		<div class="gui_goback" onclick="goBack()"></div>
 		<div class="gui_reload" onclick="reload()"></div>
+		<div class="gui_download" onclick="DOSBox_DownloadFile()"></div>
+		<div class="gui_uploadsave" onclick="DOSBox_UploadFile()"></div>
 		<div class="gui_pleasewait"><div class="gui_pleasewait_title"><script>document.write(STRING_READINGFILE);</script></div><div class="pleasewait"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
 
 		<div class="gui_container">
