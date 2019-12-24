@@ -294,6 +294,19 @@
 				document.getElementById("canvas").height = container_height;
 				}
 
+			window.onresize = function()
+				{
+				container_width = document.getElementById("container").offsetWidth;
+				container_height = document.getElementById("container").offsetHeight;
+				try
+					{
+					Module.setCanvasSize(container_width,container_height,true);
+					}
+					catch(err)
+					{
+					}
+				}
+
 			window.onload = function()
 				{
 				document.getElementById("container").style.display="block";
