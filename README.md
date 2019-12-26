@@ -53,4 +53,4 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 - RetroArch: Implement downloading process for Save State.
 - RetroArch: Implement uploading process for Load State.
 - RetroArch: Bugfix for Command Key in Mac OS using Chrome or Firefox.
-- DOSBox: Prevent hanging when idle after a while.
+- DOSBox: Prevent hanging when the window or tab is idle for a while.
