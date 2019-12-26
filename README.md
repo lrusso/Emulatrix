@@ -44,3 +44,13 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 | Sega Genesis | https://buildbot.libretro.com/stable | genesis_plus_gx |
 | MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 |
 | DOS | https://github.com/dreamlayers/em-dosbox | dosbox |
+
+
+## Roadmap
+
+- RetroArch: Implement Save State button - Module._cmd_save_state().
+- RetroArch: Implement Load State button - Module._cmd_load_state().
+- RetroArch: Implement downloading process for Save State.
+- RetroArch: Implement uploading process for Load State.
+- RetroArch: Bugfix for Command Key in Mac OS using Chrome or Firefox.
+- DOSBox: Prevent hanging when idle after a while.
