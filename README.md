@@ -8,7 +8,7 @@ JavaScript Emulator - Sega Genesis, Nintendo, Super Nintendo, GameBoy, GameBoy C
 
 https://lrusso.github.io/Emulatrix/Emulatrix.htm
 
-## HTML5 emulators with mobile compatibility features
+## Emulatrix is mobile compatible
 
 ![alt screenshot](https://raw.githubusercontent.com/lrusso/Emulatrix/master/Emulatrix2.png)
 
