@@ -35,16 +35,16 @@
 				config += "rgui_browser_directory = /\n";
 
 				// SETS THE KEY FOR THE START AND SELECT BUTTON
-				config += "input_player1_start = s\n";
-				config += "input_player1_select = a\n";
+				config += "input_player1_start = e\n";
+				config += "input_player1_select = r\n";
 
 				// SETS THE KEYS FOR THE BUTTONS A, B, X, Y, L, R
-				config += "input_player1_a = x\n";
-				config += "input_player1_b = z\n";
-				config += "input_player1_x = s\n";
-				config += "input_player1_y = a\n";
-				config += "input_player1_l = e\n";
-				config += "input_player1_r = r\n";
+				config += "input_player1_a = z\n";
+				config += "input_player1_b = x\n";
+				config += "input_player1_x = a\n";
+				config += "input_player1_y = s\n";
+				config += "input_player1_l = q\n";
+				config += "input_player1_r = w\n";
 
 				// SETS THE KEYS FOR UNWANTED FUNCTIONS
 				config += "input_toggle_fast_forward = " + emptyValue + "\n";
@@ -314,6 +314,41 @@
 				document.addEventListener("click", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("dblclick", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("mousemove", parent.goBackButtonResetIncrement, false);
+
+				if (isMobileDevice()==true)
+					{
+					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
+					document.getElementsByClassName("gui_supernintendo_keyselect")[0].style.display = "block";
+					document.getElementsByClassName("gui_supernintendo_keyselect")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyR")});
+					document.getElementsByClassName("gui_supernintendo_keyselect")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyR")});
+					document.getElementsByClassName("gui_supernintendo_keystart")[0].style.display = "block";
+					document.getElementsByClassName("gui_supernintendo_keystart")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyE")});
+					document.getElementsByClassName("gui_supernintendo_keystart")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyE")});
+					document.getElementsByClassName("gui_supernintendo_keya")[0].style.display = "block";
+					document.getElementsByClassName("gui_supernintendo_keya")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyZ")});
+					document.getElementsByClassName("gui_supernintendo_keya")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyZ")});
+					document.getElementsByClassName("gui_supernintendo_keyb")[0].style.display = "block";
+					document.getElementsByClassName("gui_supernintendo_keyb")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyX")});
+					document.getElementsByClassName("gui_supernintendo_keyb")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyX")});
+
+					document.getElementsByClassName("gui_supernintendo_keyx")[0].style.display = "block";
+					document.getElementsByClassName("gui_supernintendo_keyx")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyA")});
+					document.getElementsByClassName("gui_supernintendo_keyx")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyA")});
+
+					document.getElementsByClassName("gui_supernintendo_keyy")[0].style.display = "block";
+					document.getElementsByClassName("gui_supernintendo_keyy")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyS")});
+					document.getElementsByClassName("gui_supernintendo_keyy")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyS")});
+
+					document.getElementsByClassName("gui_supernintendo_keyl")[0].style.display = "block";
+					document.getElementsByClassName("gui_supernintendo_keyl")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyQ")});
+					document.getElementsByClassName("gui_supernintendo_keyl")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyQ")});
+
+					document.getElementsByClassName("gui_supernintendo_keyr")[0].style.display = "block";
+					document.getElementsByClassName("gui_supernintendo_keyr")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyW")});
+					document.getElementsByClassName("gui_supernintendo_keyr")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyW")});
+
+					showVirtualJoystick();
+					}
 				}
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
@@ -335,6 +370,15 @@
 		</script>
 		<div class="gui_pleasewait_title"><script>document.write(parent.STRING_STARTINGEMULATOR);</script></div><div class="pleasewait"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
 		<div id="container"><canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas></div>
+		<div class="gui_joystick" id="joyDiv"></div>
+		<div class="gui_supernintendo_keyselect" oncontextmenu="return false;">SELECT</div>
+		<div class="gui_supernintendo_keystart" oncontextmenu="return false;">START</div>
+		<div class="gui_supernintendo_keya" oncontextmenu="return false;">A</div>
+		<div class="gui_supernintendo_keyb" oncontextmenu="return false;">B</div>
+		<div class="gui_supernintendo_keyx" oncontextmenu="return false;">X</div>
+		<div class="gui_supernintendo_keyy" oncontextmenu="return false;">Y</div>
+		<div class="gui_supernintendo_keyl" oncontextmenu="return false;">L</div>
+		<div class="gui_supernintendo_keyr" oncontextmenu="return false;">R</div>
 		<script src="Emulatrix_SuperNintendo.js"></script>
 	</body>
 </html>
