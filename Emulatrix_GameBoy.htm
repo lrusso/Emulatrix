@@ -41,8 +41,8 @@
 				config += "input_player1_select_btn = a\n";
 
 				// SETS THE KEYS FOR THE BUTTONS A, B
-				config += "input_player1_a = z\n";
-				config += "input_player1_b = x\n";
+				config += "input_player1_a = x\n";
+				config += "input_player1_b = z\n";
 
 				// SETS THE KEYS FOR UNWANTED FUNCTIONS
 				config += "input_toggle_fast_forward = " + emptyValue + "\n";
@@ -327,11 +327,11 @@
 					document.getElementsByClassName("gui_gameboy_keystart")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyS")});
 					document.getElementsByClassName("gui_gameboy_keystart")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyS")});
 					document.getElementsByClassName("gui_gameboy_keya")[0].style.display = "block";
-					document.getElementsByClassName("gui_gameboy_keya")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyZ")});
-					document.getElementsByClassName("gui_gameboy_keya")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyZ")});
+					document.getElementsByClassName("gui_gameboy_keya")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyX")});
+					document.getElementsByClassName("gui_gameboy_keya")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyX")});
 					document.getElementsByClassName("gui_gameboy_keyb")[0].style.display = "block";
-					document.getElementsByClassName("gui_gameboy_keyb")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyX")});
-					document.getElementsByClassName("gui_gameboy_keyb")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyX")});
+					document.getElementsByClassName("gui_gameboy_keyb")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyZ")});
+					document.getElementsByClassName("gui_gameboy_keyb")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyZ")});
 					showVirtualJoystick();
 					}
 				}
@@ -358,8 +358,8 @@
 		<div class="gui_joystick" id="joyDiv"></div>
 		<div class="gui_gameboy_keyselect" oncontextmenu="return false;">SELECT</div>
 		<div class="gui_gameboy_keystart" oncontextmenu="return false;">START</div>
-		<div class="gui_gameboy_keya" oncontextmenu="return false;">A</div>
 		<div class="gui_gameboy_keyb" oncontextmenu="return false;">B</div>
+		<div class="gui_gameboy_keya" oncontextmenu="return false;">A</div>
 		<script src="Emulatrix_GameBoy.js"></script>
 	</body>
 </html>
