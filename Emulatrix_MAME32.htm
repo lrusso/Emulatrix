@@ -322,6 +322,30 @@
 				document.addEventListener("click", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("dblclick", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("mousemove", parent.goBackButtonResetIncrement, false);
+
+				if (isMobileDevice()==true)
+					{
+					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
+					document.getElementsByClassName("gui_mame32_keycoin")[0].style.display = "block";
+					document.getElementsByClassName("gui_mame32_keycoin")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","Digit1")});
+					document.getElementsByClassName("gui_mame32_keycoin")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","Digit1")});
+					document.getElementsByClassName("gui_mame32_keystart")[0].style.display = "block";
+					document.getElementsByClassName("gui_mame32_keystart")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","Enter")});
+					document.getElementsByClassName("gui_mame32_keystart")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","Enter")});
+					document.getElementsByClassName("gui_mame32_keya")[0].style.display = "block";
+					document.getElementsByClassName("gui_mame32_keya")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyA")});
+					document.getElementsByClassName("gui_mame32_keya")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyA")});
+					document.getElementsByClassName("gui_mame32_keyb")[0].style.display = "block";
+					document.getElementsByClassName("gui_mame32_keyb")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyS")});
+					document.getElementsByClassName("gui_mame32_keyb")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyS")});
+					document.getElementsByClassName("gui_mame32_keyx")[0].style.display = "block";
+					document.getElementsByClassName("gui_mame32_keyx")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyQ")});
+					document.getElementsByClassName("gui_mame32_keyx")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyQ")});
+					document.getElementsByClassName("gui_mame32_keyy")[0].style.display = "block";
+					document.getElementsByClassName("gui_mame32_keyy")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyW")});
+					document.getElementsByClassName("gui_mame32_keyy")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyW")});
+					showVirtualJoystick();
+					}
 				}
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
@@ -343,6 +367,13 @@
 		</script>
 		<div class="gui_pleasewait_title"><script>document.write(parent.STRING_STARTINGEMULATOR);</script></div><div class="pleasewait"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
 		<div id="container"><canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas></div>
+		<div class="gui_joystick" id="joyDiv"></div>
+		<div class="gui_mame32_keycoin" oncontextmenu="return false;">COIN</div>
+		<div class="gui_mame32_keystart" oncontextmenu="return false;">START</div>
+		<div class="gui_mame32_keya" oncontextmenu="return false;">A</div>
+		<div class="gui_mame32_keyb" oncontextmenu="return false;">B</div>
+		<div class="gui_mame32_keyx" oncontextmenu="return false;">X</div>
+		<div class="gui_mame32_keyy" oncontextmenu="return false;">Y</div>
 		<script src="Emulatrix_MAME32.js"></script>
 	</body>
 </html>
