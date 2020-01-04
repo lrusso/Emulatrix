@@ -44,3 +44,7 @@ https://lrusso.github.io/Emulatrix/Emulatrix.htm
 | Sega Genesis | https://buildbot.libretro.com/stable | genesis_plus_gx |
 | MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 |
 | DOS | https://github.com/dreamlayers/em-dosbox | dosbox |
+
+## Virtual joystick code:
+
+https://github.com/lrusso/VirtualJoystick
