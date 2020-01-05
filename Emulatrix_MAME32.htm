@@ -300,19 +300,26 @@
 				// RESIZES THE CANVAS
 				document.getElementById("canvas").width = container_width;
 				document.getElementById("canvas").height = container_height;
+				setTimeout(function(){resizeEmulatorCanvas()},500);
+				setTimeout(function(){resizeEmulatorCanvas()},1500);
 				}
 
-			window.onresize = function()
+			function resizeEmulatorCanvas()
 				{
-				container_width = document.getElementById("container").offsetWidth;
-				container_height = document.getElementById("container").offsetHeight;
 				try
 					{
+					container_width = document.getElementById("container").offsetWidth;
+					container_height = document.getElementById("container").offsetHeight;
 					Module.setCanvasSize(container_width,container_height,true);
 					}
 					catch(err)
 					{
 					}
+				}
+
+			window.onresize = function()
+				{
+				resizeEmulatorCanvas();
 				}
 
 			window.onload = function()
