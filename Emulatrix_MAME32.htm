@@ -345,12 +345,18 @@
 					document.getElementsByClassName("gui_mame32_keyb")[0].style.display = "block";
 					document.getElementsByClassName("gui_mame32_keyb")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyS")});
 					document.getElementsByClassName("gui_mame32_keyb")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyS")});
+					document.getElementsByClassName("gui_mame32_keyc")[0].style.display = "block";
+					document.getElementsByClassName("gui_mame32_keyc")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyM")});
+					document.getElementsByClassName("gui_mame32_keyc")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyM")});
 					document.getElementsByClassName("gui_mame32_keyx")[0].style.display = "block";
 					document.getElementsByClassName("gui_mame32_keyx")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyQ")});
 					document.getElementsByClassName("gui_mame32_keyx")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyQ")});
 					document.getElementsByClassName("gui_mame32_keyy")[0].style.display = "block";
 					document.getElementsByClassName("gui_mame32_keyy")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyW")});
 					document.getElementsByClassName("gui_mame32_keyy")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyW")});
+					document.getElementsByClassName("gui_mame32_keyz")[0].style.display = "block";
+					document.getElementsByClassName("gui_mame32_keyz")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyN")});
+					document.getElementsByClassName("gui_mame32_keyz")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyN")});
 					showVirtualJoystick();
 					}
 				}
@@ -379,8 +385,10 @@
 		<div class="gui_mame32_keystart" oncontextmenu="return false;">START</div>
 		<div class="gui_mame32_keya" oncontextmenu="return false;">A</div>
 		<div class="gui_mame32_keyb" oncontextmenu="return false;">B</div>
+		<div class="gui_mame32_keyc" oncontextmenu="return false;">C</div>
 		<div class="gui_mame32_keyx" oncontextmenu="return false;">X</div>
 		<div class="gui_mame32_keyy" oncontextmenu="return false;">Y</div>
+		<div class="gui_mame32_keyz" oncontextmenu="return false;">Z</div>
 		<script src="Emulatrix_MAME32.js"></script>
 	</body>
 </html>
