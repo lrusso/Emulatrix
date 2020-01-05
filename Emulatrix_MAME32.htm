@@ -46,16 +46,12 @@
 					config += "input_player1_select = num1\n";
 
 					// SETS THE KEY FOR THE PLAYER 1
-					config += "input_player1_a = a\n";
-					config += "input_player1_b = s\n";
-					config += "input_player1_x = q\n";
-					config += "input_player1_y = w\n";
-					config += "input_player1_l = n\n";
-					config += "input_player1_r = m\n";
-					config += "input_player1_l2 = k\n";
-					config += "input_player1_r2 = l\n";
-					config += "input_player1_l3 = o\n";
-					config += "input_player1_r3 = p\n";
+					config += "input_player1_a = s\n";
+					config += "input_player1_b = a\n";
+					config += "input_player1_r = d\n";
+					config += "input_player1_x = w\n";
+					config += "input_player1_y = q\n";
+					config += "input_player1_l = e\n";
 
 					// SETS THE KEYS FOR UNWANTED FUNCTIONS
 					config += "input_toggle_fast_forward = " + emptyValue + "\n";
@@ -96,6 +92,10 @@
 					config += "input_streaming_toggle = " + emptyValue + "\n";
 
 					// PLAYER 1
+					config += "input_player1_l2 = " + emptyValue + "\n";
+					config += "input_player1_r2 = " + emptyValue + "\n";
+					config += "input_player1_l3 = " + emptyValue + "\n";
+					config += "input_player1_r3 = " + emptyValue + "\n";
 					config += "input_player1_l_x_plus = " + emptyValue + "\n";
 					config += "input_player1_l_x_minus = " + emptyValue + "\n";
 					config += "input_player1_l_y_plus = " + emptyValue + "\n";
@@ -346,8 +346,8 @@
 					document.getElementsByClassName("gui_mame32_keyb")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyS")});
 					document.getElementsByClassName("gui_mame32_keyb")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyS")});
 					document.getElementsByClassName("gui_mame32_keyc")[0].style.display = "block";
-					document.getElementsByClassName("gui_mame32_keyc")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyM")});
-					document.getElementsByClassName("gui_mame32_keyc")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyM")});
+					document.getElementsByClassName("gui_mame32_keyc")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyD")});
+					document.getElementsByClassName("gui_mame32_keyc")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyD")});
 					document.getElementsByClassName("gui_mame32_keyx")[0].style.display = "block";
 					document.getElementsByClassName("gui_mame32_keyx")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyQ")});
 					document.getElementsByClassName("gui_mame32_keyx")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyQ")});
@@ -355,8 +355,8 @@
 					document.getElementsByClassName("gui_mame32_keyy")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyW")});
 					document.getElementsByClassName("gui_mame32_keyy")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyW")});
 					document.getElementsByClassName("gui_mame32_keyz")[0].style.display = "block";
-					document.getElementsByClassName("gui_mame32_keyz")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyN")});
-					document.getElementsByClassName("gui_mame32_keyz")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyN")});
+					document.getElementsByClassName("gui_mame32_keyz")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyE")});
+					document.getElementsByClassName("gui_mame32_keyz")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyE")});
 					showVirtualJoystick();
 					}
 				}
