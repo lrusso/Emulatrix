@@ -7,6 +7,8 @@
 	</head>
 	<body>
 		<script>
+			function isMobileDevice(){return!!(navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/webOS/i)||navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/iPod/i)||navigator.userAgent.match(/BlackBerry/i)||navigator.userAgent.match(/Windows Phone/i))}
+
 			var userLanguage = window.navigator.userLanguage || window.navigator.language;
 
 			var ROMDATA = "";
@@ -102,6 +104,16 @@
 							// CLEARING THE SELECTED FILE VALUE
 							document.getElementById("gui_controls_file").value = null;
 
+							// CHECKING IF IT IS A MOBILE DEVICE
+							if (isMobileDevice()==true)
+								{
+								// SHOWS THE GO BACK BUTTON (FOR MOBILE VERSION)
+								document.getElementsByClassName("gui_goback_mobile")[0].style.display = "block";
+
+								// SHOWS THE RELOAD BUTTON (FOR MOBILE VERSION)
+								document.getElementsByClassName("gui_reload_mobile")[0].style.display = "block";
+								}
+
 							// STARTING THE EMULATOR
 							if (extension=="nes")
 								{
@@ -181,11 +193,13 @@
 					// HIDES THE CONTAINER
 					document.getElementById("container").style.display = "none";
 
-					// HIDES THE GO BACK BUTTON
+					// HIDES THE GO BACK BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_goback")[0].style.display = "none";
+					document.getElementsByClassName("gui_goback_mobile")[0].style.display = "none";
 
-					// HIDES THE RELOAD BUTTON
+					// HIDES THE RELOAD BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_reload")[0].style.display = "none";
+					document.getElementsByClassName("gui_reload_mobile")[0].style.display = "none";
 
 					// HIDES THE DOWNLOAD BUTTON
 					document.getElementsByClassName("gui_download")[0].style.display = "none";
@@ -227,11 +241,14 @@
 					CTRLS_IDLE = 0;
 					if (document.getElementById("container").style.display=="block")
 						{
-						// SHOWS THE GO BACK BUTTON
-						document.getElementsByClassName("gui_goback")[0].style.display = "block";
+						if (isMobileDevice()==false)
+							{
+							// SHOWS THE GO BACK BUTTON
+							document.getElementsByClassName("gui_goback")[0].style.display = "block";
 
-						// SHOWS THE RELOAD BUTTON
-						document.getElementsByClassName("gui_reload")[0].style.display = "block";
+							// SHOWS THE RELOAD BUTTON
+							document.getElementsByClassName("gui_reload")[0].style.display = "block";
+							}
 
 						if(DOSGAME==true)
 							{
@@ -302,9 +319,11 @@
 
 		<iframe id="container" src="about:blank"></iframe>
 		<div class="gui_goback" onclick="goBack()"></div>
+		<div class="gui_goback_mobile" onclick="goBack()"><div class="gui_goback_mobile_icon"></div></div>
 		<div class="gui_download" onclick="DOSBox_DownloadFile()"></div>
 		<div class="gui_uploadsave" onclick="DOSBox_UploadFile()"></div>
 		<div class="gui_reload" onclick="reload()"></div>
+		<div class="gui_reload_mobile" onclick="reload()"><div class="gui_reload_mobile_icon"></div></div>
 		<div class="gui_pleasewait"><div class="gui_pleasewait_title"><script>document.write(STRING_READINGFILE);</script></div><div class="pleasewait"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
 
 		<div class="gui_container">
