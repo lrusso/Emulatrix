@@ -139,6 +139,17 @@
 								if (MAME32_ROM_LIST.indexOf("|" + ROMNAME + "|")===-1)
 									{
 									DOSGAME = true;
+
+									// CHECKING IF IT IS A MOBILE DEVICE
+									if (isMobileDevice()==true)
+										{
+										// SHOWS THE DOWNLOAD BUTTON (FOR MOBILE VERSION)
+										document.getElementsByClassName("gui_download_mobile")[0].style.display = "block";
+
+										// SHOWS THE UPLOAD SAVE BUTTON (FOR MOBILE VERSION)
+										document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "block";
+										}
+
 									document.getElementById("container").contentDocument.location.replace("Emulatrix_DOSBox.htm");
 									}
 									else
@@ -199,11 +210,13 @@
 					document.getElementsByClassName("gui_reload")[0].style.display = "none";
 					document.getElementsByClassName("gui_reload_mobile")[0].style.display = "none";
 
-					// HIDES THE DOWNLOAD BUTTON
+					// HIDES THE DOWNLOAD BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_download")[0].style.display = "none";
+					document.getElementsByClassName("gui_download_mobile")[0].style.display = "none";
 
-					// HIDES THE UPLOAD SAVE BUTTON
+					// HIDES THE UPLOAD SAVE BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
+					document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "none";
 					}
 					catch(err)
 					{
@@ -246,15 +259,15 @@
 
 							// SHOWS THE RELOAD BUTTON
 							document.getElementsByClassName("gui_reload")[0].style.display = "block";
-							}
 
-						if(DOSGAME==true)
-							{
-							// SHOWS THE DOWNLOAD BUTTON
-							document.getElementsByClassName("gui_download")[0].style.display = "block";
+							if(DOSGAME==true)
+								{
+								// SHOWS THE DOWNLOAD BUTTON
+								document.getElementsByClassName("gui_download")[0].style.display = "block";
 
-							// SHOWS THE UPLOAD SAVE BUTTON
-							document.getElementsByClassName("gui_uploadsave")[0].style.display = "block";
+								// SHOWS THE UPLOAD SAVE BUTTON
+								document.getElementsByClassName("gui_uploadsave")[0].style.display = "block";
+								}
 							}
 						}
 					}
@@ -321,7 +334,9 @@
 		<div class="gui_goback" onclick="goBack()"></div>
 		<div class="gui_goback_mobile" onclick="goBack()"><div class="gui_goback_mobile_icon"></div></div>
 		<div class="gui_download" onclick="DOSBox_DownloadFile()"></div>
+		<div class="gui_download_mobile" onclick="DOSBox_DownloadFile()"><div class="gui_download_mobile_icon"></div></div>
 		<div class="gui_uploadsave" onclick="DOSBox_UploadFile()"></div>
+		<div class="gui_uploadsave_mobile" onclick="DOSBox_UploadFile()"><div class="gui_uploadsave_mobile_icon"></div></div>
 		<div class="gui_reload" onclick="reload()"></div>
 		<div class="gui_reload_mobile" onclick="reload()"><div class="gui_reload_mobile_icon"></div></div>
 		<div class="gui_pleasewait"><div class="gui_pleasewait_title"><script>document.write(STRING_READINGFILE);</script></div><div class="pleasewait"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
