@@ -288,14 +288,19 @@
 				// CREATES THE FILE WITH THE CONFIGURATION
 				FS.createDataFile("/home/web_user/retroarch/userdata", "retroarch.cfg", config, true, true);
 
-				// RUNS THE EMULATOR WITH THE SELECTED ROM
-				Module.callMain(["-v","/game.gb"]);
+				// WAITING A PRUDENTIAL TIME FOR THE RETROARCH.CFG FILE TO BE CREATED
+				setTimeout(function()
+					{
+					// RUNS THE EMULATOR WITH THE SELECTED ROM
+					Module.callMain(["-v","/game.gb"]);
 
-				// RESIZES THE CANVAS
-				document.getElementById("canvas").width = container_width;
-				document.getElementById("canvas").height = container_height;
-				setTimeout(function(){resizeEmulatorCanvas()},500);
-				setTimeout(function(){resizeEmulatorCanvas()},1500);
+					// RESIZES THE CANVAS
+					document.getElementById("canvas").width = container_width;
+					document.getElementById("canvas").height = container_height;
+					setTimeout(function(){resizeEmulatorCanvas()},500);
+					setTimeout(function(){resizeEmulatorCanvas()},1000);
+					setTimeout(function(){resizeEmulatorCanvas()},1500);
+					},750);
 				}
 
 			function resizeEmulatorCanvas()
