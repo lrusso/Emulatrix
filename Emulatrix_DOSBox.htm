@@ -78,14 +78,21 @@
 
 			function download_ResetPath()
 				{
-				download_PathCurrent = download_PathRoot;
-				download_getFileList();
+				if (document.getElementsByClassName("filedownload_container")[0].style.display == "block")
+					{
+					document.getElementsByClassName("filedownload_container")[0].style.display = "none";
+					}
+					else
+					{
+					download_PathCurrent = download_PathRoot;
+					download_getFileList();
+					}
 				}
 
 			function download_HideFileList()
 				{
 				download_PathCurrent = download_PathRoot;
-				document.getElementById("filedownload_container").style.display = "none";
+				document.getElementsByClassName("filedownload_container")[0].style.display = "none";
 				}
 
 			function download_getFileList()
@@ -105,11 +112,11 @@
 					catch(err)
 					{
 					}
-				document.getElementById("filedownload_location_value").innerHTML = pathToShow;
+				document.getElementsByClassName("filedownload_location_value")[0].innerHTML = pathToShow;
 
 				// SHOWING THE FILE LIST DIALOG AND HIDING THE FOLDER LIST DIALOG
-				document.getElementById("fileupload_container").style.display = "none";
-				document.getElementById("filedownload_container").style.display = "block";
+				document.getElementsByClassName("fileupload_container")[0].style.display = "none";
+				document.getElementsByClassName("filedownload_container")[0].style.display = "block";
 
 				// POPULATING THE FILE LIST
 				try
@@ -255,11 +262,11 @@
 					catch(err)
 					{
 					}
-				document.getElementById("fileupload_location_value").innerHTML = pathToShow;
+				document.getElementsByClassName("fileupload_location_value")[0].innerHTML = pathToShow;
 
 				// SHOWING THE FOLDER LIST DIALOG AND HIDING THE FILE LIST DIALOG
-				document.getElementById("fileupload_container").style.display = "block";
-				document.getElementById("filedownload_container").style.display = "none";
+				document.getElementsByClassName("fileupload_container")[0].style.display = "block";
+				document.getElementsByClassName("filedownload_container")[0].style.display = "none";
 
 				// POPULATING THE FOLDER LIST
 				try
@@ -346,8 +353,8 @@
 					{
 					}
 				upload_ResetPath();
-				document.getElementById("fileupload_container").style.display = "none";
-				document.getElementById("filedownload_container").style.display = "none";
+				document.getElementsByClassName("fileupload_container")[0].style.display = "none";
+				document.getElementsByClassName("filedownload_container")[0].style.display = "none";
 				}
 
 			function upload_ResetPath()
@@ -359,7 +366,7 @@
 			function upload_HideFileList()
 				{
 				upload_PathCurrent = upload_PathRoot;
-				document.getElementById("fileupload_container").style.display = "none";
+				document.getElementsByClassName("fileupload_container")[0].style.display = "none";
 				}
 			/*
 			---------------------------------------------------------------------------------------------------------
@@ -384,8 +391,8 @@
 					}
 					else
 					{
-					document.getElementById("filedownload_container").style.display = "none";
-					document.getElementById("fileupload_container").style.display = "none";
+					document.getElementsByClassName("filedownload_container")[0].style.display = "none";
+					document.getElementsByClassName("fileupload_container")[0].style.display = "none";
 					}
 				}
 
@@ -421,21 +428,21 @@
 
 			<canvas id="containerdosbox" oncontextmenu="event.preventDefault()"></canvas>
 
-			<div class="filedownload_container" id="filedownload_container">
+			<div class="filedownload_container">
 				<div class="filedownload_title">
 					<span class="filedownload_title_value" id="filedownload_title_value"><script>document.write(parent.STRING_DOWNLOADFILE);</script></span>
 					<div class="filedownload_title_close" onclick="download_HideFileList()">X</div>
 				</div>
-				<div class="filedownload_location"><div class="filedownload_location_value" id="filedownload_location_value">&nbsp;</div></div>
+				<div class="filedownload_location"><div class="filedownload_location_value">&nbsp;</div></div>
 				<div class="filedownload_select"></div>
 			</div>
 
-			<div class="fileupload_container" id="fileupload_container">
+			<div class="fileupload_container">
 				<div class="fileupload_title">
 					<span class="fileupload_title_value" id="fileupload_title_value"><script>document.write(parent.STRING_SELECTFOLDER1);</script></span>
 					<div class="fileupload_title_close" onclick="upload_HideFileList()">X</div>
 				</div>
-				<div class="fileupload_location"><div class="fileupload_location_value" id="fileupload_location_value">&nbsp;</div></div>
+				<div class="fileupload_location"><div class="fileupload_location_value">&nbsp;</div></div>
 				<div class="fileupload_select"></div>
 				<div class="fileupload_note"><script>document.write(parent.STRING_SELECTFOLDER2);</script></div>
 				<div class="fileupload_submit" onclick="upload_writeFile()"><script>document.write(parent.STRING_SELECTFOLDER3);</script></div>
