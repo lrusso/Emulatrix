@@ -84,6 +84,7 @@
 
 			function download_HideFileList()
 				{
+				download_PathCurrent = download_PathRoot;
 				document.getElementById("filedownload_container").style.display = "none";
 				}
 
@@ -344,6 +345,7 @@
 					catch(err)
 					{
 					}
+				upload_ResetPath();
 				document.getElementById("fileupload_container").style.display = "none";
 				document.getElementById("filedownload_container").style.display = "none";
 				}
@@ -356,6 +358,7 @@
 
 			function upload_HideFileList()
 				{
+				upload_PathCurrent = upload_PathRoot;
 				document.getElementById("fileupload_container").style.display = "none";
 				}
 			/*
