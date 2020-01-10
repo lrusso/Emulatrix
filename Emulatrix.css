@@ -102,11 +102,13 @@ body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-moz-use
 .fileupload_title_close{float:right;padding-right:10px;cursor:pointer}
 .fileupload_location{width:100%;background-color:#D3D3D3;font-family:Arial;font-size:16px;line-height:2.8;border-bottom:1px solid silver}
 .fileupload_location_value{width:280px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-align:left;padding-left:10px;padding-right:10px}
-.fileupload_select{width:100%;height:160px;background-color:white;border:none;font-family:Arial;font-size:16px;border-bottom:1px solid silver}
+.fileupload_select{width:100%;height:159px;overflow-y:scroll;background-color:white;border:none;font-family:Arial;font-size:16px}
 .fileupload_note{width:280px;height:33px;background-color:#D3D3D3;font-family:Arial;font-size:13px;padding:7px;text-align:center}
 .fileupload_submit{width:230px;background-color:silver;font-family:Arial;font-size:16px;text-align:center;line-height:2.3;border:1px solid gray;margin:0 auto;cursor:pointer}
 .fileupload_submit:hover{background-color:#A9A9A9}
 .fileupload_uploader{display:none}
+.fileupload_fileitem:hover{background-color:#3a76b1;color:white;cursor:pointer}
+.fileupload_fileitem_name{padding-left:7px}
 
 @media(max-width:1366px)
 	{

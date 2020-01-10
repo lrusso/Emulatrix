@@ -240,11 +240,8 @@
 			function upload_getFolderList()
 				{
 				// CLEARING THE FOLDER LIST
-				var select = document.getElementById("fileupload_select");
-				for(var i = select.options.length - 1 ; i >= 0 ; i--)
-					{
-					select.remove(i);
-					}
+				var select = document.getElementsByClassName("fileupload_select")[0];
+				select.innerHTML = "";
 
 				// UPDATING THE CURRENT LOCATION IN THE FILE LIST DIALOG
 				var pathToShow = upload_PathCurrent;
@@ -300,10 +297,8 @@
 							// ADDING THE FOLDERS TO THE SELECT
 							for(var i = 0; i < rawListFolders.length; i++)
 								{
-								var opt = document.createElement("option");
-								opt.value = rawListFolders[i];
-								opt.innerHTML =  "&lt;DIR&gt; " + rawListFolders[i].toUpperCase();
-								select.appendChild(opt);
+								var opt = "<div class='fileupload_fileitem' onclick='upload_checkContent(\"" + rawListFolders[i].toUpperCase() + "\",true)'><span class='fileupload_fileitem_name'>&#60;DIR&#62; " + rawListFolders[i].toUpperCase() + "</span></div>";
+								select.innerHTML = select.innerHTML + opt;
 								}
 							}
 							else
@@ -317,14 +312,11 @@
 					}
 				}
 
-			function upload_checkContent()
+			function upload_checkContent(selectedItemValue,isFolder)
 				{
 				try
 					{
-					var e = document.getElementById("fileupload_select");
-					var selectedItemValue = e.options[e.selectedIndex].value;
-					var selectedItemInnerHTML = e.options[e.selectedIndex].innerHTML;
-					if (selectedItemInnerHTML.indexOf("&lt;DIR&gt; ")>-1)
+					if (isFolder==true)
 						{
 						if (selectedItemValue=="..")
 							{
@@ -441,7 +433,7 @@
 					<div class="fileupload_title_close" onclick="upload_HideFileList()">X</div>
 				</div>
 				<div class="fileupload_location"><div class="fileupload_location_value" id="fileupload_location_value">&nbsp;</div></div>
-				<select class="fileupload_select" id="fileupload_select" size="13" onclick="upload_checkContent()"></select>
+				<div class="fileupload_select"></div>
 				<div class="fileupload_note"><script>document.write(parent.STRING_SELECTFOLDER2);</script></div>
 				<div class="fileupload_submit" onclick="upload_writeFile()"><script>document.write(parent.STRING_SELECTFOLDER3);</script></div>
 			</div>
