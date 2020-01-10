@@ -90,11 +90,8 @@
 			function download_getFileList()
 				{
 				// CLEARING THE FILE LIST
-				var select = document.getElementById("filedownload_select");
-				for(var i = select.options.length - 1 ; i >= 0 ; i--)
-					{
-					select.remove(i);
-					}
+				var select = document.getElementsByClassName("filedownload_select")[0];
+				select.innerHTML = "";
 
 				// UPDATING THE CURRENT LOCATION IN THE FILE LIST DIALOG
 				var pathToShow = download_PathCurrent;
@@ -158,19 +155,15 @@
 							// ADDING THE FOLDERS TO THE SELECT
 							for(var i = 0; i < rawListFolders.length; i++)
 								{
-								var opt = document.createElement("option");
-								opt.value = rawListFolders[i];
-								opt.innerHTML =  "&lt;DIR&gt; " + rawListFolders[i].toUpperCase();
-								select.appendChild(opt);
+								var opt = "<div class='filedownload_fileitem' onclick='download_checkContent(\"" + rawListFolders[i].toUpperCase() + "\",true)'><span class='filedownload_fileitem_name'>&#60;DIR&#62; " + rawListFolders[i].toUpperCase() + "</span></div>";
+								select.innerHTML = select.innerHTML + opt;
 								}
 
 							// ADDING THE FILES TO THE SELECT
 							for(var i = 0; i < rawListFiles.length; i++)
 								{
-								var opt = document.createElement("option");
-								opt.value = rawListFiles[i];
-								opt.innerHTML = rawListFiles[i].toUpperCase();
-								select.appendChild(opt);
+								var opt = "<div class='filedownload_fileitem' onclick='download_checkContent(\"" + rawListFiles[i].toUpperCase() + "\",false)'><span class='filedownload_fileitem_name'>" + rawListFiles[i].toUpperCase() + "</span></div>";
+								select.innerHTML = select.innerHTML + opt;
 								}
 							}
 							else
@@ -184,14 +177,11 @@
 					}
 				}
 
-			function download_checkContent()
+			function download_checkContent(selectedItemValue,isFolder)
 				{
 				try
 					{
-					var e = document.getElementById("filedownload_select");
-					var selectedItemValue = e.options[e.selectedIndex].value;
-					var selectedItemInnerHTML = e.options[e.selectedIndex].innerHTML;
-					if (selectedItemInnerHTML.indexOf("&lt;DIR&gt; ")>-1)
+					if (isFolder==true)
 						{
 						if (selectedItemValue=="..")
 							{
@@ -442,7 +432,7 @@
 					<div class="filedownload_title_close" onclick="download_HideFileList()">X</div>
 				</div>
 				<div class="filedownload_location"><div class="filedownload_location_value" id="filedownload_location_value">&nbsp;</div></div>
-				<select class="filedownload_select" id="filedownload_select" size="13" onclick="download_checkContent()"></select>
+				<div class="filedownload_select"></div>
 			</div>
 
 			<div class="fileupload_container" id="fileupload_container">
