@@ -114,13 +114,15 @@ body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-moz-use
 @media(max-width:1366px)
 	{
 	.gui_controls_table{width:650px;margin:0 auto}
-	.gui_controls_table_field{padding-top:20px;color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:normal;vertical-align:top}
+	.gui_controls_table_field1{padding-top:0px;color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:normal;vertical-align:top}
+	.gui_controls_table_field2{padding-top:20px;color:white;font-family:Arial;font-size:13px;line-height:20px;font-weight:normal;vertical-align:top}
 	}
 
 @media(min-width:1367px)
 	{
 	.gui_controls_table{width:776px;margin:0 auto}
-	.gui_controls_table_field{padding-top:50px;color:white;font-family:Arial;font-size:14px;line-height:30px;font-weight:normal;vertical-align:top}
+	.gui_controls_table_field1{padding-top:0px;color:white;font-family:Arial;font-size:14px;line-height:30px;font-weight:normal;vertical-align:top}
+	.gui_controls_table_field2{padding-top:50px;color:white;font-family:Arial;font-size:14px;line-height:30px;font-weight:normal;vertical-align:top}
 	}
 
 .pleasewait{position:fixed;width:64px;height:64px;left:0;right:0;top:0;bottom:0;margin:auto auto;border:0}
