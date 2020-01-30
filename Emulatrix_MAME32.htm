@@ -10,6 +10,17 @@
 			var container_width;
 			var container_height;
 
+			var download_running = false;
+			var download_Checker;
+			var download_Filename;
+			var download_LastSize = -1;
+			var download_LastSizeRepeated = 0;
+
+			var upload_running = false;
+			var upload_Checker;
+			var upload_OrigSize = -1;
+			var upload_LastSizeRepeated = 0;
+
 			function loadRomIntoVD()
 				{
 				// STARTS THE VIRTUAL FILE SYSTEM
@@ -322,6 +333,206 @@
 					}
 				}
 
+			function downloadROMState()
+				{
+				try
+					{
+					// CHECKING IF THE DOWNLOADING AND UPLOADING PROCESS ARE NOT RUNNING
+					if (download_running==false && upload_running==false)
+						{
+						// SETTING THE DOWNLOADING PROCESS AS TRUE
+						download_running = true;
+
+						// SAVING THE STATE (TAKES A LOT OF SECONDS IN SOME CASES, EMSCRIPTED + LIBRETRO RELATED ISSUE)
+						Module._cmd_save_state();
+
+						// GETTING THE ROM FILENAME WITHOUT THE EXTENSION
+						download_Filename = parent.ROMNAME.replace(/\.[^/.]+$/, "");
+
+						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WILL CHECK THE DOWNLOADING PROCESS
+						download_LastSize = -1;
+						download_LastSizeRepeated = 0;
+
+						document.getElementsByClassName("gui_saving")[0].style.display = "block";
+
+						// STARTING THE TASK THAT WILL DOWNLOAD THE ROMSTATE AS A FILE
+						download_Checker = setInterval(download_CheckerCron, 1000);
+						}
+					}
+					catch(err)
+					{
+					}
+				}
+
+			function download_CheckerCron()
+				{
+				try
+					{
+					// TRYING TO READ THE ROMSTATE FILE
+					var myTempFile = FS.readFile("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
+
+					// THE ROMSTATE FILE IS GOING TO BE WRITTEN WITH AN ASYNCHRONOUS TASK THAT WE CAN'T HANDLE IN ANY WAY.
+					// THIS IS THE REASON WHY WE NEED TO CHECK IF THE FILESIZE IS THE SAME AFTER SEVERAL CHECKINGS.
+
+					// CHECKING THE ROMSTATE FILE SIZE
+					if (myTempFile.length==download_LastSize)
+						{
+						// IF IT IS THE SAME, WE ADD 1 TO THE VARIABLE THAT WE USE FOR CHECKING THIS
+						download_LastSizeRepeated = download_LastSizeRepeated + 1;
+						}
+						else
+						{
+						// IF THE FILE SIZE IS NOT THE SAME, WE UPDATE A VARIABLE WITH THE LAST FILE SIZE THAT WE GOT
+						download_LastSize = myTempFile.length;
+						}
+
+					// IF THE FILE SIZE IS THE SAME AFTER SEVERAL CHECKINGS
+					if (download_LastSizeRepeated>4)
+						{
+						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WE USED FOR CHECKING
+						download_LastSize = -1;
+						download_LastSizeRepeated = 0;
+
+						// DELETING THE ROMSTATE FILE FROM THE FS
+						FS.unlink("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
+
+						// DOWNLOADING THE ROMSTATE AS A FILE
+						download_Blob(myTempFile, download_Filename + ".state", "application/octet-stream");
+
+						// SETTING THE DOWNLOAD PROCESS AS FALSE
+						download_running = false;
+
+						document.getElementsByClassName("gui_saving")[0].style.display = "none";
+
+						// DISABLING THE DOWNLOADING TASK
+						clearInterval(download_Checker);
+						}
+					}
+					catch(err)
+					{
+					console.log(err);
+					}
+				}
+
+			function download_Blob(data, fileName, mimeType)
+				{
+				var blob, url;
+				blob = new Blob([data], {type: mimeType});
+				url = window.URL.createObjectURL(blob);
+				download_URL(url, fileName);
+				}
+
+			function download_URL(data, fileName)
+				{
+				var a;
+				a = document.createElement("a");
+				a.href = data;
+				a.download = fileName;
+				document.body.appendChild(a);
+				a.style = "display: none";
+				a.click();
+				a.remove();
+				}
+
+			function uploadROMState()
+				{
+				// CHECKING IF THE UPLOADING AND DOWNLOADING PROCESS ARE NOT RUNNING
+				if (upload_running==false && download_running==false)
+					{
+					// ALLOWING THE USER TO SELECT THE ROMSTATE FILE FROM THE COMPUTER OR MOBILE DEVICE
+					document.getElementById("fileupload_uploader").click();
+					}
+				}
+
+			function upload_getFile(files)
+				{
+				try
+					{
+					// SETTING THE UPLOADING PROCESS AS TRUE
+					upload_running = true;
+
+					// READING THE SELECTED FILE
+					var filereader = new FileReader();
+					filereader.file_name = files[0].name;
+					filereader.onload = function()
+						{
+						// GETTING THE ROMFILE NAME
+						download_Filename = parent.ROMNAME.replace(/\.[^/.]+$/, "");
+
+						// CHECKING IF THERE IS A PREVIOUS ROMSTATE FILE CREATED, IF SO, IT IS DELETED
+						try
+							{
+							var myTempFile = FS.readFile("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
+							FS.unlink("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
+							}
+							catch(err)
+							{
+							}
+
+						// CREATING THE ROMSTATE FILE
+						var dataView = new Uint8Array(this.result);
+						FS.createDataFile("/home/web_user/retroarch/userdata/states",download_Filename+".state",dataView,true,false);
+
+						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WILL CHECK THE UPLOADING PROCESS
+						upload_OrigSize = dataView.length;
+						upload_OrigSizeRepeated = 0;
+
+						// CLEARING THE SELECTED FILE VALUE
+						document.getElementById("fileupload_uploader").value = null;
+
+						document.getElementsByClassName("gui_loading")[0].style.display = "block";
+
+						// STARTING THE TASK THAT WILL UPLOAD THE ROMSTATE FILE
+						upload_Checker = setInterval(upload_CheckerCron, 1000);
+						};
+					filereader.readAsArrayBuffer(files[0]);
+					}
+					catch(err)
+					{
+					}
+				}
+
+			function upload_CheckerCron()
+				{
+				try
+					{
+					// TRYING TO READ THE ROMSTATE FILE
+					var myTempFile = FS.readFile("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
+
+					// THE ROMSTATE FILE IS GOING TO BE WRITTEN WITH AN ASYNCHRONOUS TASK THAT WE CAN'T HANDLE IN ANY WAY.
+					// THIS IS THE REASON WHY WE NEED TO CHECK IF THE FILESIZE IS THE SAME AFTER SEVERAL CHECKINGS.
+
+					// CHECKING THE ROMSTATE FILE SIZE
+					if (myTempFile.length==upload_OrigSize)
+						{
+						// IF IT IS THE SAME, WE ADD 1 TO THE VARIABLE THAT WE USE FOR CHECKING THIS
+						upload_OrigSizeRepeated = upload_OrigSizeRepeated + 1;
+						}
+
+					// IF THE FILE SIZE IS THE SAME AFTER SEVERAL CHECKINGS
+					if (upload_OrigSizeRepeated>4)
+						{
+						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WE USED FOR CHECKING
+						upload_OrigSize = -1;
+						upload_OrigSizeRepeated = 0;
+
+						// SETTING THE UPLOAD PROCESS AS FALSE
+						upload_running = false;
+
+						// LOADING THE STATE (TAKES A LOT OF SECONDS IN SOME CASES, EMSCRIPTED + LIBRETRO RELATED ISSUE)
+						Module._cmd_load_state();
+
+						document.getElementsByClassName("gui_loading")[0].style.display = "none";
+
+						// DISABLING THE UPLOADING TASK
+						clearInterval(upload_Checker);
+						}
+					}
+					catch(err)
+					{
+					}
+				}
+
 			window.onresize = function()
 				{
 				resizeEmulatorCanvas();
@@ -394,6 +605,9 @@
 		<div class="gui_mame32_keyx" oncontextmenu="return false;">X</div>
 		<div class="gui_mame32_keyy" oncontextmenu="return false;">Y</div>
 		<div class="gui_mame32_keyz" oncontextmenu="return false;">Z</div>
+		<div class="gui_loading"><script>document.write(parent.STRING_LOADING);</script></div>
+		<div class="gui_saving"><script>document.write(parent.STRING_SAVING);</script></div>
+		<input type="file" class="fileupload_uploader" id="fileupload_uploader" onchange="upload_getFile(event.target.files);" />
 		<script src="Emulatrix_MAME32.js"></script>
 	</body>
 </html>
