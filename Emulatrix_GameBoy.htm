@@ -462,7 +462,7 @@
 
 						// CREATING THE ROMSTATE FILE
 						var dataView = new Uint8Array(this.result);
-						FS.createDataFile("/home/web_user/retroarch/userdata/states","game.state",dataView,true,false);
+						FS.createDataFile("/home/web_user/retroarch/userdata/states","game.state",dataView,true,true);
 
 						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WILL CHECK THE UPLOADING PROCESS
 						upload_OrigSize = dataView.length;
