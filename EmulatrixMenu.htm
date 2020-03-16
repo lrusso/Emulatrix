@@ -120,7 +120,7 @@
 								document.getElementsByClassName("gui_reload_mobile")[0].style.display = "block";
 								}
 
-							// UPDATING TOOLTIPS FOR THE DOWNLOAD/UPLOAD ICONS
+							// UPDATING THE TOOLTIPS FOR THE DOWNLOAD AND UPLOAD ICON
 							document.getElementsByClassName("gui_download")[0].title = STRING_SAVESTATE;
 							document.getElementsByClassName("gui_uploadsave")[0].title = STRING_LOADSTATE;
 
@@ -153,7 +153,7 @@
 								// CHECKING IF THE FILE IS A MAME32 OR DOSBOX GAME
 								if (MAME32_ROM_LIST.indexOf("|" + ROMNAME + "|")===-1)
 									{
-									// UPDATING TOOLTIPS FOR THE DOWNLOAD/UPLOAD ICONS
+									// UPDATING THE TOOLTIPS FOR THE DOWNLOAD AND UPLOAD ICON
 									document.getElementsByClassName("gui_download")[0].title = STRING_DOWNLOADFILE;
 									document.getElementsByClassName("gui_uploadsave")[0].title = STRING_UPLOADFILE;
 
