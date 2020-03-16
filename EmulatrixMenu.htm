@@ -18,6 +18,8 @@
 			var STRING_SELECTGAME = "";
 			var STRING_UPLOADFILE = "";
 			var STRING_DOWNLOADFILE = "";
+			var STRING_LOADSTATE = "";
+			var STRING_SAVESTATE = "";
 			var STRING_GOBACK = "";
 			var STRING_RELOAD = "";
 			var STRING_READINGFILE = "";
@@ -39,6 +41,8 @@
 				STRING_SELECTGAME = "Seleccionar juego";
 				STRING_UPLOADFILE = "Subir archivo";
 				STRING_DOWNLOADFILE = "Descargar archivo";
+				STRING_LOADSTATE = "Subir estado del juego";
+				STRING_SAVESTATE = "Descargar estado del juego";
 				STRING_GOBACK = "Volver al men" + String.fromCharCode(250) + " principal";
 				STRING_RELOAD = "Recargar juego";
 				STRING_READINGFILE = "Leyendo archivo...";
@@ -59,6 +63,8 @@
 				STRING_SELECTGAME = "Select game";
 				STRING_UPLOADFILE = "Upload file";
 				STRING_DOWNLOADFILE = "Download file";
+				STRING_LOADSTATE = "Upload game state";
+				STRING_SAVESTATE = "Download game state";
 				STRING_GOBACK = "Go back to the main menu";
 				STRING_RELOAD = "Reload game";
 				STRING_READINGFILE = "Reading file...";
@@ -114,6 +120,10 @@
 								document.getElementsByClassName("gui_reload_mobile")[0].style.display = "block";
 								}
 
+							// UPDATING TOOLTIPS FOR THE DOWNLOAD/UPLOAD ICONS
+							document.getElementsByClassName("gui_download")[0].title = STRING_SAVESTATE;
+							document.getElementsByClassName("gui_uploadsave")[0].title = STRING_LOADSTATE;
+
 							// STARTING THE EMULATOR
 							if (extension=="nes")
 								{
@@ -143,6 +153,10 @@
 								// CHECKING IF THE FILE IS A MAME32 OR DOSBOX GAME
 								if (MAME32_ROM_LIST.indexOf("|" + ROMNAME + "|")===-1)
 									{
+									// UPDATING TOOLTIPS FOR THE DOWNLOAD/UPLOAD ICONS
+									document.getElementsByClassName("gui_download")[0].title = STRING_DOWNLOADFILE;
+									document.getElementsByClassName("gui_uploadsave")[0].title = STRING_UPLOADFILE;
+
 									document.getElementById("container").contentDocument.location.replace("Emulatrix_DOSBox.htm");
 									}
 									else
@@ -323,8 +337,6 @@
 				document.getElementsByClassName("gui_upload")[0].title = STRING_SELECTGAME;
 				document.getElementsByClassName("gui_goback")[0].title = STRING_GOBACK;
 				document.getElementsByClassName("gui_reload")[0].title = STRING_RELOAD;
-				document.getElementsByClassName("gui_download")[0].title = STRING_DOWNLOADFILE;
-				document.getElementsByClassName("gui_uploadsave")[0].title = STRING_UPLOADFILE;
 				}
 		</script>
 
