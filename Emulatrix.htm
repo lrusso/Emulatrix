@@ -48,9 +48,10 @@
 				// RESIZING THE IFRAME
 				resizeContent();
 
-				// TO KEEP FOCUS IN THE IFRAME
+				// TO KEEP FOCUSING AND RESIZING THE IFRAME (WORKAROUND FOR IOS DEVICES)
 				setInterval(function()
 					{
+					resizeContent();
 					document.getElementById("content").focus();
 					}, 250);
 
