@@ -353,6 +353,7 @@
 						download_LastSize = -1;
 						download_LastSizeRepeated = 0;
 
+						// SHOWING THE 'SAVING, PLEASE WAIT...' LABEL
 						document.getElementsByClassName("gui_saving")[0].style.display = "block";
 
 						// STARTING THE TASK THAT WILL DOWNLOAD THE ROMSTATE AS A FILE
@@ -402,6 +403,7 @@
 						// SETTING THE DOWNLOAD PROCESS AS FALSE
 						download_running = false;
 
+						// HIDING THE 'SAVING, PLEASE WAIT...' LABEL
 						document.getElementsByClassName("gui_saving")[0].style.display = "none";
 
 						// DISABLING THE DOWNLOADING TASK
@@ -448,44 +450,50 @@
 				{
 				try
 					{
-					// SETTING THE UPLOADING PROCESS AS TRUE
-					upload_running = true;
-
-					// READING THE SELECTED FILE
-					var filereader = new FileReader();
-					filereader.file_name = files[0].name;
-					filereader.onload = function()
+					// CHECKING THE FILE EXTENSION
+					var extension = files[0].name.split(".").pop().toLowerCase();
+					if (extension=="state")
 						{
-						// GETTING THE ROMFILE NAME
-						download_Filename = parent.ROMNAME.replace(/\.[^/.]+$/, "");
+						// SETTING THE UPLOADING PROCESS AS TRUE
+						upload_running = true;
 
-						// CHECKING IF THERE IS A PREVIOUS ROMSTATE FILE CREATED, IF SO, IT IS DELETED
-						try
+						// READING THE SELECTED FILE
+						var filereader = new FileReader();
+						filereader.file_name = files[0].name;
+						filereader.onload = function()
 							{
-							var myTempFile = FS.readFile("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
-							FS.unlink("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
-							}
-							catch(err)
-							{
-							}
+							// GETTING THE ROMFILE NAME
+							download_Filename = parent.ROMNAME.replace(/\.[^/.]+$/, "");
 
-						// CREATING THE ROMSTATE FILE
-						var dataView = new Uint8Array(this.result);
-						FS.createDataFile("/home/web_user/retroarch/userdata/states",download_Filename+".state",dataView,true,true);
+							// CHECKING IF THERE IS A PREVIOUS ROMSTATE FILE CREATED, IF SO, IT IS DELETED
+							try
+								{
+								var myTempFile = FS.readFile("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
+								FS.unlink("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
+								}
+								catch(err)
+								{
+								}
 
-						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WILL CHECK THE UPLOADING PROCESS
-						upload_OrigSize = dataView.length;
-						upload_OrigSizeRepeated = 0;
+							// CREATING THE ROMSTATE FILE
+							var dataView = new Uint8Array(this.result);
+							FS.createDataFile("/home/web_user/retroarch/userdata/states",download_Filename+".state",dataView,true,true);
 
-						// CLEARING THE SELECTED FILE VALUE
-						document.getElementById("fileupload_uploader").value = null;
+							// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WILL CHECK THE UPLOADING PROCESS
+							upload_OrigSize = dataView.length;
+							upload_OrigSizeRepeated = 0;
 
-						document.getElementsByClassName("gui_loading")[0].style.display = "block";
+							// CLEARING THE SELECTED FILE VALUE
+							document.getElementById("fileupload_uploader").value = null;
 
-						// STARTING THE TASK THAT WILL UPLOAD THE ROMSTATE FILE
-						upload_Checker = setInterval(upload_CheckerCron, 1000);
-						};
-					filereader.readAsArrayBuffer(files[0]);
+							// SHOWING THE 'LOADING, PLEASE WAIT...' LABEL
+							document.getElementsByClassName("gui_loading")[0].style.display = "block";
+
+							// STARTING THE TASK THAT WILL UPLOAD THE ROMSTATE FILE
+							upload_Checker = setInterval(upload_CheckerCron, 1000);
+							};
+						filereader.readAsArrayBuffer(files[0]);
+						}
 					}
 					catch(err)
 					{
@@ -522,6 +530,7 @@
 						// LOADING THE STATE (TAKES A LOT OF SECONDS IN SOME CASES, EMSCRIPTED + LIBRETRO RELATED ISSUE)
 						Module._cmd_load_state();
 
+						// HIDING THE 'LOADING, PLEASE WAIT...' LABEL
 						document.getElementsByClassName("gui_loading")[0].style.display = "none";
 
 						// DISABLING THE UPLOADING TASK
