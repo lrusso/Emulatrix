@@ -19,7 +19,7 @@
 			var upload_running = false;
 			var upload_Checker;
 			var upload_OrigSize = -1;
-			var upload_LastSizeRepeated = 0;
+			var upload_OrigSizeRepeated = 0;
 
 			function loadRomIntoVD()
 				{
@@ -381,7 +381,7 @@
 						}
 
 					// IF THE FILE SIZE IS THE SAME AFTER SEVERAL CHECKINGS
-					if (download_LastSizeRepeated>4)
+					if (download_LastSizeRepeated>6)
 						{
 						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WE USED FOR CHECKING
 						download_LastSize = -1;
@@ -507,7 +507,7 @@
 						}
 
 					// IF THE FILE SIZE IS THE SAME AFTER SEVERAL CHECKINGS
-					if (upload_OrigSizeRepeated>4)
+					if (upload_OrigSizeRepeated>6)
 						{
 						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WE USED FOR CHECKING
 						upload_OrigSize = -1;
