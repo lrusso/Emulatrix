@@ -396,7 +396,7 @@
 					}
 				}
 
-			window.onload = function()
+			window.addEventListener("load", function()
 				{
 				document.getElementById("container").style.display="block";
 				setTimeout(function(){loadRomIntoVD();},1000);
@@ -407,7 +407,7 @@
 				document.addEventListener("mozpointerlockchange", mouseChecker, false);
 				document.addEventListener("webkitpointerlockchange", mouseChecker, false);
 				document.getElementById("fileupload_uploader").value = null;
-				}
+				});
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
 				{

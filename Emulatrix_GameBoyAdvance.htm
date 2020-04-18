@@ -532,12 +532,12 @@
 					}
 				}
 
-			window.onresize = function()
+			window.addEventListener("resize", function()
 				{
 				resizeEmulatorCanvas();
-				}
+				});
 
-			window.onload = function()
+			window.addEventListener("load", function()
 				{
 				document.getElementById("container").style.display="block";
 				setTimeout(function(){loadRomIntoVD();},1000);
@@ -568,7 +568,7 @@
 					document.getElementsByClassName("gui_gameboyadvance_keyr")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyW")});
 					showVirtualJoystick();
 					}
-				}
+				});
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
 				{

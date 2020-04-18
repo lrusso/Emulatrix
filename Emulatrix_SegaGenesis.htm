@@ -531,12 +531,12 @@
 					}
 				}
 
-			window.onresize = function()
+			window.addEventListener("resize", function()
 				{
 				resizeEmulatorCanvas();
-				}
+				});
 
-			window.onload = function()
+			window.addEventListener("load", function()
 				{
 				document.getElementById("container").style.display="block";
 				setTimeout(function(){loadRomIntoVD();},1000);
@@ -570,7 +570,7 @@
 					document.getElementsByClassName("gui_segagenesis_keyz")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyE")});
 					showVirtualJoystick();
 					}
-				}
+				});
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
 				{
