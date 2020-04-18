@@ -47,7 +47,7 @@
 					}
 				}
 
-			window.onload = function()
+			window.addEventListener("load", function()
 				{
 				// RESIZING THE IFRAME
 				resizeContent();
@@ -63,13 +63,13 @@
 
 				// SHOWING THE IFRAME
 				document.getElementById("content").style.display = "block";
-				}
+				});
 
-			window.onresize = function()
+			window.addEventListener("resize", function()
 				{
 				// RESIZING THE IFRAME WHEN THE SCREEN SIZE CHANGES
 				resizeContent();
-				}
+				});
 
 			var supportsOrientationChange = "onorientationchange" in window, orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 			window.addEventListener(orientationEvent, function()

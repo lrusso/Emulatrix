@@ -315,7 +315,7 @@
 
 			function isMobileDevice(){return!!(navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/webOS/i)||navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/iPod/i)||navigator.userAgent.match(/BlackBerry/i)||navigator.userAgent.match(/Windows Phone/i))}
 
-			window.onload = function()
+			window.addEventListener("load", function()
 				{
 				document.getElementById("gui_controls_file").disabled = false;
 				document.getElementById("gui_controls_file").value = null;
@@ -337,7 +337,7 @@
 				document.getElementsByClassName("gui_upload")[0].title = STRING_SELECTGAME;
 				document.getElementsByClassName("gui_goback")[0].title = STRING_GOBACK;
 				document.getElementsByClassName("gui_reload")[0].title = STRING_RELOAD;
-				}
+				});
 		</script>
 
 		<iframe id="container" src="about:blank"></iframe>
