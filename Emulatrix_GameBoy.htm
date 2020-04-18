@@ -382,7 +382,7 @@
 						}
 
 					// IF THE FILE SIZE IS THE SAME AFTER SEVERAL CHECKINGS
-					if (download_LastSizeRepeated>6)
+					if (download_LastSizeRepeated>parent.STATE_CHECK_TIMES)
 						{
 						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WE USED FOR CHECKING
 						download_LastSize = -1;
@@ -508,7 +508,7 @@
 						}
 
 					// IF THE FILE SIZE IS THE SAME AFTER SEVERAL CHECKINGS
-					if (upload_OrigSizeRepeated>6)
+					if (upload_OrigSizeRepeated>parent.STATE_CHECK_TIMES)
 						{
 						// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WE USED FOR CHECKING
 						upload_OrigSize = -1;
