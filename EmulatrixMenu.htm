@@ -337,18 +337,29 @@
 				document.getElementsByClassName("gui_upload")[0].title = STRING_SELECTGAME;
 				document.getElementsByClassName("gui_goback")[0].title = STRING_GOBACK;
 				document.getElementsByClassName("gui_reload")[0].title = STRING_RELOAD;
+
+				// SETTING WHAT HAPPENS WHEN THE USER CLICKS ON A ITEM
+				document.getElementsByClassName("gui_goback")[0].addEventListener("click",function(event){goBack()});
+				document.getElementsByClassName("gui_goback_mobile")[0].addEventListener("click",function(event){goBack()});
+				document.getElementsByClassName("gui_download")[0].addEventListener("click",function(event){ROMState_DownloadFile()});
+				document.getElementsByClassName("gui_download_mobile")[0].addEventListener("click",function(event){ROMState_DownloadFile()});
+				document.getElementsByClassName("gui_uploadsave")[0].addEventListener("click",function(event){ROMState_UploadFile()});
+				document.getElementsByClassName("gui_uploadsave_mobile")[0].addEventListener("click",function(event){ROMState_UploadFile()});
+				document.getElementsByClassName("gui_reload")[0].addEventListener("click",function(event){reload()});
+				document.getElementsByClassName("gui_reload_mobile")[0].addEventListener("click",function(event){reload()});
+				document.getElementsByClassName("gui_upload")[0].addEventListener("click",function(event){document.getElementById("gui_controls_file").click()});
 				});
 		</script>
 
 		<iframe id="container" src="about:blank"></iframe>
-		<div class="gui_goback" onclick="goBack()"></div>
-		<div class="gui_goback_mobile" onclick="goBack()"><div class="gui_goback_mobile_icon"></div></div>
-		<div class="gui_download" onclick="ROMState_DownloadFile()"></div>
-		<div class="gui_download_mobile" onclick="ROMState_DownloadFile()"><div class="gui_download_mobile_icon"></div></div>
-		<div class="gui_uploadsave" onclick="ROMState_UploadFile()"></div>
-		<div class="gui_uploadsave_mobile" onclick="ROMState_UploadFile()"><div class="gui_uploadsave_mobile_icon"></div></div>
-		<div class="gui_reload" onclick="reload()"></div>
-		<div class="gui_reload_mobile" onclick="reload()"><div class="gui_reload_mobile_icon"></div></div>
+		<div class="gui_goback"></div>
+		<div class="gui_goback_mobile"><div class="gui_goback_mobile_icon"></div></div>
+		<div class="gui_download"></div>
+		<div class="gui_download_mobile"><div class="gui_download_mobile_icon"></div></div>
+		<div class="gui_uploadsave"></div>
+		<div class="gui_uploadsave_mobile"><div class="gui_uploadsave_mobile_icon"></div></div>
+		<div class="gui_reload"></div>
+		<div class="gui_reload_mobile"><div class="gui_reload_mobile_icon"></div></div>
 		<div class="gui_pleasewait"><div class="gui_pleasewait_title"><script>document.write(STRING_READINGFILE);</script></div><div class="pleasewait"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
 
 		<div class="gui_container">
@@ -403,7 +414,7 @@
 					</table>
 				</div>
 			</div>
-			<div class="gui_upload" onclick="document.getElementById('gui_controls_file').click()"></div>
+			<div class="gui_upload"></div>
 			<input type="file" id="gui_controls_file" disabled onchange="runEmulator(event.target.files);"/>
 		</div>
 	</body>
