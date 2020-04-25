@@ -328,7 +328,7 @@
 					document.getElementById("container").focus();
 					}, 250);
 
-				// TO KEEP TRACK OF THE CLICKS WHEN PLAYING A GAME IN ORDER TO HIDE THE GOBACK BUTTON
+				// TO KEEP TRACK OF MOUSE CLICKS AND MOVEMENTS WHEN PLAYING IN ORDER TO KNOW WHEN TO HIDE/SHOW ALL THE ICONS
 				setInterval(goBackButtonTimerIncrement, 1000);
 				document.addEventListener("click", goBackButtonResetIncrement, false);
 				document.addEventListener("dblclick", goBackButtonResetIncrement, false);
