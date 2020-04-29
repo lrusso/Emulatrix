@@ -339,16 +339,18 @@
 				document.getElementsByClassName("gui_goback")[0].title = STRING_GOBACK;
 				document.getElementsByClassName("gui_reload")[0].title = STRING_RELOAD;
 
-				// SETTING WHAT HAPPENS WHEN THE USER CLICKS ON A ITEM
+				// SETTING WHAT HAPPEN WHEN THE USER CLICKS ON A ITEM
 				document.getElementsByClassName("gui_goback")[0].addEventListener("click",function(event){goBack()});
-				document.getElementsByClassName("gui_goback_mobile")[0].addEventListener("click",function(event){goBack()});
 				document.getElementsByClassName("gui_download")[0].addEventListener("click",function(event){ROMState_DownloadFile()});
-				document.getElementsByClassName("gui_download_mobile")[0].addEventListener("click",function(event){ROMState_DownloadFile()});
 				document.getElementsByClassName("gui_uploadsave")[0].addEventListener("click",function(event){ROMState_UploadFile()});
-				document.getElementsByClassName("gui_uploadsave_mobile")[0].addEventListener("click",function(event){ROMState_UploadFile()});
 				document.getElementsByClassName("gui_reload")[0].addEventListener("click",function(event){reload()});
-				document.getElementsByClassName("gui_reload_mobile")[0].addEventListener("click",function(event){reload()});
 				document.getElementsByClassName("gui_upload")[0].addEventListener("click",function(event){document.getElementById("gui_controls_file").click()});
+
+				// SETTING WHAT HAPPEN WHEN THE USER TOUCHES AN ITEM
+				document.getElementsByClassName("gui_goback_mobile")[0].addEventListener("touchstart",function(event){goBack()});
+				document.getElementsByClassName("gui_download_mobile")[0].addEventListener("touchstart",function(event){ROMState_DownloadFile()});
+				document.getElementsByClassName("gui_uploadsave_mobile")[0].addEventListener("touchstart",function(event){ROMState_UploadFile()});
+				document.getElementsByClassName("gui_reload_mobile")[0].addEventListener("touchstart",function(event){reload()});
 				});
 		</script>
 
