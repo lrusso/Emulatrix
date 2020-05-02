@@ -420,6 +420,15 @@
 					document.getElementsByClassName("gui_dosbox_keyesc")[0].style.display = "block";
 					document.getElementsByClassName("gui_dosbox_keyesc")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",27,27)});
 					document.getElementsByClassName("gui_dosbox_keyesc")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",27,27)});
+					document.getElementsByClassName("gui_dosbox_keyalt")[0].style.display = "block";
+					document.getElementsByClassName("gui_dosbox_keyalt")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",18,18)});
+					document.getElementsByClassName("gui_dosbox_keyalt")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",18,18)});
+					document.getElementsByClassName("gui_dosbox_keyctrl")[0].style.display = "block";
+					document.getElementsByClassName("gui_dosbox_keyctrl")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",17,17)});
+					document.getElementsByClassName("gui_dosbox_keyctrl")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",17,17)});
+					document.getElementsByClassName("gui_dosbox_keyshift")[0].style.display = "block";
+					document.getElementsByClassName("gui_dosbox_keyshift")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",16,16)});
+					document.getElementsByClassName("gui_dosbox_keyshift")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",16,16)});
 					document.getElementsByClassName("gui_dosbox_keyenter")[0].style.display = "block";
 					document.getElementsByClassName("gui_dosbox_keyenter")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",13,13)});
 					document.getElementsByClassName("gui_dosbox_keyenter")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",13,13)});
@@ -451,6 +460,9 @@
 
 			<div class="gui_joystick" id="joyDiv"></div>
 			<div class="gui_dosbox_keyesc" oncontextmenu="return false;">ESC</div>
+			<div class="gui_dosbox_keyalt" oncontextmenu="return false;">ALT</div>
+			<div class="gui_dosbox_keyctrl" oncontextmenu="return false;">CTRL</div>
+			<div class="gui_dosbox_keyshift" oncontextmenu="return false;">SHIFT</div>
 			<div class="gui_dosbox_keyenter" oncontextmenu="return false;">ENTER</div>
 			<div class="gui_dosbox_keyspace" oncontextmenu="return false;">SPACE</div>
 
