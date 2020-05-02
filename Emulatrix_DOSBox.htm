@@ -465,13 +465,12 @@
 
 			<div class="fileupload_container">
 				<div class="fileupload_title">
-					<span class="fileupload_title_value" id="fileupload_title_value"><script>document.write(parent.STRING_SELECTFOLDER1);</script></span>
+					<span class="fileupload_title_value" id="fileupload_title_value"><script>document.write(parent.STRING_SELECTFOLDER);</script></span>
 					<div class="fileupload_title_close" onclick="upload_HideFileList()">X</div>
 				</div>
 				<div class="fileupload_location"><div class="fileupload_location_value">&nbsp;</div></div>
 				<div class="fileupload_select"></div>
-				<div class="fileupload_note"><script>document.write(parent.STRING_SELECTFOLDER2);</script></div>
-				<div class="fileupload_submit" onclick="upload_writeFile()"><script>document.write(parent.STRING_SELECTFOLDER3);</script></div>
+				<div class="fileupload_submit" onclick="upload_writeFile()"><script>document.write(parent.STRING_UPLOADFILE);</script></div>
 			</div>
 
 			<input type="file" class="fileupload_uploader" id="fileupload_uploader" onchange="upload_getFile(event.target.files);" />
