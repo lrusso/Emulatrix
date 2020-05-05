@@ -364,6 +364,9 @@
 						download_LastSize = -1;
 						download_LastSizeRepeated = 0;
 
+						// RESTORING THE ORIGINAL LABEL TEXT
+						document.getElementsByClassName("gui_saving")[0].innerHTML = parent.STRING_SAVING;
+
 						// SHOWING THE 'SAVING, PLEASE WAIT...' LABEL
 						document.getElementsByClassName("gui_saving")[0].style.display = "block";
 
@@ -417,16 +420,20 @@
 						// UPDATING THE LABEL TEXT IN ORDER TO TELL THE USER THAT A FILE WAS DOWNLOADED
 						document.getElementsByClassName("gui_saving")[0].innerHTML = parent.STRING_SAVED;
 
+						// SETTING THE DOWNLOAD PROCESS AS FALSE
+						download_running = false;
+
 						setTimeout(function()
 							{
-							// HIDING THE LABEL
-							document.getElementsByClassName("gui_saving")[0].style.display = "none";
+							// CHECKING IF THE LABEL MUST BE HIDDEN
+							if (download_running==false)
+								{
+								// HIDING THE LABEL
+								document.getElementsByClassName("gui_saving")[0].style.display = "none";
 
-							// RESTORING THE ORIGINAL LABEL TEXT
-							document.getElementsByClassName("gui_saving")[0].innerHTML = parent.STRING_SAVING;
-
-							// SETTING THE DOWNLOAD PROCESS AS FALSE
-							download_running = false;
+								// RESTORING THE ORIGINAL LABEL TEXT
+								document.getElementsByClassName("gui_saving")[0].innerHTML = parent.STRING_SAVING;
+								}
 							}, 3000);
 
 						// DISABLING THE DOWNLOADING TASK
@@ -463,6 +470,9 @@
 				// CHECKING IF THE UPLOADING AND DOWNLOADING PROCESS ARE NOT RUNNING
 				if (upload_running==false && download_running==false)
 					{
+					// HIDING THE 'SAVING, PLEASE WAIT...' LABEL
+					document.getElementsByClassName("gui_saving")[0].style.display = "none";
+
 					// ALLOWING THE USER TO SELECT THE ROMSTATE FILE FROM THE COMPUTER OR MOBILE DEVICE
 					document.getElementById("fileupload_uploader").click();
 					}
