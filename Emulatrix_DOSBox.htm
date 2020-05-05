@@ -51,6 +51,10 @@
 					{
 					var rawReading = FS.readFile("/emulator" + filePath);
 					var fileAsArray = new Uint8Array(rawReading);
+
+					// IF RUNNING THE MOBILE APP, TELLING THE NAME THAT THE DOWNLOADED FILE WILL HAVE
+					console.log("FILENAME=" + filename);
+
 					download_Blob(fileAsArray, filename, "application/octet-stream");
 					}
 					catch(err)

@@ -389,6 +389,9 @@
 						// DELETING THE ROMSTATE FILE FROM THE FS
 						FS.unlink("/home/web_user/retroarch/userdata/states/game.state");
 
+						// IF RUNNING THE MOBILE APP, TELLING THE NAME THAT THE DOWNLOADED FILE WILL HAVE
+						console.log("FILENAME=" + download_Filename + ".state");
+
 						// DOWNLOADING THE ROMSTATE AS A FILE
 						download_Blob(myTempFile, download_Filename + ".state", "application/octet-stream");
 
