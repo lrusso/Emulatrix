@@ -54,6 +54,10 @@ https://lrusso.github.io/Emulatrix
 
 https://github.com/lrusso/VirtualJoystick
 
-## Android version available at:
+## Emulatrix in Play Store
+
+https://play.google.com/store/apps/details?id=net.emulatrix
+
+## Android source code available at:
 
 https://github.com/lrusso/EmulatrixApp
