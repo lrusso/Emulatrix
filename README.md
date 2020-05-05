@@ -53,3 +53,7 @@ https://lrusso.github.io/Emulatrix
 ## Virtual joystick code:
 
 https://github.com/lrusso/VirtualJoystick
+
+## Android version available at:
+
+https://github.com/lrusso/EmulatrixApp
