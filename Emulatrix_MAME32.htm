@@ -403,11 +403,20 @@
 						// DOWNLOADING THE ROMSTATE AS A FILE
 						download_Blob(myTempFile, download_Filename + ".state", "application/octet-stream");
 
-						// SETTING THE DOWNLOAD PROCESS AS FALSE
-						download_running = false;
+						// UPDATING THE LABEL TEXT IN ORDER TO TELL THE USER THAT A FILE WAS DOWNLOADED
+						document.getElementsByClassName("gui_saving")[0].innerHTML = parent.STRING_SAVED;
 
-						// HIDING THE 'SAVING, PLEASE WAIT...' LABEL
-						document.getElementsByClassName("gui_saving")[0].style.display = "none";
+						setTimeout(function()
+							{
+							// HIDING THE LABEL
+							document.getElementsByClassName("gui_saving")[0].style.display = "none";
+
+							// RESTORING THE ORIGINAL LABEL TEXT
+							document.getElementsByClassName("gui_saving")[0].innerHTML = parent.STRING_SAVING;
+
+							// SETTING THE DOWNLOAD PROCESS AS FALSE
+							download_running = false;
+							}, 3000);
 
 						// DISABLING THE DOWNLOADING TASK
 						clearInterval(download_Checker);
@@ -415,7 +424,6 @@
 					}
 					catch(err)
 					{
-					console.log(err);
 					}
 				}
 
