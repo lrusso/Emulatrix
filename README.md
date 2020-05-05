@@ -50,14 +50,14 @@ https://lrusso.github.io/Emulatrix
 | MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 |
 | DOS | https://github.com/dreamlayers/em-dosbox | dosbox |
 
-## Virtual joystick code:
+## Virtual joystick code
 
 https://github.com/lrusso/VirtualJoystick
+
+## Android version
+
+https://github.com/lrusso/EmulatrixApp
 
 ## Emulatrix in Play Store
 
 https://play.google.com/store/apps/details?id=net.emulatrix
-
-## Android source code available at:
-
-https://github.com/lrusso/EmulatrixApp
