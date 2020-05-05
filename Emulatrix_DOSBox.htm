@@ -56,6 +56,15 @@
 					console.log("FILENAME=" + filename);
 
 					download_Blob(fileAsArray, filename, "application/octet-stream");
+
+					// SHOWING THE LABEL
+					document.getElementsByClassName("gui_saving")[0].style.display = "block";
+
+					setTimeout(function()
+						{
+						// HIDING THE LABEL
+						document.getElementsByClassName("gui_saving")[0].style.display = "none";
+						}, 3000);
 					}
 					catch(err)
 					{
@@ -488,6 +497,8 @@
 				<div class="fileupload_select"></div>
 				<div class="fileupload_submit" onclick="upload_writeFile()"><script>document.write(parent.STRING_UPLOADFILE);</script></div>
 			</div>
+
+			<div class="gui_saving"><script>document.write(parent.STRING_SAVED);</script></div>
 
 			<input type="file" class="fileupload_uploader" id="fileupload_uploader" onchange="upload_getFile(event.target.files);" />
 
