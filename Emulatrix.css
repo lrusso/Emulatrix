@@ -159,13 +159,13 @@ body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-moz-use
 	}
 
 /* Tablet (medium) */
-@media screen and (min-width: 800px) and (max-width: 1023px)
+@media screen and (min-width: 831px) and (max-width: 1023px)
 	{
 
 	}
 
 /* Smartphones (portrait and landscape)(small) */
-@media screen and (min-width: 0px) and (max-width: 799px)
+@media screen and (min-width: 0px) and (max-width: 830px)
 	{
 	.gui_joystick{display:none;position:fixed;left:0;bottom:0;width:190px;height:220px;z-index:90}
 
