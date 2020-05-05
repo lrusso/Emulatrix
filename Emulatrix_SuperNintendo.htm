@@ -57,6 +57,9 @@
 				config += "input_player1_l = q\n";
 				config += "input_player1_r = w\n";
 
+				// SETS THE KEY FOR SOUND TOGGLE
+				config += "input_audio_mute = f10\n";
+
 				// SETS THE KEYS FOR UNWANTED FUNCTIONS
 				config += "input_toggle_fast_forward = " + emptyValue + "\n";
 				config += "input_hold_fast_forward = " + emptyValue + "\n";
@@ -79,10 +82,9 @@
 				config += "input_cheat_index_minus = " + emptyValue + "\n";
 				config += "input_cheat_toggle = " + emptyValue + "\n";
 				config += "input_screenshot = " + emptyValue + "\n";
-				config += "input_audio_mute = " + emptyValue + "\n";
 				config += "input_osk_toggle = " + emptyValue + "\n";
 				config += "input_netplay_game_watch = " + emptyValue + "\n";
-				config += "input_enable_hotkey = " + emptyValue + "\n";
+				//config += "input_enable_hotkey = " + emptyValue + "\n";
 				config += "input_volume_up = " + emptyValue + "\n";
 				config += "input_volume_down = " + emptyValue + "\n";
 				config += "input_overlay_next = " + emptyValue + "\n";
@@ -323,6 +325,15 @@
 					catch(err)
 					{
 					}
+				}
+
+			function toggleSound()
+				{
+				sendVirtualKey("keydown","F10")
+				setTimeout(function()
+					{
+					sendVirtualKey("keyup","F10");
+					}, 50);
 				}
 
 			function downloadROMState()

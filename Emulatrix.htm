@@ -11,6 +11,7 @@
 
 			var ROMDATA = "";
 			var ROMNAME = "";
+			var DOSGAME = false;
 			var CTRLS_IDLE = 0;
 			var STATE_CHECK_TIMES = 8;
 			var STRING_HOW1 = "";
@@ -94,6 +95,7 @@
 							ROMDATA = this.result;
 							ROMNAME = files[0].name;
 							ROMNAME = ROMNAME;
+							DOSGAME = false;
 
 							// HIDES THE GUI
 							document.getElementsByClassName("gui_container")[0].style.display = "none";
@@ -154,6 +156,9 @@
 									// UPDATING THE TOOLTIPS FOR THE DOWNLOAD AND UPLOAD ICON
 									document.getElementsByClassName("gui_download")[0].title = STRING_DOWNLOADFILE;
 									document.getElementsByClassName("gui_uploadsave")[0].title = STRING_UPLOADFILE;
+
+									// UPDATING THE DOSGAME VARIABLE IN ORDER TO NOT SHOW THE SOUND TOGGLE BUTTON
+									DOSGAME = true;
 
 									document.getElementById("container").contentDocument.location.replace("Emulatrix_DOSBox.htm");
 									}
@@ -225,6 +230,10 @@
 					// HIDES THE UPLOAD SAVE BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
 					document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "none";
+
+					// HIDES THE SOUND TOGGLE BUTTON (DESKTOP AND MOBILE)
+					document.getElementsByClassName("gui_sound")[0].style.display = "none";
+					document.getElementsByClassName("gui_sound_mobile")[0].style.display = "none";
 					}
 					catch(err)
 					{
@@ -253,6 +262,17 @@
 					}
 				}
 
+			function ROMState_ToggleSound()
+				{
+				try
+					{
+					document.getElementById("container").contentWindow.toggleSound();
+					}
+					catch(err)
+					{
+					}
+				}
+
 			function goBackButtonResetIncrement()
 				{
 				try
@@ -273,6 +293,12 @@
 
 							// SHOWS THE UPLOAD SAVE BUTTON
 							document.getElementsByClassName("gui_uploadsave")[0].style.display = "block";
+
+							if (DOSGAME==false)
+								{
+								// SHOWS THE SOUND TOGGLE BUTTON
+								document.getElementsByClassName("gui_sound")[0].style.display = "block";
+								}
 							}
 							else
 							{
@@ -281,6 +307,12 @@
 
 							// SHOWS THE UPLOAD SAVE BUTTON (FOR MOBILE VERSION)
 							document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "block";
+
+							if (DOSGAME==false)
+								{
+								// SHOWS THE DOWNLOAD BUTTON (FOR MOBILE VERSION)
+								document.getElementsByClassName("gui_sound_mobile")[0].style.display = "block";
+								}
 							}
 						}
 					}
@@ -307,6 +339,9 @@
 
 						// HIDES THE UPLOAD SAVE BUTTON
 						document.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
+
+						// HIDES THE SOUND TOGGLE BUTTON
+						document.getElementsByClassName("gui_sound")[0].style.display = "none";
 						}
 					}
 					catch(err)
@@ -341,6 +376,7 @@
 
 				// SETTING WHAT HAPPEN WHEN THE USER CLICKS ON A ITEM
 				document.getElementsByClassName("gui_goback")[0].addEventListener("click",function(event){goBack()});
+				document.getElementsByClassName("gui_sound")[0].addEventListener("click",function(event){ROMState_ToggleSound()});
 				document.getElementsByClassName("gui_download")[0].addEventListener("click",function(event){ROMState_DownloadFile()});
 				document.getElementsByClassName("gui_uploadsave")[0].addEventListener("click",function(event){ROMState_UploadFile()});
 				document.getElementsByClassName("gui_reload")[0].addEventListener("click",function(event){reload()});
@@ -348,6 +384,7 @@
 
 				// SETTING WHAT HAPPEN WHEN THE USER TOUCHES AN ITEM
 				document.getElementsByClassName("gui_goback_mobile")[0].addEventListener("touchstart",function(event){goBack()});
+				document.getElementsByClassName("gui_sound_mobile")[0].addEventListener("click",function(event){ROMState_ToggleSound()});
 				document.getElementsByClassName("gui_download_mobile")[0].addEventListener("touchstart",function(event){ROMState_DownloadFile()});
 				document.getElementsByClassName("gui_uploadsave_mobile")[0].addEventListener("touchstart",function(event){ROMState_UploadFile()});
 				document.getElementsByClassName("gui_reload_mobile")[0].addEventListener("touchstart",function(event){reload()});
@@ -357,6 +394,8 @@
 		<iframe id="container" src="about:blank"></iframe>
 		<div class="gui_goback"></div>
 		<div class="gui_goback_mobile"><div class="gui_goback_mobile_icon"></div></div>
+		<div class="gui_sound"></div>
+		<div class="gui_sound_mobile"><div class="gui_sound_mobile_icon"></div></div>
 		<div class="gui_download"></div>
 		<div class="gui_download_mobile"><div class="gui_download_mobile_icon"></div></div>
 		<div class="gui_uploadsave"></div>
