@@ -26,9 +26,6 @@
 
 			function loadRomIntoVD()
 				{
-				// STARTS THE VIRTUAL FILE SYSTEM
-				startFileSystem();
-
 				// CREATES THE ROM FILE IN THE VIRTUAL DRIVE
 				var dataView=new Uint8Array(parent.ROMDATA);
 				FS.createDataFile("/",parent.ROMNAME,dataView,true,false);
@@ -629,7 +626,8 @@
 			window.addEventListener("load", function()
 				{
 				document.getElementById("container").style.display="block";
-				setTimeout(function(){loadRomIntoVD();},1000);
+				setTimeout(function(){startFileSystem()},1000);
+				setTimeout(function(){loadRomIntoVD()},2000);
 				document.addEventListener("click", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("dblclick", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("mousemove", parent.goBackButtonResetIncrement, false);
