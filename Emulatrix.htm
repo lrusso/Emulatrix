@@ -198,7 +198,14 @@
 				{
 				try
 					{
-					document.getElementById("container").contentDocument.location.reload(true);
+					if (DOSGAME==true)
+						{
+						document.getElementById("container").contentDocument.location.reload(true);
+						}
+						else
+						{
+						document.getElementById("container").contentWindow.reloadROM();
+						}
 					}
 					catch(err)
 					{

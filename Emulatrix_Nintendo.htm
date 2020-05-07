@@ -56,6 +56,9 @@
 				// SETS THE KEY FOR SOUND TOGGLE
 				config += "input_audio_mute = f9\n";
 
+				// SETS THE KEY FOR RELOADING GAME
+				config += "input_reset = f10\n";
+
 				// SETS THE KEYS FOR UNWANTED FUNCTIONS
 				config += "input_toggle_fast_forward = " + emptyValue + "\n";
 				config += "input_hold_fast_forward = " + emptyValue + "\n";
@@ -71,7 +74,6 @@
 				config += "input_movie_record_toggle = " + emptyValue + "\n";
 				config += "input_pause_toggle = " + emptyValue + "\n";
 				config += "input_frame_advance = " + emptyValue + "\n";
-				config += "input_reset = " + emptyValue + "\n";
 				config += "input_shader_next = " + emptyValue + "\n";
 				config += "input_shader_prev = " + emptyValue + "\n";
 				config += "input_cheat_index_plus = " + emptyValue + "\n";
@@ -333,6 +335,15 @@
 				setTimeout(function()
 					{
 					sendVirtualKey("keyup","F9");
+					}, 50);
+				}
+
+			function reloadROM()
+				{
+				sendVirtualKey("keydown","F10")
+				setTimeout(function()
+					{
+					sendVirtualKey("keyup","F10");
 					}, 50);
 				}
 
