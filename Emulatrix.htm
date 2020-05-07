@@ -375,14 +375,19 @@
 				document.addEventListener("dblclick", goBackButtonResetIncrement, false);
 				document.addEventListener("mousemove", goBackButtonResetIncrement, false);
 
+				// CHECKING IF THE USER IS ON A MOBILE DEVICE
 				if (isMobileDevice()==true)
 					{
+					// SHOWING THE 'HOW DOES IT WORK' TEXT FOR MOBILE DEVICES
 					document.getElementsByClassName("gui_how_mobile")[0].style.display = "block";
 					}
 					else
 					{
-					document.getElementsByClassName("gui_controls")[0].style.display = "block";
+					// SHOWING THE 'HOW DOES IT WORK' TEXT FOR DESKTOP DEVICES
 					document.getElementsByClassName("gui_title_how1")[0].style.display = "block";
+
+					// SHOWING THE KEYS FOR EACH EMULATOR FOR DESKTOP DEVICES
+					document.getElementsByClassName("gui_controls")[0].style.display = "block";
 					}
 
 				// SETTING THE TITLES FOR EACH BUTTON
