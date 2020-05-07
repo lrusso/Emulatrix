@@ -340,7 +340,10 @@
 					clearInterval(settings_Checker);
 
 					// STARTING THE EMULATOR
-					startEmulator();
+					setTimeout(function()
+						{
+						startEmulator();
+						},1500);
 					}
 				}
 
