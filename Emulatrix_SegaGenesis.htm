@@ -59,7 +59,7 @@
 				config += "input_player1_r = e\n";
 
 				// SETS THE KEY FOR SOUND TOGGLE
-				config += "input_audio_mute = f10\n";
+				config += "input_audio_mute = f9\n";
 
 				// SETS THE KEYS FOR UNWANTED FUNCTIONS
 				config += "input_toggle_fast_forward = " + emptyValue + "\n";
@@ -330,10 +330,10 @@
 
 			function toggleSound()
 				{
-				sendVirtualKey("keydown","F10")
+				sendVirtualKey("keydown","F9")
 				setTimeout(function()
 					{
-					sendVirtualKey("keyup","F10");
+					sendVirtualKey("keyup","F9");
 					}, 50);
 				}
 
