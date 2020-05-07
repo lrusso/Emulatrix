@@ -16,6 +16,7 @@
 			var STATE_CHECK_TIMES = 8;
 			var STRING_HOW1 = "";
 			var STRING_HOW2 = "";
+			var STRING_HOW_MOBILE = "";
 			var STRING_INSERTCOIN = "";
 			var STRING_SELECTGAME = "";
 			var STRING_UPLOADFILE = "";
@@ -39,6 +40,7 @@
 				{
 				STRING_HOW1 = "&iquest;C&oacute;mo funciona?";
 				STRING_HOW2 = "Haga click en el &iacute;cono rojo ubicado en el extremo inferior de la pantalla y luego seleccione de su computadora el archivo del juego que desea jugar.<br />Para cargar juegos de DOS, crea un archivo ZIP con los archivos del juego y &aacute;brelo con Emulatrix.<br />Al iniciarse, se intentar&aacute; ejecutar AUTORUN.BAT.<br />Para cargar maquinas virtuales, crea un archivo ZIP con la imagen del disco con el nombre c.img.";
+				STRING_HOW_MOBILE = "Toca en el &iacute;cono inferior,<br />selecciona un ROM de tu m&oacute;vil<br />y comienza a jugar al MegaDrive,<br/>NES, SNES, Gameboy, MAME32 y DOS.";
 				STRING_INSERTCOIN = "INSERTAR MONEDA = 1";
 				STRING_SELECTGAME = "Seleccionar juego";
 				STRING_UPLOADFILE = "Subir archivo";
@@ -61,6 +63,7 @@
 				{
 				STRING_HOW1 = "How does it work?";
 				STRING_HOW2 = "Please click in the red icon located at the bottom of the screen and then select from your computer the file of the game that you want to play.<br />In order to play a DOS game, you must create a ZIP file with all the game files and open it in Emulatrix.<br />On booting, it will try to run AUTORUN.BAT.<br />In order to boot virtual machines, you must create a ZIP file with the disk image with the name c.img.";
+				STRING_HOW_MOBILE = "Touch the icon below,<br />select a ROM from your phone<br />and start playing to the MegaDrive,<br/>NES, SNES, Gameboy, MAME32 and DOS.";
 				STRING_INSERTCOIN = "INSERT COIN = 1";
 				STRING_SELECTGAME = "Select game";
 				STRING_UPLOADFILE = "Upload file";
@@ -372,13 +375,27 @@
 				document.addEventListener("dblclick", goBackButtonResetIncrement, false);
 				document.addEventListener("mousemove", goBackButtonResetIncrement, false);
 
+				if (isMobileDevice()==true)
+					{
+					document.getElementsByClassName("gui_how_mobile")[0].style.display = "block";
+					}
+					else
+					{
+					document.getElementsByClassName("gui_controls")[0].style.display = "block";
+					document.getElementsByClassName("gui_title_how1")[0].style.display = "block";
+					}
+
 				// SETTING THE TITLES FOR EACH BUTTON
 				document.getElementsByClassName("gui_upload")[0].title = STRING_SELECTGAME;
 				document.getElementsByClassName("gui_sound")[0].title = STRING_SOUND;
 				document.getElementsByClassName("gui_goback")[0].title = STRING_GOBACK;
 				document.getElementsByClassName("gui_reload")[0].title = STRING_RELOAD;
 
-				// SETTING WHAT HAPPEN WHEN THE USER CLICKS ON A ITEM
+				// SETTING WHAT WILL HAPPEN WHEN THE USER MOUSE OVER/OUT THE HOW DOES IT WORK LABEL
+				document.getElementsByClassName("gui_title_how_question")[0].addEventListener("mouseover",function(event){document.getElementsByClassName("gui_title_how2")[0].style.display="block"});
+				document.getElementsByClassName("gui_title_how_question")[0].addEventListener("mouseout",function(event){document.getElementsByClassName("gui_title_how2")[0].style.display="none"});
+
+				// SETTING WHAT WILL HAPPEN WHEN THE USER CLICKS ON A ITEM
 				document.getElementsByClassName("gui_goback")[0].addEventListener("click",function(event){goBack()});
 				document.getElementsByClassName("gui_sound")[0].addEventListener("click",function(event){ROMState_ToggleSound()});
 				document.getElementsByClassName("gui_download")[0].addEventListener("click",function(event){ROMState_DownloadFile()});
@@ -412,10 +429,11 @@
 			<div class="gui_background"></div>
 			<div class="gui_title">
 				<div class="gui_title_logo"></div>
-				<div class="gui_title_how1"><span onmouseover="document.getElementById('how').style.display='block'" onmouseout="document.getElementById('how').style.display='none'"><script>document.write(STRING_HOW1);</script></span></div>
-				<div class="gui_title_how2" id="how"><script>document.write(STRING_HOW2);</script></div>
+				<div class="gui_title_how1"><span class="gui_title_how_question"><script>document.write(STRING_HOW1);</script></span></div>
+				<div class="gui_title_how2"><script>document.write(STRING_HOW2);</script></div>
 				<div class="gui_title_email"><a href="mailto:info@emulatrix.net">info@emulatrix.net</a></div>
 			</div>
+			<div class="gui_how_mobile"><span class="gui_how_mobile_label"><script>document.write(STRING_HOW_MOBILE)</script></span></div>
 			<div class="gui_controls">
 				<div class="gui_controls_center">
 					<table class="gui_controls_table">
