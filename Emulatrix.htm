@@ -90,7 +90,10 @@
 				{
 				try
 					{
+					// GETTING THE FILE EXTENSION
 					var extension = files[0].name.split(".").pop().toLowerCase();
+
+					// CHECKING THE FILE EXTENSION
 					if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="bin" | extension=="zip")
 						{
 						// CLEARING THE CONTAINER FROM ANY GAME IN PROGRESS
@@ -336,6 +339,7 @@
 							// SHOWS THE UPLOAD SAVE BUTTON
 							document.getElementsByClassName("gui_uploadsave")[0].style.display = "block";
 
+							// CHECKING IF IT IS NOT A DOS GAME
 							if (DOSGAME==false)
 								{
 								// SHOWS THE SOUND TOGGLE BUTTON
