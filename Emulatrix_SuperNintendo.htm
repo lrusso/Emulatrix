@@ -277,7 +277,6 @@
 				// SETS THE VIDEO CONFIGURATION
 				container_width = document.getElementById("container").offsetWidth;
 				container_height = document.getElementById("container").offsetHeight;
-				settings_file += "video_vsync = true\n";
 				settings_file += "video_scale = 1\n";
 				settings_file += "video_window_x = " + container_width + "\n";
 				settings_file += "video_window_y = " + container_height + "\n";
@@ -287,8 +286,18 @@
 				settings_file += "custom_viewport_x = 0\n";
 				settings_file += "custom_viewport_y = 0\n";
 
-				// SETS THE AUDIO LATENCY
-				settings_file += "audio_latency = 128\n";
+				// CHECKING IF IT IS A MOBILE DEVICE
+				if (isMobileDevice()==true)
+					{
+					// SETTING VSYNC TO FALSE IN ORDER TO PREVENT AUDIO CRACKLING IN SOME MOBILE DEVICES
+					settings_file += "video_vsync = false\n";
+					}
+					else
+					{
+					// SETTING VSYNC TO TRUE AND A AUDIO LATENCY FOR DESKTOP COMPUTERS
+					settings_file += "video_vsync = true\n";
+					settings_file += "audio_latency = 128\n";
+					}
 
 				// HIDES THE NOTIFICATION MESSAGES
 				settings_file += "video_message_pos_x = -100\n";
