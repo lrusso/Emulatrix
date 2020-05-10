@@ -609,20 +609,30 @@
 
 			window.addEventListener("resize", function()
 				{
+				// RESIZING CANVAS IF THE WINDOW HAS BEEN RESIZED
 				resizeEmulatorCanvas();
 				});
 
 			window.addEventListener("load", function()
 				{
+				// SHOWING THE CANVAS CONTAINER
 				document.getElementById("container").style.display="block";
+
+				// STARTING THE FILE SYSTEM
 				setTimeout(function(){startFileSystem()},1000);
+
+				// LOADING THE ROM
 				setTimeout(function(){loadRomIntoVD()},2000);
+
+				// SETTING FUNCTIONS THAT WILL BE CALLED WHEN THE USER CLICKS, DOUBLE CLICKS OR MOVES THE MOUSE IN ORDER TO SHOW THE SYSTEM ICONS
 				document.addEventListener("click", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("dblclick", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("mousemove", parent.goBackButtonResetIncrement, false);
 
+				// CHECKING IF IT IS A MOBILE DEVICE
 				if (isMobileDevice()==true)
 					{
+					// SHOWING THE VIRTUAL BUTTONS
 					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
 					document.getElementsByClassName("gui_nintendo_keyselect")[0].style.display = "block";
 					document.getElementsByClassName("gui_nintendo_keyselect")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyA")});
@@ -636,6 +646,8 @@
 					document.getElementsByClassName("gui_nintendo_keyb")[0].style.display = "block";
 					document.getElementsByClassName("gui_nintendo_keyb")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyZ")});
 					document.getElementsByClassName("gui_nintendo_keyb")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyZ")});
+
+					// SHOWING THE VIRTUAL JOYSTICK
 					showVirtualJoystick();
 					}
 				});
