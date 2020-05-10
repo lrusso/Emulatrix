@@ -7,6 +7,8 @@
 	</head>
 	<body>
 		<script>
+			function isMobileDevice(){return!!(navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/webOS/i)||navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/iPod/i)||navigator.userAgent.match(/BlackBerry/i)||navigator.userAgent.match(/Windows Phone/i))}
+
 			var userLanguage = window.navigator.userLanguage || window.navigator.language;
 
 			var ROMDATA = "";
@@ -198,12 +200,15 @@
 				{
 				try
 					{
+					// CHECKING IF THE GAME IS A DOS GAME
 					if (DOSGAME==true)
 						{
+						// RELOADING THE IFRAME
 						document.getElementById("container").contentDocument.location.reload(true);
 						}
 						else
 						{
+						// RUNNING THE FUNCTION THAT IS LOCATED WITHIN THE IFRAME DOCUMENT TO RELOAD THE ROM
 						document.getElementById("container").contentWindow.reloadROM();
 						}
 					}
@@ -257,6 +262,7 @@
 				{
 				try
 					{
+					// RUNNING THE FUNCTION THAT IS LOCATED WITHIN THE IFRAME DOCUMENT TO DOWNLOAD THE ROM STATE
 					document.getElementById("container").contentWindow.downloadROMState();
 					}
 					catch(err)
@@ -268,6 +274,7 @@
 				{
 				try
 					{
+					// RUNNING THE FUNCTION THAT IS LOCATED WITHIN THE IFRAME DOCUMENT TO UPLOAD THE ROM STATE
 					document.getElementById("container").contentWindow.uploadROMState();
 					}
 					catch(err)
@@ -279,6 +286,7 @@
 				{
 				try
 					{
+					// RUNNING THE FUNCTION THAT IS LOCATED WITHIN THE IFRAME DOCUMENT TO TOGGLE THE SOUND STATUS
 					document.getElementById("container").contentWindow.toggleSound();
 					}
 					catch(err)
@@ -361,8 +369,6 @@
 					{
 					}
 				}
-
-			function isMobileDevice(){return!!(navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/webOS/i)||navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/iPod/i)||navigator.userAgent.match(/BlackBerry/i)||navigator.userAgent.match(/Windows Phone/i))}
 
 			window.addEventListener("load", function()
 				{
