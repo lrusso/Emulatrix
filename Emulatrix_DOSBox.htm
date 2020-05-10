@@ -410,26 +410,33 @@
 				{
 				try
 					{
+					// WRITING THE UPLOADED FILE INTO THE FILE SYSTEM
 					var dataView = new Uint8Array(SAVEDATA);
 					FS.writeFile("/emulator" + upload_PathCurrent + "/" + SAVENAME, dataView, {encoding: "binary"}, function(err){alert(err);});
 					}
 					catch(err)
 					{
 					}
-				upload_ResetPath();
-				document.getElementsByClassName("fileupload_container")[0].style.display = "none";
-				document.getElementsByClassName("filedownload_container")[0].style.display = "none";
+
+				// HIDING THE FILE UPLOAD DIALOG
+				upload_HideFolderList();
 				}
 
 			function upload_ResetPath()
 				{
+				// SETTING THE DEFAULT PATH TO THE FILE UPLOAD DIALOG
 				upload_PathCurrent = upload_PathRoot;
+
+				// GETTING THE SYSTEM FILE LIST IN ORDER TO DISPLAY THE FILE UPLOAD DIALOG
 				upload_getFolderList();
 				}
 
-			function upload_HideFileList()
+			function upload_HideFolderList()
 				{
+				// SETTING THE DEFAULT PATH TO THE FILE UPLOAD DIALOG
 				upload_PathCurrent = upload_PathRoot;
+
+				// HIDING THE FILE UPLOAD DIALOG
 				document.getElementsByClassName("fileupload_container")[0].style.display = "none";
 				}
 
@@ -548,7 +555,7 @@
 			<div class="fileupload_container">
 				<div class="fileupload_title">
 					<span class="fileupload_title_value" id="fileupload_title_value"><script>document.write(parent.STRING_SELECTFOLDER);</script></span>
-					<div class="fileupload_title_close" onclick="upload_HideFileList()">X</div>
+					<div class="fileupload_title_close" onclick="upload_HideFolderList()">X</div>
 				</div>
 				<div class="fileupload_location"><div class="fileupload_location_value">&nbsp;</div></div>
 				<div class="fileupload_select"></div>
