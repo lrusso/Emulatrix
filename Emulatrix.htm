@@ -14,7 +14,7 @@
 			var ROMDATA = "";
 			var ROMNAME = "";
 			var DOSGAME = false;
-			var CTRLS_IDLE = 0;
+			var MOVEMENTS_IDLE = 0;
 			var STATE_CHECK_TIMES = 8;
 			var STRING_HOW_DESKTOP1 = "";
 			var STRING_HOW_DESKTOP2 = "";
@@ -298,10 +298,29 @@
 				{
 				try
 					{
-					CTRLS_IDLE = 0;
+					// CLEARING THE MOVEMENTS IDLE TIMER
+					MOVEMENTS_IDLE = 0;
+
+					// CHECKING IF A GAME IS RUNNING
 					if (document.getElementById("container").style.display=="block")
 						{
-						if (isMobileDevice()==false)
+						// CHECKING IF IT IS A MOBILE DEVICE
+						if (isMobileDevice()==true)
+							{
+							// SHOWS THE DOWNLOAD BUTTON (FOR MOBILE VERSION)
+							document.getElementsByClassName("gui_download_mobile")[0].style.display = "block";
+
+							// SHOWS THE UPLOAD SAVE BUTTON (FOR MOBILE VERSION)
+							document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "block";
+
+							// CHECKING IF IT IS NOT A DOS GAME
+							if (DOSGAME==false)
+								{
+								// SHOWS THE SOUND TOGGLE BUTTON (FOR MOBILE VERSION)
+								document.getElementsByClassName("gui_sound_mobile")[0].style.display = "block";
+								}
+							}
+							else
 							{
 							// SHOWS THE GO BACK BUTTON
 							document.getElementsByClassName("gui_goback")[0].style.display = "block";
@@ -321,20 +340,6 @@
 								document.getElementsByClassName("gui_sound")[0].style.display = "block";
 								}
 							}
-							else
-							{
-							// SHOWS THE DOWNLOAD BUTTON (FOR MOBILE VERSION)
-							document.getElementsByClassName("gui_download_mobile")[0].style.display = "block";
-
-							// SHOWS THE UPLOAD SAVE BUTTON (FOR MOBILE VERSION)
-							document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "block";
-
-							if (DOSGAME==false)
-								{
-								// SHOWS THE DOWNLOAD BUTTON (FOR MOBILE VERSION)
-								document.getElementsByClassName("gui_sound_mobile")[0].style.display = "block";
-								}
-							}
 						}
 					}
 					catch(err)
@@ -346,8 +351,11 @@
 				{
 				try
 					{
-					CTRLS_IDLE = CTRLS_IDLE + 1;
-					if (CTRLS_IDLE >= 3)
+					// UPDATING THE MOVEMENTS IDLE TIMER
+					MOVEMENTS_IDLE = MOVEMENTS_IDLE + 1;
+
+					// CHECKING THE MOVEMENTS IDLE TIMER IS EQUAL OR GREATER THAN 3 SECONDS
+					if (MOVEMENTS_IDLE >= 3)
 						{
 						// HIDES THE GO BACK BUTTON
 						document.getElementsByClassName("gui_goback")[0].style.display = "none";
@@ -384,11 +392,13 @@
 
 				// TO KEEP TRACK OF MOUSE CLICKS AND MOVEMENTS WHEN PLAYING IN ORDER TO KNOW WHEN TO HIDE/SHOW ALL THE ICONS
 				setInterval(goBackButtonTimerIncrement, 1000);
+
+				// SETTING FUNCTIONS THAT WILL BE CALLED WHEN THE USER CLICKS, DOUBLE CLICKS OR MOVES THE MOUSE IN ORDER TO SHOW THE SYSTEM ICONS
 				document.addEventListener("click", goBackButtonResetIncrement, false);
 				document.addEventListener("dblclick", goBackButtonResetIncrement, false);
 				document.addEventListener("mousemove", goBackButtonResetIncrement, false);
 
-				// CHECKING IF THE USER IS ON A MOBILE DEVICE
+				// CHECKING IF IT IS A MOBILE DEVICE
 				if (isMobileDevice()==true)
 					{
 					// SHOWING THE 'HOW DOES IT WORK' TEXT FOR MOBILE DEVICES
