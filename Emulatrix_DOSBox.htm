@@ -243,7 +243,7 @@
 							download_PathCurrent = download_PathCurrent + "/" + selectedItemValue;
 							}
 
-						// CALLING THE FUNCTION TO GET THE FILE LIST WITH THE UPDATED PATH
+						// CALLING THE FUNCTION THAT GETS THE FILE LIST BUT WITH THE UPDATED PATH
 						download_getFileList();
 						}
 						else
@@ -382,16 +382,22 @@
 				{
 				try
 					{
+					// CHECKING IF IT IS A FOLDER
 					if (isFolder==true)
 						{
+						// CHECKING IF IT IS A 'GO BACK TO THE PARENT FOLDER' ITEM
 						if (selectedItemValue=="..")
 							{
+							// UPDATING THE CURRENT PATH WITH THE PARENT FOLDER
 							upload_PathCurrent = upload_PathCurrent.substr(0,upload_PathCurrent.lastIndexOf("/"));
 							}
 							else
 							{
+							// UPDATING THE CURRENT PATH WITH THE SELECTED FOLDER
 							upload_PathCurrent = upload_PathCurrent + "/" + selectedItemValue;
 							}
+
+						// CALLING THE FUNCTION THAT GETS THE FOLDER LIST BUT WITH THE UPDATED PATH
 						upload_getFolderList();
 						}
 					}
