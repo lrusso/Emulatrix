@@ -110,7 +110,7 @@
 					// SETTING THE DEFAULT PATH TO THE FILE DOWNLOAD DIALOG
 					download_PathCurrent = download_PathRoot;
 
-					// GETTING THE FILE LIST IN ORDER TO DISPLAY THE FILE DOWNLOAD DIALOG
+					// GETTING THE SYSTEM FILE LIST IN ORDER TO DISPLAY THE FILE DOWNLOAD DIALOG
 					download_getFileList();
 					}
 				}
@@ -280,13 +280,18 @@
 					filereader.file_name = files[0].name;
 					filereader.onload = function()
 						{
+						// SETTING THE FILE CONTENT FOR THE EMULATOR
 						SAVEDATA = this.result;
 						SAVENAME = files[0].name;
 
+						// CLEARING THE SELECTED FILE VALUE
 						document.getElementById("fileupload_uploader").value = null;
 
+						// GETTING THE SYSTEM FOLDER LIST IN ORDER TO DISPLAY THE FILE UPLOAD DIALOG
 						upload_getFolderList();
 						};
+
+					// READING THE SELECTED FILE
 					filereader.readAsArrayBuffer(files[0]);
 					}
 					catch(err)
