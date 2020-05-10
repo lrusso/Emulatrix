@@ -186,7 +186,7 @@
 							// CHECKING IF THE CURRENT PATH IS THE ROOT PATH
 							if (download_PathCurrent!=download_PathRoot)
 								{
-								// ADDING THE 'GO TO THE PARENT FOLDER' ITEM
+								// ADDING THE 'GO BACK TO THE PARENT FOLDER' ITEM
 								rawListFolders.push("..");
 								}
 
@@ -226,21 +226,30 @@
 				{
 				try
 					{
+					// CHECKING IF IT IS A FOLDER
 					if (isFolder==true)
 						{
+						// CHECKING IF IT IS A 'GO BACK TO THE PARENT FOLDER' ITEM
 						if (selectedItemValue=="..")
 							{
+							// UPDATING THE CURRENT PATH WITH THE PARENT FOLDER
 							download_PathCurrent = download_PathCurrent.substr(0,download_PathCurrent.lastIndexOf("/"));
 							}
 							else
 							{
+							// UPDATING THE CURRENT PATH WITH THE SELECTED FOLDER
 							download_PathCurrent = download_PathCurrent + "/" + selectedItemValue;
 							}
+
+						// CALLING THE FUNCTION TO GET THE FILE LIST WITH THE UPDATED PATH
 						download_getFileList();
 						}
 						else
 						{
+						// DOWNLOADING THE SELECTED FILE
 						download_Save(download_PathCurrent + "/" + selectedItemValue,selectedItemValue);
+
+						// HIDING THE FILE DOWNLOAD DIALOG
 						download_HideFileList();
 						}
 					}
@@ -405,6 +414,7 @@
 				upload_PathCurrent = upload_PathRoot;
 				document.getElementsByClassName("fileupload_container")[0].style.display = "none";
 				}
+
 			/*
 			---------------------------------------------------------------------------------------------------------
 			- FUNCTIONS TO RUN DOSBOX AND SEVERAL EVENTS                                                            -
