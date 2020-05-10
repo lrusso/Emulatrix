@@ -643,8 +643,7 @@
 				// CHECKING IF IT IS A MOBILE DEVICE
 				if (isMobileDevice()==true)
 					{
-					// SHOWING THE VIRTUAL BUTTONS
-					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
+					// SHOWING THE VIRTUAL BUTTONS AND ASSIGNING TOUCHING EVENTS TO EACH ONE OF THEM
 					document.getElementsByClassName("gui_mame32_keycoin")[0].style.display = "block";
 					document.getElementsByClassName("gui_mame32_keycoin")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","Digit1")});
 					document.getElementsByClassName("gui_mame32_keycoin")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","Digit1")});
@@ -671,6 +670,7 @@
 					document.getElementsByClassName("gui_mame32_keyz")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyE")});
 
 					// SHOWING THE VIRTUAL JOYSTICK
+					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
 					showVirtualJoystick();
 					}
 				});
