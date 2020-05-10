@@ -457,12 +457,15 @@
 
 			function mouseChecker()
 				{
+				// CHECKING IF THE POINTER IS NOT LOCKED IN THE DOSBOX EMULATION
 				if(document.pointerLockElement!=document.getElementById("containerdosbox"))
 					{
+					// CALLING THE PARENT FUNCTION FOR CLEARING THE MOVEMENTS IDLE TIMER
 					parent.goBackButtonResetIncrement();
 					}
 					else
 					{
+					// HIDING THE FILE UPLOAD AND DOWNLOAD DIALOGS
 					document.getElementsByClassName("filedownload_container")[0].style.display = "none";
 					document.getElementsByClassName("fileupload_container")[0].style.display = "none";
 					}
