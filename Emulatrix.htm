@@ -103,7 +103,7 @@
 						filereader.file_name = files[0].name;
 						filereader.onload = function()
 							{
-							// SETS THE FILE CONTENT FOR THE EMULATORS
+							// SETTING THE FILE CONTENT FOR THE EMULATORS
 							ROMDATA = this.result;
 							ROMNAME = files[0].name;
 							ROMNAME = ROMNAME;
@@ -187,7 +187,7 @@
 						// SHOWS THE PLEASE WAIT ANIMATION
 						document.getElementsByClassName("gui_pleasewait")[0].style.display = "block";
 
-						// READING THE FILE
+						// READING THE SELECTED FILE
 						filereader.readAsArrayBuffer(files[0]);
 						}
 						else
