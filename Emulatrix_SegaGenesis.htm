@@ -26,42 +26,42 @@
 
 			function loadRomIntoVD()
 				{
-				// CREATES THE ROM FILE IN THE VIRTUAL DRIVE
+				// CREATING THE ROM FILE IN THE VIRTUAL DRIVE
 				var dataView=new Uint8Array(parent.ROMDATA);
 				FS.createDataFile("/","game.bin",dataView,true,false);
 
-				// CREATES THE FOLDERS IN THE VIRTUAL DRIVE IN ORDER TO SAVE THE CONFIG FILE
+				// CREATING THE FOLDERS IN THE VIRTUAL DRIVE IN ORDER TO SAVE THE CONFIG FILE
 				FS.createFolder("/home/web_user", "retroarch", true, true);
 				FS.createFolder("/home/web_user/retroarch", "userdata", true, true);
 
-				// SET THE VARIABLE FOR EMPTY VALUE IN THE CONFIG FILE. USING RETROARCH WEB IN MAC HAS A BUG THAT
+				// SETTING THE VARIABLE FOR EMPTY VALUE IN THE CONFIG FILE. USING RETROARCH WEB IN MAC HAS A BUG THAT
 				// ANY NULL KEY IS FIRED AS THE COMMAND KEY. THAT'S WHY IS SCROLL_BACK INSTEAD OF NUL. THERE IS
 				// ANOTHER BUG IN MAC WITH THE COMMAND KEY, THAT IS FIRED AS THE TURBO BUTTON, NO MATTER THE CONFIG.
 				var emptyValue = "scroll_lock";
 
-				// SETS THE DEFAULT FOLDER WHEN BROWSING THE VIRTUAL DRIVE
+				// SETTING THE DEFAULT FOLDER WHEN BROWSING THE VIRTUAL DRIVE
 				settings_file += "rgui_browser_directory = /\n";
 
-				// SETS THE KEY FOR THE START BUTTON
+				// SETTING THE KEY FOR THE START BUTTON
 				settings_file += "input_player1_start = enter\n";
 
-				// SETS THE KEYS FOR THE BUTTONS A, B, C
+				// SETTING THE KEYS FOR THE BUTTONS A, B, C
 				settings_file += "input_player1_y = a\n";
 				settings_file += "input_player1_b = s\n";
 				settings_file += "input_player1_a = d\n";
 
-				// SETS THE KEYS FOR THE BUTTONS X, Y, Z
+				// SETTING THE KEYS FOR THE BUTTONS X, Y, Z
 				settings_file += "input_player1_l = q\n";
 				settings_file += "input_player1_x = w\n";
 				settings_file += "input_player1_r = e\n";
 
-				// SETS THE KEY FOR SOUND TOGGLE
+				// SETTING THE KEY FOR SOUND TOGGLE
 				settings_file += "input_audio_mute = f9\n";
 
-				// SETS THE KEY FOR RELOADING THE GAME
+				// SETTING THE KEY FOR RELOADING THE GAME
 				settings_file += "input_reset = f10\n";
 
-				// SETS THE KEYS FOR UNWANTED FUNCTIONS
+				// SETTING THE KEYS FOR UNWANTED FUNCTIONS
 				settings_file += "input_toggle_fast_forward = " + emptyValue + "\n";
 				settings_file += "input_hold_fast_forward = " + emptyValue + "\n";
 				settings_file += "input_toggle_slowmotion = " + emptyValue + "\n";
@@ -275,7 +275,7 @@
 				settings_file += "input_player5_gun_dpad_right = " + emptyValue + "\n";
 				settings_file += "input_player5_turbo = " + emptyValue + "\n";
 
-				// SETS THE VIDEO CONFIGURATION
+				// SETTING THE VIDEO CONFIGURATION
 				container_width = document.getElementById("container").offsetWidth;
 				container_height = document.getElementById("container").offsetHeight;
 				settings_file += "video_vsync = true\n";
@@ -288,15 +288,15 @@
 				settings_file += "custom_viewport_x = 0\n";
 				settings_file += "custom_viewport_y = 0\n";
 
-				// SETS THE AUDIO LATENCY
+				// SETTING THE AUDIO LATENCY
 				settings_file += "audio_latency = 128\n";
 
-				// HIDES THE NOTIFICATION MESSAGES
+				// HIDING THE NOTIFICATION MESSAGES
 				settings_file += "video_message_pos_x = -100\n";
 				settings_file += "video_message_pos_y = -100\n";
 				settings_file += "menu_enable_widgets = false\n";
 
-				// CREATES THE FILE WITH THE CONFIGURATION
+				// CREATING THE FILE WITH THE CONFIGURATION
 				FS.createDataFile("/home/web_user/retroarch/userdata", "retroarch.cfg", settings_file, true, true);
 
 				// WAITING A PRUDENTIAL TIME FOR THE RETROARCH.CFG FILE TO BE CREATED
@@ -339,10 +339,10 @@
 
 			function startEmulator()
 				{
-				// RUNS THE EMULATOR WITH THE SELECTED ROM
+				// RUNNING THE EMULATOR WITH THE SELECTED ROM
 				Module.callMain(["-v","/game.bin"]);
 
-				// RESIZES THE CANVAS
+				// RESIZING THE CANVAS
 				document.getElementById("canvas").width = container_width;
 				document.getElementById("canvas").height = container_height;
 				setTimeout(function(){resizeEmulatorCanvas()},500);
