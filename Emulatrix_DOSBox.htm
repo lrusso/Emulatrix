@@ -395,7 +395,7 @@
 			---------------------------------------------------------------------------------------------------------
 			*/
 
-			function loadRomIntoVD()
+			function loadZipIntoVD()
 				{
 				// LOADING AND DECOMPRESSING THE SELECTED ZIP FILE IN THE BROWSER FILE SYSTEM
 				var zipLoader = new ZIPFileLoader();
@@ -419,19 +419,27 @@
 
 			window.addEventListener("load", function()
 				{
+				// SHOWING THE CANVAS CONTAINER
 				document.getElementById("container").style.display="block";
-				setTimeout(function(){loadRomIntoVD();},1000);
+
+				// LOADING THE ZIP FILE
+				setTimeout(function(){loadZipIntoVD()},1000);
+
+				// SETTING FUNCTIONS THAT WILL BE CALLED WHEN THE USER CLICKS, DOUBLE CLICKS OR MOVES THE MOUSE IN ORDER TO SHOW THE SYSTEM ICONS
 				document.addEventListener("click", mouseChecker, false);
 				document.addEventListener("dblclick", mouseChecker, false);
 				document.addEventListener("mousemove", mouseChecker, false);
 				document.addEventListener("pointerlockchange", mouseChecker, false);
 				document.addEventListener("mozpointerlockchange", mouseChecker, false);
 				document.addEventListener("webkitpointerlockchange", mouseChecker, false);
+
+				// CLEARING THE SELECTED UPLOADED FILE VALUE
 				document.getElementById("fileupload_uploader").value = null;
 
+				// CHECKING IF IT IS A MOBILE DEVICE
 				if (isMobileDevice()==true)
 					{
-					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
+					// SHOWING THE VIRTUAL BUTTONS AND ASSIGNING TOUCHING EVENTS TO EACH ONE OF THEM
 					document.getElementsByClassName("gui_dosbox_keyesc")[0].style.display = "block";
 					document.getElementsByClassName("gui_dosbox_keyesc")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",27,27)});
 					document.getElementsByClassName("gui_dosbox_keyesc")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",27,27)});
@@ -450,6 +458,9 @@
 					document.getElementsByClassName("gui_dosbox_keyspace")[0].style.display = "block";
 					document.getElementsByClassName("gui_dosbox_keyspace")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",32,32)});
 					document.getElementsByClassName("gui_dosbox_keyspace")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",32,32)});
+
+					// SHOWING THE VIRTUAL JOYSTICK
+					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
 					showVirtualJoystick();
 					}
 				});
