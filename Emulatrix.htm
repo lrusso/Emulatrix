@@ -109,7 +109,7 @@
 							ROMNAME = ROMNAME;
 							DOSGAME = false;
 
-							// HIDES THE GUI
+							// HIDING THE GUI
 							document.getElementsByClassName("gui_container")[0].style.display = "none";
 
 							// DISPLAYING THE EMULATOR CONTAINER
@@ -125,10 +125,10 @@
 							// CHECKING IF IT IS A MOBILE DEVICE
 							if (isMobileDevice()==true)
 								{
-								// SHOWS THE GO BACK BUTTON (FOR MOBILE VERSION)
+								// SHOWING THE GO BACK BUTTON (FOR MOBILE VERSION)
 								document.getElementsByClassName("gui_goback_mobile")[0].style.display = "block";
 
-								// SHOWS THE RELOAD BUTTON (FOR MOBILE VERSION)
+								// SHOWING THE RELOAD BUTTON (FOR MOBILE VERSION)
 								document.getElementsByClassName("gui_reload_mobile")[0].style.display = "block";
 								}
 
@@ -159,7 +159,7 @@
 								}
 							else if (extension=="zip")
 								{
-								// ROMNAME TO LOWER CASE FOR LATER CHECKING
+								// RENAMING THE ROMNAME TO LOWER CASE FOR LATER CHECKING
 								ROMNAME = ROMNAME.toLowerCase();
 
 								// CHECKING IF THE FILE IS A MAME32 OR DOSBOX GAME
@@ -184,7 +184,7 @@
 							goBackButtonResetIncrement();
 							};
 
-						// SHOWS THE PLEASE WAIT ANIMATION
+						// SHOWING THE PLEASE WAIT ANIMATION
 						document.getElementsByClassName("gui_pleasewait")[0].style.display = "block";
 
 						// READING THE SELECTED FILE
@@ -229,32 +229,32 @@
 					// TELLING TO THE MOBILE APP TO SHOW THE NAVIGATION BAR
 					console.log("SHOW_NAVIGATION_BAR");
 
-					// SHOWS THE GUI
+					// SHOWING THE GUI
 					document.getElementsByClassName("gui_container")[0].style.display = "block";
 
-					// CLEARS THE CONTAINER FROM ANY GAME IN PROGRESS
+					// CLEARING THE CONTAINER FROM ANY GAME IN PROGRESS
 					document.getElementById("container").contentDocument.location.replace("about:blank");
 
-					// HIDES THE CONTAINER
+					// HIDING THE CONTAINER
 					document.getElementById("container").style.display = "none";
 
-					// HIDES THE GO BACK BUTTON (DESKTOP AND MOBILE)
+					// HIDING THE GO BACK BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_goback")[0].style.display = "none";
 					document.getElementsByClassName("gui_goback_mobile")[0].style.display = "none";
 
-					// HIDES THE RELOAD BUTTON (DESKTOP AND MOBILE)
+					// HIDING THE RELOAD BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_reload")[0].style.display = "none";
 					document.getElementsByClassName("gui_reload_mobile")[0].style.display = "none";
 
-					// HIDES THE DOWNLOAD BUTTON (DESKTOP AND MOBILE)
+					// HIDING THE DOWNLOAD BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_download")[0].style.display = "none";
 					document.getElementsByClassName("gui_download_mobile")[0].style.display = "none";
 
-					// HIDES THE UPLOAD SAVE BUTTON (DESKTOP AND MOBILE)
+					// HIDING THE UPLOAD SAVE BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
 					document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "none";
 
-					// HIDES THE SOUND TOGGLE BUTTON (DESKTOP AND MOBILE)
+					// HIDING THE SOUND TOGGLE BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_sound")[0].style.display = "none";
 					document.getElementsByClassName("gui_sound_mobile")[0].style.display = "none";
 					}
@@ -312,37 +312,37 @@
 						// CHECKING IF IT IS A MOBILE DEVICE
 						if (isMobileDevice()==true)
 							{
-							// SHOWS THE DOWNLOAD BUTTON (FOR MOBILE VERSION)
+							// SHOWING THE DOWNLOAD BUTTON (FOR MOBILE VERSION)
 							document.getElementsByClassName("gui_download_mobile")[0].style.display = "block";
 
-							// SHOWS THE UPLOAD SAVE BUTTON (FOR MOBILE VERSION)
+							// SHOWING THE UPLOAD SAVE BUTTON (FOR MOBILE VERSION)
 							document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "block";
 
 							// CHECKING IF IT IS NOT A DOS GAME
 							if (DOSGAME==false)
 								{
-								// SHOWS THE SOUND TOGGLE BUTTON (FOR MOBILE VERSION)
+								// SHOWING THE SOUND TOGGLE BUTTON (FOR MOBILE VERSION)
 								document.getElementsByClassName("gui_sound_mobile")[0].style.display = "block";
 								}
 							}
 							else
 							{
-							// SHOWS THE GO BACK BUTTON
+							// SHOWING THE GO BACK BUTTON
 							document.getElementsByClassName("gui_goback")[0].style.display = "block";
 
-							// SHOWS THE RELOAD BUTTON
+							// SHOWING THE RELOAD BUTTON
 							document.getElementsByClassName("gui_reload")[0].style.display = "block";
 
-							// SHOWS THE DOWNLOAD BUTTON
+							// SHOWING THE DOWNLOAD BUTTON
 							document.getElementsByClassName("gui_download")[0].style.display = "block";
 
-							// SHOWS THE UPLOAD SAVE BUTTON
+							// SHOWING THE UPLOAD SAVE BUTTON
 							document.getElementsByClassName("gui_uploadsave")[0].style.display = "block";
 
 							// CHECKING IF IT IS NOT A DOS GAME
 							if (DOSGAME==false)
 								{
-								// SHOWS THE SOUND TOGGLE BUTTON
+								// SHOWING THE SOUND TOGGLE BUTTON
 								document.getElementsByClassName("gui_sound")[0].style.display = "block";
 								}
 							}
@@ -363,19 +363,19 @@
 					// CHECKING THE MOVEMENTS IDLE TIMER IS EQUAL OR GREATER THAN 3 SECONDS
 					if (MOVEMENTS_IDLE >= 3)
 						{
-						// HIDES THE GO BACK BUTTON
+						// HIDING THE GO BACK BUTTON
 						document.getElementsByClassName("gui_goback")[0].style.display = "none";
 
-						// HIDES THE RELOAD BUTTON
+						// HIDING THE RELOAD BUTTON
 						document.getElementsByClassName("gui_reload")[0].style.display = "none";
 
-						// HIDES THE DOWNLOAD BUTTON
+						// HIDING THE DOWNLOAD BUTTON
 						document.getElementsByClassName("gui_download")[0].style.display = "none";
 
-						// HIDES THE UPLOAD SAVE BUTTON
+						// HIDING THE UPLOAD SAVE BUTTON
 						document.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
 
-						// HIDES THE SOUND TOGGLE BUTTON
+						// HIDING THE SOUND TOGGLE BUTTON
 						document.getElementsByClassName("gui_sound")[0].style.display = "none";
 						}
 					}
@@ -395,13 +395,13 @@
 				// UPDATING THE IFRAME SOURCE WITH A BLANK PAGE
 				document.getElementById("container").contentDocument.location.replace("about:blank");
 
-				// TO KEEP FOCUS IN THE CONTAINER
+				// KEEPING FOCUS IN THE CONTAINER
 				setInterval(function()
 					{
 					document.getElementById("container").focus();
 					}, 250);
 
-				// TO KEEP TRACK OF MOUSE CLICKS AND MOVEMENTS WHEN PLAYING IN ORDER TO KNOW WHEN TO HIDE/SHOW ALL THE ICONS
+				// KEEPING TRACK OF MOUSE CLICKS AND MOVEMENTS WHEN PLAYING IN ORDER TO KNOW WHEN TO HIDE/SHOW ALL THE ICONS
 				setInterval(goBackButtonTimerIncrement, 1000);
 
 				// SETTING FUNCTIONS THAT WILL BE CALLED WHEN THE USER CLICKS, DOUBLE CLICKS OR MOVES THE MOUSE IN ORDER TO SHOW THE SYSTEM ICONS
