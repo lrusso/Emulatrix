@@ -99,20 +99,28 @@
 
 			function downloadROMState()
 				{
+				// CHECKING IF THE FILE DOWNLOAD DIALOG IS VISIBLE
 				if (document.getElementsByClassName("filedownload_container")[0].style.display == "block")
 					{
+					// HIDING THE FILE DOWNLOAD DIALOG
 					document.getElementsByClassName("filedownload_container")[0].style.display = "none";
 					}
 					else
 					{
+					// SETTING THE DEFAULT PATH TO THE FILE DOWNLOAD DIALOG
 					download_PathCurrent = download_PathRoot;
+
+					// GETTING THE FILE LIST IN ORDER TO DISPLAY THE FILE DOWNLOAD DIALOG
 					download_getFileList();
 					}
 				}
 
 			function download_HideFileList()
 				{
+				// SETTING THE DEFAULT PATH TO THE FILE DOWNLOAD DIALOG
 				download_PathCurrent = download_PathRoot;
+
+				// HIDING THE FILE DOWNLOAD DIALOG
 				document.getElementsByClassName("filedownload_container")[0].style.display = "none";
 				}
 
@@ -122,10 +130,12 @@
 				var select = document.getElementsByClassName("filedownload_select")[0];
 				select.innerHTML = "";
 
-				// UPDATING THE CURRENT LOCATION IN THE FILE LIST DIALOG
+				// GETTING THE CURRENT DOWNLOAD PATH
 				var pathToShow = download_PathCurrent;
+
 				try
 					{
+					// REPLACING SLASHES FOR BACKSLASHES
 					pathToShow = "C:\\" + download_PathCurrent.substr(3,download_PathCurrent.length);
 					var re = new RegExp("/", "g");
 					pathToShow = pathToShow.replace(re, "\\");
@@ -133,6 +143,8 @@
 					catch(err)
 					{
 					}
+
+				// UPDATING THE CURRENT LOCATION IN THE FILE LIST DIALOG
 				document.getElementsByClassName("filedownload_location_value")[0].innerHTML = pathToShow;
 
 				// SHOWING THE FILE LIST DIALOG AND HIDING THE FOLDER LIST DIALOG
@@ -141,30 +153,32 @@
 
 				try
 					{
-					// READING THE PATH
-					game_data.fs.readdir(download_PathCurrent, function(e, content)
+					// READING EVERY ITEM WITHIN THE PATH
+					game_data.fs.readdir(download_PathCurrent, function(myItem, content)
 						{
-						// CHECKING IF THE PATH IS A FOLDER
-						if (!e)
+						// CHECKING IF THE ITEM IS A FOLDER
+						if (!myItem)
 							{
 							// SETTING THE VARIABLES THAT WILL BE STORING THE FOLDER NAMES AND FILE NAMES
 							var rawListFolders = [];
 							var rawListFiles = [];
 
 							// LOOPING THE CONTENT OF THE FOLDER
-							var contentList = content;
-							for(var i = 0; i < contentList.length; i++)
+							for(var i = 0; i < content.length; i++)
 								{
 								// CHECKING THE OBJECT TYPE
-								game_data.fs.readdir(download_PathCurrent + "/" + contentList[i], function(e, content2)
+								game_data.fs.readdir(download_PathCurrent + "/" + content[i], function(myItem2, content2)
 									{
-									if (e) // IS A FILE
+									// CHECKING IF THE ITEM IS A FOLDER
+									if (!myItem2)
 										{
-										rawListFiles.push(contentList[i]);
+										// ADDING ITEM TO THE FOLDER LIST
+										rawListFolders.push(content[i]);
 										}
-										else // IS A FOLDER
+										else
 										{
-										rawListFolders.push(contentList[i]);
+										// ADDING ITEM TO THE FILE LIST
+										rawListFiles.push(content[i]);
 										}
 									});
 								}
@@ -198,7 +212,7 @@
 							}
 							else
 							{
-							// IF THE PATH IS NOT A FOLDER, IT IS A FILE, THAT MUST BE DOWNLOADED.
+							// IF THE PATH IS NOT A FOLDER, IT IS A FILE, THAT MUST BE DOWNLOADED
 							downloadROMState();
 							}
 						});
