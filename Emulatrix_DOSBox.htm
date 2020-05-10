@@ -139,12 +139,12 @@
 				document.getElementsByClassName("fileupload_container")[0].style.display = "none";
 				document.getElementsByClassName("filedownload_container")[0].style.display = "block";
 
-				// POPULATING THE FILE LIST
 				try
 					{
+					// READING THE PATH
 					game_data.fs.readdir(download_PathCurrent, function(e, content)
 						{
-						// IF THE PATH IS A FOLDER
+						// CHECKING IF THE PATH IS A FOLDER
 						if (!e)
 							{
 							// SETTING THE VARIABLES THAT WILL BE STORING THE FOLDER NAMES AND FILE NAMES
@@ -172,6 +172,7 @@
 							// CHECKING IF THE CURRENT PATH IS THE ROOT PATH
 							if (download_PathCurrent!=download_PathRoot)
 								{
+								// ADDING THE 'GO TO THE PARENT FOLDER' ITEM
 								rawListFolders.push("..");
 								}
 
@@ -197,6 +198,7 @@
 							}
 							else
 							{
+							// IF THE PATH IS NOT A FOLDER, IT IS A FILE, THAT MUST BE DOWNLOADED.
 							downloadROMState();
 							}
 						});
