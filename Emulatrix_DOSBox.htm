@@ -359,16 +359,12 @@
 							// SORTING THE FOLDERS
 							rawListFolders.sort(function(a,b){if(a.toLowerCase()<b.toLowerCase())return -1;if(a.toLowerCase()>b.toLowerCase())return 1;return 0;});
 
-							// ADDING THE FOLDERS TO THE SELECT
+							// ADDING THE FOLDERS TO THE SELECT LIST
 							for(var i = 0; i < rawListFolders.length; i++)
 								{
 								var opt = "<div class='fileupload_fileitem' onclick='upload_checkContent(\"" + rawListFolders[i].toUpperCase() + "\",true)'><span class='fileupload_fileitem_name'>&#60;DIR&#62; " + rawListFolders[i].toUpperCase() + "</span></div>";
 								selectList.innerHTML = selectList.innerHTML + opt;
 								}
-							}
-							else
-							{
-							upload_ResetPath();
 							}
 						});
 					}
