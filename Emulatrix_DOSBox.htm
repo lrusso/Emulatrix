@@ -126,9 +126,11 @@
 
 			function download_getFileList()
 				{
-				// CLEARING THE FILE LIST
-				var select = document.getElementsByClassName("filedownload_select")[0];
-				select.innerHTML = "";
+				// GETTING THE SELECT LIST
+				var selectList = document.getElementsByClassName("filedownload_select")[0];
+
+				// CLEARING THE SELECT LIST
+				selectList.innerHTML = "";
 
 				// GETTING THE CURRENT DOWNLOAD PATH
 				var pathToShow = download_PathCurrent;
@@ -196,18 +198,18 @@
 							// SORTING THE FILES
 							rawListFiles.sort(function(a,b){if(a.toLowerCase()<b.toLowerCase())return -1;if(a.toLowerCase()>b.toLowerCase())return 1;return 0;});
 
-							// ADDING THE FOLDERS TO THE SELECT
+							// ADDING THE FOLDERS TO THE SELECT LIST
 							for(var i = 0; i < rawListFolders.length; i++)
 								{
 								var opt = "<div class='filedownload_fileitem' onclick='download_checkContent(\"" + rawListFolders[i].toUpperCase() + "\",true)'><span class='filedownload_fileitem_name'>&#60;DIR&#62; " + rawListFolders[i].toUpperCase() + "</span></div>";
-								select.innerHTML = select.innerHTML + opt;
+								selectList.innerHTML = selectList.innerHTML + opt;
 								}
 
-							// ADDING THE FILES TO THE SELECT
+							// ADDING THE FILES TO THE SELECT LIST
 							for(var i = 0; i < rawListFiles.length; i++)
 								{
 								var opt = "<div class='filedownload_fileitem' onclick='download_checkContent(\"" + rawListFiles[i].toUpperCase() + "\",false)'><span class='filedownload_fileitem_name'>" + rawListFiles[i].toUpperCase() + "</span></div>";
-								select.innerHTML = select.innerHTML + opt;
+								selectList.innerHTML = selectList.innerHTML + opt;
 								}
 							}
 							else
