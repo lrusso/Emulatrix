@@ -49,20 +49,22 @@
 				{
 				try
 					{
+					// READING THE FILE THAT WILL BE DOWNLOADED
 					var rawReading = FS.readFile("/emulator" + filePath);
 					var fileAsArray = new Uint8Array(rawReading);
 
 					// IF RUNNING THE MOBILE APP, TELLING THE NAME THAT THE DOWNLOADED FILE WILL HAVE
 					console.log("FILENAME=" + filename);
 
+					// DOWNLOADING THE FILE
 					download_Blob(fileAsArray, filename, "application/octet-stream");
 
-					// SHOWING THE LABEL
+					// SHOWING THE 'FILE SAVED' LABEL
 					document.getElementsByClassName("gui_saving")[0].style.display = "block";
 
+					// HIDING THE 'FILE SAVED' LABEL AFTER THREE SECONDS
 					setTimeout(function()
 						{
-						// HIDING THE LABEL
 						document.getElementsByClassName("gui_saving")[0].style.display = "none";
 						}, 3000);
 					}
