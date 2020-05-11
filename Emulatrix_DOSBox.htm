@@ -412,7 +412,7 @@
 					{
 					// WRITING THE UPLOADED FILE INTO THE FILE SYSTEM
 					var dataView = new Uint8Array(SAVEDATA);
-					FS.writeFile("/emulator" + upload_PathCurrent + "/" + SAVENAME, dataView, {encoding: "binary"}, function(err){alert(err);});
+					FS.writeFile("/emulator" + upload_PathCurrent + "/" + SAVENAME, dataView, {encoding: "binary"}, function(err){});
 					}
 					catch(err)
 					{
@@ -491,6 +491,33 @@
 					document.getElementsByClassName("fileupload_container")[0].style.display = "none";
 					}
 				}
+
+			window.addEventListener("blur", function()
+				{
+				try
+					{
+					// PAUSING THE DOSBOX EMULATION
+					DOSBox_execute = false;
+					}
+					catch(err)
+					{
+					}
+				});
+
+			window.addEventListener("focus", function()
+				{
+				try
+					{
+					// RESUMING THE DOSBOX EMULATION
+					DOSBox_execute = true;
+
+					// EXECUTING THE LAST FUNCTION WITH THE LAST TIMEOUT
+					Browser.safeSetTimeout(DOSBox_lastFunc,DOSBox_lastTimeout);
+					}
+					catch(err)
+					{
+					}
+				});
 
 			window.addEventListener("load", function()
 				{
