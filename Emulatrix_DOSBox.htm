@@ -442,6 +442,27 @@
 
 			/*
 			---------------------------------------------------------------------------------------------------------
+			- FUNCTION TO TOGGLE SOUND STATUS                                                                       -
+			---------------------------------------------------------------------------------------------------------
+			*/
+
+			function toggleSound()
+				{
+				// CHECKING IF THE AUDICONTEXT IS SUSPENDED (MUTED)
+				if (SDL2.audioContext.state == "suspended")
+					{
+					// RESUMING THE AUDIOCONTEXT
+					SDL2.audioContext.resume();
+					}
+				else if (SDL2.audioContext.state == "running")
+					{
+					// PAUSING THE AUDIO CONTEXT
+					SDL2.audioContext.suspend();
+					}
+				}
+
+			/*
+			---------------------------------------------------------------------------------------------------------
 			- FUNCTIONS TO RUN DOSBOX AND SEVERAL EVENTS                                                            -
 			---------------------------------------------------------------------------------------------------------
 			*/
