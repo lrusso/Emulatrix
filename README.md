@@ -18,11 +18,11 @@ https://www.emulatrix.net
 | PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
 | :------------ |:---------------:| :-----:| :-----:|
 | Nintendo | Select the game file from your hard drive. | NES | --- | 
-| Super Nintendo | Select the game file from your hard drive. | SMC | --- |
+| Super Nintendo | Select the game file from your hard drive. | SMC, SFC, SRM | --- |
 | GameBoy | Select the game file from your hard drive. | GB | --- |
 | GameBoy Color | Select the game file from your hard drive. | GBC | --- |
 | GameBoy Advance | Select the game file from your hard drive. | GBA | --- |
-| Sega Genesis | Select the game file from your hard drive. | BIN | --- |
+| Sega Genesis | Select the game file from your hard drive. | BIN, SMD, MD | --- |
 | MAME32 | Select the game file from your hard drive. | ZIP | Do not rename the ZIP file. |
 | DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
 | Virtual Machines | Select the disk file from your hard drive. | ZIP | Must contain a c.img file.<br/>It will be mounted and booted. |
