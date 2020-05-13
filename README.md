@@ -2,7 +2,7 @@
 
 JavaScript Emulator - Sega Genesis, Nintendo, Super Nintendo, GameBoy, GameBoy Color, GameBoy Advance, MAME32, DOSBox and Virtual Machines.
 
-![alt screenshot](https://raw.githubusercontent.com/lrusso/Emulatrix/master/Emulatrix1.png)
+![alt screenshot](https://raw.githubusercontent.com/lrusso/EmulatrixWeb/master/Emulatrix1.png)
 
 ## Web
 
@@ -10,7 +10,7 @@ https://www.emulatrix.net
 
 ## Emulatrix has mobile compatibility
 
-![alt screenshot](https://raw.githubusercontent.com/lrusso/Emulatrix/master/Emulatrix2.png)
+![alt screenshot](https://raw.githubusercontent.com/lrusso/EmulatrixWeb/master/Emulatrix2.png)
 
 
 ## IMPORTANT - After selecting the upload icon
