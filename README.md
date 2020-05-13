@@ -12,7 +12,6 @@ https://lrusso.github.io/EmulatrixWeb
 
 ![alt screenshot](https://raw.githubusercontent.com/lrusso/EmulatrixWeb/master/Emulatrix2.png)
 
-
 ## IMPORTANT - After selecting the upload icon
 
 | PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
