@@ -50,10 +50,6 @@ https://www.emulatrix.net
 | MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 |
 | DOS | https://github.com/dreamlayers/em-dosbox | dosbox |
 
-## Virtual joystick code
-
-https://github.com/lrusso/VirtualJoystick
-
 ## Platforms and links
 
 | PLATFORM  | URL |
@@ -62,3 +58,7 @@ https://github.com/lrusso/VirtualJoystick
 | Web Source | https://github.com/lrusso/EmulatrixWeb
 | Android | https://play.google.com/store/apps/details?id=net.emulatrix
 | Android Source | https://github.com/lrusso/EmulatrixApp
+
+## Virtual joystick code
+
+https://github.com/lrusso/VirtualJoystick
