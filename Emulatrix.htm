@@ -100,7 +100,7 @@
 					var extension = files[0].name.split(".").pop().toLowerCase();
 
 					// CHECKING THE FILE EXTENSION
-					if (extension=="nes" | extension=="smc" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="bin" | extension=="zip")
+					if (extension=="nes" | extension=="smc" | extension=="sfc" | extension=="srm" | extension=="gb" | extension=="gbc" | extension=="gba" | extension=="bin" | extension=="smd" | extension=="md" | extension=="zip")
 						{
 						// CLEARING THE CONTAINER FROM ANY GAME IN PROGRESS
 						document.getElementById("container").contentDocument.location.replace("about:blank");
@@ -147,7 +147,7 @@
 								{
 								document.getElementById("container").contentDocument.location.replace("Emulatrix_Nintendo.htm");
 								}
-							else if (extension=="smc")
+							else if (extension=="smc" | extension=="sfc" | extension=="srm")
 								{
 								document.getElementById("container").contentDocument.location.replace("Emulatrix_SuperNintendo.htm");
 								}
@@ -159,7 +159,7 @@
 								{
 								document.getElementById("container").contentDocument.location.replace("Emulatrix_GameBoyAdvance.htm");
 								}
-							else if (extension=="bin")
+							else if (extension=="bin" | extension=="smd" | extension=="md")
 								{
 								document.getElementById("container").contentDocument.location.replace("Emulatrix_SegaGenesis.htm");
 								}
