@@ -54,6 +54,10 @@ https://www.emulatrix.net
 
 https://github.com/lrusso/VirtualJoystick
 
+## Web version
+
+https://github.com/lrusso/EmulatrixWeb
+
 ## Android version
 
 https://github.com/lrusso/EmulatrixApp
