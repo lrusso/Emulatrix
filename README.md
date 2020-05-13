@@ -54,7 +54,7 @@ https://www.emulatrix.net
 
 https://github.com/lrusso/VirtualJoystick
 
-## Versions and platforms
+## Platforms and links
 
 | PLATFORM  | URL |
 | :------------ |:---------------|
