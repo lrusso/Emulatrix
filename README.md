@@ -56,6 +56,7 @@ https://lrusso.github.io/EmulatrixWeb
 | Web | https://lrusso.github.io/EmulatrixWeb
 | Web Source | https://github.com/lrusso/EmulatrixWeb
 | Android | https://play.google.com/store/apps/details?id=net.emulatrix
+| Android APK | https://lrusso.github.io/EmulatrixApp/Emulatrix.apk
 | Android Source | https://github.com/lrusso/EmulatrixApp
 
 ## Virtual joystick code
