@@ -433,8 +433,12 @@
 					// CHECKING THE ROMSTATE FILE SIZE
 					if (myTempFile.length==download_LastSize)
 						{
-						// IF IT IS THE SAME, WE ADD 1 TO THE VARIABLE THAT WE USE FOR CHECKING THIS
-						download_LastSizeRepeated = download_LastSizeRepeated + 1;
+						// CHECK IF THE WINDOW/TAB IS ACTIVE/VISIBLE
+						if (!document.hidden)
+							{
+							// IF IT IS THE SAME, WE ADD 1 TO THE VARIABLE THAT WE USE FOR CHECKING THIS
+							download_LastSizeRepeated = download_LastSizeRepeated + 1;
+							}
 						}
 						else
 						{
