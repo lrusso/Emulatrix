@@ -11,6 +11,8 @@ https://lrusso.github.io/EmulatrixWeb
 ## Android version
 
 https://lrusso.github.io/EmulatrixApp
+https://lrusso.github.io/EmulatrixApp/Emulatrix.apk
+https://play.google.com/store/apps/details?id=net.emulatrix
 
 ## IMPORTANT - After selecting the upload icon
 
