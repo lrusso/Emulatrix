@@ -145,6 +145,9 @@
 							document.getElementsByClassName("gui_download")[0].title = STRING_SAVESTATE;
 							document.getElementsByClassName("gui_uploadsave")[0].title = STRING_LOADSTATE;
 
+							// UPDATING THE WEB TITLE
+							parent.updateTitle();
+
 							// CHECKING THE ROM EXTENSION AND STARTING THE REQUIRED EMULATOR FOR THE SELECTED ROM
 							if (extension=="nes")
 								{
