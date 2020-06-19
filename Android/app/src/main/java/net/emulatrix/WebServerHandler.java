@@ -18,7 +18,7 @@ class WebServerHandler extends Thread
 
 	public void run()
 		{
-		String headerBase = "HTTP/1.1 %code%\n" + "Server: Emulatrix/1.2\n" + "Content-Length: %length%\n" + "Connection: close\n" + "Content-Type: %fileType%; charset=iso-8859-1\n\n";
+		String headerBase = "HTTP/1.1 %code%\n" + "Server: Emulatrix/1.5\n" + "Content-Length: %length%\n" + "Connection: close\n" + "Content-Type: %fileType%; charset=iso-8859-1\n\n";
 		
 		String header = headerBase;
 		header = header.replace("%code%", "403 Forbidden");
@@ -42,8 +42,8 @@ class WebServerHandler extends Thread
 					}
 				if (s.substring(0, 3).equals("GET"))
 					{
-					int lugar = s.indexOf(" HTTP/");
-					documentName = s.substring(5,lugar);
+					int location = s.indexOf(" HTTP/");
+					documentName = s.substring(5,location);
 					documentName = documentName.replaceAll("[/]+","/");
 					}
 				}
@@ -146,20 +146,7 @@ class WebServerHandler extends Thread
 		try	{toClient.close();} catch (IOException e1) {}
 		}
 	
-	public String sacarultima(String a)
-		{
-		int b = a.lastIndexOf("/");
-		if (b==-1)
-			{
-			return "";
-			}
-			else
-			{
-			return a.substring(0, a.lastIndexOf("/"));
-			}
-		}
-	
-	public String replacer(String data)
+	private String replacer(String data)
 		{
 		try
 			{
@@ -173,7 +160,7 @@ class WebServerHandler extends Thread
 		return data;
 		}
 
-	public static String getEmulatrixFolder()
+	private static String getEmulatrixFolder()
 		{
 		String path = "Android/data/net.emulatrix";
 		if (Environment.getExternalStorageDirectory().toString().endsWith("/"))
