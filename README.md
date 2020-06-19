@@ -53,14 +53,14 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 
 | PLATFORM  | MODIFICATIONS  |
 | :------------ |:---------------|
-| Nintendo | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| Super Nintendo | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| GameBoy | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| GameBoy Color | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| GameBoy Advance | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| Sega Genesis | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| MAME32 | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| DOS | Pause/resume emulation when the window/tab is focus/blur and load/save state implementation. |
+| Nintendo | Delayed compilation workaround, content resized to canvas and upload/download state implementation. |
+| Super Nintendo | Delayed compilation workaround, content resized to canvas and upload/download state implementation. |
+| GameBoy | Delayed compilation workaround, content resized to canvas and upload/download state implementation. |
+| GameBoy Color | Delayed compilation workaround, content resized to canvas and upload/download state implementation. |
+| GameBoy Advance | Delayed compilation workaround, content resized to canvas and upload/download state implementation. |
+| Sega Genesis | Delayed compilation workaround, content resized to canvas and upload/download state implementation. |
+| MAME32 | Delayed compilation workaround, content resized to canvas and upload/download state implementation. |
+| DOS | Pause/resume emulation when the window/tab is focus/blur and upload/download files implementation. |
 
 ## Virtual joystick code
 
