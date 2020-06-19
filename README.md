@@ -6,6 +6,7 @@ Multiplatform Emulator - Sega Genesis, Nintendo, Super Nintendo, GameBoy, GameBo
 
 ## Web version
 
+
 https://www.emulatrix.net
 
 ## Android version
