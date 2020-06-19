@@ -38,16 +38,16 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 
 ## Original core files
 
-| PLATFORM  | URL  | CORE |
-| :------------ |:---------------:| :-----:|
-| Nintendo | https://buildbot.libretro.com/stable | fceumm |
-| Super Nintendo | https://buildbot.libretro.com/stable | snes9x2010 |
-| GameBoy | https://buildbot.libretro.com/stable | gambatte |
-| GameBoy Color | https://buildbot.libretro.com/stable | gambatte |
-| GameBoy Advance | https://buildbot.libretro.com/stable | vba_next |
-| Sega Genesis | https://buildbot.libretro.com/stable | genesis_plus_gx |
-| MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 |
-| DOS | https://github.com/dreamlayers/em-dosbox | dosbox |
+| PLATFORM  | URL  | CORE | VERSION
+| :------------ |:---------------:| :-----:| :-----:|
+| Nintendo | https://buildbot.libretro.com/stable | fceumm | 1.8.2
+| Super Nintendo | https://buildbot.libretro.com/stable | snes9x2010 | 1.8.2
+| GameBoy | https://buildbot.libretro.com/stable | gambatte | 1.8.2
+| GameBoy Color | https://buildbot.libretro.com/stable | gambatte | 1.8.2
+| GameBoy Advance | https://buildbot.libretro.com/stable | vba_next | 1.8.2
+| Sega Genesis | https://buildbot.libretro.com/stable | genesis_plus_gx | 1.8.2
+| MAME32 | https://buildbot.libretro.com/stable | fbalpha2012 | 1.8.2
+| DOS | https://github.com/dreamlayers/em-dosbox | dosbox | -
 
 ## Core files modifications
 
