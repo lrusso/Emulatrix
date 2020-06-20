@@ -12,6 +12,10 @@ https://www.emulatrix.net
 
 https://play.google.com/store/apps/details?id=net.emulatrix
 
+## Banner generator
+
+https://www.emulatrix.net/Banner/Banner.htm
+
 ## IMPORTANT - After selecting the upload icon
 
 | PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
