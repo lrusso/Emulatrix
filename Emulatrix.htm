@@ -501,11 +501,8 @@
 					var usingSafari = navigator.userAgent.toLowerCase().indexOf("safari")>-1;
 					if (usingSafari==true)
 						{
-						// SHOWING THE LABEL THAT WILL SAY THAT EMULATRIX IS NOT COMPATIBLE WITH SAFARI.
+						// SHOWING THE LABEL THAT WILL SAYS THAT EMULATRIX IS NOT COMPATIBLE WITH SAFARI.
 						document.getElementsByClassName("gui_safari")[0].style.display = "block";
-
-						// UPDATING THE LABEL SAYING THAT EMULATRIX IS NOT COMPATIBLE WITH SAFARI.
-						document.getElementsByClassName("gui_safari_label")[0].innerHTML = STRING_SAFARI;
 						}
 						else
 						{
@@ -593,7 +590,7 @@
 				<div class="gui_title_email"><a class="gui_title_email_value" href="#"></a></div>
 			</div>
 			<div class="gui_how_mobile"><span class="gui_how_mobile_label"><script>document.write(STRING_HOW_MOBILE)</script></span></div>
-			<div class="gui_safari"><span class="gui_safari_label"><script>document.write(STRING_HOW_MOBILE)</script></span></div>
+			<div class="gui_safari"><span class="gui_safari_label"><script>document.write(STRING_SAFARI)</script></span></div>
 			<div class="gui_controls">
 				<div class="gui_controls_center">
 					<table class="gui_controls_table">

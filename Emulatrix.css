@@ -47,7 +47,7 @@ html,body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-mo
 .gui_title_email a{text-decoration:none;color:white}
 .gui_how_mobile{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;text-align:center;height:185px;margin:auto auto;color:white;font-family:Arial;font-size:20px;cursor:default}
 .gui_how_mobile_label{padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;border-radius:10px;line-height:2;display:inline-block; background-color:rgba(0,0,0,0.6)}
-.gui_safari{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;text-align:center;height:185px;margin:auto auto;color:white;font-family:Arial;font-size:20px;cursor:default}
+.gui_safari{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;text-align:center;height:140px;margin:auto auto;color:white;font-family:Arial;font-size:20px;cursor:default}
 .gui_safari_label{padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;border-radius:10px;line-height:2;display:inline-block; background-color:rgba(0,0,0,0.6)}
 .gui_controls{display:none;width:100%;height:100%;position:fixed;left:0;right:0;top:50px;bottom:0;margin:0 auto}
 .gui_controls_center{position:relative;top:50%;transform:translateY(-50%);text-align:center;color:white;margin-top:-50px}
