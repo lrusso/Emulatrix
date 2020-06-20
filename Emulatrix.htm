@@ -20,6 +20,7 @@
 			var STRING_HOW_DESKTOP2 = "";
 			var STRING_HOW_MOBILE = "";
 			var STRING_HOW_MOBILE_IOS = "";
+			var STRING_SAFARI = "";
 			var STRING_INSERTCOIN = "";
 			var STRING_SELECTGAME = "";
 			var STRING_UPLOADFILE = "";
@@ -48,6 +49,7 @@
 				STRING_HOW_DESKTOP2 = "Haga click en el &iacute;cono rojo ubicado en el extremo inferior de la pantalla y luego seleccione de su computadora el archivo del juego que desea jugar.<br />Para cargar juegos de DOS, crea un archivo ZIP con los archivos del juego y &aacute;brelo con Emulatrix.<br />Al iniciarse, se intentar&aacute; ejecutar AUTORUN.BAT.<br />Para cargar maquinas virtuales, crea un archivo ZIP con la imagen del disco con el nombre c.img.";
 				STRING_HOW_MOBILE = "Toca el &iacute;cono inferior,<br />selecciona un ROM de tu m&oacute;vil<br />y comienza a jugar al MegaDrive,<br/>NES, SNES, Gameboy, MAME32 y DOS.";
 				STRING_HOW_MOBILE_IOS = "Emulatrix<br/>no es compatible<br/>con sistemas iOS."
+				STRING_SAFARI = "Emulatrix<br/>no es compatible<br/>con el navegador Web Safari."
 				STRING_INSERTCOIN = "INSERTAR MONEDA = 1";
 				STRING_SELECTGAME = "Seleccionar juego";
 				STRING_UPLOADFILE = "Subir archivo";
@@ -74,6 +76,7 @@
 				STRING_HOW_DESKTOP2 = "Please click in the red icon located at the bottom of the screen and then select from your computer the file of the game that you want to play.<br />In order to play a DOS game, you must create a ZIP file with all the game files and open it in Emulatrix.<br />On booting, it will try to run AUTORUN.BAT.<br />In order to boot virtual machines, you must create a ZIP file with the disk image with the name c.img.";
 				STRING_HOW_MOBILE = "Touch the icon below,<br />select a ROM from your phone<br />and start playing to the MegaDrive,<br/>NES, SNES, Gameboy, MAME32 and DOS.";
 				STRING_HOW_MOBILE_IOS = "Emulatrix<br/>is not compatible<br/>with iOS systems."
+				STRING_SAFARI = "Emulatrix<br/>is not compatible<br/>with the Safari Web browser."
 				STRING_INSERTCOIN = "INSERT COIN = 1";
 				STRING_SELECTGAME = "Select game";
 				STRING_UPLOADFILE = "Upload file";
@@ -479,8 +482,8 @@
 				if (isMobileDevice()==true)
 					{
 					// CHECKING IF THE USER IS USING IOS. EMULATRIX IS NOT COMPATIBLE WITH IOS.
-					var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-					if (iOS==true)
+					var usingiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+					if (usingiOS==true)
 						{
 						// UPDATING THE LABEL SAYING THAT EMULATRIX IS NOT COMPATIBLE WITH IOS.
 						document.getElementsByClassName("gui_how_mobile_label")[0].innerHTML = STRING_HOW_MOBILE_IOS;
@@ -494,13 +497,27 @@
 					// SHOWING THE 'HOW DOES IT WORK' TEXT FOR DESKTOP DEVICES
 					document.getElementsByClassName("gui_title_how_desktop")[0].style.display = "block";
 
-					// SHOWING THE KEYS FOR EACH EMULATOR FOR DESKTOP DEVICES
-					document.getElementsByClassName("gui_controls")[0].style.display = "block";
+					// CHECKING IF THE USER IS USING SAFARI. EMULATRIX IS NOT COMPATIBLE WITH SAFARI.
+					var usingSafari = navigator.userAgent.toLowerCase().indexOf("safari")>-1;
+					if (usingSafari==true)
+						{
+						// SHOWING THE LABEL THAT WILL SAY THAT EMULATRIX IS NOT COMPATIBLE WITH SAFARI.
+						document.getElementsByClassName("gui_safari")[0].style.display = "block";
+
+						// UPDATING THE LABEL SAYING THAT EMULATRIX IS NOT COMPATIBLE WITH SAFARI.
+						document.getElementsByClassName("gui_safari_label")[0].innerHTML = STRING_SAFARI;
+						}
+						else
+						{
+						// SHOWING THE KEYS FOR EACH EMULATOR FOR DESKTOP DEVICES
+						document.getElementsByClassName("gui_controls")[0].style.display = "block";
+						}
 					}
 
-				// CHECKING IF THE USER IS USING IOS. EMULATRIX IS NOT COMPATIBLE WITH IOS.
-				var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-				if (iOS==true)
+				// CHECKING IF THE USER IS USING IOS OR SAFARI. EMULATRIX IS NOT COMPATIBLE WITH IOS OR SAFARI.
+				var usingiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+				var usingSafari = navigator.userAgent.toLowerCase().indexOf("safari")>-1;
+				if (usingiOS==true || usingSafari==true)
 					{
 					// DISABLING THE UPLOADER ICON
 					document.getElementById("gui_uploader").className = "gui_uploader gui_uploader_ios";
@@ -576,6 +593,7 @@
 				<div class="gui_title_email"><a class="gui_title_email_value" href="#"></a></div>
 			</div>
 			<div class="gui_how_mobile"><span class="gui_how_mobile_label"><script>document.write(STRING_HOW_MOBILE)</script></span></div>
+			<div class="gui_safari"><span class="gui_safari_label"><script>document.write(STRING_HOW_MOBILE)</script></span></div>
 			<div class="gui_controls">
 				<div class="gui_controls_center">
 					<table class="gui_controls_table">
