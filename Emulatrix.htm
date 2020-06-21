@@ -8,6 +8,80 @@
 	<body>
 		<script>
 			function isMobileDevice(){return!!(navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/webOS/i)||navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/iPod/i)||navigator.userAgent.match(/BlackBerry/i)||navigator.userAgent.match(/Windows Phone/i))}
+			function alertCustom(title,message,accept)
+				{
+				try
+					{
+					var alertContainer = document.createElement("div");
+					alertContainer.style.position = "fixed";
+					alertContainer.style.top = 0;
+					alertContainer.style.bottom = 0;
+					alertContainer.style.left = 0;
+					alertContainer.style.right = 0;
+					alertContainer.style.zIndex = 9999;
+					alertContainer.style.backgroundColor = "rgba(0,0,0,0.5)";
+
+					var alertForm = document.createElement("div");
+					alertForm.style.position = "relative";
+					alertForm.style.top = "50%";
+					alertForm.style.left = 0;
+					alertForm.style.right = 0;
+					alertForm.style.marginLeft = "auto";
+					alertForm.style.marginRight = "auto";
+					alertForm.style.transform = "translateY(-50%)";
+					alertForm.style.width = "400px";
+					alertForm.style.backgroundColor = "#f2f2f2";
+					alertForm.style.textAlign = "center";
+
+					var alertTitle = document.createElement("div");
+					alertTitle.style.textAlign = "left";
+					alertTitle.style.paddingLeft = "10px";
+					alertTitle.style.backgroundColor = "#3a76b1";
+					alertTitle.style.fontFamily = "Arial";
+					alertTitle.style.fontSize = "16px";
+					alertTitle.style.color = "white";
+					alertTitle.style.lineHeight = 2.5;
+					alertTitle.innerHTML = title;
+
+					var alertMessage = document.createElement("div");
+					alertMessage.style.padding = "20px";
+					alertMessage.style.fontFamily = "Arial";
+					alertMessage.style.fontSize = "16px";
+					alertMessage.style.color = "black";
+					alertMessage.style.textAlign = "center";
+					alertMessage.style.lineHeight = 2;
+					alertMessage.innerHTML = message;
+
+					var alertButton = document.createElement("div");
+					alertButton.style.padding = "10px";
+					alertButton.style.backgroundColor = "#d2d2d2";
+					alertButton.style.border = "1px solid #b2b2b2";
+					alertButton.style.fontFamily = "Arial";
+					alertButton.style.fontSize = "16px";
+					alertButton.style.color = "black";
+					alertButton.style.textAlign = "center";
+					alertButton.style.lineHeight = 1.5;
+					alertButton.style.display = "inline-block";
+					alertButton.style.marginBottom = "10px";
+					alertButton.style.paddingLeft = "40px";
+					alertButton.style.paddingRight = "40px";
+					alertButton.style.cursor = "pointer";
+					alertButton.addEventListener("click",function(event)
+						{
+						document.body.removeChild(alertContainer);
+						});
+					alertButton.innerHTML = accept;
+
+					alertForm.appendChild(alertTitle);
+					alertForm.appendChild(alertMessage);
+					alertForm.appendChild(alertButton);
+					alertContainer.appendChild(alertForm);
+					document.body.appendChild(alertContainer);
+					}
+					catch(err)
+					{
+					}
+				}
 
 			var userLanguage = window.navigator.userLanguage || window.navigator.language;
 
@@ -33,7 +107,9 @@
 			var STRING_STARTINGEMULATOR = "";
 			var STRING_SELECTFOLDER = "";
 			var STRING_KEYBOARDANDMOUSE = "";
-			var STRING_ERRORWITHEXTENSION = "";
+			var STRING_ERROREXTENSION_TITLE = "";
+			var STRING_ERROREXTENSION_MESSAGE = "";
+			var STRING_ERROREXTENSION_ACCEPT = "";
 			var STRING_SAVING = "";
 			var STRING_LOADING = "";
 			var STRING_SAVED = "";
@@ -62,7 +138,9 @@
 				STRING_STARTINGEMULATOR = "Iniciando emulador...";
 				STRING_SELECTFOLDER = "Indique la carpeta";
 				STRING_KEYBOARDANDMOUSE = "TECLADO<br/>Y MOUSE";
-				STRING_ERRORWITHEXTENSION = "ERROR: Por favor verifique que el juego se encuentre en formato NES, SMC, SFC, SRM, GB, GBC, GBA, BIN, SMD, MD o ZIP.";
+				STRING_ERROREXTENSION_TITLE = "Mensaje";
+				STRING_ERROREXTENSION_MESSAGE = "Por favor verifique que el juego se encuentre en formato NES, SMC, SFC, SRM, GB, GBC, GBA, BIN, SMD, MD o ZIP.";
+				STRING_ERROREXTENSION_ACCEPT = "Aceptar";
 				STRING_SAVING = "Guardando, por favor espere...";
 				STRING_LOADING = "Cargando, por favor espere...";
 				STRING_SAVED = "Archivo guardado en Descargas.";
@@ -89,7 +167,9 @@
 				STRING_STARTINGEMULATOR = "Starting emulator...";
 				STRING_SELECTFOLDER = "Select the folder";
 				STRING_KEYBOARDANDMOUSE = "KEYBOARD<br/>AND MOUSE";
-				STRING_ERRORWITHEXTENSION = "ERROR: Please check that the game is in NES, SMC, SFC, SRM, GB, GBC, GBA, BIN, SMD, MD or ZIP format.";
+				STRING_ERROREXTENSION_TITLE = "Message";
+				STRING_ERROREXTENSION_MESSAGE = "Please check that the game is in NES, SMC, SFC, SRM, GB, GBC, GBA, BIN, SMD, MD or ZIP format.";
+				STRING_ERROREXTENSION_ACCEPT = "OK";
 				STRING_SAVING = "Saving, please wait...";
 				STRING_LOADING = "Loading, please wait...";
 				STRING_SAVED = "File saved in Downloads.";
@@ -207,8 +287,11 @@
 						}
 						else
 						{
+						// CLEARING THE SELECTED FILE VALUE
+						document.getElementById("gui_controls_file").value = null;
+
 						// SHOWING AN ALERT MESSAGE WITH ALL THE COMPATIBLE FILE FORMATS
-						alert(STRING_ERRORWITHEXTENSION);
+						alertCustom(STRING_ERROREXTENSION_TITLE,STRING_ERROREXTENSION_MESSAGE,STRING_ERROREXTENSION_ACCEPT);
 						}
 					}
 					catch(err)
