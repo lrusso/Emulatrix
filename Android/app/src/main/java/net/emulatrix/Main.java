@@ -147,6 +147,10 @@ public class Main extends Activity
 			{
 			hideNavigationBarAndPrivacyPolicy();
 			}
+		if (checkFolderExists("Android/data/net.emulatrix")==true)
+			{
+			startWebService();
+			}
 		}
 	 @Override protected void onActivityResult(int requestCode, int resultCode, Intent intent)
 	 	{
