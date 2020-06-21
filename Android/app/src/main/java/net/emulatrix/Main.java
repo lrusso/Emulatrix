@@ -187,17 +187,14 @@ public class Main extends Activity
 							{
 							hideNavigationBarAndPrivacyPolicy();
 							playingGame = true;
-							mUploadMessage5.onReceiveValue(new Uri[]{result});
-							mUploadMessage5 = null;
 							}
 							else
 							{
 							showNavigationBarAndPrivacyPolicy();
 							playingGame = false;
-							messageExtensionError();
-							mUploadMessage5.onReceiveValue(null);
-							mUploadMessage5 = null;
 							}
+						mUploadMessage5.onReceiveValue(new Uri[]{result});
+						mUploadMessage5 = null;
 						}
 					}
 					else
@@ -290,16 +287,6 @@ public class Main extends Activity
 			catch(Exception e)
 			{
 			}
-		}
-
-	private void messageExtensionError()
-		{
-		new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.text_error_extension_title)).setMessage(R.string.text_error_extension_message).setIcon(R.drawable.ic_launcher).setPositiveButton(getResources().getString(R.string.textOK),new DialogInterface.OnClickListener()
-			{
-			public void onClick(DialogInterface dialog,int which)
-				{
-				}
-			}).show();
 		}
 
 	private void clickInPrivacy()

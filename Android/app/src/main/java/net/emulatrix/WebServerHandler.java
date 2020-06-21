@@ -18,7 +18,7 @@ class WebServerHandler extends Thread
 
 	public void run()
 		{
-		String headerBase = "HTTP/1.1 %code%\n" + "Server: Emulatrix/1.5.2\n" + "Content-Length: %length%\n" + "Connection: close\n" + "Content-Type: %fileType%; charset=iso-8859-1\n\n";
+		String headerBase = "HTTP/1.1 %code%\n" + "Server: Emulatrix/1.5.3\n" + "Content-Length: %length%\n" + "Connection: close\n" + "Content-Type: %fileType%; charset=iso-8859-1\n\n";
 		
 		String header = headerBase;
 		header = header.replace("%code%", "403 Forbidden");
