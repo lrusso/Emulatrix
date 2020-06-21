@@ -12,7 +12,7 @@ https://www.emulatrix.net
 
 https://play.google.com/store/apps/details?id=net.emulatrix
 
-## Game Banner generator
+## Banner generator
 
 https://www.emulatrix.net/Banner/Banner.htm
 
