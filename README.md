@@ -10,6 +10,7 @@ https://www.emulatrix.net
 
 ## Android version
 
+
 https://play.google.com/store/apps/details?id=net.emulatrix
 
 ## Banner generator
