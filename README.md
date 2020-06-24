@@ -74,7 +74,7 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 | MAME32 | Bugfix | Delayed compilation workaround |
 | MAME32 | Bugfix | Content resized to canvas |
 | MAME32 | Feature | Load/save state implementation |
-| DOS | Bugfix | Launching emulator on blur bugfix |
+| DOS | Bugfix | Launching emulator on blur |
 | DOS | Bugfix | Paused/resumed emulation on blur/focus |
 | DOS | Feature | Load/save file implementation |
 
