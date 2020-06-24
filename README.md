@@ -59,9 +59,15 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 | Super Nintendo | Bugfix | Delayed compilation workaround |
 | Super Nintendo | Bugfix | Content resized to canvas |
 | Super Nintendo | Feature | Load/save state implementation |
-| GameBoy | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| GameBoy Color | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| GameBoy Advance | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
+| GameBoy | Bugfix | Delayed compilation workaround |
+| GameBoy | Bugfix | Content resized to canvas |
+| GameBoy | Feature | Load/save state implementation |
+| GameBoy Color | Bugfix | Delayed compilation workaround |
+| GameBoy Color | Bugfix | Content resized to canvas |
+| GameBoy Color | Feature | Load/save state implementation |
+| GameBoy Advance | Bugfix | Delayed compilation workaround |
+| GameBoy Advance | Bugfix | Content resized to canvas |
+| GameBoy Advance | Feature | Load/save state implementation |
 | Sega Genesis | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
 | MAME32 | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
 | DOS | Launching emulator on blur bugfix, paused/resumed emulation when the window/tab is focus/blur and load/save file implementation. |
