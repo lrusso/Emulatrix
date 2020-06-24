@@ -51,9 +51,11 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 
 ## Core files modifications
 
-| PLATFORM  | MODIFICATIONS  |
-| :------------ |:---------------|
-| Nintendo | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
+| PLATFORM  | TYPE  | DETAILS |
+| :------------ |:--------------- |:---------------|
+| Nintendo | Bugfix | Delayed compilation workaround |
+| Nintendo | Bugfix | Content resized to canvas |
+| Nintendo | Feature | load/save state implementation |
 | Super Nintendo | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
 | GameBoy | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
 | GameBoy Color | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
