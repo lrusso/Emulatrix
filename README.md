@@ -2,6 +2,7 @@
 
 Multiplatform Emulator - Sega Genesis, Nintendo, Super Nintendo, GameBoy, GameBoy Color, GameBoy Advance, MAME32, DOSBox and Virtual Machines.
 
+
 ![alt screenshot](https://raw.githubusercontent.com/lrusso/Emulatrix/master/Emulatrix.png)
 
 ## Web version
