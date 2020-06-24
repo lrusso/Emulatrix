@@ -55,8 +55,10 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 | :------------ |:--------------- |:---------------|
 | Nintendo | Bugfix | Delayed compilation workaround |
 | Nintendo | Bugfix | Content resized to canvas |
-| Nintendo | Feature | load/save state implementation |
-| Super Nintendo | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
+| Nintendo | Feature | Load/save state implementation |
+| Super Nintendo | Bugfix | Delayed compilation workaround |
+| Super Nintendo | Bugfix | Content resized to canvas |
+| Super Nintendo | Feature | Load/save state implementation |
 | GameBoy | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
 | GameBoy Color | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
 | GameBoy Advance | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
