@@ -68,9 +68,15 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 | GameBoy Advance | Bugfix | Delayed compilation workaround |
 | GameBoy Advance | Bugfix | Content resized to canvas |
 | GameBoy Advance | Feature | Load/save state implementation |
-| Sega Genesis | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| MAME32 | Delayed compilation workaround, content resized to canvas and load/save state implementation. |
-| DOS | Launching emulator on blur bugfix, paused/resumed emulation when the window/tab is focus/blur and load/save file implementation. |
+| Sega Genesis | Bugfix | Delayed compilation workaround |
+| Sega Genesis | Bugfix | Content resized to canvas |
+| Sega Genesis | Feature | Load/save state implementation |
+| MAME32 | Bugfix | Delayed compilation workaround |
+| MAME32 | Bugfix | Content resized to canvas |
+| MAME32 | Feature | Load/save state implementation |
+| DOS | Bugfix | Launching emulator on blur bugfix |
+| DOS | Bugfix | Paused/resumed emulation when the window/tab is focus/blur |
+| DOS | Feature | Load/save file implementation |
 
 ## Virtual joystick code
 
