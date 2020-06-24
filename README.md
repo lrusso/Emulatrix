@@ -75,7 +75,7 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 | MAME32 | Bugfix | Content resized to canvas |
 | MAME32 | Feature | Load/save state implementation |
 | DOS | Bugfix | Launching emulator on blur bugfix |
-| DOS | Bugfix | Paused/resumed emulation when the window/tab is focus/blur |
+| DOS | Bugfix | Paused/resumed emulation on blur/focus |
 | DOS | Feature | Load/save file implementation |
 
 ## Virtual joystick code
