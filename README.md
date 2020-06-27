@@ -58,6 +58,7 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 | Libretro cores | Feature | Paused/resumed emulation on blur/focus |
 | Libretro cores | Feature | Load/save state implementation |
 | DOSBox core | Bugfix | Launching emulator on blur |
+| DOSBox core | Bugfix | Removed black margin when trying fullscreen |
 | DOSBox core | Feature | Paused/resumed emulation on blur/focus |
 | DOSBox core | Feature | Load/save file implementation |
 
