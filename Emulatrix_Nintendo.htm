@@ -611,6 +611,30 @@
 					}
 				}
 
+			window.addEventListener("blur", function()
+				{
+				try
+					{
+					// PAUSING THE EMULATION
+					Emulator_execute = false;
+					}
+					catch(err)
+					{
+					}
+				});
+
+			window.addEventListener("focus", function()
+				{
+				try
+					{
+					// RESUMING THE EMULATION
+					Emulator_execute = true;
+					}
+					catch(err)
+					{
+					}
+				});
+
 			window.addEventListener("resize", function()
 				{
 				// RESIZING CANVAS IF THE WINDOW HAS BEEN RESIZED
