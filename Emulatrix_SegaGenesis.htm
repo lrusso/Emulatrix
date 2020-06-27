@@ -409,6 +409,9 @@
 				{
 				try
 					{
+					// RESUMING THE EMULATION
+					Emulator_execute = true;
+
 					// CHECKING IF THE DOWNLOADING AND UPLOADING PROCESS ARE NOT RUNNING
 					if (download_running==false && upload_running==false)
 						{
@@ -532,6 +535,9 @@
 
 			function uploadROMState()
 				{
+				// RESUMING THE EMULATION
+				Emulator_execute = true;
+
 				// CHECKING IF THE UPLOADING AND DOWNLOADING PROCESS ARE NOT RUNNING
 				if (upload_running==false && download_running==false)
 					{
