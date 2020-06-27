@@ -526,6 +526,23 @@
 					}
 				}
 
+			function detectAltEnter(e)
+				{
+				try
+					{
+					e = e || window.event;
+					if (e.altKey && e.keyCode == 13)
+						{
+						e.preventDefault();
+						e.stopPropagation();
+						e.stopImmediatePropagation();
+						}
+					}
+					catch(err)
+					{
+					}
+				}
+
 			window.addEventListener("blur", function()
 				{
 				try
@@ -568,6 +585,11 @@
 				document.addEventListener("pointerlockchange", mouseChecker, false);
 				document.addEventListener("mozpointerlockchange", mouseChecker, false);
 				document.addEventListener("webkitpointerlockchange", mouseChecker, false);
+
+				// BUGFIX FOR FULLSCREEN
+				document.addEventListener("keydown",function(e){detectAltEnter(e)});
+				document.addEventListener("keypress",function(e){detectAltEnter(e)});
+				document.addEventListener("keyup", function(e){detectAltEnter(e)});
 
 				// CLEARING THE SELECTED FILE TO UPLOAD VALUE
 				document.getElementById("fileupload_uploader").value = null;
@@ -613,6 +635,7 @@
 					}, 5000);
 				return true;
 				}
+
 		</script>
 
 		<div class="gui_pleasewait_title"><script>document.write(parent.STRING_STARTINGEMULATOR);</script></div><div class="pleasewait"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
