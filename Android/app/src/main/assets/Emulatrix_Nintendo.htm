@@ -366,8 +366,13 @@
 				{
 				try
 					{
+					// RESUMING THE EMULATION
 					Emulator_execute = true;
+
+					// PRESSING THE F9 KEY
 					sendVirtualKey("keydown","F9")
+
+					// RELEASING THE F9 KEY
 					setTimeout(function()
 						{
 						sendVirtualKey("keyup","F9");
@@ -382,8 +387,13 @@
 				{
 				try
 					{
+					// RESUMING THE EMULATION
 					Emulator_execute = true;
+
+					// PRESSING THE F10 KEY
 					sendVirtualKey("keydown","F10")
+
+					// RELEASING THE F10 KEY
 					setTimeout(function()
 						{
 						sendVirtualKey("keyup","F10");
@@ -398,6 +408,9 @@
 				{
 				try
 					{
+					// RESUMING THE EMULATION
+					Emulator_execute = true;
+
 					// CHECKING IF THE DOWNLOADING AND UPLOADING PROCESS ARE NOT RUNNING
 					if (download_running==false && upload_running==false)
 						{
@@ -521,14 +534,23 @@
 
 			function uploadROMState()
 				{
-				// CHECKING IF THE UPLOADING AND DOWNLOADING PROCESS ARE NOT RUNNING
-				if (upload_running==false && download_running==false)
+				try
 					{
-					// HIDING THE 'SAVING, PLEASE WAIT...' LABEL
-					document.getElementsByClassName("gui_saving")[0].style.display = "none";
+					// RESUMING THE EMULATION
+					Emulator_execute = true;
 
-					// ALLOWING THE USER TO SELECT THE ROMSTATE FILE FROM THE COMPUTER OR MOBILE DEVICE
-					document.getElementById("fileupload_uploader").click();
+					// CHECKING IF THE UPLOADING AND DOWNLOADING PROCESS ARE NOT RUNNING
+					if (upload_running==false && download_running==false)
+						{
+						// HIDING THE 'SAVING, PLEASE WAIT...' LABEL
+						document.getElementsByClassName("gui_saving")[0].style.display = "none";
+
+						// ALLOWING THE USER TO SELECT THE ROMSTATE FILE FROM THE COMPUTER OR MOBILE DEVICE
+						document.getElementById("fileupload_uploader").click();
+						}
+					}
+					catch(err)
+					{
 					}
 				}
 
