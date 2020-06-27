@@ -530,9 +530,14 @@
 				{
 				try
 					{
+					// GETTING THE KEY EVENT
 					e = e || window.event;
+
+					// CHECKING IF IT IS A ALT+ENTER COMBINATION
 					if (e.altKey && e.keyCode == 13)
 						{
+						// PREVENTING THE EVENT IN ORDER TO NOT SHOW THE BLACK MARGIN BUG
+						// THAT IT'S DISPLAYED AS A 'FULLSCREEN' MODE
 						e.preventDefault();
 						e.stopPropagation();
 						e.stopImmediatePropagation();
