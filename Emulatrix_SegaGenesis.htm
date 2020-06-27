@@ -367,8 +367,13 @@
 				{
 				try
 					{
+					// RESUMING THE EMULATION
 					Emulator_execute = true;
+
+					// PRESSING THE F9 KEY
 					sendVirtualKey("keydown","F9")
+
+					// RELEASING THE F9 KEY
 					setTimeout(function()
 						{
 						sendVirtualKey("keyup","F9");
@@ -383,8 +388,13 @@
 				{
 				try
 					{
+					// RESUMING THE EMULATION
 					Emulator_execute = true;
+
+					// PRESSING THE F10 KEY
 					sendVirtualKey("keydown","F10")
+
+					// RELEASING THE F10 KEY
 					setTimeout(function()
 						{
 						sendVirtualKey("keyup","F10");
