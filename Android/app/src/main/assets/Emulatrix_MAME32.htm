@@ -372,20 +372,34 @@
 
 			function toggleSound()
 				{
-				sendVirtualKey("keydown","F9")
-				setTimeout(function()
+				try
 					{
-					sendVirtualKey("keyup","F9");
-					}, 50);
+					Emulator_execute = true;
+					sendVirtualKey("keydown","F9")
+					setTimeout(function()
+						{
+						sendVirtualKey("keyup","F9");
+						}, 50);
+					}
+					catch(err)
+					{
+					}
 				}
 
 			function reloadROM()
 				{
-				sendVirtualKey("keydown","F10")
-				setTimeout(function()
+				try
 					{
-					sendVirtualKey("keyup","F10");
-					}, 50);
+					Emulator_execute = true;
+					sendVirtualKey("keydown","F10")
+					setTimeout(function()
+						{
+						sendVirtualKey("keyup","F10");
+						}, 50);
+					}
+					catch(err)
+					{
+					}
 				}
 
 			function downloadROMState()
