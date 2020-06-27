@@ -55,27 +55,34 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 | :------------ |:--------------- |:---------------|
 | Nintendo | Bugfix | Delayed compilation workaround |
 | Nintendo | Bugfix | Content resized to canvas |
+| Nintendo | Feature | Paused/resumed emulation on blur/focus |
 | Nintendo | Feature | Load/save state implementation |
 | Super Nintendo | Bugfix | Delayed compilation workaround |
 | Super Nintendo | Bugfix | Content resized to canvas |
+| Super Nintendo | Feature | Paused/resumed emulation on blur/focus |
 | Super Nintendo | Feature | Load/save state implementation |
 | GameBoy | Bugfix | Delayed compilation workaround |
 | GameBoy | Bugfix | Content resized to canvas |
+| GameBoy | Feature | Paused/resumed emulation on blur/focus |
 | GameBoy | Feature | Load/save state implementation |
 | GameBoy Color | Bugfix | Delayed compilation workaround |
 | GameBoy Color | Bugfix | Content resized to canvas |
+| GameBoy Color | Feature | Paused/resumed emulation on blur/focus |
 | GameBoy Color | Feature | Load/save state implementation |
 | GameBoy Advance | Bugfix | Delayed compilation workaround |
 | GameBoy Advance | Bugfix | Content resized to canvas |
+| GameBoy Advance | Feature | Paused/resumed emulation on blur/focus |
 | GameBoy Advance | Feature | Load/save state implementation |
 | Sega Genesis | Bugfix | Delayed compilation workaround |
 | Sega Genesis | Bugfix | Content resized to canvas |
+| Sega Genesis | Feature | Paused/resumed emulation on blur/focus |
 | Sega Genesis | Feature | Load/save state implementation |
 | MAME32 | Bugfix | Delayed compilation workaround |
 | MAME32 | Bugfix | Content resized to canvas |
+| MAME32 | Feature | Paused/resumed emulation on blur/focus |
 | MAME32 | Feature | Load/save state implementation |
 | DOS | Bugfix | Launching emulator on blur |
-| DOS | Bugfix | Paused/resumed emulation on blur/focus |
+| DOS | Feature | Paused/resumed emulation on blur/focus |
 | DOS | Feature | Load/save file implementation |
 
 ## Virtual joystick code
