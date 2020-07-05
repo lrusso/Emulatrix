@@ -12,18 +12,6 @@ https://www.emulatrix.net
 
 https://play.google.com/store/apps/details?id=net.emulatrix
 
-## Banner generators
-
-https://www.emulatrix.net/Banners/Banner1.htm
-
-https://www.emulatrix.net/Banners/Banner2.htm
-
-https://www.emulatrix.net/Banners/Banner3.htm
-
-https://www.emulatrix.net/Banners/Banner4.htm
-
-https://www.emulatrix.net/Banners/Banner5.htm
-
 ## IMPORTANT - After selecting the upload icon
 
 | PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
@@ -78,3 +66,15 @@ https://www.emulatrix.net/Banners/Banner5.htm
 ## Virtual joystick code
 
 https://github.com/lrusso/VirtualJoystick
+
+## Banner generators
+
+https://www.emulatrix.net/Banners/Banner1.htm
+
+https://www.emulatrix.net/Banners/Banner2.htm
+
+https://www.emulatrix.net/Banners/Banner3.htm
+
+https://www.emulatrix.net/Banners/Banner4.htm
+
+https://www.emulatrix.net/Banners/Banner5.htm
