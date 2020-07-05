@@ -22,6 +22,8 @@ https://www.emulatrix.net/Banner/Banner3.htm
 
 https://www.emulatrix.net/Banner/Banner4.htm
 
+https://www.emulatrix.net/Banner/Banner5.htm
+
 ## IMPORTANT - After selecting the upload icon
 
 | PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
