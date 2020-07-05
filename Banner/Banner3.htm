@@ -78,9 +78,6 @@
 					// GETTING THE CONTEXT
 					var context = canvas.getContext("2d");
 
-					// DRAWING THE SMARTPHONE
-					context.drawImage(image1, 0, 0, 1024, 589);
-
 					// DRAWING THE LOGO SHADOW
 					var centerX = 926;
 					var centerY = 491;
@@ -117,7 +114,7 @@
 									image4.onload = function()
 										{
 										// SETTING THE IMAGE WIDTH AND HEIGHT
-										var width = 843;
+										var width = 844;
 										var height = 416;
 
 										try
@@ -129,14 +126,14 @@
 											var imagenResized = downScaleImage(image4, scale);
 
 											// DRAWING THE RESIZED IMAGE
-											context.drawImage(imagenResized, 95, 86, width, height);
+											context.drawImage(imagenResized, 94, 86, width, height);
 											}
 											catch(err)
 											{
 											// IF THERE IS AN ERROR, IT MEANS THAT THE FILE IMAGE IS SMALLER THAN
 											// THE SIZE THAT IT SUPPOSED TO FILL. SO, BECAUSE OF THIS,
 											// IN THE FOLLOWING LINE THE IMAGE IS STRETCHED TO FILL.
-											context.drawImage(image4, 95, 86, width, height);
+											context.drawImage(image4, 94, 86, width, height);
 											}
 
 										// DRAWING THE SMARTPHONE
