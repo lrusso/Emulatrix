@@ -78,6 +78,10 @@
 					// GETTING THE CONTEXT
 					var context = canvas.getContext("2d");
 
+					// SETTING A WHITE BACKGROUND
+					context.fillStyle = "white";
+					context.fillRect(0, 0, 1024, 589);
+
 					try
 						{
 						// CREATING THE FILEREADER
@@ -123,6 +127,9 @@
 											context.drawImage(image4, 95, 86, width, height);
 											}
 
+										// SAVING THE IMAGE FOR LATER CLIPPING
+										context.save();
+
 										// CLIPPING ONE BORDER
 										context.fillStyle = "white";
 										context.beginPath();
@@ -140,6 +147,9 @@
 										context.lineTo(0,439);
 										context.closePath();
 										context.fill();
+
+										// RESTORING THE IMAGE IN ORDER TO CANCEL THE CLIPPING
+										context.restore();
 
 										// DRAWING THE SMARTPHONE
 										context.drawImage(image1, 0, 0, 1024, 589);
