@@ -35,7 +35,7 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 | config -set "cycles=15000" | Faster emulation speed |
 | config -set "cycles=20000" | Fastest emulation speed |
 | config -set "sbtype=none" | Sound Blaster disabled |
-| pkzip folder.zip c:\myfolder\*.* -rp | Creates folder.zip with MyFolder content |
+| pkzip folder.zip c:\myfolder\*.* -rp | Creates folder.zip with myfolder content |
 
 ## Original core files
 
