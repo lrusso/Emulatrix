@@ -63,6 +63,7 @@ https://play.google.com/store/apps/details?id=net.emulatrix
 | DOSBox core | Bugfix | SimulateInfiniteLoop in 16 bits systems |
 | DOSBox core | Feature | Paused/resumed emulation on blur/focus |
 | DOSBox core | Feature | Load/save file implementation |
+| DOSBox core | Feature | PKZip implementation |
 
 ## Virtual joystick code
 
