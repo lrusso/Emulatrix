@@ -22,20 +22,22 @@ public class JavaScriptInterface {
         if(blobUrl.startsWith("blob"))
             {
             return "javascript: var xhr = new XMLHttpRequest();" +
-                    "xhr.open('GET', '"+ blobUrl +"', true);" +
+                    "xhr.open('GET', '" + blobUrl + "', true);" +
                     "xhr.setRequestHeader('Content-type','application/octet-stream');" +
                     "xhr.responseType = 'blob';" +
-                    "xhr.onload = function(e) {" +
-                    "    if (this.status == 200) {" +
-                    "        var blobStateFile = this.response;" +
-                    "        var reader = new FileReader();" +
-                    "        reader.readAsDataURL(blobStateFile);" +
-                    "        reader.onloadend = function() {" +
-                    "            base64data = reader.result;" +
-                    "            Android.getBase64FromBlobData(base64data);" +
-                    "        }" +
-                    "    }" +
-                    "};" +
+                    "xhr.onload = function(e)" +
+                        "{" +
+                        "if (this.status == 200)" +
+                            "{" +
+                            "var blobStateFile = this.response;" +
+                            "var filereader = new FileReader();" +
+                            "filereader.onload = function()" +
+                                "{" +
+                                "Android.getBase64FromBlobData(filereader.result);" +
+                                "};" +
+                            "filereader.readAsDataURL(blobStateFile);" +
+                            "}" +
+                        "};" +
                     "xhr.send();";
             }
         return "javascript: console.log('It is not a Blob URL');";
