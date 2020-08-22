@@ -80,3 +80,7 @@ https://www.emulatrix.net/Banners/Banner3.htm
 https://www.emulatrix.net/Banners/Banner4.htm
 
 https://www.emulatrix.net/Banners/Banner5.htm
+
+https://www.emulatrix.net/Banners/Banner6.htm
+
+https://www.emulatrix.net/Banners/Banner7.htm
