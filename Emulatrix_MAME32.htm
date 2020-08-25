@@ -441,9 +441,6 @@
 						// SHOWING THE 'SAVING, PLEASE WAIT...' LABEL
 						document.getElementsByClassName("gui_saving")[0].style.display = "block";
 
-						// IF RUNNING THE MOBILE APP, TELLING THE NAME THAT THE DOWNLOADED FILE WILL HAVE
-						console.log("FILENAME=" + download_Filename + ".state");
-
 						// STARTING THE TASK THAT WILL DOWNLOAD THE ROMSTATE AS A FILE
 						download_Checker = setInterval(download_CheckerCron, 1000);
 						}
