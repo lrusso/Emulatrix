@@ -152,6 +152,10 @@ html,body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-mo
 	.gui_controls_table_field2{padding-top:50px;color:white;font-family:Arial;font-size:14px;line-height:30px;font-weight:normal;vertical-align:top}
 	}
 
+.gui_controls_table_column1{width:20%}
+.gui_controls_table_column2{width:30%}
+.gui_controls_table_column3{width:20%}
+
 .pleasewait{position:fixed;width:64px;height:64px;left:0;right:0;top:0;bottom:0;margin:auto auto;border:0}
 .lds-spinner{color:white;display:inline-block;position:relative;width:64px;height:64px}
 .lds-spinner div{transform-origin:32px 32px;animation:lds-spinner 1.2s linear infinite}
