@@ -13,5 +13,11 @@
       "type": "image/png",
       "density": 1
     },
+    {
+      "src": "./EmulatrixFavIcon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "density": 1
+    },
   ]
 }
