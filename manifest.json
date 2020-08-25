@@ -4,6 +4,7 @@
   "lang": "en-US",
   "start_url": "./index.html",
   "display": "fullscreen",
+  "orientation": "portrait",
   "theme_color": "#000000",
   "background_color": "#000000",
   "icons": [
