@@ -34,7 +34,6 @@ const filesToCache = [
 	"Emulatrix_SuperNintendo.js",
 	"Emulatrix_SuperNintendo.wasm",
 	"index.html",
-	"worker.js"
 ];
 
 const staticCacheName = "emulatrix-v1";
