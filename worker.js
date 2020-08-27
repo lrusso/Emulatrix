@@ -3,6 +3,7 @@ const filesToCache = [
 	"Emulatrix.css",
 	"Emulatrix.htm",
 	"Emulatrix.json",
+	"Emulatrix.png",
 	"EmulatrixFavIcon_16x16.png",
 	"EmulatrixFavIcon_192x192.png",
 	"EmulatrixFavIcon_192x192b.png",
@@ -32,7 +33,8 @@ const filesToCache = [
 	"Emulatrix_SuperNintendo.htm",
 	"Emulatrix_SuperNintendo.js",
 	"Emulatrix_SuperNintendo.wasm",
-	"index.html"
+	"index.html",
+	"worker.js"
 ];
 
 const staticCacheName = "emulatrix-v1";
