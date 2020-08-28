@@ -122,9 +122,6 @@
 						filereader.file_name = files[0].name;
 						filereader.onload = function()
 							{
-							// PATCH FOR CHROME IN ANDROID IN PWA MODE
-							parent.resizeContent();
-
 							// SETTING THE FILE CONTENT FOR THE EMULATORS
 							ROMDATA = this.result;
 							ROMNAME = files[0].name;
