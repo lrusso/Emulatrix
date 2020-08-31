@@ -61,20 +61,24 @@
 
 			window.addEventListener("load", function()
 				{
-				// RESIZING THE IFRAME
-				resizeContent();
-
-				// TO KEEP FOCUS IN THE IFRAME
-				setInterval(function()
+				// CHECKING IF EMULATRIX IS NOT RUNNING WITHIN AN IFRAME
+				if (window.top == window.self)
 					{
-					document.getElementById("content").focus();
-					}, 250);
+					// RESIZING THE IFRAME
+					resizeContent();
 
-				// LOADING THE GAME
-				document.getElementById("content").src = "Emulatrix.htm";
+					// TO KEEP FOCUS IN THE IFRAME
+					setInterval(function()
+						{
+						document.getElementById("content").focus();
+						}, 250);
 
-				// SHOWING THE IFRAME
-				document.getElementById("content").style.display = "block";
+					// LOADING THE GAME
+					document.getElementById("content").src = "Emulatrix.htm";
+
+					// SHOWING THE IFRAME
+					document.getElementById("content").style.display = "block";
+					}
 				});
 
 			window.addEventListener("resize", function()
