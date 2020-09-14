@@ -21,6 +21,8 @@
 			var upload_OrigSize = -1;
 			var upload_OrigSizeRepeated = 0;
 
+			var loading_Checker;
+
 			var settings_file = "";
 			var settings_Checker;
 
@@ -655,6 +657,24 @@
 					}
 				}
 
+			function loadingChecker()
+				{
+				// CHECKING IF THE EMULATOR_RUNNING VARIABLE EXISTS
+				if (Emulator_running)
+					{
+					// CHECKING IF THE EMULATOR IS RUNNING
+					if (Emulator_running==true)
+						{
+						// HIDING THE LOADING ICON AND TEXT
+						document.getElementsByClassName("gui_pleasewait_title")[0].style.display = "none";
+						document.getElementsByClassName("pleasewait")[0].style.display = "none";
+
+						// DISABLING THE LOADING CHECKER
+						clearInterval(loading_Checker);
+						}
+					}
+				}
+
 			window.addEventListener("blur", function()
 				{
 				try
@@ -695,6 +715,9 @@
 
 				// LOADING THE ROM
 				setTimeout(function(){loadRomIntoVD()},2000);
+
+				// CHECKING WHEN THE EMULATOR IS RUNNING IN ORDER TO HIDE THE LOADING ICON AND TEXT
+				loading_Checker = setInterval(loadingChecker, 500);
 
 				// SETTING FUNCTIONS THAT WILL BE CALLED WHEN THE USER CLICKS, DOUBLE CLICKS OR MOVES THE MOUSE IN ORDER TO SHOW THE SYSTEM ICONS
 				document.addEventListener("click", parent.goBackButtonResetIncrement, false);
