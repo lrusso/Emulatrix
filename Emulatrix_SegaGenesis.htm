@@ -649,8 +649,7 @@
 
 			function loadingChecker()
 				{
-				// CHECKING IF THE EMULATOR_RUNNING VARIABLE EXISTS
-				if (Emulator_running)
+				try
 					{
 					// CHECKING IF THE EMULATOR IS RUNNING
 					if (Emulator_running==true)
@@ -662,6 +661,9 @@
 						// DISABLING THE LOADING CHECKER
 						clearInterval(loading_Checker);
 						}
+					}
+					catch(err)
+					{
 					}
 				}
 
