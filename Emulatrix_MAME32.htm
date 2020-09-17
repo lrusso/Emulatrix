@@ -465,8 +465,8 @@
 					// CHECKING THE ROMSTATE FILE SIZE
 					if (myTempFile.length==download_LastSize)
 						{
-						// CHECK IF THE WINDOW/TAB IS ACTIVE/VISIBLE
-						if (!document.hidden)
+						// CHECKING IF THE EMULATOR WAS RESUMED
+						if (Emulator_execute==true)
 							{
 							// IF IT IS THE SAME, WE ADD 1 TO THE VARIABLE THAT WE USE FOR CHECKING THIS
 							download_LastSizeRepeated = download_LastSizeRepeated + 1;
