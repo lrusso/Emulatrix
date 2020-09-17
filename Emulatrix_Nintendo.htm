@@ -369,7 +369,7 @@
 				try
 					{
 					// RESUMING THE EMULATION
-					Emulator_execute = true;
+					Emulator_running = true;
 
 					// PRESSING THE F9 KEY
 					sendVirtualKey("keydown","F9")
@@ -390,7 +390,7 @@
 				try
 					{
 					// RESUMING THE EMULATION
-					Emulator_execute = true;
+					Emulator_running = true;
 
 					// PRESSING THE F10 KEY
 					sendVirtualKey("keydown","F10")
@@ -411,7 +411,7 @@
 				try
 					{
 					// RESUMING THE EMULATION
-					Emulator_execute = true;
+					Emulator_running = true;
 
 					// CHECKING IF THE DOWNLOADING AND UPLOADING PROCESS ARE NOT RUNNING
 					if (download_running==false && upload_running==false)
@@ -458,7 +458,7 @@
 					if (myTempFile.length==download_LastSize)
 						{
 						// CHECKING IF THE EMULATOR WAS RESUMED
-						if (Emulator_execute==true)
+						if (Emulator_running==true)
 							{
 							// IF IT IS THE SAME, WE ADD 1 TO THE VARIABLE THAT WE USE FOR CHECKING THIS
 							download_LastSizeRepeated = download_LastSizeRepeated + 1;
@@ -536,7 +536,7 @@
 				try
 					{
 					// RESUMING THE EMULATION
-					Emulator_execute = true;
+					Emulator_running = true;
 
 					// CHECKING IF THE UPLOADING AND DOWNLOADING PROCESS ARE NOT RUNNING
 					if (upload_running==false && download_running==false)
@@ -650,8 +650,8 @@
 				{
 				try
 					{
-					// CHECKING IF THE EMULATOR IS RUNNING
-					if (Emulator_running==true)
+					// CHECKING IF THE EMULATOR WAS STARTED
+					if (Emulator_started==true)
 						{
 						// HIDING THE LOADING ICON AND TEXT
 						document.getElementsByClassName("gui_pleasewait_title")[0].style.display = "none";
@@ -671,7 +671,7 @@
 				try
 					{
 					// PAUSING THE EMULATION
-					Emulator_execute = false;
+					Emulator_running = false;
 					}
 					catch(err)
 					{
@@ -683,7 +683,7 @@
 				try
 					{
 					// RESUMING THE EMULATION
-					Emulator_execute = true;
+					Emulator_running = true;
 					}
 					catch(err)
 					{
