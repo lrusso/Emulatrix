@@ -67,14 +67,14 @@ https://github.com/lrusso/VirtualJoystick
 
 ## Banner generators
 
-https://www.emulatrix.net/Banners/Banner1.htm
+https://www.emulatrix.com/Banners/Banner1.htm
 
-https://www.emulatrix.net/Banners/Banner2.htm
+https://www.emulatrix.com/Banners/Banner2.htm
 
-https://www.emulatrix.net/Banners/Banner3.htm
+https://www.emulatrix.com/Banners/Banner3.htm
 
-https://www.emulatrix.net/Banners/Banner4.htm
+https://www.emulatrix.com/Banners/Banner4.htm
 
-https://www.emulatrix.net/Banners/Banner5.htm
+https://www.emulatrix.com/Banners/Banner5.htm
 
-https://www.emulatrix.net/Banners/Banner6.htm
+https://www.emulatrix.com/Banners/Banner6.htm
