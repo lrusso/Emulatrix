@@ -147,9 +147,21 @@ html,body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-mo
 
 @media(min-width:1367px)
 	{
+	.gui_title{height:60px}
+	.gui_title_logo{height:40px;width:160px;}
+	.gui_title_how_desktop{font-size:18px}
+	.gui_title_how_desktop_label{font-size:18px;width:450px}
+	.gui_title_email{font-size:18px}
 	.gui_controls_table{width:776px;margin:0 auto}
-	.gui_controls_table_field1{padding-top:0;color:white;font-family:Arial;font-size:14px;line-height:30px;font-weight:normal;vertical-align:top}
-	.gui_controls_table_field2{padding-top:50px;color:white;font-family:Arial;font-size:14px;line-height:30px;font-weight:normal;vertical-align:top}
+	.gui_controls_table_field1{padding-top:0px;color:white;font-family:Arial;font-size:18px;line-height:30px;font-weight:normal;vertical-align:top}
+	.gui_controls_table_field2{padding-top:50px;color:white;font-family:Arial;font-size:18px;line-height:30px;font-weight:normal;vertical-align:top}
+	.gui_controls_center{position:relative;top:50%;transform:translateY(-50%);text-align:center;color:white;margin-top:-50px}
+	.gui_controls_segagenesis{width:150px;height:50px;background-size:cover;margin-bottom:20px}
+	.gui_controls_supernintendo{width:186px;height:50px;background-size:cover;margin-bottom:20px}
+	.gui_controls_nintendo{width:150px;height:50px;background-size:cover;margin-bottom:20px}
+	.gui_controls_gameboy{width:150px;height:50px;background-size:cover;margin-bottom:20px}
+	.gui_controls_mame32{width:150px;height:50px;background-size:cover;margin-bottom:20px}
+	.gui_controls_dosbox{width:75px;height:75px;background-size:cover;margin-bottom:20px}
 	}
 
 .gui_controls_table_column1{width:20%}
