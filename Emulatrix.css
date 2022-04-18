@@ -148,7 +148,7 @@ html,body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-mo
 @media(min-width:1367px)
 	{
 	.gui_title{height:60px}
-	.gui_title_logo{height:40px;width:160px;}
+	.gui_title_logo{height:40px;width:160px}
 	.gui_title_how_desktop{font-size:18px}
 	.gui_title_how_desktop_label{font-size:18px;width:450px}
 	.gui_title_email{font-size:18px}
