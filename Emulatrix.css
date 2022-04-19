@@ -272,4 +272,9 @@ html,body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-mo
 	.gui_dosbox_keyshift{display:none;position:fixed;right:170px;bottom:10px;width:63px;height:63px;background-color:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.2);font-family:Arial;font-size:15px;line-height:4.32;color:rgba(255,255,255,0.3);text-align:center;border-radius:50px;cursor:default;z-index:98}
 	.gui_dosbox_keyenter{display:none;position:fixed;right:90px;bottom:10px;width:63px;height:63px;background-color:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.2);font-family:Arial;font-size:15px;line-height:4.32;color:rgba(255,255,255,0.3);text-align:center;border-radius:50px;cursor:default;z-index:98}
 	.gui_dosbox_keyspace{display:none;position:fixed;right:10px;bottom:10px;width:63px;height:63px;background-color:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.2);font-family:Arial;font-size:15px;line-height:4.32;color:rgba(255,255,255,0.3);text-align:center;border-radius:50px;cursor:default;z-index:97}
+
+	.filedownload_container{height:250px;top:30px}
+	.filedownload_select{height:169px}
+	.fileupload_container{height:248px;top:30px}
+	.fileupload_select{height:99px}
 	}
