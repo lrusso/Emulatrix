@@ -16,6 +16,7 @@
 			var ROMNAME = "";
 			var DOSGAME = false;
 			var MOVEMENTS_IDLE = 0;
+			var ACTION_BUTTONS_VISIBLE = false;
 			var STATE_CHECK_TIMES = 8;
 			var STRING_HOW_DESKTOP1 = "";
 			var STRING_HOW_DESKTOP2 = "";
@@ -146,9 +147,6 @@
 								{
 								// SHOWING THE GO BACK BUTTON (FOR MOBILE DEVICES)
 								document.getElementsByClassName("gui_goback_mobile")[0].style.display = "block";
-
-								// SHOWING THE RELOAD BUTTON (FOR MOBILE DEVICES)
-								document.getElementsByClassName("gui_reload_mobile")[0].style.display = "block";
 								}
 
 							// UPDATING THE TOOLTIPS FOR THE DOWNLOAD AND UPLOAD ICON
@@ -287,6 +285,9 @@
 					// HIDING THE SOUND TOGGLE BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_sound")[0].style.display = "none";
 					document.getElementsByClassName("gui_sound_mobile")[0].style.display = "none";
+
+					// SETTING THAT THE ACTION BUTTONS MUST BE HIDDEN
+					ACTION_BUTTONS_VISIBLE = false;
 					}
 					catch(err)
 					{
@@ -364,52 +365,35 @@
 					if (document.getElementById("container").style.display=="block")
 						{
 						// CHECKING IF IT IS A MOBILE DEVICE
-						if (isMobileDevice()==true)
-							{
-							// SHOWING THE DOWNLOAD BUTTON (FOR MOBILE DEVICES)
-							document.getElementsByClassName("gui_download_mobile")[0].style.display = "block";
-
-							// SHOWING THE UPLOAD SAVE BUTTON (FOR MOBILE DEVICES)
-							document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "block";
-
-							// SHOWING THE SOUND TOGGLE BUTTON (FOR MOBILE DEVICES)
-							document.getElementsByClassName("gui_sound_mobile")[0].style.display = "block";
-
-							// CHECKING IF THE GAME IS A DOS GAME
-							if (DOSGAME==true)
-								{
-								// SHOWING THE DECREASE CYCLES BUTTON (FOR MOBILE DEVICES)
-								document.getElementsByClassName("gui_decrease_mobile")[0].style.display = "block";
-
-								// SHOWING THE INCREASE CYCLES BUTTON (FOR MOBILE DEVICES)
-								document.getElementsByClassName("gui_increase_mobile")[0].style.display = "block";
-								}
-							}
-							else
+						if (isMobileDevice()==false)
 							{
 							// SHOWING THE GO BACK BUTTON
 							document.getElementsByClassName("gui_goback")[0].style.display = "block";
 
-							// SHOWING THE RELOAD BUTTON
-							document.getElementsByClassName("gui_reload")[0].style.display = "block";
-
-							// SHOWING THE DOWNLOAD BUTTON
-							document.getElementsByClassName("gui_download")[0].style.display = "block";
-
-							// SHOWING THE UPLOAD SAVE BUTTON
-							document.getElementsByClassName("gui_uploadsave")[0].style.display = "block";
-
-							// SHOWING THE SOUND TOGGLE BUTTON
-							document.getElementsByClassName("gui_sound")[0].style.display = "block";
-
-							// CHECKING IF THE GAME IS A DOS GAME
-							if (DOSGAME==true)
+							// CHECKING IF THE ACTION BUTTON CAN BE DISPLAYED
+							if (ACTION_BUTTONS_VISIBLE==true)
 								{
-								// SHOWING THE DECREASE CYCLES BUTTON
-								document.getElementsByClassName("gui_decrease")[0].style.display = "block";
+								// SHOWING THE SOUND TOGGLE BUTTON
+								document.getElementsByClassName("gui_sound")[0].style.display = "block";
 
-								// SHOWING THE INCREASE CYCLES BUTTON
-								document.getElementsByClassName("gui_increase")[0].style.display = "block";
+								// SHOWING THE DOWNLOAD BUTTON
+								document.getElementsByClassName("gui_download")[0].style.display = "block";
+
+								// SHOWING THE UPLOAD SAVE BUTTON
+								document.getElementsByClassName("gui_uploadsave")[0].style.display = "block";
+
+								// SHOWING THE RELOAD BUTTON
+								document.getElementsByClassName("gui_reload")[0].style.display = "block";
+
+								// CHECKING IF THE GAME IS A DOS GAME
+								if (DOSGAME==true)
+									{
+									// SHOWING THE DECREASE CYCLES BUTTON
+									document.getElementsByClassName("gui_decrease")[0].style.display = "block";
+
+									// SHOWING THE INCREASE CYCLES BUTTON
+									document.getElementsByClassName("gui_increase")[0].style.display = "block";
+									}
 								}
 							}
 						}
@@ -432,8 +416,8 @@
 						// HIDING THE GO BACK BUTTON
 						document.getElementsByClassName("gui_goback")[0].style.display = "none";
 
-						// HIDING THE RELOAD BUTTON
-						document.getElementsByClassName("gui_reload")[0].style.display = "none";
+						// HIDING THE SOUND TOGGLE BUTTON
+						document.getElementsByClassName("gui_sound")[0].style.display = "none";
 
 						// HIDING THE DOWNLOAD BUTTON
 						document.getElementsByClassName("gui_download")[0].style.display = "none";
@@ -441,8 +425,8 @@
 						// HIDING THE UPLOAD SAVE BUTTON
 						document.getElementsByClassName("gui_uploadsave")[0].style.display = "none";
 
-						// HIDING THE SOUND TOGGLE BUTTON
-						document.getElementsByClassName("gui_sound")[0].style.display = "none";
+						// HIDING THE RELOAD BUTTON
+						document.getElementsByClassName("gui_reload")[0].style.display = "none";
 
 						// CHECKING IF THE GAME IS A DOS GAME
 						if (DOSGAME==true)
@@ -457,6 +441,38 @@
 					}
 					catch(err)
 					{
+					}
+				}
+
+			function enableControls()
+				{
+				// SETTING THAT THE ACTIONS BUTTONS (STATES HANDLER, RESTART, SOUND, ETC.) CAN BE DISPLAYED
+				ACTION_BUTTONS_VISIBLE = true;
+
+				// CHECKING IF IT IS A MOBILE DEVICE
+				if (isMobileDevice()==true)
+					{
+					// SHOWING THE SOUND TOGGLE BUTTON (FOR MOBILE DEVICES)
+					document.getElementsByClassName("gui_sound_mobile")[0].style.display = "block";
+
+					// SHOWING THE DOWNLOAD BUTTON (FOR MOBILE DEVICES)
+					document.getElementsByClassName("gui_download_mobile")[0].style.display = "block";
+
+					// SHOWING THE UPLOAD SAVE BUTTON (FOR MOBILE DEVICES)
+					document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "block";
+
+					// SHOWING THE RELOAD BUTTON (FOR MOBILE DEVICES)
+					document.getElementsByClassName("gui_reload_mobile")[0].style.display = "block";
+
+					// CHECKING IF THE GAME IS A DOS GAME
+					if (DOSGAME==true)
+						{
+						// SHOWING THE DECREASE CYCLES BUTTON (FOR MOBILE DEVICES)
+						document.getElementsByClassName("gui_decrease_mobile")[0].style.display = "block";
+
+						// SHOWING THE INCREASE CYCLES BUTTON (FOR MOBILE DEVICES)
+						document.getElementsByClassName("gui_increase_mobile")[0].style.display = "block";
+						}
 					}
 				}
 

@@ -682,6 +682,10 @@
 
 			function checkControls()
 				{
+				// NOTIFYING TO THE PARENT THAT THE EMULATOR IS ALREADY RUNNING AND THAT
+				// IT CAN SHOW THE ACTION BUTTONS (STATES HANDLER, RESTART, SOUND, ETC.)
+				parent.enableControls();
+
 				// CHECKING IF IT IS A MOBILE DEVICE
 				if (isMobileDevice()==true)
 					{
