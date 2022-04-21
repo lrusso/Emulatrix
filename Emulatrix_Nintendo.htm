@@ -678,6 +678,31 @@
 					}
 				}
 
+			function checkControls()
+				{
+				// CHECKING IF IT IS A MOBILE DEVICE
+				if (isMobileDevice()==true)
+					{
+					// SHOWING THE VIRTUAL BUTTONS AND ASSIGNING TOUCHING EVENTS TO EACH ONE OF THEM
+					document.getElementsByClassName("gui_nintendo_keyselect")[0].style.display = "block";
+					document.getElementsByClassName("gui_nintendo_keyselect")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyA")});
+					document.getElementsByClassName("gui_nintendo_keyselect")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyA")});
+					document.getElementsByClassName("gui_nintendo_keystart")[0].style.display = "block";
+					document.getElementsByClassName("gui_nintendo_keystart")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyS")});
+					document.getElementsByClassName("gui_nintendo_keystart")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyS")});
+					document.getElementsByClassName("gui_nintendo_keya")[0].style.display = "block";
+					document.getElementsByClassName("gui_nintendo_keya")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyX")});
+					document.getElementsByClassName("gui_nintendo_keya")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyX")});
+					document.getElementsByClassName("gui_nintendo_keyb")[0].style.display = "block";
+					document.getElementsByClassName("gui_nintendo_keyb")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyZ")});
+					document.getElementsByClassName("gui_nintendo_keyb")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyZ")});
+
+					// SHOWING THE VIRTUAL JOYSTICK
+					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
+					showVirtualJoystick();
+					}
+				}
+
 			window.addEventListener("blur", function()
 				{
 				try
@@ -726,28 +751,6 @@
 				document.addEventListener("click", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("dblclick", parent.goBackButtonResetIncrement, false);
 				document.addEventListener("mousemove", parent.goBackButtonResetIncrement, false);
-
-				// CHECKING IF IT IS A MOBILE DEVICE
-				if (isMobileDevice()==true)
-					{
-					// SHOWING THE VIRTUAL BUTTONS AND ASSIGNING TOUCHING EVENTS TO EACH ONE OF THEM
-					document.getElementsByClassName("gui_nintendo_keyselect")[0].style.display = "block";
-					document.getElementsByClassName("gui_nintendo_keyselect")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyA")});
-					document.getElementsByClassName("gui_nintendo_keyselect")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyA")});
-					document.getElementsByClassName("gui_nintendo_keystart")[0].style.display = "block";
-					document.getElementsByClassName("gui_nintendo_keystart")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyS")});
-					document.getElementsByClassName("gui_nintendo_keystart")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyS")});
-					document.getElementsByClassName("gui_nintendo_keya")[0].style.display = "block";
-					document.getElementsByClassName("gui_nintendo_keya")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyX")});
-					document.getElementsByClassName("gui_nintendo_keya")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyX")});
-					document.getElementsByClassName("gui_nintendo_keyb")[0].style.display = "block";
-					document.getElementsByClassName("gui_nintendo_keyb")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown","KeyZ")});
-					document.getElementsByClassName("gui_nintendo_keyb")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup","KeyZ")});
-
-					// SHOWING THE VIRTUAL JOYSTICK
-					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
-					showVirtualJoystick();
-					}
 				});
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)

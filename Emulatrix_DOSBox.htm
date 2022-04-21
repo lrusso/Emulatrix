@@ -567,6 +567,37 @@
 					}
 				}
 
+			function checkControls()
+				{
+				// CHECKING IF IT IS A MOBILE DEVICE
+				if (isMobileDevice()==true)
+					{
+					// SHOWING THE VIRTUAL BUTTONS AND ASSIGNING TOUCHING EVENTS TO EACH ONE OF THEM
+					document.getElementsByClassName("gui_dosbox_keyesc")[0].style.display = "block";
+					document.getElementsByClassName("gui_dosbox_keyesc")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",27,27)});
+					document.getElementsByClassName("gui_dosbox_keyesc")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",27,27)});
+					document.getElementsByClassName("gui_dosbox_keyalt")[0].style.display = "block";
+					document.getElementsByClassName("gui_dosbox_keyalt")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",18,18)});
+					document.getElementsByClassName("gui_dosbox_keyalt")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",18,18)});
+					document.getElementsByClassName("gui_dosbox_keyctrl")[0].style.display = "block";
+					document.getElementsByClassName("gui_dosbox_keyctrl")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",17,17)});
+					document.getElementsByClassName("gui_dosbox_keyctrl")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",17,17)});
+					document.getElementsByClassName("gui_dosbox_keyshift")[0].style.display = "block";
+					document.getElementsByClassName("gui_dosbox_keyshift")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",16,16)});
+					document.getElementsByClassName("gui_dosbox_keyshift")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",16,16)});
+					document.getElementsByClassName("gui_dosbox_keyenter")[0].style.display = "block";
+					document.getElementsByClassName("gui_dosbox_keyenter")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",13,13)});
+					document.getElementsByClassName("gui_dosbox_keyenter")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",13,13)});
+					document.getElementsByClassName("gui_dosbox_keyspace")[0].style.display = "block";
+					document.getElementsByClassName("gui_dosbox_keyspace")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",32,32)});
+					document.getElementsByClassName("gui_dosbox_keyspace")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",32,32)});
+
+					// SHOWING THE VIRTUAL JOYSTICK
+					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
+					showVirtualJoystick();
+					}
+				}
+
 			window.addEventListener("blur", function()
 				{
 				try
@@ -617,34 +648,6 @@
 
 				// CLEARING THE SELECTED FILE TO UPLOAD VALUE
 				document.getElementById("fileupload_uploader").value = null;
-
-				// CHECKING IF IT IS A MOBILE DEVICE
-				if (isMobileDevice()==true)
-					{
-					// SHOWING THE VIRTUAL BUTTONS AND ASSIGNING TOUCHING EVENTS TO EACH ONE OF THEM
-					document.getElementsByClassName("gui_dosbox_keyesc")[0].style.display = "block";
-					document.getElementsByClassName("gui_dosbox_keyesc")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",27,27)});
-					document.getElementsByClassName("gui_dosbox_keyesc")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",27,27)});
-					document.getElementsByClassName("gui_dosbox_keyalt")[0].style.display = "block";
-					document.getElementsByClassName("gui_dosbox_keyalt")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",18,18)});
-					document.getElementsByClassName("gui_dosbox_keyalt")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",18,18)});
-					document.getElementsByClassName("gui_dosbox_keyctrl")[0].style.display = "block";
-					document.getElementsByClassName("gui_dosbox_keyctrl")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",17,17)});
-					document.getElementsByClassName("gui_dosbox_keyctrl")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",17,17)});
-					document.getElementsByClassName("gui_dosbox_keyshift")[0].style.display = "block";
-					document.getElementsByClassName("gui_dosbox_keyshift")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",16,16)});
-					document.getElementsByClassName("gui_dosbox_keyshift")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",16,16)});
-					document.getElementsByClassName("gui_dosbox_keyenter")[0].style.display = "block";
-					document.getElementsByClassName("gui_dosbox_keyenter")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",13,13)});
-					document.getElementsByClassName("gui_dosbox_keyenter")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",13,13)});
-					document.getElementsByClassName("gui_dosbox_keyspace")[0].style.display = "block";
-					document.getElementsByClassName("gui_dosbox_keyspace")[0].addEventListener("touchstart",function(event){sendVirtualKey("keydown",32,32)});
-					document.getElementsByClassName("gui_dosbox_keyspace")[0].addEventListener("touchend",function(event){sendVirtualKey("keyup",32,32)});
-
-					// SHOWING THE VIRTUAL JOYSTICK
-					document.getElementsByClassName("gui_joystick")[0].style.display = "block";
-					showVirtualJoystick();
-					}
 				});
 
 			window.onerror = function (msg, url, lineNo, columnNo, error)
