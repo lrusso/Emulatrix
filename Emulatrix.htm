@@ -474,6 +474,12 @@
 						document.getElementsByClassName("gui_increase_mobile")[0].style.display = "block";
 						}
 					}
+					else
+					{
+					// FORCING TO SHOW ALL THE ACTIONS BUTTONS FOR A FEW SECONDS
+					// JUST TO VISUALLY NOTIFY THE USER ABOUT ALL THE AVAILABLE BUTTONS
+					goBackButtonResetIncrement();
+					}
 				}
 
 			window.addEventListener("load", function()
