@@ -7,10 +7,14 @@
 	</head>
 	<body>
 		<script>
+			function getBooleanSetting(settingName){try{var name = "emulatrix" + settingName;var nameEQ = name + "=";var ca = document.cookie.split(";");for(var i=0;i < ca.length;i++){var c = ca[i];while (c.charAt(0)==" "){c = c.substring(1,c.length);}if (c.indexOf(nameEQ) == 0){if (c.substring(nameEQ.length,c.length)=="true"){return true;}else{return false;}}}}catch(err){}return true;}
+			function setBooleanSetting(settingName,settingValue){try{var name = "emulatrix" + settingName;var value = String(settingValue);var days = 999;var expires = "";if (days){var date = new Date();date.setTime(date.getTime() + (days*24*60*60*1000));expires = "; expires=" + date.toUTCString();}document.cookie = name + "=" + (value || "")  + expires + "; Secure; path=/";}catch(err){}}
 			function isMobileDevice(){return!!(navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/webOS/i)||navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/iPod/i)||navigator.userAgent.match(/BlackBerry/i)||navigator.userAgent.match(/Windows Phone/i))}
 			function alertCustom(title,message,accept){try{var alertContainer = document.createElement("div");alertContainer.style.position = "fixed";alertContainer.style.top = 0;alertContainer.style.bottom = 0;alertContainer.style.left = 0;alertContainer.style.right = 0;alertContainer.style.zIndex = 9999;alertContainer.style.backgroundColor = "rgba(0,0,0,0.5)";var alertForm = document.createElement("div");alertForm.style.position = "relative";alertForm.style.top = "50%";alertForm.style.left = 0;alertForm.style.right = 0;alertForm.style.marginLeft = "auto";alertForm.style.marginRight = "auto";alertForm.style.transform = "translateY(-50%)";alertForm.style.width = "400px";alertForm.style.backgroundColor = "#f2f2f2";alertForm.style.textAlign = "center";var alertTitle = document.createElement("div");alertTitle.style.textAlign = "left";alertTitle.style.paddingLeft = "10px";alertTitle.style.backgroundColor = "#3a76b1";alertTitle.style.fontFamily = "Arial";alertTitle.style.fontSize = "16px";alertTitle.style.fontWeight = "bold";alertTitle.style.color = "white";alertTitle.style.lineHeight = 2.5;alertTitle.innerHTML = title;var alertMessage = document.createElement("div");alertMessage.style.padding = "20px";alertMessage.style.fontFamily = "Arial";alertMessage.style.fontSize = "16px";alertMessage.style.color = "black";alertMessage.style.textAlign = "center";alertMessage.style.lineHeight = 2;alertMessage.innerHTML = message;var alertButton = document.createElement("div");alertButton.style.padding = "10px";alertButton.style.backgroundColor = "#d2d2d2";alertButton.style.border = "1px solid #b2b2b2";alertButton.style.fontFamily = "Arial";alertButton.style.fontSize = "16px";alertButton.style.color = "black";alertButton.style.textAlign = "center";alertButton.style.lineHeight = 1.5;alertButton.style.display = "inline-block";alertButton.style.marginBottom = "10px";alertButton.style.paddingLeft = "40px";alertButton.style.paddingRight = "40px";alertButton.style.cursor = "pointer";alertButton.addEventListener("click",function(event){document.body.removeChild(alertContainer);});alertButton.innerHTML = accept;alertForm.appendChild(alertTitle);alertForm.appendChild(alertMessage);alertForm.appendChild(alertButton);alertContainer.appendChild(alertForm);document.body.appendChild(alertContainer);}catch(err){}}
 
 			var userLanguage = window.navigator.userLanguage || window.navigator.language;
+
+			var GAME_SOUND_ENABLED = getBooleanSetting("GAME_SOUND_ENABLED");
 
 			var ROMDATA = "";
 			var ROMNAME = "";
@@ -283,8 +287,8 @@
 					document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "none";
 
 					// HIDING THE SOUND TOGGLE BUTTON (DESKTOP AND MOBILE)
-					document.getElementsByClassName("gui_sound")[0].style.display = "none";
-					document.getElementsByClassName("gui_sound_mobile")[0].style.display = "none";
+					document.getElementById("gui_sound_handler").style.display = "none";
+					document.getElementById("gui_sound_handler_mobile").style.display = "none";
 
 					// SETTING THAT THE ACTION BUTTONS MUST BE HIDDEN
 					ACTION_BUTTONS_VISIBLE = false;
@@ -322,8 +326,26 @@
 				{
 				try
 					{
+					// CHECKING IF THE SOUND IS ENABLED
+					if (GAME_SOUND_ENABLED==true)
+						{
+						// DISABLING THE SOUND
+						GAME_SOUND_ENABLED = false;
+						}
+						else
+						{
+						// ENABLIND THE SOUND
+						GAME_SOUND_ENABLED = true;
+						}
+
+					// UPDATING THE SOUND ICON
+					updateSoundIcon();
+
+					// SAVING THE USER PREFERENCE
+					setBooleanSetting("GAME_SOUND_ENABLED", GAME_SOUND_ENABLED);
+
 					// RUNNING THE FUNCTION THAT IS LOCATED WITHIN THE IFRAME DOCUMENT TO TOGGLE THE SOUND STATUS
-					document.getElementById("container").contentWindow.toggleSound();
+					document.getElementById("container").contentWindow.toggleSound(GAME_SOUND_ENABLED);
 					}
 					catch(err)
 					{
@@ -374,7 +396,7 @@
 							if (ACTION_BUTTONS_VISIBLE==true)
 								{
 								// SHOWING THE SOUND TOGGLE BUTTON
-								document.getElementsByClassName("gui_sound")[0].style.display = "block";
+								document.getElementById("gui_sound_handler").style.display = "block";
 
 								// SHOWING THE DOWNLOAD BUTTON
 								document.getElementsByClassName("gui_download")[0].style.display = "block";
@@ -417,7 +439,7 @@
 						document.getElementsByClassName("gui_goback")[0].style.display = "none";
 
 						// HIDING THE SOUND TOGGLE BUTTON
-						document.getElementsByClassName("gui_sound")[0].style.display = "none";
+						document.getElementById("gui_sound_handler").style.display = "none";
 
 						// HIDING THE DOWNLOAD BUTTON
 						document.getElementsByClassName("gui_download")[0].style.display = "none";
@@ -449,11 +471,14 @@
 				// SETTING THAT THE ACTIONS BUTTONS (STATES HANDLER, RESTART, SOUND, ETC.) CAN BE DISPLAYED
 				ACTION_BUTTONS_VISIBLE = true;
 
+				// UPDATING THE SOUND ICON ACCORDING TO THE SOUND PREFERENCE
+				updateSoundIcon();
+
 				// CHECKING IF IT IS A MOBILE DEVICE
 				if (isMobileDevice()==true)
 					{
 					// SHOWING THE SOUND TOGGLE BUTTON (FOR MOBILE DEVICES)
-					document.getElementsByClassName("gui_sound_mobile")[0].style.display = "block";
+					document.getElementById("gui_sound_handler_mobile").style.display = "block";
 
 					// SHOWING THE DOWNLOAD BUTTON (FOR MOBILE DEVICES)
 					document.getElementsByClassName("gui_download_mobile")[0].style.display = "block";
@@ -479,6 +504,45 @@
 					// ON DESKTOP DEVICES, SHOWING ALL THE ACTIONS BUTTONS FOR A FEW SECONDS
 					// JUST TO VISUALLY NOTIFY THE USER ABOUT ALL THE AVAILABLE BUTTONS
 					goBackButtonResetIncrement();
+					}
+				}
+
+			function getSoundStatus()
+				{
+				// PASSING TO THE EMULATOR THE SOUND STATUS
+				return GAME_SOUND_ENABLED;
+				}
+
+			function updateSoundIcon()
+				{
+				// CHECKING IF IT IS A MOBILE DEVICE
+				if (isMobileDevice()==true)
+					{
+					// CHECKING IF THE SOUND IS ENABLED
+					if (GAME_SOUND_ENABLED==true)
+						{
+						// SHOWING THE ENABLED MOBILE SOUND ICON
+						document.getElementById("gui_sound_handler_mobile_icon").className = "gui_sound_on_mobile_icon";
+						}
+						else
+						{
+						// SHOWING THE DISABLED MOBILE SOUND ICON
+						document.getElementById("gui_sound_handler_mobile_icon").className = "gui_sound_off_mobile_icon";
+						}
+					}
+					else
+					{
+					// CHECKING IF THE SOUND IS ENABLED
+					if (GAME_SOUND_ENABLED==true)
+						{
+						// SHOWING THE ENABLED SOUND ICON
+						document.getElementById("gui_sound_handler").className = "gui_sound_on";
+						}
+						else
+						{
+						// SHOWING THE DISABLED SOUND ICON
+						document.getElementById("gui_sound_handler").className = "gui_sound_off";
+						}
 					}
 				}
 
@@ -554,6 +618,9 @@
 					document.getElementById("gui_uploader").addEventListener("click",function(event){document.getElementById("gui_controls_file").click()});
 					}
 
+				// UPDATING THE SOUND ICON ACCORDING TO THE SOUND PREFERENCE
+				this.updateSoundIcon();
+
 				// SHOWING THE UPLOADER ICON
 				document.getElementById("gui_uploader").style.display = "block";
 
@@ -563,7 +630,7 @@
 
 				// SETTING THE TITLES FOR EACH BUTTON
 				document.getElementsByClassName("gui_uploader")[0].title = STRING_SELECTGAME;
-				document.getElementsByClassName("gui_sound")[0].title = STRING_SOUND;
+				document.getElementById("gui_sound_handler").title = STRING_SOUND;
 				document.getElementsByClassName("gui_goback")[0].title = STRING_GOBACK;
 				document.getElementsByClassName("gui_reload")[0].title = STRING_RELOAD;
 				document.getElementsByClassName("gui_decrease")[0].title = STRING_DECREASE;
@@ -577,7 +644,7 @@
 				document.getElementsByClassName("gui_goback")[0].addEventListener("click",function(event){goBack()});
 				document.getElementsByClassName("gui_decrease")[0].addEventListener("click",function(event){decreaseCycles()});
 				document.getElementsByClassName("gui_increase")[0].addEventListener("click",function(event){increaseCycles()});
-				document.getElementsByClassName("gui_sound")[0].addEventListener("click",function(event){ROMState_ToggleSound()});
+				document.getElementById("gui_sound_handler").addEventListener("click",function(event){ROMState_ToggleSound()});
 				document.getElementsByClassName("gui_download")[0].addEventListener("click",function(event){ROMState_DownloadFile()});
 				document.getElementsByClassName("gui_uploadsave")[0].addEventListener("click",function(event){ROMState_UploadFile()});
 				document.getElementsByClassName("gui_reload")[0].addEventListener("click",function(event){reload()});
@@ -586,7 +653,7 @@
 				document.getElementsByClassName("gui_goback_mobile")[0].addEventListener("touchstart",function(event){goBack()});
 				document.getElementsByClassName("gui_decrease_mobile")[0].addEventListener("click",function(event){decreaseCycles()});
 				document.getElementsByClassName("gui_increase_mobile")[0].addEventListener("click",function(event){increaseCycles()});
-				document.getElementsByClassName("gui_sound_mobile")[0].addEventListener("click",function(event){ROMState_ToggleSound()});
+				document.getElementById("gui_sound_handler_mobile").addEventListener("click",function(event){ROMState_ToggleSound()});
 				document.getElementsByClassName("gui_download_mobile")[0].addEventListener("touchstart",function(event){ROMState_DownloadFile()});
 				document.getElementsByClassName("gui_uploadsave_mobile")[0].addEventListener("touchstart",function(event){ROMState_UploadFile()});
 				document.getElementsByClassName("gui_reload_mobile")[0].addEventListener("touchstart",function(event){reload()});
@@ -600,8 +667,8 @@
 		<div class="gui_decrease_mobile"><div class="gui_decrease_mobile_icon"></div></div>
 		<div class="gui_increase"></div>
 		<div class="gui_increase_mobile"><div class="gui_increase_mobile_icon"></div></div>
-		<div class="gui_sound"></div>
-		<div class="gui_sound_mobile"><div class="gui_sound_mobile_icon"></div></div>
+		<div class="gui_sound_on" id="gui_sound_handler"></div>
+		<div class="gui_sound_on_mobile" id="gui_sound_handler_mobile"><div id="gui_sound_handler_mobile_icon" class="gui_sound_on_mobile_icon"></div></div>
 		<div class="gui_download"></div>
 		<div class="gui_download_mobile"><div class="gui_download_mobile_icon"></div></div>
 		<div class="gui_uploadsave"></div>
