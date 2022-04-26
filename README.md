@@ -50,18 +50,18 @@ https://www.emulatrix.com
 
 | PLATFORM  | TYPE  | DETAILS |
 | :------------ |:--------------- |:---------------|
-| Libretro cores | Bugfix | Delayed compilation workaround |
 | Libretro cores | Bugfix | Content resized to canvas |
+| Libretro cores | Bugfix | Delayed compilation workaround |
 | Libretro cores | Feature | Mute/unmute implementation |
-| Libretro cores | Feature | Paused/resumed emulation on blur/focus |
 | Libretro cores | Feature | Load/save state implementation |
+| Libretro cores | Feature | Paused/resumed emulation on blur/focus |
 | DOSBox core | Bugfix | Launching emulator on blur |
-| DOSBox core | Bugfix | Removed black margin when trying fullscreen |
 | DOSBox core | Bugfix | SimulateInfiniteLoop in 16 bits systems |
-| DOSBox core | Feature | Paused/resumed emulation on blur/focus |
+| DOSBox core | Bugfix | Removed black margin when trying fullscreen |
+| DOSBox core | Feature | PKZip implementation |
 | DOSBox core | Feature | Mute/unmute implementation |
 | DOSBox core | Feature | Load/save file implementation |
-| DOSBox core | Feature | PKZip implementation |
+| DOSBox core | Feature | Paused/resumed emulation on blur/focus |
 
 ## Virtual joystick code
 
