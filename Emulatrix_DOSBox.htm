@@ -293,8 +293,13 @@
 				{
 				try
 					{
+					// CREATING THE FILE READER
 					var filereader = new FileReader();
+
+					// GETTING THE FILENAME
 					filereader.file_name = files[0].name;
+
+					// SETTING THAT WILL HAPPEN WHEN THE FILE IS READ
 					filereader.onload = function()
 						{
 						// SETTING THE FILE CONTENT FOR THE EMULATOR
