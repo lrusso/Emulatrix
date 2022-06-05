@@ -565,16 +565,22 @@
 				{
 				try
 					{
-					// CHECKING THE FILE EXTENSION
+					// GETTING THE FILE EXTENSION
 					var extension = files[0].name.split(".").pop().toLowerCase();
+
+					// CHECKING THE FILE EXTENSION
 					if (extension=="state")
 						{
 						// SETTING THE UPLOADING PROCESS AS TRUE
 						upload_running = true;
 
-						// READING THE SELECTED FILE
+						// CREATING THE FILE READER
 						var filereader = new FileReader();
+
+						// GETTING THE FILENAME
 						filereader.file_name = files[0].name;
+
+						// SETTING THAT WILL HAPPEN WHEN THE FILE IS READ
 						filereader.onload = function()
 							{
 							// CHECKING IF THERE IS A PREVIOUS ROMSTATE FILE CREATED, IF SO, IT IS DELETED
@@ -604,6 +610,8 @@
 							// STARTING THE TASK THAT WILL UPLOAD THE ROMSTATE FILE
 							upload_Checker = setInterval(upload_CheckerCron, 1000);
 							};
+
+						// READING THE FILE
 						filereader.readAsArrayBuffer(files[0]);
 						}
 					}
