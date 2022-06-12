@@ -34,6 +34,7 @@
 			var STRING_LOADSTATE = "";
 			var STRING_SAVESTATE = "";
 			var STRING_GOBACK = "";
+			var STRING_FULLSCREEN = "";
 			var STRING_RELOAD = "";
 			var STRING_READINGFILE = "";
 			var STRING_STARTINGEMULATOR = "";
@@ -65,6 +66,7 @@
 				STRING_LOADSTATE = "Subir estado del juego";
 				STRING_SAVESTATE = "Descargar estado del juego";
 				STRING_GOBACK = "Volver al men" + String.fromCharCode(250) + " principal";
+				STRING_FULLSCREEN = "Pantalla completa";
 				STRING_RELOAD = "Recargar juego";
 				STRING_READINGFILE = "Leyendo archivo...";
 				STRING_STARTINGEMULATOR = "Iniciando emulador...";
@@ -94,6 +96,7 @@
 				STRING_LOADSTATE = "Upload game state";
 				STRING_SAVESTATE = "Download game state";
 				STRING_GOBACK = "Go back to the main menu";
+				STRING_FULLSCREEN = "Fullscreen";
 				STRING_RELOAD = "Reload game";
 				STRING_READINGFILE = "Reading file...";
 				STRING_STARTINGEMULATOR = "Starting emulator...";
@@ -253,6 +256,13 @@
 				{
 				try
 					{
+					// CHECKING IF THE GAME IS RUNNING IN FULLSCREEN
+					if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height))
+						{
+						// GOING BACK TO WINDOW MODE
+						document.exitFullscreen();
+						}
+
 					// SHOWING THE GUI
 					document.getElementsByClassName("gui_container")[0].style.display = "block";
 
@@ -265,6 +275,9 @@
 					// HIDING THE GO BACK BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_goback")[0].style.display = "none";
 					document.getElementsByClassName("gui_goback_mobile")[0].style.display = "none";
+
+					// HIDING THE FULLSCREEN BUTTON (DESKTOP ONLY)
+					document.getElementsByClassName("gui_fullscreen")[0].style.display = "none";
 
 					// HIDING THE DECREASE CYCLES BUTTON (DESKTOP AND MOBILE)
 					document.getElementsByClassName("gui_decrease")[0].style.display = "none";
@@ -395,6 +408,9 @@
 							// CHECKING IF THE ACTION BUTTON CAN BE DISPLAYED
 							if (ACTION_BUTTONS_VISIBLE==true)
 								{
+								// HIDING THE FULLSCREEN BUTTON
+								document.getElementsByClassName("gui_fullscreen")[0].style.display = "block";
+
 								// SHOWING THE SOUND TOGGLE BUTTON
 								document.getElementById("gui_sound_handler").style.display = "block";
 
@@ -437,6 +453,9 @@
 						{
 						// HIDING THE GO BACK BUTTON
 						document.getElementsByClassName("gui_goback")[0].style.display = "none";
+
+						// HIDING THE FULLSCREEN BUTTON
+						document.getElementsByClassName("gui_fullscreen")[0].style.display = "none";
 
 						// HIDING THE SOUND TOGGLE BUTTON
 						document.getElementById("gui_sound_handler").style.display = "none";
@@ -546,6 +565,45 @@
 					}
 				}
 
+			function fullscreenHandler()
+				{
+				try
+					{
+					// CHECKING IF THE GAME IS RUNNING IN FULLSCREEN
+					if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height))
+						{
+						// GOING BACK TO WINDOW MODE
+						document.exitFullscreen();
+
+						// NO POINT GOING ANY FURTHER
+						return;
+						}
+
+					// SETTING THE ELEMENT THAT WILL BE PRESENTED IN FULLSCREEN
+					var elem = document.getElementsByTagName("body")[0];
+
+					// CHECKING IF THERE IS A REQUESTFULLSCREEN
+					if (elem.requestFullscreen)
+						{
+						// REQUESTING FULLSCREEN
+						elem.requestFullscreen();
+						}
+					else if (elem.webkitRequestFullscreen) // SAFARI
+						{
+						// REQUESTING FULLSCREEN
+						elem.webkitRequestFullscreen();
+						}
+					else if (elem.msRequestFullscreen) // IE11
+						{
+						// REQUESTING FULLSCREEN
+						elem.msRequestFullscreen();
+						}
+					}
+					catch(err)
+					{
+					}
+				}
+
 			window.addEventListener("load", function()
 				{
 				// ENABLING THE UPLOAD ICON FUNCTIONALITY
@@ -632,6 +690,7 @@
 				document.getElementsByClassName("gui_uploader")[0].title = STRING_SELECTGAME;
 				document.getElementById("gui_sound_handler").title = STRING_SOUND;
 				document.getElementsByClassName("gui_goback")[0].title = STRING_GOBACK;
+				document.getElementsByClassName("gui_fullscreen")[0].title = STRING_FULLSCREEN;
 				document.getElementsByClassName("gui_reload")[0].title = STRING_RELOAD;
 				document.getElementsByClassName("gui_decrease")[0].title = STRING_DECREASE;
 				document.getElementsByClassName("gui_increase")[0].title = STRING_INCREASE;
@@ -642,6 +701,7 @@
 
 				// SETTING WHAT WILL HAPPEN WHEN THE USER CLICKS ON A ITEM
 				document.getElementsByClassName("gui_goback")[0].addEventListener("click",function(event){goBack()});
+				document.getElementsByClassName("gui_fullscreen")[0].addEventListener("click",function(event){fullscreenHandler()});
 				document.getElementsByClassName("gui_decrease")[0].addEventListener("click",function(event){decreaseCycles()});
 				document.getElementsByClassName("gui_increase")[0].addEventListener("click",function(event){increaseCycles()});
 				document.getElementById("gui_sound_handler").addEventListener("click",function(event){ROMState_ToggleSound()});
@@ -663,6 +723,7 @@
 		<iframe id="container" src="about:blank"></iframe>
 		<div class="gui_goback"></div>
 		<div class="gui_goback_mobile"><div class="gui_goback_mobile_icon"></div></div>
+		<div class="gui_fullscreen"></div>
 		<div class="gui_decrease"></div>
 		<div class="gui_decrease_mobile"><div class="gui_decrease_mobile_icon"></div></div>
 		<div class="gui_increase"></div>
