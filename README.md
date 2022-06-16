@@ -64,6 +64,10 @@ https://www.emulatrix.com
 | DOSBox core | Feature | Load/save file implementation |
 | DOSBox core | Feature | Paused/resumed emulation on blur/focus |
 
+## Emulatrix has mobile compatibility (Android only)
+
+![alt screenshot](https://raw.githubusercontent.com/lrusso/Emulatrix/master/Emulatrix2.png)
+
 ## Virtual joystick code
 
 https://github.com/lrusso/VirtualJoystick
