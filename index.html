@@ -44,16 +44,22 @@
 
 			function resizeContent()
 				{
+				// GETTING THE WINDOW WIDTH
 				var w = window.innerWidth;
+
+				// GETTING THE WINDOW HEIGHT
 				var h = window.innerHeight;
 
-				if(window.innerHeight > window.innerWidth) // MOBILE DEVICE
+				// CHECKING IF THE CURRENT DEVICE IS A MOBILE DEVICE
+				if(window.innerHeight > window.innerWidth)
 					{
+					// RESIZING THE CONTAINER FOR MOBILE DEVICES
 					document.getElementById("content").style.width = h + "px";
 					document.getElementById("content").style.height = w + "px";
 					}
 					else
 					{
+					// RESIZING THE CONTAINER FOR DESKTOP DEVICES
 					document.getElementById("content").style.width = w + "px";
 					document.getElementById("content").style.height = h + "px";
 					}
@@ -67,9 +73,10 @@
 					// RESIZING THE IFRAME
 					resizeContent();
 
-					// TO KEEP FOCUS IN THE IFRAME
+					// CREATING A 250 MS INTERVAL
 					setInterval(function()
 						{
+						// FOCUSING THE CONTAINER
 						document.getElementById("content").focus();
 						}, 250);
 
