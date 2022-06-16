@@ -417,9 +417,10 @@
 					// PRESSING THE F10 KEY
 					sendVirtualKey("keydown","F10");
 
-					// RELEASING THE F10 KEY
+					// WAITING 50 MS
 					setTimeout(function()
 						{
+						// RELEASING THE F10 KEY
 						sendVirtualKey("keyup","F10");
 						}, 50);
 					}
