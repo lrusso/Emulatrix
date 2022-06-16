@@ -620,15 +620,20 @@
 							// CHECKING IF THERE IS A PREVIOUS ROMSTATE FILE CREATED, IF SO, IT IS DELETED
 							try
 								{
+								// TRYING TO READ THE ROMSTATE FILE
 								var myTempFile = FS.readFile("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
+
+								// DELETING THE ROMSTATE FILE
 								FS.unlink("/home/web_user/retroarch/userdata/states/" + download_Filename + ".state");
 								}
 								catch(err)
 								{
 								}
 
-							// CREATING THE ROMSTATE FILE
+							// GETTING THE DATA FOR THE ROMSTATE FILE
 							var dataView = new Uint8Array(this.result);
+
+							// CREATING THE ROMSTATE FILE
 							FS.createDataFile("/home/web_user/retroarch/userdata/states",download_Filename+".state",dataView,true,true);
 
 							// SETTING THE DEFAULT VALUES FOR THE VARIABLES THAT WILL CHECK THE UPLOADING PROCESS
