@@ -43,6 +43,7 @@ https://www.emulatrix.com
 | GameBoy Color | https://buildbot.libretro.com/stable | gambatte
 | GameBoy Advance | https://buildbot.libretro.com/stable | vba_next
 | Sega Genesis | https://buildbot.libretro.com/stable | genesis_plus_gx
+| MAME32 | https://buildbot.libretro.com/stable | mame2003_plus_libretro
 | MAME32 | https://buildbot.libretro.com/stable | fbalpha2012
 | DOS | https://github.com/dreamlayers/em-dosbox | dosbox
 
