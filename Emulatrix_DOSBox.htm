@@ -73,9 +73,10 @@
 					// CLEARING THE PREVIOUS TIMEOUT FOR HIDING THE 'FILE SAVED' LABEL (IF ANY)
 					try{clearTimeout(mySavedGameLabelTimeout)}catch(err){}
 
-					// HIDING THE 'FILE SAVED' LABEL AFTER THREE SECONDS
+					// WAITING 3000 MS
 					mySavedGameLabelTimeout = setTimeout(function()
 						{
+						// HIDING THE 'FILE SAVED' LABEL AFTER THREE SECONDS
 						document.getElementsByClassName("gui_saving")[0].style.display = "none";
 						}, 3000);
 					}
@@ -444,8 +445,10 @@
 				{
 				try
 					{
-					// WRITING THE UPLOADED FILE INTO THE FILE SYSTEM
+					// GETTING THE DATA FOR THE FILE
 					var dataView = new Uint8Array(SAVEDATA);
+
+					// CREATING THE FILE
 					FS.writeFile("/emulator" + upload_PathCurrent + "/" + SAVENAME, dataView, {encoding: "binary"}, function(err){});
 					}
 					catch(err)
@@ -486,9 +489,10 @@
 				sendVirtualKey("keydown",17,17);
 				sendVirtualKey("keydown",122,122);
 
-				// RELEASING CTRL+F11 AFTER 100 MS
+				// WAITING 100 MS
 				setTimeout(function()
 					{
+					// RELEASING CTRL+F11
 					sendVirtualKey("keyup",17,17);
 					sendVirtualKey("keyup",122,122);
 					},100);
@@ -500,9 +504,10 @@
 				sendVirtualKey("keydown",17,17);
 				sendVirtualKey("keydown",123,123);
 
-				// RELEASING CTRL+F12 AFTER 100 MS
+				// WAITING 100 MS
 				setTimeout(function()
 					{
+					// RELEASING CTRL+F12
 					sendVirtualKey("keyup",17,17);
 					sendVirtualKey("keyup",123,123);
 					},100);
@@ -649,7 +654,7 @@
 				// SHOWING THE CANVAS CONTAINER
 				document.getElementById("container").style.display="block";
 
-				// LOADING THE ZIP FILE
+				// LOADING THE ZIP FILE AFTER 1000 MS
 				setTimeout(function(){loadZipIntoVD()},1000);
 
 				// SETTING FUNCTIONS THAT WILL BE CALLED WHEN THE USER CLICKS, DOUBLE CLICKS OR MOVES THE MOUSE IN ORDER TO SHOW THE SYSTEM ICONS
@@ -675,8 +680,10 @@
 				// WINDOW.ONLOAD DOESN'T FIX THIS.
 				// THAT'S WHY THE CODE BELOW GIVES ANOTHER TRY TO RUN THE DOSBOX SCRIPT WITH THE SELECTED ZIP FILE.
 
+				// WAITING 5000 MS
 				setTimeout(function()
 					{
+					// RELOADING THE PAGE
 					document.location.reload(true);
 					}, 5000);
 				return true;
