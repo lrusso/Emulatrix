@@ -308,6 +308,14 @@
 				// CREATING THE FILE WITH THE CONFIGURATION
 				FS.createDataFile("/home/web_user/retroarch/userdata", "retroarch.cfg", settings_file, true, true);
 
+				// CREATING THE MAME 2003 CONFIGURATION FILE
+				var settings_file2 = "";
+				settings_file2 += "mame2003-plus_skip_warnings = enabled\n";
+				settings_file2 += "mame2003-plus_skip_disclaimer = enabled\n";
+
+				// CREATING THE FILE WITH THE MAME 2003 CONFIGURATION
+				FS.createDataFile("/home/web_user/retroarch/userdata", "retroarch-core-options.cfg", settings_file2, true, true);
+
 				// WAITING A PRUDENTIAL TIME FOR THE RETROARCH.CFG FILE TO BE CREATED
 				settings_Checker = setInterval(checkSettingsFile, 1000);
 				}
