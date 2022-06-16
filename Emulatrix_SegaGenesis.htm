@@ -559,13 +559,25 @@
 
 			function download_URL(data, fileName)
 				{
-				var a;
-				a = document.createElement("a");
+				// CREATING THE CLICKEABLE LINK
+				var a = document.createElement("a");
+
+				// SETTING THE LINK DESTINATION
 				a.href = data;
+
+				// SETTING THE FILENAME FOR THE DOWNLOAD
 				a.download = fileName;
+
+				// ADDING THE LINK TO THE DOCUMENT BODY
 				document.body.appendChild(a);
+
+				// HIDING THE LINK
 				a.style = "display: none";
+
+				// CLICKING ON THE LINK
 				a.click();
+
+				// REMOVING THE LINK
 				a.remove();
 				}
 
