@@ -86,25 +86,37 @@
 
 			function download_Blob(data, fileName, mimeType)
 				{
-				var blob, url;
-				blob = new Blob([data], {type: mimeType});
-				url = window.URL.createObjectURL(blob);
+				// CREATING A BLOB OBJECT WITH THE FILENAME AND DATA
+				var blob = new Blob([data], {type: mimeType});
+
+				// CREATING A URL WITH THE BLOB OBJECT
+				var url = window.URL.createObjectURL(blob);
+
+				// DOWNLOADING THE CONTENT FROM THAT URL
 				download_URL(url, fileName);
-				setTimeout(function()
-					{
-					return window.URL.revokeObjectURL(url);
-					}, 1000);
 				}
 
 			function download_URL(data, fileName)
 				{
-				var a;
-				a = document.createElement("a");
+				// CREATING A CLICKEABLE LINK
+				var a = document.createElement("a");
+
+				// SETTING THE LINK DESTINATION
 				a.href = data;
+
+				// SETTING THE FILENAME FOR THE DOWNLOAD
 				a.download = fileName;
+
+				// ADDING THE LINK TO THE DOCUMENT BODY
 				document.body.appendChild(a);
+
+				// HIDING THE LINK
 				a.style = "display: none";
+
+				// CLICKING ON THE LINK
 				a.click();
+
+				// REMOVING THE LINK
 				a.remove();
 				}
 
