@@ -371,8 +371,14 @@
 				// RESIZING THE CANVAS
 				document.getElementById("canvas").width = container_width;
 				document.getElementById("canvas").height = container_height;
+
+				// RESIZING THE CANVAS AFTER 500 MS (WORKAROUND FOR OLD/SLOW DEVICES)
 				setTimeout(function(){resizeEmulatorCanvas()},500);
+
+				// RESIZING THE CANVAS AFTER 1000 MS (WORKAROUND FOR OLD/SLOW DEVICES)
 				setTimeout(function(){resizeEmulatorCanvas()},1000);
+
+				// RESIZING THE CANVAS AFTER 1500 MS (WORKAROUND FOR OLD/SLOW DEVICES)
 				setTimeout(function(){resizeEmulatorCanvas()},1500);
 				}
 
