@@ -575,9 +575,13 @@
 
 			function download_Blob(data, fileName, mimeType)
 				{
-				var blob, url;
-				blob = new Blob([data], {type: mimeType});
-				url = window.URL.createObjectURL(blob);
+				// CREATING A BLOB OBJECT WITH THE FILENAME AND DATA
+				var blob = new Blob([data], {type: mimeType});
+
+				// CREATING A URL WITH THE BLOB OBJECT
+				var url = window.URL.createObjectURL(blob);
+
+				// DOWNLOADING THE CONTENT FROM THAT URL
 				download_URL(url, fileName);
 				}
 
