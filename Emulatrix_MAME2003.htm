@@ -47,15 +47,19 @@
 					// EXTRACTING THE KINST.CHD FILE
 					zip.file("kinst.chd").async("binarystring").then(function(data)
 						{
-						// CREATING THE CHD FILE IN THE VIRTUAL DRIVE
+						// GETTING THE CHD FILE CONTENT
 						var dataView1 = toUint8Array(data);
+
+						// CREATING THE CHD FILE IN THE VIRTUAL DRIVE
 						FS.createDataFile("/", "kinst.chd", dataView1, true, false);
 
 						// EXTRACTING THE KINST.CHD FILE
 						zip.file("kinst.zip").async("binarystring").then(function(data)
 							{
-							// CREATING THE CHD FILE IN THE VIRTUAL DRIVE
+							// GETTING THE ROM FILE CONTENT
 							var dataView2 = toUint8Array(data);
+
+							// CREATING THE ROM FILE IN THE VIRTUAL DRIVE
 							FS.createDataFile("/", "kinst.zip", dataView2, true, false);
 
 							// LOADING A GAME AS USUAL

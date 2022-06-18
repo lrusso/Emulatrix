@@ -28,8 +28,10 @@
 
 			function loadRomIntoVD()
 				{
-				// CREATING THE ROM FILE IN THE VIRTUAL DRIVE
+				// GETTING THE ROM FILE CONTENT
 				var dataView = new Uint8Array(parent.ROMDATA);
+
+				// CREATING THE ROM FILE IN THE VIRTUAL DRIVE
 				FS.createDataFile("/", "game.smc", dataView, true, false);
 
 				// CREATING THE FOLDERS IN THE VIRTUAL DRIVE IN ORDER TO SAVE THE CONFIG FILE
