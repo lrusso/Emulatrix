@@ -29,8 +29,8 @@
 			function loadRomIntoVD()
 				{
 				// CREATING THE ROM FILE IN THE VIRTUAL DRIVE
-				var dataView=new Uint8Array(parent.ROMDATA);
-				FS.createDataFile("/","game.gb",dataView,true,false);
+				var dataView = new Uint8Array(parent.ROMDATA);
+				FS.createDataFile("/", "game.gb", dataView, true, false);
 
 				// CREATING THE FOLDERS IN THE VIRTUAL DRIVE IN ORDER TO SAVE THE CONFIG FILE
 				FS.createFolder("/home/web_user", "retroarch", true, true);
