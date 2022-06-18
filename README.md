@@ -66,7 +66,7 @@ https://www.emulatrix.com
 
 ## MAME 2003 Plus notes:
 
-- Playing Killer Instinct: Create a zip file named ```kinst-chd.zip``` that must contain ```kinst.zip``` and ```kinst.chd```. Emulatrix will unzip that will and create both required files to run the game (takes several seconds).
+- Playing Killer Instinct: Create a zip file named ```kinst-chd.zip``` that must contain ```kinst.zip``` and ```kinst.chd```. Emulatrix will unzip those files in order to run the game (takes several seconds).
 - Saving and loading states: Some games (Killer Instinct, Mortal Kombat 1, 2 and Ultimate) are not working with this feature (it's a core issue).
 
 ## Emulatrix has mobile compatibility (Android only)
