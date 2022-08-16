@@ -33,7 +33,7 @@
 			var settings_file2 = "";
 			var settings_Checker;
 
-			function loadKillerInstinctIntoVD()
+			function unzipIntoVD(chdFilename, zipFilename)
 				{
 				// CREATING A ZIP READER
 				var zipReader = new JSZip();
@@ -44,25 +44,25 @@
 				// READING THE ZIP FILE
 				zipReader.loadAsync(zipFile).then(function(zip)
 					{
-					// EXTRACTING THE KINST.CHD FILE
-					zip.file("kinst.chd").async("binarystring").then(function(data)
+					// EXTRACTING THE CHD FILE
+					zip.file(chdFilename).async("binarystring").then(function(data)
 						{
 						// GETTING THE CHD FILE CONTENT
 						var dataView1 = toUint8Array(data);
 
 						// CREATING THE CHD FILE IN THE VIRTUAL DRIVE
-						FS.createDataFile("/", "kinst.chd", dataView1, true, false);
+						FS.createDataFile("/", chdFilename, dataView1, true, false);
 
-						// EXTRACTING THE KINST.CHD FILE
-						zip.file("kinst.zip").async("binarystring").then(function(data)
+						// EXTRACTING THE ZIP ROM FILE
+						zip.file(zipFilename).async("binarystring").then(function(data)
 							{
-							// GETTING THE ROM FILE CONTENT
+							// GETTING THE ZIP ROM FILE CONTENT
 							var dataView2 = toUint8Array(data);
 
-							// CREATING THE ROM FILE IN THE VIRTUAL DRIVE
-							FS.createDataFile("/", "kinst.zip", dataView2, true, false);
+							// CREATING THE ZIP ROM FILE IN THE VIRTUAL DRIVE
+							FS.createDataFile("/", zipFilename, dataView2, true, false);
 
-							// LOADING A GAME AS USUAL
+							// WRITING THE ROM FILE IN THE VIRTUAL DISK AND LOADING THE GAME
 							loadRomIntoVD();
 							});
 						});
@@ -907,12 +907,12 @@
 					// CHECKING IF THE GAME IS KILLER INSTINCT
 					if (parent.ROMNAME=="kinst-chd.zip")
 						{
-						// LOADING SPECIFIC LOGIC FOR KILLER INSTINCT
-						loadKillerInstinctIntoVD();
+						// UNZIPPING THE GAME IN THE VIRTUAL DISK
+						unzipIntoVD("kinst.chd", "kinst.zip");
 						}
 						else
 						{
-						// LOADING A GAME AS USUAL
+						// WRITING THE ROM FILE IN THE VIRTUAL DISK AND LOADING THE GAME
 						loadRomIntoVD();
 						}
 					},2000);
