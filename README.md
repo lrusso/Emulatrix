@@ -71,7 +71,7 @@ https://www.emulatrix.com
 
 ## Final Burn Alpha 2012 note:
 
-- Playing Samurai Shodown III: You must use the samsho3h.zip file.
+- Playing Samurai Shodown III: You must use the ```samsho3h.zip``` file.
 
 ## Emulatrix has mobile compatibility (Android only)
 
