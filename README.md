@@ -69,6 +69,10 @@ https://www.emulatrix.com
 - Playing Killer Instinct: Create a zip file named ```kinst-chd.zip``` that must contain ```kinst.zip``` and ```kinst.chd```. Emulatrix will unzip those files in order to run the game (takes several seconds).
 - Saving and loading states: In some games (Killer Instinct, Mortal Kombat 1, 2 and Ultimate) the saving function doesn't work (core issue).
 
+## Final Burn Alpha 2012 note:
+
+- Playing Samurai Shodown III: You must play using the samsho3h.zip file.
+
 ## Emulatrix has mobile compatibility (Android only)
 
 ![alt screenshot](https://raw.githubusercontent.com/lrusso/Emulatrix/master/Emulatrix2.png)
