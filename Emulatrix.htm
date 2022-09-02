@@ -755,28 +755,28 @@
 						// CHECKING IF IT IS THE "C" KEY
 						if (e.keyCode == 67)
 							{
-							// CHECKING IF THE MOBILE CONTROLS WILL BE HIDDEN
+							// CHECKING IF THE MOBILE CONTROLS WILL BE VISIBLE
 							if (MOBILE_CONTROLS_VISIBLE==true)
 								{
-								// SETTING THAT THE MOBILE CONTROLS WILL BE VISIBLE
-								MOBILE_CONTROLS_VISIBLE = false;
-
-								// SAVING THE HIDE MOBILE CONTROLS PREFERENCE
-								setBooleanSetting("MOBILE_CONTROLS_VISIBLE", MOBILE_CONTROLS_VISIBLE);
-
-								// HIDING THE MOBILE CONTROLS HIDDEN LABEL
-								document.getElementsByClassName("gui_mobile_controls_label")[0].style.display = "none";
-								}
-								else
-								{
 								// SETTING THAT THE MOBILE CONTROLS WILL BE HIDDEN
-								MOBILE_CONTROLS_VISIBLE = true
+								MOBILE_CONTROLS_VISIBLE = false;
 
 								// SAVING THE HIDE MOBILE CONTROLS PREFERENCE
 								setBooleanSetting("MOBILE_CONTROLS_VISIBLE", MOBILE_CONTROLS_VISIBLE);
 
 								// SHOWING THE MOBILE CONTROLS HIDDEN LABEL
 								document.getElementsByClassName("gui_mobile_controls_label")[0].style.display = "block";
+								}
+								else
+								{
+								// SETTING THAT THE MOBILE CONTROLS WILL BE VISIBLE
+								MOBILE_CONTROLS_VISIBLE = true
+
+								// SAVING THE HIDE MOBILE CONTROLS PREFERENCE
+								setBooleanSetting("MOBILE_CONTROLS_VISIBLE", MOBILE_CONTROLS_VISIBLE);
+
+								// HIDING THE MOBILE CONTROLS HIDDEN LABEL
+								document.getElementsByClassName("gui_mobile_controls_label")[0].style.display = "none";
 								}
 							}
 						}
