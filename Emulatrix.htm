@@ -702,6 +702,13 @@
 					document.getElementById("gui_uploader").addEventListener("click",function(event){document.getElementById("gui_controls_file").click()});
 					}
 
+				// CHECKING IF THE MOBILE CONTROLS ARE HIDDEN
+				if (MOBILE_CONTROLS_VISIBLE==false)
+					{
+					// SHOWING THE MOBILE CONTROLS HIDDEN LABEL
+					document.getElementsByClassName("gui_mobile_controls_label")[0].style.display = "block";
+					}
+
 				// UPDATING THE SOUND ICON ACCORDING TO THE SOUND PREFERENCE
 				this.updateSoundIcon();
 
