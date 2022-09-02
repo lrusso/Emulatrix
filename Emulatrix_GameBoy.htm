@@ -745,7 +745,7 @@
 				parent.enableControls();
 
 				// CHECKING IF IT IS A MOBILE DEVICE AND THAT THE MOBILE CONTROLS MUST BE DISPLAYED
-				if (isMobileDevice()==true && parent.mobileControlsHidden()==false)
+				if (isMobileDevice()==true && parent.mobileControlsVisible()==true)
 					{
 					// SHOWING THE VIRTUAL BUTTONS AND ASSIGNING TOUCHING EVENTS TO EACH ONE OF THEM
 					document.getElementsByClassName("gui_gameboy_keyselect")[0].style.display = "block";
