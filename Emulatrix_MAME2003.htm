@@ -835,8 +835,8 @@
 				// IT CAN SHOW THE ACTION BUTTONS (STATES HANDLER, RESTART, SOUND, ETC.)
 				parent.enableControls();
 
-				// CHECKING IF IT IS A MOBILE DEVICE
-				if (isMobileDevice()==true)
+				// CHECKING IF IT IS A MOBILE DEVICE AND THAT THE MOBILE CONTROLS MUST BE DISPLAYED
+				if (isMobileDevice()==true && parent.mobileControlsHidden()==false)
 					{
 					// SHOWING THE VIRTUAL BUTTONS AND ASSIGNING TOUCHING EVENTS TO EACH ONE OF THEM
 					document.getElementsByClassName("gui_mame32_keycoin")[0].style.display = "block";
