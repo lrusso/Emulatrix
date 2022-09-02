@@ -750,7 +750,7 @@
 				document.getElementsByClassName("gui_download_mobile")[0].addEventListener("touchstart",function(event){ROMState_DownloadFile()});
 				document.getElementsByClassName("gui_uploadsave_mobile")[0].addEventListener("touchstart",function(event){ROMState_UploadFile()});
 				document.getElementsByClassName("gui_reload_mobile")[0].addEventListener("touchstart",function(event){reload()});
-				document.getElementsByClassName("gui_mobile_controls_label")[0].addEventListener("click",function(event){MOBILE_CONTROLS_VISIBLE = true;setBooleanSetting("MOBILE_CONTROLS_VISIBLE", MOBILE_CONTROLS_VISIBLE);document.getElementsByClassName("gui_mobile_controls_label")[0].style.display = "none";});
+				document.getElementsByClassName("gui_mobile_controls_label")[0].addEventListener("click",function(event){MOBILE_CONTROLS_VISIBLE=true;setBooleanSetting("MOBILE_CONTROLS_VISIBLE",MOBILE_CONTROLS_VISIBLE);document.getElementsByClassName("gui_mobile_controls_label")[0].style.display="none";});
 
 				// SETTING WHAT HAPPEN WHEN THE USER STOP PRESSING A KEY
 				document.addEventListener("keyup", function(e)
