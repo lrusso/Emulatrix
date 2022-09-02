@@ -79,7 +79,7 @@ https://www.emulatrix.com
 
 ## Playing Emulatrix on Android with a USB Keyboard:
 
-Press C on the Main Menu in order to enable or disable the mobile controls.
+Press ```C``` on the Main Menu in order to enable or disable the mobile controls.
 
 ## Virtual joystick code
 
