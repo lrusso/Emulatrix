@@ -77,6 +77,10 @@ https://www.emulatrix.com
 
 ![alt screenshot](https://raw.githubusercontent.com/lrusso/Emulatrix/master/Emulatrix2.png)
 
+## Playing Emulatrix on Android with a USB Keyboard:
+
+Press C on the Main Menu in order to enable or disable the mobile controls.
+
 ## Virtual joystick code
 
 https://github.com/lrusso/VirtualJoystick
