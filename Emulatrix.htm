@@ -457,6 +457,35 @@
 									}
 								}
 							}
+
+						// CHECKING IF IT IS A MOBILE DEVICE AND THAT THE MOBILE CONTROLS MUST BE DISPLAYED
+						if (isMobileDevice()==true && HIDE_MOBILE_CONTROLS==true)
+							{
+							// SHOWING THE GO BACK BUTTON (FOR MOBILE DEVICES)
+							document.getElementsByClassName("gui_goback_mobile")[0].style.display = "block";
+
+							// SHOWING THE SOUND TOGGLE BUTTON (FOR MOBILE DEVICES)
+							document.getElementById("gui_sound_handler_mobile").style.display = "block";
+
+							// SHOWING THE DOWNLOAD BUTTON (FOR MOBILE DEVICES)
+							document.getElementsByClassName("gui_download_mobile")[0].style.display = "block";
+
+							// SHOWING THE UPLOAD SAVE BUTTON (FOR MOBILE DEVICES)
+							document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "block";
+
+							// SHOWING THE RELOAD BUTTON (FOR MOBILE DEVICES)
+							document.getElementsByClassName("gui_reload_mobile")[0].style.display = "block";
+
+							// CHECKING IF THE GAME IS A DOS GAME
+							if (DOSGAME==true)
+								{
+								// SHOWING THE DECREASE CYCLES BUTTON (FOR MOBILE DEVICES)
+								document.getElementsByClassName("gui_decrease_mobile")[0].style.display = "block";
+
+								// SHOWING THE INCREASE CYCLES BUTTON (FOR MOBILE DEVICES)
+								document.getElementsByClassName("gui_increase_mobile")[0].style.display = "block";
+								}
+							}
 						}
 					}
 					catch(err)
@@ -501,6 +530,35 @@
 							// HIDING THE INCREASE CYCLES BUTTON
 							document.getElementsByClassName("gui_increase")[0].style.display = "none";
 							}
+
+						// CHECKING IF IT IS A MOBILE DEVICE AND THAT THE MOBILE CONTROLS MUST BE DISPLAYED
+						if (isMobileDevice()==true && HIDE_MOBILE_CONTROLS==true)
+							{
+							// HIDING THE GO BACK BUTTON (FOR MOBILE DEVICES)
+							document.getElementsByClassName("gui_goback_mobile")[0].style.display = "none";
+
+							// HIDING THE SOUND TOGGLE BUTTON (FOR MOBILE DEVICES)
+							document.getElementById("gui_sound_handler_mobile").style.display = "none";
+
+							// HIDING THE DOWNLOAD BUTTON (FOR MOBILE DEVICES)
+							document.getElementsByClassName("gui_download_mobile")[0].style.display = "none";
+
+							// HIDING THE UPLOAD SAVE BUTTON (FOR MOBILE DEVICES)
+							document.getElementsByClassName("gui_uploadsave_mobile")[0].style.display = "none";
+
+							// HIDING THE RELOAD BUTTON (FOR MOBILE DEVICES)
+							document.getElementsByClassName("gui_reload_mobile")[0].style.display = "none";
+
+							// CHECKING IF THE GAME IS A DOS GAME
+							if (DOSGAME==true)
+								{
+								// HIDING THE DECREASE CYCLES BUTTON (FOR MOBILE DEVICES)
+								document.getElementsByClassName("gui_decrease_mobile")[0].style.display = "none";
+
+								// HIDING THE INCREASE CYCLES BUTTON (FOR MOBILE DEVICES)
+								document.getElementsByClassName("gui_increase_mobile")[0].style.display = "none";
+								}
+							}
 						}
 					}
 					catch(err)
@@ -516,9 +574,12 @@
 				// UPDATING THE SOUND ICON ACCORDING TO THE SOUND PREFERENCE
 				updateSoundIcon();
 
-				// CHECKING IF IT IS A MOBILE DEVICE
-				if (isMobileDevice()==true)
+				// CHECKING IF IT IS A MOBILE DEVICE AND THAT THE MOBILE CONTROLS MUST BE HIDDEN
+				if (isMobileDevice()==true && HIDE_MOBILE_CONTROLS==false)
 					{
+					// SHOWING THE GO BACK BUTTON (FOR MOBILE DEVICES)
+					document.getElementsByClassName("gui_goback_mobile")[0].style.display = "block";
+
 					// SHOWING THE SOUND TOGGLE BUTTON (FOR MOBILE DEVICES)
 					document.getElementById("gui_sound_handler_mobile").style.display = "block";
 
@@ -557,6 +618,7 @@
 
 			function mobileControlsHidden()
 				{
+				// PASSING TO THE EMULATOR IF THE MOBILE CONTROLS MUST BE HIDDEN OR NOT
 				return HIDE_MOBILE_CONTROLS;
 				}
 
