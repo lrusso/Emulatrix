@@ -743,22 +743,38 @@
 				document.getElementsByClassName("gui_uploadsave_mobile")[0].addEventListener("touchstart",function(event){ROMState_UploadFile()});
 				document.getElementsByClassName("gui_reload_mobile")[0].addEventListener("touchstart",function(event){reload()});
 
+				// SETTING WHAT HAPPEN WHEN THE USER STOP PRESSING A KEY
 				document.addEventListener("keyup", function(e)
 					{
-					e = e || window.event;
-
-					if (e.keyCode == 67)
+					try
 						{
-						if (HIDE_MOBILE_CONTROLS==true)
+						// GETTING THE KEY EVENT
+						e = e || window.event;
+
+						// CHECKING IF IT IS THE "C" KEY
+						if (e.keyCode == 67)
 							{
-							HIDE_MOBILE_CONTROLS = false;
-							document.getElementsByClassName("gui_mobile_controls_label")[0].style.display = "none";
+							// CHECKING IF THE MOBILE CONTROLS WILL BE HIDDEN
+							if (HIDE_MOBILE_CONTROLS==true)
+								{
+								// SETTING THAT THE MOBILE CONTROLS WILL BE VISIBLE
+								HIDE_MOBILE_CONTROLS = false;
+
+								// HIDING THE MOBILE CONTROLS HIDDEN LABEL
+								document.getElementsByClassName("gui_mobile_controls_label")[0].style.display = "none";
+								}
+								else
+								{
+								// SETTING THAT THE MOBILE CONTROLS WILL BE HIDDEN
+								HIDE_MOBILE_CONTROLS = true
+
+								// SHOWING THE MOBILE CONTROLS HIDDEN LABEL
+								document.getElementsByClassName("gui_mobile_controls_label")[0].style.display = "block";
+								}
 							}
-							else
-							{
-							HIDE_MOBILE_CONTROLS = true
-							document.getElementsByClassName("gui_mobile_controls_label")[0].style.display = "block";
-							}
+						}
+						catch(err)
+						{
 						}
 					});
 				});
