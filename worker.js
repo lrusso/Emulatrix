@@ -12,6 +12,7 @@ const filesToCache = [
 	"EmulatrixFavIcon_48x48.png",
 	"EmulatrixFavIcon_512x512.png",
 	"EmulatrixFavIcon_512x512b.png",
+	"EmulatrixFavIcon.svg",
 	"EmulatrixShare.png",
 	"Emulatrix_DOSBox.htm",
 	"Emulatrix_DOSBox.js",
