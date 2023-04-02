@@ -138,8 +138,8 @@ html,body{margin:0;padding:0;background-color:black;-webkit-user-select:none;-mo
 .fileupload_location{width:100%;background-color:#D3D3D3;font-family:Arial;font-size:16px;line-height:2.8}
 .fileupload_location_value{width:180px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-align:left;padding-left:10px;padding-right:10px}
 .fileupload_select{width:100%;height:159px;overflow-y:scroll;background-color:white;border:none;font-family:Arial;font-size:16px}
-.fileupload_submit{width:180px;background-color:silver;font-family:Arial;font-size:16px;text-align:center;line-height:2.3;border:1px solid #b2b2b2;margin:10px auto;cursor:pointer;border-radius:5px;overflow:"hidden"}
-.fileupload_submit:hover{background-color:#A9A9A9}
+.fileupload_submit{width:180px;background-color:#d2d2d2;font-family:Arial;font-size:16px;text-align:center;line-height:2.3;border:1px solid #b2b2b2;margin:10px auto;cursor:pointer;border-radius:5px;overflow:"hidden"}
+.fileupload_submit:hover{background-color:#b2b2b2}
 .fileupload_uploader{display:none}
 .fileupload_fileitem{width:100%;font-family:Arial;font-size:16px;line-height:2}
 .fileupload_fileitem:hover{background-color:#3a76b1;color:white;cursor:pointer}
