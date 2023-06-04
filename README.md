@@ -8,7 +8,7 @@ JavaScript and WebAssembly Emulator - Sega Genesis, Nintendo, Super Nintendo, Ga
 
 https://www.emulatrix.com
 
-## IMPORTANT - After selecting the upload icon
+## IMPORTANT - After clicking on the upload icon
 
 | PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
 | :------------ |:---------------:| :-----:| :-----:|
