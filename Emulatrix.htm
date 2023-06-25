@@ -480,9 +480,6 @@
 						// HIDING THE GO BACK BUTTON
 						document.getElementsByClassName("gui_goback")[0].style.display = "none";
 
-						// HIDING THE MOUSE POINTER
-						try{document.getElementById("container").contentWindow.hideMouse();}catch(err){}
-
 						// HIDING THE FULLSCREEN BUTTON
 						document.getElementsByClassName("gui_fullscreen")[0].style.display = "none";
 
@@ -506,6 +503,11 @@
 
 							// HIDING THE INCREASE CYCLES BUTTON
 							document.getElementsByClassName("gui_increase")[0].style.display = "none";
+							}
+						else
+							{
+							// HIDING THE MOUSE POINTER (ONLY IF IT IS NOT A DOS GAME)
+							try{document.getElementById("container").contentWindow.hideMouse();}catch(err){}
 							}
 						}
 					}
