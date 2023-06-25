@@ -429,7 +429,7 @@
 							document.getElementsByClassName("gui_goback")[0].style.display = "block";
 
 							// SHOWING THE MOUSE POINTER
-							document.getElementById("container").contentWindow.showMouse();
+							try{document.getElementById("container").contentWindow.showMouse();}catch(err){}
 
 							// CHECKING IF THE ACTION BUTTON CAN BE DISPLAYED
 							if (ACTION_BUTTONS_VISIBLE==true)
@@ -481,7 +481,7 @@
 						document.getElementsByClassName("gui_goback")[0].style.display = "none";
 
 						// HIDING THE MOUSE POINTER
-						document.getElementById("container").contentWindow.hideMouse();
+						try{document.getElementById("container").contentWindow.hideMouse();}catch(err){}
 
 						// HIDING THE FULLSCREEN BUTTON
 						document.getElementsByClassName("gui_fullscreen")[0].style.display = "none";
