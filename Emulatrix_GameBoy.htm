@@ -767,6 +767,16 @@
 					}
 				}
 
+			function hideMouse()
+				{
+				document.getElementsByTagName("body")[0].className = "gui_mouse_hidden";
+				}
+
+			function showMouse()
+				{
+				document.getElementsByTagName("body")[0].className = "gui_mouse_visible";
+				}
+
 			window.addEventListener("blur", function()
 				{
 				try

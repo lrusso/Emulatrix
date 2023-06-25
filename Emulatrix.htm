@@ -428,10 +428,13 @@
 							// SHOWING THE GO BACK BUTTON
 							document.getElementsByClassName("gui_goback")[0].style.display = "block";
 
+							// SHOWING THE MOUSE POINTER
+							document.getElementById("container").contentWindow.showMouse();
+
 							// CHECKING IF THE ACTION BUTTON CAN BE DISPLAYED
 							if (ACTION_BUTTONS_VISIBLE==true)
 								{
-								// HIDING THE FULLSCREEN BUTTON
+								// SHOWING THE FULLSCREEN BUTTON
 								document.getElementsByClassName("gui_fullscreen")[0].style.display = "block";
 
 								// SHOWING THE SOUND TOGGLE BUTTON
@@ -476,6 +479,9 @@
 						{
 						// HIDING THE GO BACK BUTTON
 						document.getElementsByClassName("gui_goback")[0].style.display = "none";
+
+						// HIDING THE MOUSE POINTER
+						document.getElementById("container").contentWindow.hideMouse();
 
 						// HIDING THE FULLSCREEN BUTTON
 						document.getElementsByClassName("gui_fullscreen")[0].style.display = "none";
