@@ -30,12 +30,16 @@ It's a Web project that is 50% in JavaScript and 50% in WebAssembly. It uses the
 
 | TYPE IN THE PROMPT  | RESULT  |
 | :------------ |:---------------:|
+| mount d . -t cdrom | Mounting a path as a CD-ROM |
+| imgmount d cd1.cue cd2.cue -t cdrom | Mounting two CD-ROM images |
 | config -set "cycles=4000" | Default emulation speed |
 | config -set "cycles=10000" | Faster emulation speed |
 | config -set "cycles=15000" | Faster emulation speed |
 | config -set "cycles=20000" | Fastest emulation speed |
 | config -set "sbtype=none" | Sound Blaster disabled |
 | pkzip folder.zip c:\myfolder\\*.\* -rp | Creates folder.zip with myfolder content |
+
+For switching CD-ROM images you must press Ctrl+F4 (Windows) or Fn + Control + Option + F4 (Mac).
 
 ## Original core files
 
