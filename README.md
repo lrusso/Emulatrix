@@ -14,17 +14,20 @@ It's a Web project that is 50% in JavaScript and 50% in WebAssembly. It uses the
 
 ## IMPORTANT - After clicking on the upload icon
 
-| PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT | NOTE |
-| :------------ |:---------------:| :-----:| :-----:|
-| Nintendo | Select the game file from your hard drive. | NES | --- | 
-| Super Nintendo | Select the game file from your hard drive. | SMC, SFC, SRM | --- |
-| GameBoy | Select the game file from your hard drive. | GB | --- |
-| GameBoy Color | Select the game file from your hard drive. | GBC | --- |
-| GameBoy Advance | Select the game file from your hard drive. | GBA | --- |
-| Sega Genesis | Select the game file from your hard drive. | BIN, SMD, MD | --- |
-| MAME32 | Select the game file from your hard drive. | ZIP | Do not rename the ZIP file. |
-| DOS | Select the game file from your hard drive. | ZIP | Will try to run AUTORUN.BAT |
-| Virtual Machines | Select the disk file from your hard drive. | ZIP | Must contain a c.img file.<br>It will be mounted and booted. |
+| PLATFORM  | HOW TO PLAY A GAME?  | FILE FORMAT |
+| :------------ |:---------------:| :-----:|
+| Nintendo | Select the game file from your device. | NES |
+| Super Nintendo | Select the game file from your device. | SMC, SFC, SRM |
+| GameBoy | Select the game file from your device. | GB |
+| GameBoy Color | Select the game file from your device. | GBC |
+| GameBoy Advance | Select the game file from your device. | GBA |
+| Sega Genesis | Select the game file from your device. | BIN, SMD, MD |
+| MAME32 | Select the game file from your device. | ZIP |
+| DOS | Select the game file from your device. | ZIP |
+| Virtual Machines | Select the disk file from your device. | ZIP |
+
+- When running DOS, Emulatrix will try to run AUTORUN.BAT from the ZIP file while booting.
+- Regarding Virtual Machines, the ZIP must contain a c.img file that will be mounted and booted.
 
 ## DOSBox useful commands
 
@@ -39,7 +42,7 @@ It's a Web project that is 50% in JavaScript and 50% in WebAssembly. It uses the
 | config -set "sbtype=none" | Sound Blaster disabled |
 | pkzip folder.zip c:\myfolder\\*.\* -rp | Creates folder.zip with myfolder content |
 
-For switching CD-ROM images you must press Ctrl+F4 (Windows) or Fn + Control + Option + F4 (Mac).
+- For switching CD-ROM images you must press Ctrl+F4 (Windows) or Fn + Control + Option + F4 (Mac).
 
 ## Original core files
 
