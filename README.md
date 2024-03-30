@@ -10,7 +10,7 @@ https://www.emulatrix.com
 
 ## How does it work?
 
-It's a Web project that is 50% in ```JavaScript``` and 50% in ```WebAssembly```. It uses the ```HTML5 File API``` for reading a file from the computer, so the End User must select the ROM file from his computer. After that, it uses ```BrowserFS```, that creates a virtual filesystem on the client side where the ROM file is uploaded. When using the ```DOS``` emulator, there is a Web File Manager that allows the End User to upload and download files to/from that virtual filesystem. Once the ```JavaScript``` side is running and mounted, the emulators are in ```WebAssembly``` and the content is rendered on a ```Canvas``` and for audio it uses an ```AudioContext```. There is a ```JavaScript``` logic that handles the ```AudioContext``` (for mute/unmute) and a similar logic for pausing and resuming the emulation when the window is on blur or on focus.
+It's a Web project that is 50% in ```JavaScript``` and 50% in ```WebAssembly```. It uses the ```HTML5 File API``` for reading a file from the computer, so the End User must select the ROM file from his computer. After that, it uses ```BrowserFS```, that creates a virtual filesystem on the client side where the ROM file is uploaded. When using the ```DOS``` emulator, there is a Web File Manager that allows the End User to upload and download files to/from that virtual filesystem. The emulators are in ```WebAssembly``` and the content is rendered on a ```Canvas``` and for audio it uses an ```AudioContext```. There is a ```JavaScript``` logic that handles the ```AudioContext``` (for mute/unmute) and a similar logic for pausing and resuming the emulation when the window is on blur or on focus.
 
 ## IMPORTANT - After clicking on the upload icon
 
