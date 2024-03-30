@@ -26,7 +26,7 @@ It's a Web project that is 50% in ```JavaScript``` and 50% in ```WebAssembly```.
 | DOS | Select the game file from your device. | ZIP |
 | Virtual Machines | Select the disk file from your device. | ZIP |
 
-- When running DOS, Emulatrix will try to run ```AUTORUN.BAT``` from the ZIP file after booting.
+- When running ```DOS```, Emulatrix will try to run ```AUTORUN.BAT``` from the ZIP file after booting.
 - Regarding Virtual Machines, the ZIP file must contain a ```c.img``` file that will be mounted and booted.
 
 ## DOSBox useful commands
