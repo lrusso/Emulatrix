@@ -26,8 +26,8 @@ It's a Web project that is 50% in JavaScript and 50% in WebAssembly. It uses the
 | DOS | Select the game file from your device. | ZIP |
 | Virtual Machines | Select the disk file from your device. | ZIP |
 
-- When running DOS, Emulatrix will try to run AUTORUN.BAT from the ZIP file after booting.
-- Regarding Virtual Machines, the ZIP must contain a c.img file that will be mounted and booted.
+- When running DOS, Emulatrix will try to run ```AUTORUN.BAT``` from the ZIP file after booting.
+- Regarding Virtual Machines, the ZIP must contain a ```c.img``` file that will be mounted and booted.
 
 ## DOSBox useful commands
 
@@ -42,7 +42,7 @@ It's a Web project that is 50% in JavaScript and 50% in WebAssembly. It uses the
 | config -set "sbtype=none" | Sound Blaster disabled |
 | pkzip folder.zip c:\myfolder\\*.\* -rp | Creates folder.zip with myfolder content |
 
-- For switching CD-ROM images you must press Ctrl+F4 (Windows) or Fn + Control + Option + F4 (Mac).
+- For switching CD-ROM images you must press ```Ctrl+F4``` (Windows) or ```Fn + Control + Option + F4``` (Mac).
 
 ## Original core files
 
