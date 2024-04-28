@@ -109,3 +109,5 @@ https://www.emulatrix.com/Banner4.htm
 https://www.emulatrix.com/Banner5.htm
 
 https://www.emulatrix.com/Banner6.htm
+
+https://www.emulatrix.com/BannerTitle.htm
