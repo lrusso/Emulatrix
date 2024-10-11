@@ -229,14 +229,14 @@
 							// ADDING THE FOLDERS TO THE SELECT LIST
 							for(var i = 0; i < rawListFolders.length; i++)
 								{
-								var opt = "<div class='filedownload_fileitem' onclick='download_checkContent(\"" + rawListFolders[i].toUpperCase() + "\",true)'><span class='filedownload_fileitem_name'>&#60;DIR&#62; " + rawListFolders[i].toUpperCase() + "</span></div>";
+								var opt = "<div class='filedownload_fileitem' onclick='download_checkContent(\"" + rawListFolders[i] + "\",true)'><span class='filedownload_fileitem_name'>&#60;DIR&#62; " + rawListFolders[i].toUpperCase() + "</span></div>";
 								selectList.innerHTML = selectList.innerHTML + opt;
 								}
 
 							// ADDING THE FILES TO THE SELECT LIST
 							for(var i = 0; i < rawListFiles.length; i++)
 								{
-								var opt = "<div class='filedownload_fileitem' onclick='download_checkContent(\"" + rawListFiles[i].toUpperCase() + "\",false)'><span class='filedownload_fileitem_name'>" + rawListFiles[i].toUpperCase() + "</span></div>";
+								var opt = "<div class='filedownload_fileitem' onclick='download_checkContent(\"" + rawListFiles[i] + "\",false)'><span class='filedownload_fileitem_name'>" + rawListFiles[i].toUpperCase() + "</span></div>";
 								selectList.innerHTML = selectList.innerHTML + opt;
 								}
 							}
@@ -403,7 +403,7 @@
 							// ADDING THE FOLDERS TO THE SELECT LIST
 							for(var i = 0; i < rawListFolders.length; i++)
 								{
-								var opt = "<div class='fileupload_fileitem' onclick='upload_checkContent(\"" + rawListFolders[i].toUpperCase() + "\",true)'><span class='fileupload_fileitem_name'>&#60;DIR&#62; " + rawListFolders[i].toUpperCase() + "</span></div>";
+								var opt = "<div class='fileupload_fileitem' onclick='upload_checkContent(\"" + rawListFolders[i] + "\",true)'><span class='fileupload_fileitem_name'>&#60;DIR&#62; " + rawListFolders[i].toUpperCase() + "</span></div>";
 								selectList.innerHTML = selectList.innerHTML + opt;
 								}
 							}
