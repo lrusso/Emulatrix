@@ -42,7 +42,7 @@ It's a Web project that is 50% in JavaScript and 50% in WebAssembly. It uses the
 | config -set "sbtype=none" | Sound Blaster disabled |
 | pkzip folder.zip c:\myfolder\\*.\* -rp | Creates folder.zip with myfolder content |
 
-- For switching CD-ROM images you must press ```Ctrl+F4``` (Windows) or ```Fn + Control + Option + F4``` (Mac).
+- For switching CD-ROM images you must press ```Ctrl+F4``` (Windows) or ```Fn + Control + Option + F4``` (Mac). This also can be used for refreshing the filesystem after uploading a file.
 
 ## Original core files
 
