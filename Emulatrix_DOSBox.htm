@@ -451,6 +451,15 @@
 
 					// CREATING THE FILE
 					FS.writeFile("/emulator" + upload_PathCurrent + "/" + SAVENAME, dataView, {encoding: "binary"}, function(err){});
+
+
+					// WAITING 1000 MS
+					setTimeout(function()
+						{
+						// RELEASING CTRL+F12
+						refreshFilesystem();
+						},1000);
+
 					}
 					catch(err)
 					{
@@ -511,6 +520,25 @@
 					// RELEASING CTRL+F12
 					sendVirtualKey("keyup",17,17);
 					sendVirtualKey("keyup",123,123);
+					},100);
+				}
+			/*
+			---------------------------------------------------------------------------------------------------------
+			- FUNCTIONS TO REFRESH DOSBOX FILESYSTEM                                                              -
+			---------------------------------------------------------------------------------------------------------
+			*/
+			function refreshFilesystem()
+				{
+				// PRESSING CTRL+F4
+				sendVirtualKey("keydown",17,17);
+				sendVirtualKey("keydown",115,115);
+
+				// WAITING 100 MS
+				setTimeout(function()
+					{
+					// RELEASING CTRL+F4
+					sendVirtualKey("keyup",17,17);
+					sendVirtualKey("keyup",115,115);
 					},100);
 				}
 
