@@ -346,7 +346,60 @@
       }
 
       function alertCustom(title, message, accept) {
+        var backgroundEmail = document.querySelector(".contact")
+        var backgroundUpload = document.querySelector(".upload")
+        var backgroundElements = [backgroundEmail, backgroundUpload]
+        var backgroundTabIndexes = []
+
+        for (var i = 0; i < backgroundElements.length; i++) {
+          if (backgroundElements[i]) {
+            backgroundTabIndexes[i] = backgroundElements[i].getAttribute("tabindex")
+            backgroundElements[i].setAttribute("tabindex", "-1")
+          }
+        }
+
+        function onAlertKeyDown(event) {
+          if (event.code === "Enter" || event.code === "Space") {
+            event.preventDefault()
+            closeAlert()
+          }
+        }
+
+        function closeAlert() {
+          document.removeEventListener("keydown", onAlertKeyDown)
+          document.body.removeChild(alertContainer)
+          restoreBackgroundElements()
+          document.addEventListener("keydown", onFirstTabKeyDown)
+        }
+
+        // removing the alert leaves the focus on the body, and from there the
+        // browser resumes the tab order in document order, where the email
+        // comes before the upload button, so the first tab is redirected
+        function onFirstTabKeyDown(event) {
+          document.removeEventListener("keydown", onFirstTabKeyDown)
+          if (event.code === "Tab" && !event.shiftKey && backgroundUpload) {
+            event.preventDefault()
+            backgroundUpload.focus()
+          }
+        }
+
+        function restoreBackgroundElements() {
+          for (var i = 0; i < backgroundElements.length; i++) {
+            if (backgroundElements[i]) {
+              if (backgroundTabIndexes[i] === null) {
+                backgroundElements[i].removeAttribute("tabindex")
+              } else {
+                backgroundElements[i].setAttribute(
+                  "tabindex",
+                  backgroundTabIndexes[i]
+                )
+              }
+            }
+          }
+        }
+
         var alertContainer = document.createElement("div")
+        alertContainer.setAttribute("tabindex", "-1")
         alertContainer.style.position = "fixed"
         alertContainer.style.top = 0
         alertContainer.style.bottom = 0
@@ -405,7 +458,7 @@
         alertButton.style.paddingRight = "40px"
         alertButton.style.cursor = "pointer"
         alertButton.addEventListener("click", function () {
-          document.body.removeChild(alertContainer)
+          closeAlert()
         })
         alertButton.addEventListener("mouseover", function () {
           alertButton.style.backgroundColor = "silver"
@@ -424,6 +477,10 @@
         alertContainer.appendChild(alertForm)
 
         document.body.appendChild(alertContainer)
+
+        document.addEventListener("keydown", onAlertKeyDown)
+
+        alertContainer.focus()
       }
 
       function getBooleanSetting(settingName) {
