@@ -108,9 +108,10 @@
       ]
 
       function downloadFile(filename, base64Data) {
-        var base64Clean = base64Data.includes(",")
-          ? base64Data.split(",")[1]
-          : base64Data
+        var base64Clean =
+          base64Data.indexOf(",") !== -1
+            ? base64Data.split(",")[1]
+            : base64Data
         var byteCharacters = atob(base64Clean)
         var byteNumbers = new Array(byteCharacters.length)
         for (var i = 0; i < byteCharacters.length; i++) {
