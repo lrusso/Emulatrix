@@ -79,8 +79,73 @@
 
         var img = document.createElement("img")
         img.style.display = "block"
+        paintLetterFaces(imgCanvas)
         img.src = imgCanvas.toDataURL("image/png")
         document.body.appendChild(img)
+      }
+
+      function paintLetterFaces(canvas) {
+        var width = canvas.width
+        var height = canvas.height
+        var context = canvas.getContext("2d")
+        var image = context.getImageData(0, 0, width, height)
+        var data = image.data
+        var total = width * height
+        var outside = new Uint8Array(total)
+        var stack = new Int32Array(total)
+        var count = 0
+        var i, x, y
+
+        function visit(index) {
+          if (!outside[index] && data[index * 4 + 3] === 0) {
+            outside[index] = 1
+            stack[count++] = index
+          }
+        }
+
+        for (x = 0; x < width; x++) {
+          visit(x)
+          visit((height - 1) * width + x)
+        }
+        for (y = 0; y < height; y++) {
+          visit(y * width)
+          visit(y * width + width - 1)
+        }
+        while (count > 0) {
+          i = stack[--count]
+          x = i % width
+          y = (i - x) / width
+          if (x > 0) visit(i - 1)
+          if (x < width - 1) visit(i + 1)
+          if (y > 0) visit(i - width)
+          if (y < height - 1) visit(i + width)
+        }
+
+        var border = new Uint8Array(total)
+        for (i = 0; i < total; i++) {
+          if (!outside[i]) continue
+          x = i % width
+          y = (i - x) / width
+          for (var dy = -1; dy <= 1; dy++) {
+            for (var dx = -1; dx <= 1; dx++) {
+              if (x + dx >= 0 && x + dx < width && y + dy >= 0 && y + dy < height) {
+                border[(y + dy) * width + x + dx] = 1
+              }
+            }
+          }
+        }
+
+        for (i = 0; i < total; i++) {
+          if (outside[i] || border[i]) continue
+          var alpha = data[i * 4 + 3]
+          if (alpha === 255) continue
+          var opacity = alpha / 255
+          data[i * 4] = Math.round(data[i * 4] * opacity + 255 * (1 - opacity))
+          data[i * 4 + 1] = Math.round(data[i * 4 + 1] * opacity + 255 * (1 - opacity))
+          data[i * 4 + 2] = Math.round(data[i * 4 + 2] * opacity + 255 * (1 - opacity))
+          data[i * 4 + 3] = 255
+        }
+        context.putImageData(image, 0, 0)
       }
 
       function onceFontIsAvailable(cb) {
