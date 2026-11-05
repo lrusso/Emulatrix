@@ -179,7 +179,9 @@
           var alpha = data[i * 4 + 3]
           if (alpha === 255) continue
           var opacity = alpha / 255
-          data[i * 4] = Math.round(data[i * 4] * opacity + FACE_COLOR[0] * (1 - opacity))
+          data[i * 4] = Math.round(
+            data[i * 4] * opacity + FACE_COLOR[0] * (1 - opacity)
+          )
           data[i * 4 + 1] = Math.round(
             data[i * 4 + 1] * opacity + FACE_COLOR[1] * (1 - opacity)
           )
