@@ -9,7 +9,14 @@
   </head>
   <body>
     <script>
-      var PLATFORMS = ["SEGA GENESIS", "SUPER NINTENDO", "NINTENDO", "GAME BOY", "MAME", "DOS"]
+      var PLATFORMS = [
+        "SEGA GENESIS",
+        "SUPER NINTENDO",
+        "NINTENDO",
+        "GAME BOY",
+        "MAME",
+        "DOS",
+      ]
       var FONT_SIZE = "500px" // drawn big so the thin outline stays clean, then reduced
       var LETTER_SPACING = "-50px" // negative brings the letters closer together
       var LETTER_PADDING = 250 // room for the parts of a letter that stick out of its advance width
@@ -43,7 +50,11 @@
         for (var c = 0; c < text.length; c++) {
           if (text.charAt(c) === " ") continue
           var offset = Math.round(tmpContext.measureText(text.substring(0, c)).width)
-          tmpContext.drawImage(letterCanvas(text.charAt(c), fontSize, textHeight * 2), offset - LETTER_PADDING, 0)
+          tmpContext.drawImage(
+            letterCanvas(text.charAt(c), fontSize, textHeight * 2),
+            offset - LETTER_PADDING,
+            0
+          )
         }
 
         var pixels = tmpContext.getImageData(0, 0, tmpCanvas.width, tmpCanvas.height)
@@ -100,7 +111,8 @@
         var canvas = document.createElement("canvas")
         var context = canvas.getContext("2d")
         context.font = fontSize + " Emulatrix"
-        canvas.width = Math.ceil(context.measureText(letter).width) + LETTER_PADDING * 2
+        canvas.width =
+          Math.ceil(context.measureText(letter).width) + LETTER_PADDING * 2
         canvas.height = height
         context.font = fontSize + " Emulatrix"
         context.fillStyle = "black"
@@ -167,8 +179,12 @@
           if (alpha === 255) continue
           var opacity = alpha / 255
           data[i * 4] = Math.round(data[i * 4] * opacity + 255 * (1 - opacity))
-          data[i * 4 + 1] = Math.round(data[i * 4 + 1] * opacity + 255 * (1 - opacity))
-          data[i * 4 + 2] = Math.round(data[i * 4 + 2] * opacity + 255 * (1 - opacity))
+          data[i * 4 + 1] = Math.round(
+            data[i * 4 + 1] * opacity + 255 * (1 - opacity)
+          )
+          data[i * 4 + 2] = Math.round(
+            data[i * 4 + 2] * opacity + 255 * (1 - opacity)
+          )
           data[i * 4 + 3] = 255
         }
         context.putImageData(image, 0, 0)
@@ -188,9 +204,17 @@
       function reduceHeight(canvas, targetHeight) {
         var current = canvas
         while (current.height / 2 > targetHeight) {
-          current = scaleCanvas(current, Math.round(current.width / 2), Math.round(current.height / 2))
+          current = scaleCanvas(
+            current,
+            Math.round(current.width / 2),
+            Math.round(current.height / 2)
+          )
         }
-        return scaleCanvas(current, Math.round((current.width * targetHeight) / current.height), targetHeight)
+        return scaleCanvas(
+          current,
+          Math.round((current.width * targetHeight) / current.height),
+          targetHeight
+        )
       }
 
       function onceFontIsAvailable(cb) {

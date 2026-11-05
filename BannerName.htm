@@ -141,8 +141,12 @@
           if (alpha === 255) continue
           var opacity = alpha / 255
           data[i * 4] = Math.round(data[i * 4] * opacity + 255 * (1 - opacity))
-          data[i * 4 + 1] = Math.round(data[i * 4 + 1] * opacity + 255 * (1 - opacity))
-          data[i * 4 + 2] = Math.round(data[i * 4 + 2] * opacity + 255 * (1 - opacity))
+          data[i * 4 + 1] = Math.round(
+            data[i * 4 + 1] * opacity + 255 * (1 - opacity)
+          )
+          data[i * 4 + 2] = Math.round(
+            data[i * 4 + 2] * opacity + 255 * (1 - opacity)
+          )
           data[i * 4 + 3] = 255
         }
         context.putImageData(image, 0, 0)
