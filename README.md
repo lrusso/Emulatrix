@@ -48,6 +48,8 @@ https://www.emulatrix.com/BannerLaptop.htm
 
 https://www.emulatrix.com/BannerName.htm
 
+https://www.emulatrix.com/BannerPlatforms.htm
+
 https://www.emulatrix.com/BannerReadme.htm
 
 https://www.emulatrix.com/BannerResources.htm
